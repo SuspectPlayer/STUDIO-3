@@ -1,0 +1,24 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+//Written by Darcy Glover
+
+public class ClickOnSymbols : MonoBehaviour
+{
+    Color clickedSymbol;
+
+    GameObject clickedButton;
+
+    public void ClickOnSymbolsMethod()                    
+    {
+        clickedButton = GameObject.FindGameObjectWithTag("Clicked"); //finding the clicked button using tags
+
+        clickedSymbol = clickedButton.GetComponent<Image>().color; //finding the color of the clicked button 
+
+        gameObject.GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol); //calling the "check" script
+
+        clickedButton.tag = "Untagged"; //setting the tag back to default
+    }
+}
