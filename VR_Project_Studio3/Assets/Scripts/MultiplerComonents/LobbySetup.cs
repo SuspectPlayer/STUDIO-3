@@ -30,6 +30,7 @@ public class LobbySetup : MonoBehaviourPunCallbacks
         string randomRoomName = "Room_" + Random.Range(0, 10000);
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.IsOpen = true;
+        roomOptions.IsVisible = true;
         roomOptions.MaxPlayers = 2;
 
 
@@ -44,6 +45,7 @@ public class LobbySetup : MonoBehaviourPunCallbacks
         string randomRoomName = "Room_" + Random.Range(0, 10000);
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.IsOpen = true;
+        roomOptions.IsVisible = true;
         roomOptions.MaxPlayers = 2;
 
 
