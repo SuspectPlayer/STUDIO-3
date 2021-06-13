@@ -48,9 +48,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/SlotCar-Scene.unity
     guid: 711b38c07f2cf904f81b3422c67f1825
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/VRLoginScene.unity
     guid: c75fa0fe40d38f045a2f38cf10b5a586
+  - enabled: 1
+    path: Assets/Scenes/Tom's Scenes/Multiplayer/Loading.unity
+    guid: 161483aae8cea15479e2b57cff6b8542
+  - enabled: 1
+    path: Assets/Scenes/Tom's Scenes/Multiplayer/Lobby.unity
+    guid: f74c8af17258e9549a907c9dfebbcfb2
+  - enabled: 1
+    path: Assets/Scenes/Tom's Scenes/Multiplayer/Game.unity
+    guid: 6f9e5e88eb502fd478b7d739ee22e3e6
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 5d4b125955921b9439007ae2953ca96c, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 83367af2cb06e3e48b0cf914a56111b6, type: 2}
