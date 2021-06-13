@@ -16,12 +16,12 @@ public class LobbySetup : MonoBehaviourPunCallbacks
 
     public void VRJoinLobby()
     {
-        PhotonNetwork.JoinRoom("Room_" + roomCode);
+        PhotonNetwork.JoinRoom("Room_" + roomCode.text);
     }
 
     public void PCJoinLobby()
     {
-        PhotonNetwork.JoinRoom("Room_" + roomCode);
+        PhotonNetwork.JoinRoom("Room_" + roomCode.text);
         player2.transform.Find("Player Name").GetComponent<TextMeshProUGUI>().text = PhotonNetwork.NickName;
     }
 
