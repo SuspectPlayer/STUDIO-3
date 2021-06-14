@@ -7,13 +7,10 @@ using UnityEngine;
 public class UnlockDoor : MonoBehaviour
 {
     [SerializeField]
-    GameObject doorLight;
-
-    [SerializeField]
-    Material red, green;
+    GameObject door;
 
    public void UnlockDoorMethod()
    {
-      doorLight.GetComponent<MeshRenderer>().material = green;
+        door.SetActive(true);
    }
 }

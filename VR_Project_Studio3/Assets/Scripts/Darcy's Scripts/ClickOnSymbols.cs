@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class ClickOnSymbols : MonoBehaviour
 {
-    Color clickedSymbol;
+    Sprite clickedSymbol;
 
     GameObject clickedButton;
 
@@ -15,7 +15,7 @@ public class ClickOnSymbols : MonoBehaviour
     {
         clickedButton = GameObject.FindGameObjectWithTag("Clicked"); //finding the clicked button using tags
 
-        clickedSymbol = clickedButton.GetComponent<Image>().color; //finding the color of the clicked button 
+        clickedSymbol = clickedButton.GetComponent<Image>().sprite; //finding the symbol of the clicked button 
 
         gameObject.GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol); //calling the "check" script
 

@@ -6,7 +6,7 @@ using UnityEngine;
 public class DevTeleport : MonoBehaviour
 {
     [SerializeField]
-    Transform player, room1, room2;
+    GameObject player1, player2;
 
     bool roomOne = true;
 
@@ -16,11 +16,15 @@ public class DevTeleport : MonoBehaviour
         {
             if(roomOne)
             {
-                player.position = room2.position;
+                player1.SetActive(false);
+                player2.SetActive(true);
+                roomOne = false;
             }
             else
             {
-                player.position = room1.position;
+                player1.SetActive(true);
+                player2.SetActive(false);
+                roomOne = true;
             }
         }
     }

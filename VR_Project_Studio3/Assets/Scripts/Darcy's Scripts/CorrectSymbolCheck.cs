@@ -13,18 +13,18 @@ public class CorrectSymbolCheck : MonoBehaviour
     [SerializeField]
     Text correctCount;
 
-    Color[] clickedSymbols = new Color[4];
+    Sprite[] clickedSymbols = new Sprite[4];
 
     [SerializeField]
-    Color neutral;
+    Sprite neutral;
 
     int correctSymbolCount = 0, incorrectSymbolCount = 0;
 
-    public void CorrectSymbolCheckMethod(Color clickedSymbol)
+    public void CorrectSymbolCheckMethod(Sprite clickedSymbol)
     {
         for (int i = 0; i < 4; i++) //checking to see if the clicked colour is one of the ones in the "spawned" symbols on the map
         {
-            if (clickedSymbol == symbols[i].GetComponent<Image>().color && correctSymbolCount < 4)
+            if (clickedSymbol == symbols[i].GetComponentInChildren<Image>().sprite && correctSymbolCount < 4)
             {
                 if(clickedSymbol == clickedSymbols[i])
                 {

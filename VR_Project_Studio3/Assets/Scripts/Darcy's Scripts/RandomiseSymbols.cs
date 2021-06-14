@@ -13,6 +13,9 @@ public class RandomiseSymbols : MonoBehaviour
     [SerializeField]
     Color[] colours;
 
+    [SerializeField]
+    Sprite[] sprites;
+
     int randomNumber, numberChecker;
     int[] storedRandomNumbers = new int[4];
 
@@ -55,7 +58,8 @@ public class RandomiseSymbols : MonoBehaviour
     {
         for(int i = 0; i < 4; i++)
         {
-            symbols[i].GetComponent<Image>().color = colours[storedRandomNumbers[i]];
+            //symbols[i].GetComponentInChildren<Image>().color = colours[storedRandomNumbers[i]];
+            symbols[i].GetComponentInChildren<Image>().sprite = sprites[storedRandomNumbers[i]];
         }
     }
 }
