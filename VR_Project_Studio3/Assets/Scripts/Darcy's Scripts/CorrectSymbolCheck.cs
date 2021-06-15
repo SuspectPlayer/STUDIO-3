@@ -10,9 +10,6 @@ public class CorrectSymbolCheck : MonoBehaviour
     [SerializeField]
     GameObject[] symbols;
 
-    [SerializeField]
-    Text correctCount;
-
     Sprite[] clickedSymbols = new Sprite[4];
 
     [SerializeField]
@@ -57,7 +54,6 @@ public class CorrectSymbolCheck : MonoBehaviour
                 }
             }
         }
-        correctCount.text = correctSymbolCount.ToString();
         incorrectSymbolCount = 0;
     }
 }

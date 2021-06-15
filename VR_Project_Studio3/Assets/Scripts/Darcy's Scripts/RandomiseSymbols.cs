@@ -11,9 +11,6 @@ public class RandomiseSymbols : MonoBehaviour
     GameObject[] symbols;
 
     [SerializeField]
-    Color[] colours;
-
-    [SerializeField]
     Sprite[] sprites;
 
     int randomNumber, numberChecker;
@@ -58,7 +55,6 @@ public class RandomiseSymbols : MonoBehaviour
     {
         for(int i = 0; i < 4; i++)
         {
-            //symbols[i].GetComponentInChildren<Image>().color = colours[storedRandomNumbers[i]];
             symbols[i].GetComponentInChildren<Image>().sprite = sprites[storedRandomNumbers[i]];
         }
     }
