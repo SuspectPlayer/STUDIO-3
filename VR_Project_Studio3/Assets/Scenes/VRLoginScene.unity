@@ -389,6 +389,7 @@ GameObject:
   m_Component:
   - component: {fileID: 223369097}
   - component: {fileID: 223369098}
+  - component: {fileID: 223369099}
   m_Layer: 0
   m_Name: LobbyManager
   m_TagString: Untagged
@@ -428,6 +429,28 @@ MonoBehaviour:
   player2: {fileID: 433045558}
   lobbySetupPannel: {fileID: 1801098050}
   lobbyPannel: {fileID: 1216143211}
+--- !u!114 &223369099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223369096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 998
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &250343473
 GameObject:
   m_ObjectHideFlags: 0
@@ -3650,7 +3673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a6b68503b079f42bc32ce2322065c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isVRPlayer: 0
+  isVRPlayer: 1
 --- !u!114 &1665687316
 MonoBehaviour:
   m_ObjectHideFlags: 0

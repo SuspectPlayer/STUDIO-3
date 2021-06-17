@@ -13,6 +13,13 @@ public class LobbySetup : MonoBehaviourPunCallbacks
     public GameObject player2;
     public GameObject lobbySetupPannel;
     public GameObject lobbyPannel;
+    PhotonView photonView;
+
+    private void Awake()
+    {
+        photonView = GetComponent<PhotonView>();
+        //DontDestroyOnLoad(this);
+    }
 
     public void VRJoinLobby()
     {
@@ -22,7 +29,7 @@ public class LobbySetup : MonoBehaviourPunCallbacks
     public void PCJoinLobby()
     {
         PhotonNetwork.JoinRoom("Room_" + roomCode.text);
-        player2.transform.Find("Player Name").GetComponent<TextMeshProUGUI>().text = PhotonNetwork.NickName;
+        player1.transform.Find("Player Name").GetComponent<TextMeshProUGUI>().text = PhotonNetwork.NickName;
     }
 
     public void VRStartLobby()
@@ -69,17 +76,38 @@ public class LobbySetup : MonoBehaviourPunCallbacks
     {
         lobbySetupPannel.SetActive(false);
         lobbyPannel.SetActive(true);
+        if (!PhotonNetwork.IsMasterClient)
+        {
+            photonView.RPC("RPC_SetName", RpcTarget.Others, PhotonNetwork.NickName.ToString());
+            player1.transform.Find("Player Name").GetComponent<TextMeshProUGUI>().text = PhotonNetwork.NickName;
+            player2.transform.Find("Player Name").GetComponent<TextMeshProUGUI>().text = PhotonNetwork.MasterClient.NickName;
+        }
+       
     }
 
-    //public override void OnRoomListUpdate(List<RoomInfo> roomList)
+
+    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    {
+        if (roomList.Count == 2)
+        {
+            if (player2.activeSelf == false)
+            {
+
+            }
+
+        }
+        //photonView.RPC("RPC_SetName", RpcTarget.Others/*, PhotonNetwork.NickName.ToString()*/);
+    }
+
+    //public override void OnJoinedLobby()
     //{
-    //    if(roomList.Count == 2)
-    //    {
-    //        if(player2.activeSelf == false)
-    //        {
-    //            player2.transform.Find("Player Name").GetComponent<TextMeshProUGUI>().text = PhotonNetwork.PlayerList.;
-    //        }
-            
-    //    }
+    //    photonView.RPC("RPC_SetName", RpcTarget.Others, PhotonNetwork.NickName.ToString());
     //}
+
+
+    [PunRPC]
+    private void RPC_SetName(string nickName)
+    {
+        player2.transform.Find("Player Name").GetComponent<TextMeshProUGUI>().text = nickName;
+    }
 }
