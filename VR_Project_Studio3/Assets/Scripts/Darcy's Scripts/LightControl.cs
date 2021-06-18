@@ -10,14 +10,17 @@ public class LightControl : MonoBehaviour
     [SerializeField]
     Button assignedButton;
 
+    int lightsOn = 0;
+
     Color alphaControl = Color.white;
 
     public void TurnLightOn()
     {
-        if(assignedButton.image.color.a < 1)
+        if(assignedButton.image.color.a < 1 && lightsOn <= 2)
         {
+            gameObject.SetActive(true);
+            lightsOn++;
             AlphaUp();
-
         }
         else
         {
@@ -27,6 +30,8 @@ public class LightControl : MonoBehaviour
 
     void TurnLightOff()
     {
+        gameObject.SetActive(false);
+        lightsOn--;
         AlphaDown();
     }
 
