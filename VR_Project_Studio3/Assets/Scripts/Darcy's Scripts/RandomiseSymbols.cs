@@ -64,15 +64,15 @@ public class RandomiseSymbols : MonoBehaviour
 
     void ApplySymbols()
     {
-        photonView.RPC("RPC_ApplySymbols", RpcTarget.All);
+        photonView.RPC("RPC_ApplySymbols", RpcTarget.All, storedRandomNumbers);
     }
 
     [PunRPC]
-    void RPC_ApplySymbols() //applying the symbols to the images to 'spawn' them in
+    void RPC_ApplySymbols(int[] storedNumbers) //applying the symbols to the images to 'spawn' them in
     {
         for (int i = 0; i < 4; i++)
         {
-            symbols[i].GetComponentInChildren<Image>().sprite = sprites[storedRandomNumbers[i]];
+            symbols[i].GetComponentInChildren<Image>().sprite = sprites[storedNumbers[i]];
         }
     }
 }
