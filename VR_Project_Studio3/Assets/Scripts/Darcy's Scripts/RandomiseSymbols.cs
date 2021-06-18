@@ -21,7 +21,7 @@ public class RandomiseSymbols : MonoBehaviour
 
     void Awake()
     {
-        photonView = GameObject.Find("GameSetup").GetComponent<PhotonView>();
+        photonView = GetComponent<PhotonView>();
     }
 
     void Start()

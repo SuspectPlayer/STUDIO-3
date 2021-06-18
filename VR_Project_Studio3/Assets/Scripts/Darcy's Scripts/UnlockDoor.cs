@@ -14,7 +14,7 @@ public class UnlockDoor : MonoBehaviour
 
     void Start()
     {
-        photonView = GameObject.Find("GameSetup").GetComponent<PhotonView>();
+        photonView = GetComponent<PhotonView>();
     }
 
     public void UnlockDoorMethod()
