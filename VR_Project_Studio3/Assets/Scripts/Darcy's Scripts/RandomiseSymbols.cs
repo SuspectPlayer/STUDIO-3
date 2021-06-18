@@ -29,7 +29,7 @@ public class RandomiseSymbols : MonoBehaviour
         if (PhotonNetwork.IsMasterClient)
         {
             PickUniqueRandomNumbers();
-            photonView.RPC("RPC_ApplySymbols", RpcTarget.All);
+            ApplySymbols();
         }
     }
 
@@ -60,6 +60,11 @@ public class RandomiseSymbols : MonoBehaviour
                 }
             }
         }
+    }
+
+    void ApplySymbols()
+    {
+        photonView.RPC("RPC_ApplySymbols", RpcTarget.All);
     }
 
     [PunRPC]
