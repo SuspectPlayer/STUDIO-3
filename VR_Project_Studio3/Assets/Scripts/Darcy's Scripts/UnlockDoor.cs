@@ -19,7 +19,8 @@ public class UnlockDoor : MonoBehaviour
 
     public void UnlockDoorMethod()
     {
-        photonView.RPC("RPC_UnlockDoor", RpcTarget.Others);
+        door.SetActive(true);
+        photonView.RPC("RPC_UnlockDoor", RpcTarget.All);
     }
 
     [PunRPC]

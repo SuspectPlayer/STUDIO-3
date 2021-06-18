@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
-//Written by Darcy Glover
+//Written by Darcy Glover and Jack Hobbs
 
 public class RandomiseSymbols : MonoBehaviour
 {
@@ -16,10 +17,20 @@ public class RandomiseSymbols : MonoBehaviour
     int randomNumber, numberChecker;
     int[] storedRandomNumbers = new int[4];
 
+    PhotonView photonView;
+
+    void Awake()
+    {
+        photonView = GameObject.Find("GameSetup").GetComponent<PhotonView>();
+    }
+
     void Start()
     {
-        PickUniqueRandomNumbers();
-        ApplySymbols();
+        if (PhotonNetwork.IsMasterClient)
+        {
+            PickUniqueRandomNumbers();
+            photonView.RPC("RPC_ApplySymbols", RpcTarget.All);
+        }
     }
 
     void PickUniqueRandomNumbers()
@@ -51,9 +62,10 @@ public class RandomiseSymbols : MonoBehaviour
         }
     }
 
-    void ApplySymbols() //applying the symbols to the images to 'spawn' them in
+    [PunRPC]
+    void RPC_ApplySymbols() //applying the symbols to the images to 'spawn' them in
     {
-        for(int i = 0; i < 4; i++)
+        for (int i = 0; i < 4; i++)
         {
             symbols[i].GetComponentInChildren<Image>().sprite = sprites[storedRandomNumbers[i]];
         }

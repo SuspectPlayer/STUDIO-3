@@ -43,6 +43,7 @@ MonoBehaviour:
   - RPC_LoadGameOthers
   - RPC_SetName
   - RPC_UnlockDoor
+  - RPC_ApplySymbols
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
