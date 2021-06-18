@@ -42,6 +42,7 @@ MonoBehaviour:
   - RPC_LoadedGameScene
   - RPC_LoadGameOthers
   - RPC_SetName
+  - RPC_UnlockDoor
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 0

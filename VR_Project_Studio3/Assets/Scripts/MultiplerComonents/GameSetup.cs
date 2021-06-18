@@ -37,12 +37,12 @@ public class GameSetup : MonoBehaviourPunCallbacks
         }
         
 
-        PhotonNetwork.LoadLevel("TestJoiningScene");
+        PhotonNetwork.LoadLevel("Darcy Test Scene");
     }
 
     private void OnSceneFinishedLoading(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "TestJoiningScene")
+        if (scene.name == "Darcy Test Scene")
         {
             if (PhotonNetwork.IsMasterClient)
             {
@@ -68,7 +68,7 @@ public class GameSetup : MonoBehaviourPunCallbacks
     [PunRPC]
     void RPC_LoadGameOthers()
     {
-        PhotonNetwork.LoadLevel("TestJoiningScene");
+        PhotonNetwork.LoadLevel("Darcy Test Scene");
     }
     [PunRPC]
     void RPC_LoadedGameScene()
@@ -81,12 +81,12 @@ public class GameSetup : MonoBehaviourPunCallbacks
     {
         //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Test PC player"), Vector3.up, Quaternion.identity);
         if (isVRPlayer)
-        {
-            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Test XR Rig"), Vector3.up, Quaternion.identity);
+        { 
+            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "First Person Controller"), new Vector3(18.798f, 4.5787f, -46.436f), Quaternion.identity);
         }
         else if (!isVRPlayer)
         {
-            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Test PC player"), Vector3.up, Quaternion.identity);
+            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "ViewerCam Variant"), new Vector3(110.442f, 38.952f, 46.117f), Quaternion.identity);
         }
     }
 }
