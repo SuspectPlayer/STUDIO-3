@@ -9,7 +9,7 @@ public class LoginUIManager : MonoBehaviour
     public GameObject connectWithNamePannel;
     void Start()
     {
-        connectOptionsPannel.SetActive(true);
+        connectOptionsPannel.SetActive(false);
         connectWithNamePannel.SetActive(false);
     }
 

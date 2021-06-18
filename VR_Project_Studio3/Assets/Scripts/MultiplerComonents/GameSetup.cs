@@ -20,6 +20,15 @@ public class GameSetup : MonoBehaviourPunCallbacks
         SceneManager.sceneLoaded += OnSceneFinishedLoading;
     }
 
+    public void SetIsVRPlayer()
+    {
+        isVRPlayer = true;
+    }
+    public void SetIsNotVRPlayer()
+    {
+        isVRPlayer = false;
+    }
+
     public void OnClickStartGame()
     {
         if (!PhotonNetwork.IsMasterClient)
