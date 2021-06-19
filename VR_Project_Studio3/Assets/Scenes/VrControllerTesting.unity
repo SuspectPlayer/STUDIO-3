@@ -123,6 +123,49 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &429650470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 429650472}
+  - component: {fileID: 429650471}
+  m_Layer: 0
+  m_Name: XR Interaction Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &429650471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429650470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e4e6cca11330d4088d729ab4fc9d9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &429650472
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429650470}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.6795716, y: 0.0882535, z: -0.66029084}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1816604025
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,5 +410,57 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2630536987877561395, guid: 16fce78728b4a3841a137f1973583bf7, type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 429650471}
+    - target: {fileID: 2630536989125782984, guid: 16fce78728b4a3841a137f1973583bf7, type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 429650471}
+    - target: {fileID: 3993084169110397963, guid: 16fce78728b4a3841a137f1973583bf7, type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 429650471}
+    - target: {fileID: 6250220648963689797, guid: 16fce78728b4a3841a137f1973583bf7, type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 429650471}
+    - target: {fileID: 6977759159653334095, guid: 16fce78728b4a3841a137f1973583bf7, type: 3}
+      propertyPath: customInputs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6977759159653334095, guid: 16fce78728b4a3841a137f1973583bf7, type: 3}
+      propertyPath: customInputs.Array.data[0].actionName
+      value: UIActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 6977759159653334095, guid: 16fce78728b4a3841a137f1973583bf7, type: 3}
+      propertyPath: customInputs.Array.data[0].actionButton
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6977759159653334095, guid: 16fce78728b4a3841a137f1973583bf7, type: 3}
+      propertyPath: customInputs.Array.data[0].actionBehavior.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6977759159653334095, guid: 16fce78728b4a3841a137f1973583bf7, type: 3}
+      propertyPath: customInputs.Array.data[0].actionBehavior.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6977759159653334095, guid: 16fce78728b4a3841a137f1973583bf7, type: 3}
+      propertyPath: customInputs.Array.data[0].actionBehavior.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7456313198050462546, guid: 16fce78728b4a3841a137f1973583bf7, type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 429650471}
+    - target: {fileID: 8352403490858166934, guid: 16fce78728b4a3841a137f1973583bf7, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9215466935054872256, guid: 16fce78728b4a3841a137f1973583bf7, type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 429650471}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16fce78728b4a3841a137f1973583bf7, type: 3}
