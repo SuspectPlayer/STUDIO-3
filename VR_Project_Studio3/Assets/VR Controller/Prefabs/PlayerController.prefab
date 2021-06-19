@@ -1018,6 +1018,7 @@ GameObject:
   - component: {fileID: 2630536988184014303}
   - component: {fileID: 2630536988184014300}
   - component: {fileID: 2630536988184014297}
+  - component: {fileID: 9060596167368925790}
   m_Layer: 0
   m_Name: XR Rig
   m_TagString: Untagged
@@ -1114,17 +1115,35 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2630536988184014291}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4aa427bff98e5849aacdac4dafc3dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ToTeleportButtons: 
-  m_ToDirectGrabButtons: 
-  m_ToRayInteractButtons: 
+  m_ActivationButtons: 
+  m_DeactivationButtons: 
   m_LeftBaseController: {fileID: 2630536988147019667}
   m_LeftTeleportController: {fileID: 2630536987877561399}
   m_RightBaseController: {fileID: 2630536989047724806}
+  m_RightTeleportController: {fileID: 2630536989125782988}
+--- !u!114 &9060596167368925790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2630536988184014291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76eb794085b8a024ebb00dfddda956b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StateCycleButtons: 
+  m_LeftDirectController: {fileID: 2630536988147019667}
+  m_LeftRayController: {fileID: 2168345243932818329}
+  m_LeftTeleportController: {fileID: 2630536987877561399}
+  m_RightDirectController: {fileID: 2630536989047724806}
+  m_RightRayController: {fileID: 5224902797913378702}
   m_RightTeleportController: {fileID: 2630536989125782988}
 --- !u!1 &2630536989047724806
 GameObject:
