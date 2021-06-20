@@ -44,23 +44,31 @@ public class LobbySetup : MonoBehaviourPunCallbacks
         PhotonNetwork.CreateRoom(randomRoomName, roomOptions);
 
         player1.transform.Find("Player Name").GetComponent<TextMeshProUGUI>().text = PhotonNetwork.NickName;
+        if (FindObjectOfType<GameSetup>().isVRPlayer)
+        {
+            player1.transform.Find("Platform").GetComponent<TMP_Dropdown>().value = 1;
+        }
+        else
+        {
+            player1.transform.Find("Platform").GetComponent<TMP_Dropdown>().value = 0;
+        }
         roomNumber.text = randomRoomName;
     }
 
-    public void PCStartLobby()
-    {
-        string randomRoomName = "Room_" + Random.Range(0, 10000);
-        RoomOptions roomOptions = new RoomOptions();
-        roomOptions.IsOpen = true;
-        roomOptions.IsVisible = true;
-        roomOptions.MaxPlayers = 2;
+    //public void PCStartLobby()
+    //{
+    //    string randomRoomName = "Room_" + Random.Range(0, 10000);
+    //    RoomOptions roomOptions = new RoomOptions();
+    //    roomOptions.IsOpen = true;
+    //    roomOptions.IsVisible = true;
+    //    roomOptions.MaxPlayers = 2;
 
 
-        PhotonNetwork.CreateRoom(randomRoomName, roomOptions);
+    //    PhotonNetwork.CreateRoom(randomRoomName, roomOptions);
 
-        player1.transform.Find("Player Name").GetComponent<TextMeshProUGUI>().text = PhotonNetwork.NickName;
-        roomNumber.text = randomRoomName;
-    }
+    //    player1.transform.Find("Player Name").GetComponent<TextMeshProUGUI>().text = PhotonNetwork.NickName;
+    //    roomNumber.text = randomRoomName;
+    //}
 
     public override void OnCreatedRoom()
     {
@@ -81,6 +89,18 @@ public class LobbySetup : MonoBehaviourPunCallbacks
             photonView.RPC("RPC_SetName", RpcTarget.Others, PhotonNetwork.NickName.ToString());
             player1.transform.Find("Player Name").GetComponent<TextMeshProUGUI>().text = PhotonNetwork.NickName;
             player2.transform.Find("Player Name").GetComponent<TextMeshProUGUI>().text = PhotonNetwork.MasterClient.NickName;
+
+            if (FindObjectOfType<GameSetup>().isVRPlayer)
+            {
+                player1.transform.Find("Platform").GetComponent<TMP_Dropdown>().value = 1;
+                photonView.RPC("RPC_SetPlatform", RpcTarget.Others, 1);
+            }
+            else
+            {
+                player1.transform.Find("Platform").GetComponent<TMP_Dropdown>().value = 0;
+                photonView.RPC("RPC_SetPlatform", RpcTarget.Others, 0);
+            }
+            
         }
        
     }
@@ -106,8 +126,14 @@ public class LobbySetup : MonoBehaviourPunCallbacks
 
 
     [PunRPC]
-    private void RPC_SetName(string nickName)
+    void RPC_SetName(string nickName)
     {
         player2.transform.Find("Player Name").GetComponent<TextMeshProUGUI>().text = nickName;
+    }
+
+    [PunRPC]
+    void RPC_SetPlatform(int platform)
+    {
+        player2.transform.Find("Platform").GetComponent<TMP_Dropdown>().value = platform;
     }
 }
