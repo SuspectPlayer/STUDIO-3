@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
 //Written by Darcy Glover
 
@@ -12,23 +13,37 @@ public class LightControl : MonoBehaviour
 
     Color alphaControl = Color.white;
 
+    PhotonView photonView;
+
+    void Awake()
+    {
+        photonView = GetComponent<PhotonView>();
+    }
+
     public void TurnLightOn()
     {
-        if(assignedButton.image.color.a < 1 && gameObject.GetComponentInParent<LightCounter>().lightCount < 2)
+        photonView.RPC("RPC_TurnLightOn", RpcTarget.All);
+    }
+
+    [PunRPC]
+    void RPC_TurnLightOn()
+    {
+        if (assignedButton.image.color.a < 1 && gameObject.GetComponentInParent<LightCounter>().lightCount < 2)
         {
-            gameObject.SetActive(true);
+            gameObject.GetComponent<Light>().enabled = true;
             gameObject.GetComponentInParent<LightCounter>().CountUp();
             AlphaUp();
         }
-        else if(assignedButton.image.color.a == 1)
+        else if (assignedButton.image.color.a == 1)
         {
-            TurnLightOff();
+            photonView.RPC("RPC_TurnLightOff", RpcTarget.All);
         }
     }
 
-    void TurnLightOff()
+    [PunRPC]
+    void RPC_TurnLightOff()
     {
-        gameObject.SetActive(false);
+        gameObject.GetComponent<Light>().enabled = false;
         gameObject.GetComponentInParent<LightCounter>().CountDown();
         AlphaDown();
     }

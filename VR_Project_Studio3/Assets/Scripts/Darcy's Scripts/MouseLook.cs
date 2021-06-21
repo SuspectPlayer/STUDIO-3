@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class MouseLook : MonoBehaviour
 {
@@ -9,16 +10,29 @@ public class MouseLook : MonoBehaviour
 
     public Transform playerBody;
 
-    private float xRotation = 0f;
+    float xRotation = 0f;
+
+    PhotonView photonview;
+
+    void Awake()
+    {
+        photonview = GetComponentInParent<PhotonView>();
+    }
 
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        if (photonview.IsMine)
+        {
+           Cursor.lockState = CursorLockMode.Locked;
+        }
+
     }
 
 
     void Update()
     {
+        if(photonview.IsMine)
+        {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
@@ -27,5 +41,6 @@ public class MouseLook : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
+        }
     }
 }
