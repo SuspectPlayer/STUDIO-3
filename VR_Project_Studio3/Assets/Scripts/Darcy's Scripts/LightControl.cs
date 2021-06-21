@@ -14,12 +14,13 @@ public class LightControl : MonoBehaviour
 
     public void TurnLightOn()
     {
-        if(assignedButton.image.color.a < 1)
+        if(assignedButton.image.color.a < 1 && gameObject.GetComponentInParent<LightCounter>().lightCount < 2)
         {
             gameObject.SetActive(true);
+            gameObject.GetComponentInParent<LightCounter>().CountUp();
             AlphaUp();
         }
-        else
+        else if(assignedButton.image.color.a == 1)
         {
             TurnLightOff();
         }
@@ -28,6 +29,7 @@ public class LightControl : MonoBehaviour
     void TurnLightOff()
     {
         gameObject.SetActive(false);
+        gameObject.GetComponentInParent<LightCounter>().CountDown();
         AlphaDown();
     }
 
