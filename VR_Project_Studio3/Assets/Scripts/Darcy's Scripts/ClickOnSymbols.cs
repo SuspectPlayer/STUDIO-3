@@ -9,12 +9,8 @@ public class ClickOnSymbols : MonoBehaviour
 {
     Sprite clickedSymbol;
 
-    GameObject clickedButton;
-
-    public void ClickOnSymbolsMethod()                    
+    public void ClickOnSymbolsMethod(Button clickedButton)                    
     {
-        clickedButton = GameObject.FindGameObjectWithTag("Clicked"); //finding the clicked button using tags
-
         clickedSymbol = clickedButton.GetComponent<Image>().sprite; //finding the symbol of the clicked button 
 
         gameObject.GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol); //calling the "check" script
