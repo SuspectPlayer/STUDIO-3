@@ -86,10 +86,11 @@ public class LobbySetup : MonoBehaviourPunCallbacks
         lobbyPannel.SetActive(true);
         if (!PhotonNetwork.IsMasterClient)
         {
+            roomNumber.text = PhotonNetwork.CurrentRoom.Name;
             photonView.RPC("RPC_SetName", RpcTarget.Others, PhotonNetwork.NickName.ToString());
             player1.transform.Find("Player Name").GetComponent<TextMeshProUGUI>().text = PhotonNetwork.NickName;
             player2.transform.Find("Player Name").GetComponent<TextMeshProUGUI>().text = PhotonNetwork.MasterClient.NickName;
-
+            photonView.RPC("RPC_PlatformRequest", RpcTarget.Others);
             if (FindObjectOfType<GameSetup>().isVRPlayer)
             {
                 player1.transform.Find("Platform").GetComponent<TMP_Dropdown>().value = 1;
@@ -106,18 +107,13 @@ public class LobbySetup : MonoBehaviourPunCallbacks
     }
 
 
-    public override void OnRoomListUpdate(List<RoomInfo> roomList)
-    {
-        if (roomList.Count == 2)
-        {
-            if (player2.activeSelf == false)
-            {
-
-            }
-
-        }
-        //photonView.RPC("RPC_SetName", RpcTarget.Others/*, PhotonNetwork.NickName.ToString()*/);
-    }
+    //public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    //{
+    //    if (PhotonNetwork.IsMasterClient)
+    //    {
+            
+    //    }
+    //}
 
     //public override void OnJoinedLobby()
     //{
@@ -135,5 +131,18 @@ public class LobbySetup : MonoBehaviourPunCallbacks
     void RPC_SetPlatform(int platform)
     {
         player2.transform.Find("Platform").GetComponent<TMP_Dropdown>().value = platform;
+    }
+
+    [PunRPC]
+    void RPC_PlatformRequest()
+    {
+        if (FindObjectOfType<GameSetup>().isVRPlayer)
+        {
+            photonView.RPC("RPC_SetPlatform", RpcTarget.Others, 1);
+        }
+        else
+        {
+            photonView.RPC("RPC_SetPlatform", RpcTarget.Others, 0);
+        }
     }
 }
