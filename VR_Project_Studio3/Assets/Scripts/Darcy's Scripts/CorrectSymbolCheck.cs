@@ -10,6 +10,9 @@ public class CorrectSymbolCheck : MonoBehaviour
     [SerializeField]
     GameObject[] symbols;
 
+    [SerializeField]
+    GameObject dashboard;
+
     Sprite[] clickedSymbols = new Sprite[4];
 
     [SerializeField]
@@ -23,28 +26,29 @@ public class CorrectSymbolCheck : MonoBehaviour
         {
             if (clickedSymbol == symbols[i].GetComponentInChildren<Image>().sprite && correctSymbolCount < 4)
             {
-                if(clickedSymbol == clickedSymbols[i])
+                if (clickedSymbol == clickedSymbols[i])
                 {
                     correctSymbolCount = 0;
-                    for(int x = 0; x < 4; x++) //refreshing the array after a failed attempt
+                    for (int x = 0; x < 4; x++) //refreshing the array after a failed attempt
                     {
                         clickedSymbols[x] = neutral;
                     }
                     break;
                 }
 
+                Debug.Log("correct");
                 clickedSymbols[i] = clickedSymbol;
                 correctSymbolCount++;
 
-                if(correctSymbolCount >= 4) //"win" condition
+                if (correctSymbolCount >= 4) //"win" condition
                 {
-                    gameObject.GetComponent<UnlockDoor>().UnlockDoorMethod();
+                    dashboard.GetComponent<UnlockDoor>().UnlockDoorMethod();
                 }
             }
             else
             {
                 incorrectSymbolCount++;
-                if(incorrectSymbolCount >= 4)
+                if (incorrectSymbolCount >= 4)
                 {
                     correctSymbolCount = 0;
                     for (int x = 0; x < 4; x++) //refreshing the array after a failed attempt

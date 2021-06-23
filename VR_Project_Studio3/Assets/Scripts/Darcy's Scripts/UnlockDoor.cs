@@ -8,7 +8,7 @@ using Photon.Pun;
 public class UnlockDoor : MonoBehaviour
 {
     [SerializeField]
-    GameObject door;
+    GameObject door, puzzleManager;
 
     PhotonView photonView;
 
@@ -19,7 +19,6 @@ public class UnlockDoor : MonoBehaviour
 
     public void UnlockDoorMethod()
     {
-        door.SetActive(true);
         photonView.RPC("RPC_UnlockDoor", RpcTarget.All);
     }
 
@@ -27,5 +26,6 @@ public class UnlockDoor : MonoBehaviour
     void RPC_UnlockDoor()
     {
         door.SetActive(true);
+        puzzleManager.GetComponent<PuzzleManager>().ActivatePuzzle();
     }
 }
