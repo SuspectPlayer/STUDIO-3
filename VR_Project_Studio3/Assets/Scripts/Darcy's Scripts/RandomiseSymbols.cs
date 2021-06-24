@@ -37,7 +37,7 @@ public class RandomiseSymbols : MonoBehaviour
     {
         for (int i = 0; i < 4; i++) //applying the random numbers into the array
         {
-            randomNumber = Random.Range(0, 9);
+            randomNumber = Random.Range(0, 16);
             storedRandomNumbers[i] = randomNumber;
         }
         CheckNumbers();

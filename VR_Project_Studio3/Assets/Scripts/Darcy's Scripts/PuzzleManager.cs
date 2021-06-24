@@ -42,6 +42,7 @@ public class PuzzleManager : MonoBehaviour
                     {
                         p.enabled = true;
                     }
+                    GetComponent<DoorControl>().door = GameObject.Find("Door 2"); //switching to the second door for unlocking purposes
                     puzzleCount++;
                     break;
                 }

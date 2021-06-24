@@ -11,7 +11,7 @@ public class CorrectSymbolCheck : MonoBehaviour
     GameObject[] symbols;
 
     [SerializeField]
-    GameObject dashboard;
+    GameObject dashboard, door;
 
     Sprite[] clickedSymbols = new Sprite[4];
 
@@ -19,6 +19,8 @@ public class CorrectSymbolCheck : MonoBehaviour
     Sprite neutral;
 
     int correctSymbolCount = 0, incorrectSymbolCount = 0;
+
+    bool devCheat = false;
 
     public void CorrectSymbolCheckMethod(Sprite clickedSymbol)
     {
@@ -40,14 +42,26 @@ public class CorrectSymbolCheck : MonoBehaviour
                 clickedSymbols[i] = clickedSymbol;
                 correctSymbolCount++;
 
-                if (correctSymbolCount >= 4) //"win" condition
+                if (correctSymbolCount >= 4 || devCheat) //"win" condition
                 {
-                    dashboard.GetComponent<UnlockDoor>().UnlockDoorMethod();
+                    switch (door.name) //checking which puzzle the player is currently doing
+                    {
+                        case "Door 1":
+                            {
+                                dashboard.GetComponent<DoorControl>().UnlockDoor();
+                                break;
+                            }
+                        case "Door 2":
+                            {
+                                Debug.Log("complete");
+                                break;
+                            }
+                    }
                 }
             }
             else
             {
-                incorrectSymbolCount++;
+                incorrectSymbolCount++; //counts when the player hits a wrong button
                 if (incorrectSymbolCount >= 4)
                 {
                     correctSymbolCount = 0;
@@ -59,5 +73,13 @@ public class CorrectSymbolCheck : MonoBehaviour
             }
         }
         incorrectSymbolCount = 0;
+    }
+
+    void Update() //dev tool to complete the puzzles for easier testing
+    {
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            devCheat = true;
+        }
     }
 }
