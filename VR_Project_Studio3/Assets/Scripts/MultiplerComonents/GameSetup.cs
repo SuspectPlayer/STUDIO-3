@@ -57,7 +57,7 @@ public class GameSetup : MonoBehaviourPunCallbacks
 
     private void MasterLoadedGame()
     {
-        photonView.RPC("RPC_LoadedGameScene", RpcTarget.MasterClient);
+        //photonView.RPC("RPC_LoadedGameScene", RpcTarget.MasterClient);
         photonView.RPC("RPC_LoadGameOthers", RpcTarget.Others);
     }
     private void NonMasterLoadedGame()
