@@ -38,9 +38,14 @@ public class PuzzleManager : MonoBehaviour
                 }
             case 1:
                 {
+                    puzzles[puzzleCount - 1].GetComponent<CorrectSymbolCheck>().enabled = false;
                     foreach (var p in puzzles[puzzleCount].GetComponentsInChildren<RandomiseSymbols>()) //turning on all the randomisers in the second puzzle
                     {
                         p.enabled = true;
+                    }
+                    foreach (var c in puzzles[puzzleCount].GetComponentsInChildren<CorrectSymbolCheck>()) //turning on all the correct symbol checkers in the second puzzle
+                    {
+                        c.enabled = true;
                     }
                     GetComponent<DoorControl>().door = GameObject.Find("Door 2"); //switching to the second door for unlocking purposes
                     puzzleCount++;

@@ -20,7 +20,10 @@ public class CorrectSymbolCheck : MonoBehaviour
 
     int correctSymbolCount = 0, incorrectSymbolCount = 0;
 
-    bool devCheat = false;
+    void Start() //this is only here so i can turn on and off the script component
+    {
+        
+    }
 
     public void CorrectSymbolCheckMethod(Sprite clickedSymbol)
     {
@@ -38,11 +41,11 @@ public class CorrectSymbolCheck : MonoBehaviour
                     break;
                 }
 
-                Debug.Log("correct");
                 clickedSymbols[i] = clickedSymbol;
                 correctSymbolCount++;
+                Debug.Log(correctSymbolCount.ToString());
 
-                if (correctSymbolCount >= 4 || devCheat) //"win" condition
+                if (correctSymbolCount >= 4) //"win" condition
                 {
                     switch (door.name) //checking which puzzle the player is currently doing
                     {
@@ -73,13 +76,5 @@ public class CorrectSymbolCheck : MonoBehaviour
             }
         }
         incorrectSymbolCount = 0;
-    }
-
-    void Update() //dev tool to complete the puzzles for easier testing
-    {
-        if(Input.GetKeyDown(KeyCode.P))
-        {
-            devCheat = true;
-        }
     }
 }
