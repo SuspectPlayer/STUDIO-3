@@ -434,7 +434,6 @@ GameObject:
   - component: {fileID: 2630536987724764014}
   - component: {fileID: 2630536987724764015}
   - component: {fileID: 2630536987724764012}
-  - component: {fileID: 2630536987724764013}
   - component: {fileID: 5055118654422196154}
   m_Layer: 8
   m_Name: PlayerController
@@ -488,25 +487,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &2630536987724764013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2630536987724764002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 941bb4470f732d941986873f0fc287fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 4
-  controllers:
-  - {fileID: 2630536988147019678}
-  head: {fileID: 2630536989674869282}
-  teleportationProvider: {fileID: 2630536988184014303}
-  playerMain: {fileID: 2630536987724764002}
-  playerXRRig: {fileID: 2630536988184014291}
 --- !u!114 &5055118654422196154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1054,7 +1034,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2630536988147019667}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2aa50ce843832140a609ae92f0a2f76, type: 3}
   m_Name: 
@@ -1062,6 +1042,7 @@ MonoBehaviour:
   node: 4
   customInputs:
   - actionName: TestUIClick
+    actionButton: 0
     actionBehavior:
       m_PersistentCalls:
         m_Calls:
@@ -1092,6 +1073,7 @@ GameObject:
   - component: {fileID: 2630536988184014300}
   - component: {fileID: 9060596167368925790}
   - component: {fileID: 3531940129424441848}
+  - component: {fileID: 1808184286045810371}
   m_Layer: 0
   m_Name: XR Rig
   m_TagString: Untagged
@@ -1217,6 +1199,46 @@ MonoBehaviour:
   rightWrist: {fileID: 5505239714007021541}
   leftUIActive: 0
   rightUIActive: 0
+--- !u!114 &1808184286045810371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2630536988184014291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e67ac68bd1ae7a49a5f099678577a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  node: 4
+  primaryButtonAction:
+    m_PersistentCalls:
+      m_Calls: []
+  gripButtonAction:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerButtonAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5055118654422196154}
+        m_TargetAssemblyTypeName: PlayerMethods, Assembly-CSharp
+        m_MethodName: TestTrigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  menuButtonAction:
+    m_PersistentCalls:
+      m_Calls: []
+  secondaryButtonAction:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2630536989047724806
 GameObject:
   m_ObjectHideFlags: 0
@@ -1229,7 +1251,6 @@ GameObject:
   - component: {fileID: 7610487423278807673}
   - component: {fileID: 2630536989047724813}
   - component: {fileID: 6250220648963689797}
-  - component: {fileID: 2630536989047724812}
   m_Layer: 0
   m_Name: RightDirect Controller
   m_TagString: Untagged
@@ -1370,20 +1391,6 @@ MonoBehaviour:
   m_PlayHapticsOnHoverCanceled: 0
   m_HapticHoverCancelIntensity: 0
   m_HapticHoverCancelDuration: 0
---- !u!114 &2630536989047724812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2630536989047724806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2aa50ce843832140a609ae92f0a2f76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  node: 5
-  customInputs: []
 --- !u!1 &2630536989125782988
 GameObject:
   m_ObjectHideFlags: 0
