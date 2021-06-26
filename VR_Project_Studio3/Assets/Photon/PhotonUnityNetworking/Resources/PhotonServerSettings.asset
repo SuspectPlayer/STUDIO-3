@@ -50,6 +50,10 @@ MonoBehaviour:
   - RPC_TurnLightOn
   - RPC_UnlockDoor
   - RPC_LockDoor
+  - RPC_ActivateFirstPuzzle
+  - RPC_ActivateSecondPuzzle
+  - RPC_DeactivateFirstPuzzle
+  - RPC_DeactivateSecondPuzzle
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 0

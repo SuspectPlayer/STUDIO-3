@@ -7,9 +7,6 @@ using Photon.Pun;
 
 public class DoorControl : MonoBehaviour
 {
-    [SerializeField]
-    GameObject puzzleManager;
-
     public GameObject door;
 
     [SerializeField]
@@ -42,6 +39,7 @@ public class DoorControl : MonoBehaviour
     void RPC_UnlockDoor()
     {
         door.GetComponentInChildren<MeshRenderer>().material = green;
-        puzzleManager.GetComponent<PuzzleManager>().ActivatePuzzle();
+        GetComponent<PuzzleManager>().whichPuzzle++;
+        GetComponent<PuzzleManager>().ActivatePuzzle();
     }
 }

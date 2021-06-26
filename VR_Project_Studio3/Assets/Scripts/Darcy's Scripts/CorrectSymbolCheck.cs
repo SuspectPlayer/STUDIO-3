@@ -52,11 +52,21 @@ public class CorrectSymbolCheck : MonoBehaviour
                         case "Door 1":
                             {
                                 dashboard.GetComponent<DoorControl>().UnlockDoor();
+                                correctSymbolCount = 0;
                                 break;
                             }
                         case "Door 2":
                             {
-                                Debug.Log("complete");
+                                if(gameObject.name == "Inside")
+                                {
+                                    dashboard.GetComponent<DoorControl>().LockDoor();
+                                    correctSymbolCount = 0;
+                                }
+                                else
+                                {
+                                    dashboard.GetComponent<DoorControl>().UnlockDoor();
+                                    correctSymbolCount = 0;
+                                }
                                 break;
                             }
                     }
