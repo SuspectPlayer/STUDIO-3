@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class FindEventCamera : MonoBehaviour
 {
+    //this script just finds the cloned event camera for the canvases
     void Update()
     {
         GetComponent<Canvas>().worldCamera = GameObject.Find("ViewerCam Variant(Clone)").GetComponentInChildren<Camera>();
