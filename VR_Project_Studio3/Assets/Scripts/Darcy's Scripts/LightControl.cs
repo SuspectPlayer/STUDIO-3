@@ -13,6 +13,9 @@ public class LightControl : MonoBehaviour
 
     Color alphaControl = Color.white;
 
+    [SerializeField]
+    Material lightOn, lightOff;
+
     PhotonView photonView;
 
     void Awake()
@@ -22,16 +25,21 @@ public class LightControl : MonoBehaviour
 
     public void TurnLightOn()
     {
+        Debug.Log("click");
         photonView.RPC("RPC_TurnLightOn", RpcTarget.All);
     }
 
     [PunRPC]
     void RPC_TurnLightOn()
     {
-        if (assignedButton.image.color.a < 1 && gameObject.GetComponentInParent<LightCounter>().lightCount < 2)
+        if (assignedButton.image.color.a < 1 && gameObject.GetComponentInParent<LightCounter>().lightCount < 2) //limited to 2 lights on at any time.
         {
-            gameObject.GetComponent<Light>().enabled = true;
-            gameObject.GetComponentInParent<LightCounter>().CountUp();
+            GetComponent<Light>().enabled = true;
+            if(gameObject.name.Contains("Inside")) //if the light is an inside one, it needs to have its mesh changed
+            {
+                GetComponentInChildren<MeshRenderer>().materials[1] = lightOn;
+            }
+            GetComponentInParent<LightCounter>().CountUp();
             AlphaUp();
         }
         else if (assignedButton.image.color.a == 1)
@@ -43,8 +51,12 @@ public class LightControl : MonoBehaviour
     [PunRPC]
     void RPC_TurnLightOff()
     {
-        gameObject.GetComponent<Light>().enabled = false;
-        gameObject.GetComponentInParent<LightCounter>().CountDown();
+        GetComponent<Light>().enabled = false;
+        if (gameObject.name.Contains("Inside"))
+        {
+            GetComponentInChildren<MeshRenderer>().materials[1] = lightOff;
+        }
+        GetComponentInParent<LightCounter>().CountDown();
         AlphaDown();
     }
 

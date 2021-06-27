@@ -9,9 +9,6 @@ public class DoorControl : MonoBehaviour
 {
     public GameObject door;
 
-    [SerializeField]
-    Material green, red, yellow;
-
     PhotonView photonView;
 
     void Start()
@@ -32,13 +29,15 @@ public class DoorControl : MonoBehaviour
     [PunRPC]
     void RPC_LockDoor()
     {
-        door.GetComponentInChildren<MeshRenderer>().material = red;
+        door.GetComponentInChildren<MeshRenderer>().material.SetColor("_EmissionColor", Color.red);
+        door.GetComponentInChildren<Animator>().SetBool("Unlock", false);
     }
 
     [PunRPC]
     void RPC_UnlockDoor()
     {
-        door.GetComponentInChildren<MeshRenderer>().material = green;
+        door.GetComponentInChildren<MeshRenderer>().material.SetColor("_EmissionColor", Color.green);
+        door.GetComponentInChildren<Animator>().SetBool("Unlock", true);
         GetComponent<PuzzleManager>().whichPuzzle++;
         GetComponent<PuzzleManager>().ActivatePuzzle();
     }
