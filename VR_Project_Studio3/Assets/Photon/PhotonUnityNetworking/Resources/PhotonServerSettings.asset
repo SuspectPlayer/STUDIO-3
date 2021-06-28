@@ -27,7 +27,7 @@ MonoBehaviour:
     AuthMode: 0
     EnableLobbyStatistics: 0
     NetworkLogging: 1
-  DevRegion: 
+  DevRegion: au
   PunLogging: 0
   EnableSupportLogger: 0
   RunInBackground: 1
@@ -38,18 +38,23 @@ MonoBehaviour:
   - DestroySpaceship
   - Fire
   - RespawnSpaceship
-  - RPC_ActivatePuzzle
+  - RPC_ActivateFirstPuzzle
+  - RPC_ActivateSecondPuzzle
   - RPC_ApplySymbols
   - RPC_CreatePlayer
+  - RPC_DeactivateFirstPuzzle
+  - RPC_DeactivateSecondPuzzle
   - RPC_LoadedGameScene
   - RPC_LoadGameOthers
+  - RPC_LockDoor
   - RPC_PlatformRequest
   - RPC_SetName
   - RPC_SetPlatform
   - RPC_TurnLightOff
   - RPC_TurnLightOn
   - RPC_UnlockDoor
-  - RPC_LockDoor
+  - RPC_CountDown
+  - RPC_CountUp
   DisableAutoOpenWizard: 1
   ShowSettings: 0
-  DevRegionSetOnce: 0
+  DevRegionSetOnce: 1
