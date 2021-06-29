@@ -55,6 +55,8 @@ MonoBehaviour:
   - RPC_UnlockDoor
   - RPC_CountDown
   - RPC_CountUp
+  - RPC_ActivateThirdPuzzle
+  - RPC_DeactivateThirdPuzzle
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

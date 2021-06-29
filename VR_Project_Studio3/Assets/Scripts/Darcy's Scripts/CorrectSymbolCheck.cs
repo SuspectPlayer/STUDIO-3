@@ -18,7 +18,7 @@ public class CorrectSymbolCheck : MonoBehaviour
     [SerializeField]
     Sprite neutral;
 
-    int correctSymbolCount = 0, incorrectSymbolCount = 0;
+    int correctSymbolCount = 0, incorrectSymbolCount = 0, rightOrderCount = 0;
 
     void Start() //this is only here so i can turn on and off the script component
     {
@@ -66,6 +66,28 @@ public class CorrectSymbolCheck : MonoBehaviour
                                 {
                                     dashboard.GetComponent<DoorControl>().UnlockDoor();
                                     correctSymbolCount = 0;
+                                }
+                                break;
+                            }
+                        case "Door 3": //for door 3, the symbols will need to be in a particular order
+                            {
+                                for(int x = 0; x < 4; x++)
+                                {
+                                    if(clickedSymbols[i] == symbols[i].GetComponentInChildren<Image>().sprite)
+                                    {
+                                        rightOrderCount++;                                     
+                                    }
+                                    else
+                                    {
+                                        Debug.Log("wrong order");
+                                        correctSymbolCount = 0;
+                                        break;
+                                    }
+                                }
+                                if(rightOrderCount == 4) //if the 4 symbols were clicked in the right order it opens the door
+                                {
+                                    Debug.Log("right order");
+                                    //dashboard.GetComponent<DoorControl>().UnlockDoor();
                                 }
                                 break;
                             }

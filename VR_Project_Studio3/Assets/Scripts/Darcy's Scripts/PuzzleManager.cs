@@ -34,6 +34,16 @@ public class PuzzleManager : MonoBehaviour
                     photonView.RPC("RPC_ActivateSecondPuzzle", RpcTarget.All, whichPuzzle);
                     break;
                 }
+            case 2:
+                {
+                    photonView.RPC("RPC_ActivateThirdPuzzle", RpcTarget.All, whichPuzzle);
+                    break;
+                }
+            default:
+                {
+                    Debug.Log("Finished");
+                    break;
+                }
         }
     }
 
@@ -49,6 +59,11 @@ public class PuzzleManager : MonoBehaviour
             case 1:
                 {
                     photonView.RPC("RPC_DeactivateSecondPuzzle", RpcTarget.All, whichPuzzle);
+                    break;
+                }
+            case 2:
+                {
+                    photonView.RPC("RPC_DeactivateThirdPuzzle", RpcTarget.All, whichPuzzle);
                     break;
                 }
         }
@@ -79,9 +94,22 @@ public class PuzzleManager : MonoBehaviour
     [PunRPC]
     void RPC_DeactivateSecondPuzzle(int whichPuzzle)
     {
-        foreach (var p in puzzles[whichPuzzle].GetComponentsInChildren<CorrectSymbolCheck>()) //turning on all the randomisers in the second puzzle
+        foreach (var p in puzzles[whichPuzzle].GetComponentsInChildren<CorrectSymbolCheck>())
         {
             p.enabled = false;
         }
+    }
+
+    [PunRPC]
+    void RPC_ActivateThirdPuzzle(int whichPuzzle)
+    {
+        puzzles[whichPuzzle].GetComponent<RandomiseSymbols>().enabled = true;
+        GetComponent<DoorControl>().door = GameObject.Find("Door 3");
+    }
+
+    [PunRPC]
+    void RPC_DeactivateThirdPuzzle(int whichPuzzle)
+    {
+        puzzles[whichPuzzle].GetComponent<CorrectSymbolCheck>().enabled = false;
     }
 }
