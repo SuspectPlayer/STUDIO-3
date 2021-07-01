@@ -15,7 +15,7 @@ MonoBehaviour:
   AppSettings:
     AppIdRealtime: 4abb3a87-472c-4a08-ae18-538e1fa0cb33
     AppIdChat: 
-    AppIdVoice: 
+    AppIdVoice: 5cc2e479-c9d6-4103-87af-2bf1e659dcfc
     AppVersion: 
     UseNameServer: 1
     FixedRegion: 
@@ -27,23 +27,28 @@ MonoBehaviour:
     AuthMode: 0
     EnableLobbyStatistics: 0
     NetworkLogging: 1
-  DevRegion: au
+  DevRegion: 
   PunLogging: 0
   EnableSupportLogger: 0
   RunInBackground: 1
   StartInOfflineMode: 0
   RpcList:
+  - CantHearYou
+  - ChangeColour
   - ClickRpc
   - DestroyRpc
   - DestroySpaceship
   - Fire
+  - HeresWhy
   - RespawnSpaceship
   - RPC_ActivateFirstPuzzle
   - RPC_ActivateSecondPuzzle
+  - RPC_ActivateThirdPuzzle
   - RPC_ApplySymbols
   - RPC_CreatePlayer
   - RPC_DeactivateFirstPuzzle
   - RPC_DeactivateSecondPuzzle
+  - RPC_DeactivateThirdPuzzle
   - RPC_LoadedGameScene
   - RPC_LoadGameOthers
   - RPC_LockDoor
@@ -53,10 +58,6 @@ MonoBehaviour:
   - RPC_TurnLightOff
   - RPC_TurnLightOn
   - RPC_UnlockDoor
-  - RPC_CountDown
-  - RPC_CountUp
-  - RPC_ActivateThirdPuzzle
-  - RPC_DeactivateThirdPuzzle
   DisableAutoOpenWizard: 1
-  ShowSettings: 0
-  DevRegionSetOnce: 1
+  ShowSettings: 1
+  DevRegionSetOnce: 0
