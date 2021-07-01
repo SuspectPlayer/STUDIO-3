@@ -14,7 +14,7 @@ public class MovementController : MonoBehaviour
 
     public GameObject head = null;
 
-    [SerializeField]TeleportationProvider teleportationProvider;
+    [SerializeField] TeleportationProvider teleportationProvider;
     public GameObject playerMain;
     public GameObject playerXRRig;
 
@@ -49,7 +49,7 @@ public class MovementController : MonoBehaviour
                     Debug.Log(positionVector);
                     PlayerMove(positionVector);
                 }
-                
+
             }
         }
     }
