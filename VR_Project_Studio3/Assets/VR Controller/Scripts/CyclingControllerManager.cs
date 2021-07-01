@@ -225,13 +225,13 @@ public class CyclingControllerManager : MonoBehaviour
         /// Attaches a game object that represents an interactor for a state, to a state.
         /// </summary>
         /// <param name="state">The state that we're attaching the game object to</param>
-        /// <param name="parentGamObject">The game object that represents the interactor for that state.</param>
-        public void SetGameObject(ControllerStates state, GameObject parentGamObject)
+        /// <param name="parentGameObject">The game object that represents the interactor for that state.</param>
+        public void SetGameObject(ControllerStates state, GameObject parentGameObject)
         {
             if ((state == ControllerStates.MAX) || (m_Interactors == null))
                 return;
 
-            m_Interactors[(int)state].Attach(parentGamObject);
+            m_Interactors[(int)state].Attach(parentGameObject);
         }
 
         /// <summary>
@@ -282,6 +282,31 @@ public class CyclingControllerManager : MonoBehaviour
     ControllerState m_RightControllerState;
     ControllerState m_LeftControllerState;
 
+    ControllerStates tempLeft;
+    ControllerStates tempRight;
+
+    public void UIControllerActivation(bool isLeft)
+    {
+        tempLeft = m_LeftControllerState.GetState();
+        tempRight = m_RightControllerState.GetState();
+
+        if (isLeft)
+        {
+            m_LeftControllerState.SetState(ControllerStates.Grab);
+            m_RightControllerState.SetState(ControllerStates.Ray);
+        }
+        else if (!isLeft)
+        {
+            m_RightControllerState.SetState(ControllerStates.Grab);
+            m_LeftControllerState.SetState(ControllerStates.Ray);
+        }
+    }
+
+    public void UIControllerDeactivation()
+    {
+        m_LeftControllerState.SetState(tempLeft);
+        m_RightControllerState.SetState(tempRight);
+    }
 
     void OnEnable()
     {

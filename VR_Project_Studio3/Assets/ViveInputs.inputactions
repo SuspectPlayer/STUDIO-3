@@ -1,0 +1,61 @@
+{
+    "name": "ViveInputs",
+    "maps": [
+        {
+            "name": "DiverActions",
+            "id": "6d516fe5-2794-4da7-b9e5-8672793e4c7a",
+            "actions": [
+                {
+                    "name": "OpenMenuLeft",
+                    "type": "Button",
+                    "id": "22e656f0-0114-481e-9b31-89d29473d82f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "3f86337a-9eae-4165-82da-146dbd1e1543",
+                    "path": "<ViveController>{LeftHand}/menu",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "VRControlOpenXR",
+                    "action": "OpenMenuLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4ee62f1c-920b-4fb7-944c-880f244fe157",
+                    "path": "<OculusTouchController>{LeftHand}/menu",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "VRControlOpenXR",
+                    "action": "OpenMenuLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "VRControlOpenXR",
+            "bindingGroup": "VRControlOpenXR",
+            "devices": [
+                {
+                    "devicePath": "<ViveController>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<OculusTouchController>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
