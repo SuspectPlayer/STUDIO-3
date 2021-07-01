@@ -13,7 +13,7 @@ public class ClickOnSymbols : MonoBehaviour
     {
         clickedSymbol = clickedButton.GetComponent<Image>().sprite; //finding the symbol of the clicked button 
 
-        gameObject.GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol); //calling the "check" script
+        GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol); //calling the "check" script
 
         clickedButton.tag = "Untagged"; //setting the tag back to default
     }

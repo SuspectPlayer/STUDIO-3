@@ -55,8 +55,8 @@ EditorBuildSettings:
     path: Assets/Scenes/TestJoiningScene.unity
     guid: 49f3028f1b4c9bd41b327ca7872fe8d2
   - enabled: 1
-    path: Assets/Scenes/Darcy Test Scene.unity
-    guid: c52cc58d9cfb8b845934071066fa371a
+    path: Assets/Scenes/Darcy_Abyss_Greybox.unity
+    guid: 65ef3d239b2ea404aaf5da5e81881a44
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 5d4b125955921b9439007ae2953ca96c, type: 2}
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 1fba2cf63b3302349b746a44a35c0033, type: 2}

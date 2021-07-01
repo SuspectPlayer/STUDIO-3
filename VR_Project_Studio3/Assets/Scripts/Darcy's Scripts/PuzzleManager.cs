@@ -10,41 +10,106 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField]
     GameObject[] puzzles;
 
-    int puzzleCount = 0;
+    public int whichPuzzle = 0; //checking which puzzle the player is currently solving
 
     PhotonView photonView;
 
     void Start()
     {
-        photonView = gameObject.GetComponent<PhotonView>();
+        photonView = GetComponent<PhotonView>();
         ActivatePuzzle();
     }
 
-    public void ActivatePuzzle()
+    public void ActivatePuzzle() //method that activates puzzles
     {
-        photonView.RPC("RPC_ActivatePuzzle", RpcTarget.All);
-    }
-
-    [PunRPC]
-    void RPC_ActivatePuzzle()
-    {
-        switch (puzzleCount)
+        switch (whichPuzzle)
         {
-            case 0: //turning on the randomiser in the first puzzle
+            case 0: 
                 {
-                    puzzles[puzzleCount].GetComponent<RandomiseSymbols>().enabled = true;
-                    puzzleCount++;
+                    photonView.RPC("RPC_ActivateFirstPuzzle", RpcTarget.All, whichPuzzle);
                     break;
                 }
             case 1:
                 {
-                    foreach (var p in puzzles[puzzleCount].GetComponentsInChildren<RandomiseSymbols>()) //turning on all the randomisers in the second puzzle
-                    {
-                        p.enabled = true;
-                    }
-                    puzzleCount++;
+                    photonView.RPC("RPC_ActivateSecondPuzzle", RpcTarget.All, whichPuzzle);
+                    break;
+                }
+            case 2:
+                {
+                    photonView.RPC("RPC_ActivateThirdPuzzle", RpcTarget.All, whichPuzzle);
+                    break;
+                }
+            default:
+                {
+                    Debug.Log("Finished");
                     break;
                 }
         }
+    }
+
+    public void DeactivatePuzzle() //method that deactivates puzzles
+    {
+        switch (whichPuzzle)
+        {
+            case 0:
+                {
+                    photonView.RPC("RPC_DeactivateFirstPuzzle", RpcTarget.All, whichPuzzle);
+                    break;
+                }
+            case 1:
+                {
+                    photonView.RPC("RPC_DeactivateSecondPuzzle", RpcTarget.All, whichPuzzle);
+                    break;
+                }
+            case 2:
+                {
+                    photonView.RPC("RPC_DeactivateThirdPuzzle", RpcTarget.All, whichPuzzle);
+                    break;
+                }
+        }
+    }
+
+    [PunRPC]
+    void RPC_ActivateFirstPuzzle(int whichPuzzle)
+    {
+        puzzles[whichPuzzle].GetComponent<RandomiseSymbols>().enabled = true;
+    }
+
+    [PunRPC]
+    void RPC_DeactivateFirstPuzzle(int whichPuzzle)
+    {
+        puzzles[whichPuzzle].GetComponent<CorrectSymbolCheck>().enabled = false;
+    }
+
+    [PunRPC]
+    void RPC_ActivateSecondPuzzle(int whichPuzzle)
+    {
+        foreach (var p in puzzles[whichPuzzle].GetComponentsInChildren<RandomiseSymbols>()) //turning on all the randomisers in the second puzzle
+        {
+            p.enabled = true;
+        }
+        GetComponent<DoorControl>().door = GameObject.Find("Door 2"); //switching to the second door for unlocking purposes
+    }
+
+    [PunRPC]
+    void RPC_DeactivateSecondPuzzle(int whichPuzzle)
+    {
+        foreach (var p in puzzles[whichPuzzle].GetComponentsInChildren<CorrectSymbolCheck>())
+        {
+            p.enabled = false;
+        }
+    }
+
+    [PunRPC]
+    void RPC_ActivateThirdPuzzle(int whichPuzzle)
+    {
+        puzzles[whichPuzzle].GetComponent<RandomiseSymbols>().enabled = true;
+        GetComponent<DoorControl>().door = GameObject.Find("Door 3");
+    }
+
+    [PunRPC]
+    void RPC_DeactivateThirdPuzzle(int whichPuzzle)
+    {
+        puzzles[whichPuzzle].GetComponent<CorrectSymbolCheck>().enabled = false;
     }
 }

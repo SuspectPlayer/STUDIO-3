@@ -11,6 +11,8 @@ public class RandomiseSymbols : MonoBehaviour
     [SerializeField]
     GameObject[] symbols;
 
+    GameObject outside;
+
     [SerializeField]
     Sprite[] sprites;
 
@@ -37,10 +39,24 @@ public class RandomiseSymbols : MonoBehaviour
     {
         for (int i = 0; i < 4; i++) //applying the random numbers into the array
         {
-            randomNumber = Random.Range(0, 9);
+            randomNumber = Random.Range(0, 16);
             storedRandomNumbers[i] = randomNumber;
         }
         CheckNumbers();
+        if (gameObject.name == "Inside") //checking for the second puzzle, make sure that the symbols are unique
+        {
+            outside = GameObject.Find("Outside");
+            for (int i = 0; i < 4; i++)
+            {
+                for(int x = 0; x < 4; x++)
+                {
+                    if (storedRandomNumbers[i] == outside.GetComponent<RandomiseSymbols>().storedRandomNumbers[x])
+                    {
+                        PickUniqueRandomNumbers();
+                    }
+                }
+            }
+        }
     }
 
     void CheckNumbers()
