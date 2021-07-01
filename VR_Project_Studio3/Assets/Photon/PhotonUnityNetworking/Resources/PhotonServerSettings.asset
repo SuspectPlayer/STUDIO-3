@@ -32,29 +32,7 @@ MonoBehaviour:
   EnableSupportLogger: 0
   RunInBackground: 1
   StartInOfflineMode: 0
-  RpcList:
-  - ClickRpc
-  - DestroyRpc
-  - DestroySpaceship
-  - Fire
-  - RespawnSpaceship
-  - RPC_ActivateFirstPuzzle
-  - RPC_ActivateSecondPuzzle
-  - RPC_ActivateThirdPuzzle
-  - RPC_ApplySymbols
-  - RPC_CreatePlayer
-  - RPC_DeactivateFirstPuzzle
-  - RPC_DeactivateSecondPuzzle
-  - RPC_DeactivateThirdPuzzle
-  - RPC_LoadedGameScene
-  - RPC_LoadGameOthers
-  - RPC_LockDoor
-  - RPC_PlatformRequest
-  - RPC_SetName
-  - RPC_SetPlatform
-  - RPC_TurnLightOff
-  - RPC_TurnLightOn
-  - RPC_UnlockDoor
+  RpcList: []
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 0

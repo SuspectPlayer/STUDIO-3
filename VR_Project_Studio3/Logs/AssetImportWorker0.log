@@ -1,0 +1,1314 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.9f1 (108be757e447) revision 1084391'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 19041.1052; Version 2004; 64bit' Language: 'en' Physical Memory: 16187 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.9f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/tajna/Desktop/STUDIO-3/STUDIO-3/VR_Project_Studio3
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+51636
+Successfully changed project path to: C:/Users/tajna/Desktop/STUDIO-3/STUDIO-3/VR_Project_Studio3
+C:/Users/tajna/Desktop/STUDIO-3/STUDIO-3/VR_Project_Studio3
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 120.05 ms, found 11 plugins.
+Preloading 1 native plugins for Editor in 1.27 ms.
+Initialize engine version: 2020.3.9f1 (108be757e447)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/tajna/Desktop/STUDIO-3/STUDIO-3/VR_Project_Studio3/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1660 Ti (ID=0x2191)
+    Vendor:   
+    VRAM:     5991 MB
+    Driver:   27.21.14.6230
+Shader 'Distant Lands/Stylized Terrain First Pass': dependency 'BaseMapShader' shader 'Distant Lands/Stylized Terrain' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56052
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002545 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 82.92 ms, found 11 plugins.
+Preloading 1 native plugins for Editor in 0.11 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.502 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.013914 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 108.68 ms, found 11 plugins.
+Preloading 1 native plugins for Editor in 0.21 ms.
+[XR] OculusXRPlugin: registering subsystems
+[XR] Unable to register display lifecyle provider: [1]
+[XR] Oculus Input lifecycle provider registered.
+[XR] Unable to register input lifecyle provider: [1]
+NullReferenceException: Object reference not set to an instance of an object
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\Users\tajna\Desktop\STUDIO-3\STUDIO-3\VR_Project_Studio3\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\tajna\Desktop\STUDIO-3\STUDIO-3\VR_Project_Studio3\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
+
+(Filename: Library/PackageCache/com.unity.xr.oculus@1.9.1/Runtime/OculusLoader.cs Line: 249)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.804 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Distant Lands/Stylized Terrain First Pass': dependency 'BaseMapShader' shader 'Distant Lands/Stylized Terrain' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 1.20 ms, found 11 plugins.
+Preloading 1 native plugins for Editor in 0.09 ms.
+Unloading 2592 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 149.6 MB.
+System memory in use after: 149.6 MB.
+
+Unloading 179 unused Assets to reduce memory usage. Loaded Objects now: 3043.
+Total: 5.621700 ms (FindLiveObjects: 0.366700 ms CreateObjectMapping: 0.230100 ms MarkObjects: 4.665300 ms  DeleteObjects: 0.339500 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Contents/Prefabs/Bases/Small Base.prefab
+  artifactKey: Guid(d5644ce264cfc26499fe487dffd978ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Contents/Prefabs/Bases/Small Base.prefab using Guid(d5644ce264cfc26499fe487dffd978ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '756cfa311c12723f227f019d0c42aab7') in 0.143758 seconds
+  Import took 0.150420 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.526926 seconds.
+  path: Assets/Materials/MapAbyss.mat
+  artifactKey: Guid(dcac84722c433dd479ab653ed8403601) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/MapAbyss.mat using Guid(dcac84722c433dd479ab653ed8403601) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0340491207df1fe396f8d8fa6c06d178') in 0.067520 seconds
+  Import took 0.073127 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000335 seconds.
+  path: Assets/Materials/MapOverview 2.mat
+  artifactKey: Guid(cc41af6ab3612674fbaffb0aaef606a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/MapOverview 2.mat using Guid(cc41af6ab3612674fbaffb0aaef606a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20cc2b3c2e8e22c56eba3628736013aa') in 0.264135 seconds
+  Import took 0.269586 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000346 seconds.
+  path: Assets/Materials/ScannerPanel 3.mat
+  artifactKey: Guid(2dab9a9dc09b15946a9969abb3b71c6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/ScannerPanel 3.mat using Guid(2dab9a9dc09b15946a9969abb3b71c6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '451b9fa93308a39d5daa4453667faf6e') in 0.029510 seconds
+  Import took 0.035710 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000380 seconds.
+  path: Assets/Materials/ScannerPanel 1.mat
+  artifactKey: Guid(906419ec35524c94f880d6cab19b319c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/ScannerPanel 1.mat using Guid(906419ec35524c94f880d6cab19b319c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1c036a5b904750180f75d0de426899f') in 0.028258 seconds
+  Import took 0.033257 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000536 seconds.
+  path: Assets/Materials/WhiteSirenLight.mat
+  artifactKey: Guid(ad73ded2665b1bd4485990646e15bff1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/WhiteSirenLight.mat using Guid(ad73ded2665b1bd4485990646e15bff1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3309dd384fd1008d86c7ce8fd623222b') in 0.029976 seconds
+  Import took 0.036250 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000410 seconds.
+  path: Assets/Materials/ScannerPanel 2.mat
+  artifactKey: Guid(80a9b77a4453244458d18a57a8bcea00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/ScannerPanel 2.mat using Guid(80a9b77a4453244458d18a57a8bcea00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5da8a83b528a13db447e679f3aeb75d5') in 0.040815 seconds
+  Import took 0.046503 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000458 seconds.
+  path: Assets/Materials/RedSirenLight.mat
+  artifactKey: Guid(b1869c0da1175404c8af0e3712c72d4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/RedSirenLight.mat using Guid(b1869c0da1175404c8af0e3712c72d4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93f711016d4b3879efe65a18fa4f9614') in 0.024231 seconds
+  Import took 0.030919 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000387 seconds.
+  path: Assets/Materials/ScannerPanel.mat
+  artifactKey: Guid(218cbcd8d8b765c40af9ac62963ff83e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/ScannerPanel.mat using Guid(218cbcd8d8b765c40af9ac62963ff83e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f8bf1c2058130761bf57c09912e0ef9') in 0.023245 seconds
+  Import took 0.028152 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000378 seconds.
+  path: Assets/Materials/Water.mat
+  artifactKey: Guid(4180330afd69d0d4999df32f06cf605b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Water.mat using Guid(4180330afd69d0d4999df32f06cf605b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0f24ac9a009a476312c08524832eda7') in 0.027119 seconds
+  Import took 0.033231 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000360 seconds.
+  path: Assets/Materials/MapOverview 1.mat
+  artifactKey: Guid(83b5142f43bdb3d4eafe2023b01e1f39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/MapOverview 1.mat using Guid(83b5142f43bdb3d4eafe2023b01e1f39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ad928fb540f5914f59e6be477f834a1') in 0.323307 seconds
+  Import took 0.328616 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000451 seconds.
+  path: Assets/Materials/whiteSquare.png
+  artifactKey: Guid(d281d4cf23b3aec4eb46b059b74d6f7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/whiteSquare.png using Guid(d281d4cf23b3aec4eb46b059b74d6f7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9426024f13bc981f5828b72999884f41') in 0.065436 seconds
+  Import took 0.070607 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 27.600905 seconds.
+  path: Assets/Materials/GreenSirenLight.mat
+  artifactKey: Guid(01fa72c81c433084ea269d330b089366) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/GreenSirenLight.mat using Guid(01fa72c81c433084ea269d330b089366) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6697b0648587a2ce1bbe612627ca187b') in 0.032551 seconds
+  Import took 0.037999 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000498 seconds.
+  path: Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Scenes/New Scene/LightingData.asset
+  artifactKey: Guid(fefcd0a24bbbd954f873bde531627204) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Scenes/New Scene/LightingData.asset using Guid(fefcd0a24bbbd954f873bde531627204) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d98572a212d30e5e46db2a3ea737d09') in 0.021180 seconds
+  Import took 0.026839 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000402 seconds.
+  path: Assets/Materials/GreenSirenLight.mat
+  artifactKey: Guid(01fa72c81c433084ea269d330b089366) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/GreenSirenLight.mat using Guid(01fa72c81c433084ea269d330b089366) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6697b0648587a2ce1bbe612627ca187b') in 0.016577 seconds
+  Import took 0.021727 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000308 seconds.
+  path: Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/SlotCar-Scene/LightingData.asset
+  artifactKey: Guid(7c8e0d280c24c4aba81a4294e87548ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/SlotCar-Scene/LightingData.asset using Guid(7c8e0d280c24c4aba81a4294e87548ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6b2eebd5d5dca234874bcc5d835d2f7') in 0.011468 seconds
+  Import took 0.015954 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000276 seconds.
+  path: Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Contents/Prefabs/Bases/Pieces/Extras/Large Can Light.prefab
+  artifactKey: Guid(2a4821d460a893c408199ae080d6b29e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Contents/Prefabs/Bases/Pieces/Extras/Large Can Light.prefab using Guid(2a4821d460a893c408199ae080d6b29e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbce50ba082fad409d2c7357e7bcbda1') in 0.016444 seconds
+  Import took 0.021866 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000389 seconds.
+  path: Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Contents/Materials/Sea Base/Light Off.mat
+  artifactKey: Guid(4c51939efbc753245a5a8173f0842e9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Contents/Materials/Sea Base/Light Off.mat using Guid(4c51939efbc753245a5a8173f0842e9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c9a038fd870b71bf055b434347ee3a1') in 0.020417 seconds
+  Import took 0.025274 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000426 seconds.
+  path: Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Contents/Materials/Sea Base/Light On.mat
+  artifactKey: Guid(6ccfc5be16aa75d42bfd3436fd5daa0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Contents/Materials/Sea Base/Light On.mat using Guid(6ccfc5be16aa75d42bfd3436fd5daa0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b57455b2395bc354e85bb37a4b42000') in 0.015944 seconds
+  Import took 0.021962 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000431 seconds.
+  path: Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Contents/Prefabs/Bases/Pieces/Extras/Large Can Light.prefab
+  artifactKey: Guid(2a4821d460a893c408199ae080d6b29e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Contents/Prefabs/Bases/Pieces/Extras/Large Can Light.prefab using Guid(2a4821d460a893c408199ae080d6b29e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbce50ba082fad409d2c7357e7bcbda1') in 0.012380 seconds
+  Import took 0.017966 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000344 seconds.
+  path: Assets/Sprites/Light_Button_Icon.png
+  artifactKey: Guid(b59edc28096564949bfcd4ed281bc3a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Light_Button_Icon.png using Guid(b59edc28096564949bfcd4ed281bc3a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d679f22eecb31c44b338b99dbad8f35') in 0.040626 seconds
+  Import took 0.044869 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.407620 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Detail_Lights_01_Convex.asset
+  artifactKey: Guid(b59d5d020b164fe4aba3241dbf2f85bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Detail_Lights_01_Convex.asset using Guid(b59d5d020b164fe4aba3241dbf2f85bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20d7d72f38157d5caeb2021edd9390a2') in 0.035823 seconds
+  Import took 0.041184 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.011364 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Detail_Lights_01_Convex.asset
+  artifactKey: Guid(b59d5d020b164fe4aba3241dbf2f85bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Detail_Lights_01_Convex.asset using Guid(b59d5d020b164fe4aba3241dbf2f85bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20d7d72f38157d5caeb2021edd9390a2') in 0.012589 seconds
+  Import took 0.020514 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.280236 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Detail_Lights_02_Convex.asset
+  artifactKey: Guid(5538535428085af48a9a00799d5457c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Detail_Lights_02_Convex.asset using Guid(5538535428085af48a9a00799d5457c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8b2681f6f7b8a1b8b3bf6076abb9175') in 0.016822 seconds
+  Import took 0.023099 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000410 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Detail_Lights_03_Convex.asset
+  artifactKey: Guid(3452a1884f2f62f4ebf0f8efb52343c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Detail_Lights_03_Convex.asset using Guid(3452a1884f2f62f4ebf0f8efb52343c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be3caa2b600d1002c85b3a2817ebb113') in 0.021190 seconds
+  Import took 0.027076 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.747268 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Light_Panel_04_Convex.asset
+  artifactKey: Guid(ac257ef7d4f9d0f45843311659cb24b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Light_Panel_04_Convex.asset using Guid(ac257ef7d4f9d0f45843311659cb24b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5545721ec7265da0aa6079a8cdaee3b7') in 0.016066 seconds
+  Import took 0.022580 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000323 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Light_Panel_05_Convex.asset
+  artifactKey: Guid(37e78c9f5a886794d8f61bdafe9f8f4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Light_Panel_05_Convex.asset using Guid(37e78c9f5a886794d8f61bdafe9f8f4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9b143112727660df3906de1fa97500b') in 0.018447 seconds
+  Import took 0.022887 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000281 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Light_Small_01_Convex.asset
+  artifactKey: Guid(1a9e6f476e877294fad722bcb10e6352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Light_Small_01_Convex.asset using Guid(1a9e6f476e877294fad722bcb10e6352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40837c13901d126b4ffb525572b03d76') in 0.016905 seconds
+  Import took 0.021743 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000295 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Light_Small_02_Convex.asset
+  artifactKey: Guid(58f62da2e0e2b51409c514bd7f2a6a24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Light_Small_02_Convex.asset using Guid(58f62da2e0e2b51409c514bd7f2a6a24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f13db7fdd2ac5520696696e4e58b0995') in 0.015718 seconds
+  Import took 0.021068 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000475 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Light_Small_03_Convex.asset
+  artifactKey: Guid(7294ed7f6a1942549ae1a07b9521e7d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Light_Small_03_Convex.asset using Guid(7294ed7f6a1942549ae1a07b9521e7d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a186e4e7a5cbecae76bb6888efd80ec') in 0.016734 seconds
+  Import took 0.021094 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000427 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Light_Small_04_Convex.asset
+  artifactKey: Guid(f0348ce1e0f440d469db178a03a0fb7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Light_Small_04_Convex.asset using Guid(f0348ce1e0f440d469db178a03a0fb7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b5aa07767d24925d56157f1f859188f') in 0.018126 seconds
+  Import took 0.023082 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000332 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Light_Small_05_Convex.asset
+  artifactKey: Guid(8b7379f434da14f4a94d76f4aa7fb2e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Light_Small_05_Convex.asset using Guid(8b7379f434da14f4a94d76f4aa7fb2e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '547147b8176aa9dce7a4ade640b9a0f3') in 0.017901 seconds
+  Import took 0.025859 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000438 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Light_Small_08_Convex.asset
+  artifactKey: Guid(ad69c3587c061dd478dc13e7aeae56b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Light_Small_08_Convex.asset using Guid(ad69c3587c061dd478dc13e7aeae56b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '522780a2148bdb432a6ea1d7ae0bd2b3') in 0.026244 seconds
+  Import took 0.032481 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000429 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Light_Small_07_Convex.asset
+  artifactKey: Guid(49d3299ea551d514d8e76cd7a110258f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Light_Small_07_Convex.asset using Guid(49d3299ea551d514d8e76cd7a110258f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '647f4ac691790f1721b0f0212e1d5671') in 0.017758 seconds
+  Import took 0.022416 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000502 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Light_Small_06_Convex.asset
+  artifactKey: Guid(a52ced253cf0f9e4f8594205015bedfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Light_Small_06_Convex.asset using Guid(a52ced253cf0f9e4f8594205015bedfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c2091b138130ef6db67b5f05dbc701d') in 0.016874 seconds
+  Import took 0.022163 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 69.924397 seconds.
+  path: Assets/Resources/Prefabs/First Person Controller.prefab
+  artifactKey: Guid(3595e440d26f349428f460be6bc1155b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Prefabs/First Person Controller.prefab using Guid(3595e440d26f349428f460be6bc1155b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '564082976a52c2c9ab6b9313ddf014cc') in 0.039328 seconds
+  Import took 0.046042 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.593764 seconds.
+  path: Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Contents/Prefabs/Bases/Reef Base 1.prefab
+  artifactKey: Guid(e168610453345e14fb5cd45b7ac6a142) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Contents/Prefabs/Bases/Reef Base 1.prefab using Guid(e168610453345e14fb5cd45b7ac6a142) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5795eb152c89a5babba7dee142e983c1') in 0.048985 seconds
+  Import took 0.056721 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 197.254178 seconds.
+  path: Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Contents/Prefabs/Bases/Large Base.prefab
+  artifactKey: Guid(0c3f2351e8892714ab8dc6b9764c83d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Contents/Prefabs/Bases/Large Base.prefab using Guid(0c3f2351e8892714ab8dc6b9764c83d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5a1f677fef195bef4463260e9d24444') in 0.063599 seconds
+  Import took 0.070505 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 43.033495 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_02_Convex.asset
+  artifactKey: Guid(ee10ae3b76fc4b540b76453cda66f7d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_02_Convex.asset using Guid(ee10ae3b76fc4b540b76453cda66f7d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a38f268caa4119456499fc6c8b783db') in 0.018876 seconds
+  Import took 0.024692 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000288 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_02_Convex 2.asset
+  artifactKey: Guid(03cf9fca71bd31f49a999008a5e6840e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_02_Convex 2.asset using Guid(03cf9fca71bd31f49a999008a5e6840e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a6173798487357e17616c3af0bf00a1') in 0.023062 seconds
+  Import took 0.027727 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000309 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_03_Convex.asset
+  artifactKey: Guid(7e33bc206dc4cb04683bd82d7ed14d10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_03_Convex.asset using Guid(7e33bc206dc4cb04683bd82d7ed14d10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ece12bb0ef941b67a2a728cf7d752b1') in 0.018397 seconds
+  Import took 0.024277 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000464 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_03_Convex 2.asset
+  artifactKey: Guid(c4d79799a62ab604b94b380e1d66b67e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_03_Convex 2.asset using Guid(c4d79799a62ab604b94b380e1d66b67e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '526a070181d64f7b7e6d3defddc33184') in 0.019967 seconds
+  Import took 0.025388 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000389 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_04_Convex 1.asset
+  artifactKey: Guid(faad48d97c2a9b84ca98ff693d42c01d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_04_Convex 1.asset using Guid(faad48d97c2a9b84ca98ff693d42c01d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '757eca585010a73a5be2c66eb4b12eac') in 0.025278 seconds
+  Import took 0.030550 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000332 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_03_Convex 3.asset
+  artifactKey: Guid(99ec76d74dfa2a54594163a8c794a50f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_03_Convex 3.asset using Guid(99ec76d74dfa2a54594163a8c794a50f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '083d6ecd563dea9927424c4ca7e99eb3') in 0.030967 seconds
+  Import took 0.035440 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000256 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_06_Convex 1.asset
+  artifactKey: Guid(2e819618beb3e924eb78adf200dc0101) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_06_Convex 1.asset using Guid(2e819618beb3e924eb78adf200dc0101) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfc98446d2baa1da5888457bd7dddf01') in 0.017660 seconds
+  Import took 0.023672 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000302 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_07_Convex 1.asset
+  artifactKey: Guid(3e3bf564872a7e5408f50dda1affc04f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_07_Convex 1.asset using Guid(3e3bf564872a7e5408f50dda1affc04f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92153ca850efe8f70ceaa24a6ca067cd') in 0.016917 seconds
+  Import took 0.024702 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000311 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pods_01_Convex 2.asset
+  artifactKey: Guid(932af67eca07a6543ad72d4328f2a6d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pods_01_Convex 2.asset using Guid(932af67eca07a6543ad72d4328f2a6d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f00c89835471900b2e15aed4bbf0f25f') in 0.030062 seconds
+  Import took 0.035569 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000491 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_05_Convex 1.asset
+  artifactKey: Guid(38d481564fbd12345a310b94e6868c65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_05_Convex 1.asset using Guid(38d481564fbd12345a310b94e6868c65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b76036204f94efd38803460407cabc80') in 0.016400 seconds
+  Import took 0.022673 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000296 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_05_Convex.asset
+  artifactKey: Guid(23502449a99420941a67346813f4215b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_05_Convex.asset using Guid(23502449a99420941a67346813f4215b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9925bc34acb09bd71c5775add6570e69') in 0.015849 seconds
+  Import took 0.020547 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_05_Convex 2.asset
+  artifactKey: Guid(c59992de147c3114ab72bca152ba04f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_05_Convex 2.asset using Guid(c59992de147c3114ab72bca152ba04f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4dbee6f40cc34817ecf46a27adf53f7') in 0.027156 seconds
+  Import took 0.031128 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000282 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pods_01_Convex 1.asset
+  artifactKey: Guid(5fdf83c819a2c404e9bc52ee32d15d8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pods_01_Convex 1.asset using Guid(5fdf83c819a2c404e9bc52ee32d15d8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8717ed82b2123f753ef797279f405381') in 0.019385 seconds
+  Import took 0.026135 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000556 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_07_Convex.asset
+  artifactKey: Guid(335043d2cbdf6894c982f66c78359c35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_07_Convex.asset using Guid(335043d2cbdf6894c982f66c78359c35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69705033acafa25ed335587fc7cc97d4') in 0.015174 seconds
+  Import took 0.022057 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000310 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pods_01_Convex.asset
+  artifactKey: Guid(a1f785309498d4740b1cc86121d96a4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pods_01_Convex.asset using Guid(a1f785309498d4740b1cc86121d96a4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4420dabec34e199059637b4687892ac8') in 0.021192 seconds
+  Import took 0.027466 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000419 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_02_Convex 1.asset
+  artifactKey: Guid(ebb4074e6aa5fcc4c85eac44a2e3b2ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_02_Convex 1.asset using Guid(ebb4074e6aa5fcc4c85eac44a2e3b2ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '359e99a6a8be36dadde6501856451b12') in 0.027805 seconds
+  Import took 0.033366 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000300 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_04_Convex.asset
+  artifactKey: Guid(f38c852b95db7504a8bd9de0800d0137) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_04_Convex.asset using Guid(f38c852b95db7504a8bd9de0800d0137) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11e89b989976f8577c398ef031aa5896') in 0.018193 seconds
+  Import took 0.022846 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000340 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_06_Convex.asset
+  artifactKey: Guid(7b31e8989bf8b7845b4e2c5d616061c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_06_Convex.asset using Guid(7b31e8989bf8b7845b4e2c5d616061c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3a2690105b8b2b545cfc5656383de28') in 0.015948 seconds
+  Import took 0.022330 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000292 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_06_Convex 2.asset
+  artifactKey: Guid(6c4e5cb55f4fd604e90dcc945fb2157a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_06_Convex 2.asset using Guid(6c4e5cb55f4fd604e90dcc945fb2157a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7df3d32a607c79661b648b37939576d3') in 0.022412 seconds
+  Import took 0.027968 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000462 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_07_Convex 2.asset
+  artifactKey: Guid(d1918ca8d7c769d4c93a8e796b8989d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_07_Convex 2.asset using Guid(d1918ca8d7c769d4c93a8e796b8989d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d048d510482cc19e930a04152e57130') in 0.022512 seconds
+  Import took 0.027193 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_03_Convex 1.asset
+  artifactKey: Guid(4ada6c26f749c9540bfaacd4e94f7fa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_03_Convex 1.asset using Guid(4ada6c26f749c9540bfaacd4e94f7fa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b15381a2a2851f06a6dc7fa43792f6a') in 0.016519 seconds
+  Import took 0.022381 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.410020 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Detail_Pipe_Pillar_01_Convex.asset
+  artifactKey: Guid(6fac9e24b94bfa541a5c9b2c0499ebc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Detail_Pipe_Pillar_01_Convex.asset using Guid(6fac9e24b94bfa541a5c9b2c0499ebc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1e1afb910f0733f9ba63f03cfed575f') in 0.016976 seconds
+  Import took 0.023848 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000380 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Pillar_Detail_01_Convex.asset
+  artifactKey: Guid(2f990ecf9333f674e818c85aa0689b48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Pillar_Detail_01_Convex.asset using Guid(2f990ecf9333f674e818c85aa0689b48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5394e1b4b172ec23cc61bbbd28f0900b') in 0.015499 seconds
+  Import took 0.022254 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.474097 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_01_Convex 2.asset
+  artifactKey: Guid(47f40283329ac294492b79f6d4fc4ef8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_01_Convex 2.asset using Guid(47f40283329ac294492b79f6d4fc4ef8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9866628654c6ebc4b9803c10e3be3609') in 0.017784 seconds
+  Import took 0.023246 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000354 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_01_Convex 3.asset
+  artifactKey: Guid(93ccffd6bad30af408573f142d60bde7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_01_Convex 3.asset using Guid(93ccffd6bad30af408573f142d60bde7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33103afffdcd69f433d12672e0d57c2c') in 0.028388 seconds
+  Import took 0.034978 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.287811 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_04_Convex.asset
+  artifactKey: Guid(6665187220ca93a43a8beacc3ad30f0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_04_Convex.asset using Guid(6665187220ca93a43a8beacc3ad30f0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '470f38d671587d3d3324754f81ce6558') in 0.015889 seconds
+  Import took 0.021904 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000335 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_04_Convex 1.asset
+  artifactKey: Guid(6a7e8f7643a90c94aa38422f0804de8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_04_Convex 1.asset using Guid(6a7e8f7643a90c94aa38422f0804de8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb9de98e54a0f5c45e0533cc84e4fcd9') in 0.025051 seconds
+  Import took 0.029759 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000313 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_05_Convex 1.asset
+  artifactKey: Guid(4c0d41da5dd156f4aa24720cb93d7759) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_05_Convex 1.asset using Guid(4c0d41da5dd156f4aa24720cb93d7759) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c16afcae64e455be34d8ceed3296fb6') in 0.023517 seconds
+  Import took 0.029193 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000409 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_04_Convex 3.asset
+  artifactKey: Guid(6186ac6dc14eb9c4ba0fe45558450d52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_04_Convex 3.asset using Guid(6186ac6dc14eb9c4ba0fe45558450d52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc593f60060bcf00d7f424246f3c1aab') in 0.031998 seconds
+  Import took 0.037112 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000316 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_01_Convex.asset
+  artifactKey: Guid(33cd65267bdffed4f8984567691c8e4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_01_Convex.asset using Guid(33cd65267bdffed4f8984567691c8e4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '493a4e79027fdbdbf29923ca9718433a') in 0.022090 seconds
+  Import took 0.028414 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000298 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_01_Convex 1.asset
+  artifactKey: Guid(001d3c4d56b5b774db1d1f79187dcf3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Pillar_01_Convex 1.asset using Guid(001d3c4d56b5b774db1d1f79187dcf3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77aa5415d2b0574275781f459d6e44d2') in 0.017687 seconds
+  Import took 0.023172 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000390 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_05_Convex 2.asset
+  artifactKey: Guid(a63adf9331b2da046964386077499be0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_05_Convex 2.asset using Guid(a63adf9331b2da046964386077499be0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eef4b564f5bc2fe63bd06a40dcf127ac') in 0.023176 seconds
+  Import took 0.027923 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000290 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_04_Convex 2.asset
+  artifactKey: Guid(bdd94b635f2deba4ca2638232a356dea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_04_Convex 2.asset using Guid(bdd94b635f2deba4ca2638232a356dea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7bacc39319015ed16fc3ea8676b02a0') in 0.026841 seconds
+  Import took 0.033315 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000281 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_05_Convex.asset
+  artifactKey: Guid(e1f697aea159ad04bae7b376987f38f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_05_Convex.asset using Guid(e1f697aea159ad04bae7b376987f38f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e1e3806cfc8c1e5756902e7274f4405') in 0.024306 seconds
+  Import took 0.031672 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000313 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Exterior_Pillar_01_Convex.asset
+  artifactKey: Guid(c0112d78b9bd05145889d126174231f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Exterior_Pillar_01_Convex.asset using Guid(c0112d78b9bd05145889d126174231f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86ea65b6e27b1930951acff327c62e44') in 0.025051 seconds
+  Import took 0.034240 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.265666 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_02_Convex.asset
+  artifactKey: Guid(7dbfb25a61472e641bcae56fd61d3add) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_02_Convex.asset using Guid(7dbfb25a61472e641bcae56fd61d3add) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75f43cd8f08b62072a2b1e5678059bc0') in 0.017520 seconds
+  Import took 0.024034 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000360 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_02_Convex 2.asset
+  artifactKey: Guid(1e5951e1ce30df649b069d56922fd9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_02_Convex 2.asset using Guid(1e5951e1ce30df649b069d56922fd9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4bd8f888528aef52b1d8241b1082057') in 0.020829 seconds
+  Import took 0.026720 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000342 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_03_Convex 2.asset
+  artifactKey: Guid(f1cfb938d5ccbaf44a3bee82d9cdc5a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_03_Convex 2.asset using Guid(f1cfb938d5ccbaf44a3bee82d9cdc5a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e38fd615b2958ff5dc16c062bbb7e375') in 0.026533 seconds
+  Import took 0.031981 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_04_Convex 1.asset
+  artifactKey: Guid(3d037745756d29d47ac914ba276974d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_04_Convex 1.asset using Guid(3d037745756d29d47ac914ba276974d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3576899d98073e675e2c539e4d1afb6') in 0.023977 seconds
+  Import took 0.029039 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000341 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_04_Convex 3.asset
+  artifactKey: Guid(9c7c9cb730f9ee9418fd6628ba305dd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_04_Convex 3.asset using Guid(9c7c9cb730f9ee9418fd6628ba305dd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0dc5bb0415ff2ee2ed40c26730ec39c') in 0.029313 seconds
+  Import took 0.035865 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000339 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_01_Convex.asset
+  artifactKey: Guid(1313ac252430e2b4096aac0b3d28e29d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_01_Convex.asset using Guid(1313ac252430e2b4096aac0b3d28e29d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dcc4fea75e6c8ed3df4ff6bfedbef57f') in 0.020170 seconds
+  Import took 0.027720 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000686 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_05_Convex.asset
+  artifactKey: Guid(180b091a9c5e56a42b227ef2fb629cb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_05_Convex.asset using Guid(180b091a9c5e56a42b227ef2fb629cb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdbd74abc011e9c19cdbc0e42f2b92da') in 0.018894 seconds
+  Import took 0.025175 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000320 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_04_Convex 2.asset
+  artifactKey: Guid(baf95c60cac50f64aa9115e7d04c6988) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_04_Convex 2.asset using Guid(baf95c60cac50f64aa9115e7d04c6988) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb7a51ab67d4e289a5d9bcf05f677c7c') in 0.030540 seconds
+  Import took 0.035613 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000341 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_03_Convex 1.asset
+  artifactKey: Guid(727ea41089b069b469e0358c8dcbb033) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_03_Convex 1.asset using Guid(727ea41089b069b469e0358c8dcbb033) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91a45642c280a5d808199f829c093f10') in 0.023894 seconds
+  Import took 0.028892 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000282 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_04_Convex.asset
+  artifactKey: Guid(63bd9973d48f83a43ae2531dde035c28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_04_Convex.asset using Guid(63bd9973d48f83a43ae2531dde035c28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca89b93527c22916b197f7ecddca4b73') in 0.017782 seconds
+  Import took 0.023266 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000356 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_01_Convex 2.asset
+  artifactKey: Guid(b48d1f86f38a4664d9bdb27947e1efcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_01_Convex 2.asset using Guid(b48d1f86f38a4664d9bdb27947e1efcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16d94fdcdc44d92eddb74f9bdbf008f9') in 0.035660 seconds
+  Import took 0.042937 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_01_Convex 1.asset
+  artifactKey: Guid(45d3f085eeb805f40ad166fb3236ccdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_01_Convex 1.asset using Guid(45d3f085eeb805f40ad166fb3236ccdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c9587b39377b6f1b1f32f35202a9e24') in 0.043115 seconds
+  Import took 0.052633 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000351 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_02_Convex 1.asset
+  artifactKey: Guid(42defa37b568bc1429f8d77bea698d69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_02_Convex 1.asset using Guid(42defa37b568bc1429f8d77bea698d69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32b9c619b2b76f970dab221436212c9a') in 0.034167 seconds
+  Import took 0.044410 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000279 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_05_Convex 2.asset
+  artifactKey: Guid(2f0b7aa55cadbca4faddd6046d2455e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_05_Convex 2.asset using Guid(2f0b7aa55cadbca4faddd6046d2455e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '187c2ec84d55dce21281bfbb902d7ba0') in 0.038087 seconds
+  Import took 0.047058 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000353 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_03_Convex.asset
+  artifactKey: Guid(c6d37c04cf205054ab051ed5276be289) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_03_Convex.asset using Guid(c6d37c04cf205054ab051ed5276be289) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90d02dc7703e488d371cb68f612056fd') in 0.019899 seconds
+  Import took 0.027885 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_02_Convex 1.asset
+  artifactKey: Guid(8f2dc87ca6b8b4148951272f87ffcd04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_02_Convex 1.asset using Guid(8f2dc87ca6b8b4148951272f87ffcd04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b86cfa0eadcb4fb3a6459d5f432addb9') in 0.020300 seconds
+  Import took 0.026809 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000288 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_05_Convex 1.asset
+  artifactKey: Guid(1d12a428e1e82d643b388ec1a2fe8cac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_05_Convex 1.asset using Guid(1d12a428e1e82d643b388ec1a2fe8cac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e12e7bfa8b3b18183390289f329551d') in 0.025094 seconds
+  Import took 0.030910 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_02_Convex 2.asset
+  artifactKey: Guid(9c01fab2d7988f946b2fc04b391bfcce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_02_Convex 2.asset using Guid(9c01fab2d7988f946b2fc04b391bfcce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b57b45564049ffdcd937436337461115') in 0.025121 seconds
+  Import took 0.032052 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000379 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_02_Convex.asset
+  artifactKey: Guid(fe48396f1c191b341a802b4764441726) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_Wide_02_Convex.asset using Guid(fe48396f1c191b341a802b4764441726) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a20424fb1cc46d32d76cad7b79af4274') in 0.018016 seconds
+  Import took 0.023273 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.271122 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_01_Convex.asset
+  artifactKey: Guid(16085dc31a538364c8e2178563e7b090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_01_Convex.asset using Guid(16085dc31a538364c8e2178563e7b090) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76cc1a3a785ab52192abb6adb1a177ee') in 0.015265 seconds
+  Import took 0.020765 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000380 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_01_Convex 2.asset
+  artifactKey: Guid(d900e7064da5cdd48b3c32e3fb6f947f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_01_Convex 2.asset using Guid(d900e7064da5cdd48b3c32e3fb6f947f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8fa1425d8c70b2999c303af6f9ededa') in 0.043155 seconds
+  Import took 0.049675 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000590 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_01_Convex 1.asset
+  artifactKey: Guid(3431d2d22f0c7e942a8074b1e6a2d78f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Bld_Wall_Corner_Pillar_01_Convex 1.asset using Guid(3431d2d22f0c7e942a8074b1e6a2d78f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b9b3cdf016f72fb211c5d5446f4ecbe') in 0.029202 seconds
+  Import took 0.036660 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 57.378136 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Missile_02_Convex.asset
+  artifactKey: Guid(d112353b2257a8141b428b9474d22c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Missile_02_Convex.asset using Guid(d112353b2257a8141b428b9474d22c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5aae752869a6d4ee0fb10802c00eb43d') in 0.020504 seconds
+  Import took 0.027605 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000417 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_MapTable_Top_01_Convex.asset
+  artifactKey: Guid(9cb2e9af79c8b21488ca661d5b3ec605) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_MapTable_Top_01_Convex.asset using Guid(9cb2e9af79c8b21488ca661d5b3ec605) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce9760baf2514102d8826a10429125ae') in 0.018770 seconds
+  Import took 0.024622 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000306 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Ladder_Handles_01_Convex.asset
+  artifactKey: Guid(4f034cce80131b0478a7ba547303b393) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Ladder_Handles_01_Convex.asset using Guid(4f034cce80131b0478a7ba547303b393) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d0c603589cbe3980b3b05009151395f') in 0.017300 seconds
+  Import took 0.022991 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000341 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Ladder_01_Convex.asset
+  artifactKey: Guid(f72a8fbd66b71c64a9967ff9738197eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Ladder_01_Convex.asset using Guid(f72a8fbd66b71c64a9967ff9738197eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42717c79e7b4307326ef4c94a0c47f71') in 0.018400 seconds
+  Import took 0.025101 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000599 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Detail_Struts_01_Convex.asset
+  artifactKey: Guid(df6793779ccff0e4a9ad263b518d2ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Detail_Struts_01_Convex.asset using Guid(df6793779ccff0e4a9ad263b518d2ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abe126e2112b9278f3bb960614e259e0') in 0.019811 seconds
+  Import took 0.027583 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Detail_Pipes_01_Convex.asset
+  artifactKey: Guid(2d75a3497f445c14e8eac27c913a2590) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Detail_Pipes_01_Convex.asset using Guid(2d75a3497f445c14e8eac27c913a2590) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd090c678227900d84bee5fa3b3bd0d93') in 0.018555 seconds
+  Import took 0.024740 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000289 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Buttons_12_Convex.asset
+  artifactKey: Guid(2108cd147dd7def4a8e63f6fbba0679a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Buttons_12_Convex.asset using Guid(2108cd147dd7def4a8e63f6fbba0679a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'deb4b3a33c7c5cfe79d43c199d39e2e9') in 0.020227 seconds
+  Import took 0.026838 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000407 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Detail_Pipes_03_Convex.asset
+  artifactKey: Guid(edacdecce38899d418409ef6fa158bde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Detail_Pipes_03_Convex.asset using Guid(edacdecce38899d418409ef6fa158bde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '358d539d858366fb34307a3a1365d26e') in 0.017740 seconds
+  Import took 0.022699 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000378 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_CenterTube_02_Convex.asset
+  artifactKey: Guid(5be7f2fe793b0f7419880a805a6b0125) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_CenterTube_02_Convex.asset using Guid(5be7f2fe793b0f7419880a805a6b0125) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ed8d313902b1e72e916644234c62993') in 0.020098 seconds
+  Import took 0.027857 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000390 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Buttons_11_Convex.asset
+  artifactKey: Guid(71ccbfff2ea9f21488ad18b291b93e2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Buttons_11_Convex.asset using Guid(71ccbfff2ea9f21488ad18b291b93e2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da84fdfe71fad797e5967836a6a4f793') in 0.018702 seconds
+  Import took 0.024776 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000334 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_ControlPanel_02_Convex.asset
+  artifactKey: Guid(e87fa03b44bcf224f971597139a2dd85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_ControlPanel_02_Convex.asset using Guid(e87fa03b44bcf224f971597139a2dd85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a3d78d085386404d647c2f9e0f29b67') in 0.017887 seconds
+  Import took 0.023460 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000283 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_CornerSeat_01_Convex 1.asset
+  artifactKey: Guid(8c30db8086a174841be2817662fb704d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_CornerSeat_01_Convex 1.asset using Guid(8c30db8086a174841be2817662fb704d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e9712c33241fe0d4e8e84a70a3dd029') in 0.029928 seconds
+  Import took 0.034799 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000305 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Buttons_13_Convex.asset
+  artifactKey: Guid(e7e64c53d8270fd4a8230a4a37d25173) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Buttons_13_Convex.asset using Guid(e7e64c53d8270fd4a8230a4a37d25173) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce75a98826dc201667a4f9f9a32c81b6') in 0.018198 seconds
+  Import took 0.024569 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000375 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Buttons_14_Convex.asset
+  artifactKey: Guid(d6acf903a6c7ca64f90e156738e5e2a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Buttons_14_Convex.asset using Guid(d6acf903a6c7ca64f90e156738e5e2a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75478d3c178f4ce23693d4397504f0f7') in 0.016792 seconds
+  Import took 0.022522 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000344 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Detail_Pipe_02_Convex.asset
+  artifactKey: Guid(3f7ec6cef72eb5444b5d666d2b81598a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Detail_Pipe_02_Convex.asset using Guid(3f7ec6cef72eb5444b5d666d2b81598a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c7008dfea0b69be783b5198336192f9') in 0.017093 seconds
+  Import took 0.022156 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000277 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_CenterTube_01_Convex.asset
+  artifactKey: Guid(1a09ba3aa442ad44c9216d16d9567cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_CenterTube_01_Convex.asset using Guid(1a09ba3aa442ad44c9216d16d9567cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48265b492358b47360c506aa10e27ebf') in 0.016339 seconds
+  Import took 0.021744 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000426 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_ControlPanel_01_Convex.asset
+  artifactKey: Guid(a85bf393eb2442e4bb50dc03b2a67d27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_ControlPanel_01_Convex.asset using Guid(a85bf393eb2442e4bb50dc03b2a67d27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f0957861bb3fa0abcea7898b0248175') in 0.018225 seconds
+  Import took 0.023754 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000342 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_MapTable_01_Convex.asset
+  artifactKey: Guid(fadf5e8d70c9eea46a14a588b6e40fdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_MapTable_01_Convex.asset using Guid(fadf5e8d70c9eea46a14a588b6e40fdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6c5d3035497af7af71519baf42db367') in 0.016115 seconds
+  Import took 0.021658 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000507 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_ControlPanel_03_Convex.asset
+  artifactKey: Guid(02f81ad9a23dc6441ac56ad8e976ec1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_ControlPanel_03_Convex.asset using Guid(02f81ad9a23dc6441ac56ad8e976ec1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0440d3e6c322a3d8f557146ae634f656') in 0.024403 seconds
+  Import took 0.029052 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000387 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Light_Panel_02_Convex.asset
+  artifactKey: Guid(ff0dea8bffafa1b41bccac56be741ba1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Light_Panel_02_Convex.asset using Guid(ff0dea8bffafa1b41bccac56be741ba1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8245c3e7a9b7fbdea5c60a92003ba92c') in 0.015232 seconds
+  Import took 0.022091 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000246 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Light_Panel_01_Convex.asset
+  artifactKey: Guid(9b2e832eb43e2d64095c2529a7cb91bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Light_Panel_01_Convex.asset using Guid(9b2e832eb43e2d64095c2529a7cb91bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ef84d00f9178309a696421d8d492e65') in 0.016782 seconds
+  Import took 0.022481 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000293 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_ControlPanel_04_Convex.asset
+  artifactKey: Guid(03f79e6cc4f8b8f4c82216c5fec0b2d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_ControlPanel_04_Convex.asset using Guid(03f79e6cc4f8b8f4c82216c5fec0b2d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46f82269045ece66191df401a6cd1675') in 0.018307 seconds
+  Import took 0.022471 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.338191 seconds.
+  path: Packages/com.unity.xr.management/Tests/TestTooling/Unity.XR.TestSupport.asmdef
+  artifactKey: Guid(174dd372073128d46a2d10d2daaf414f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.management/Tests/TestTooling/Unity.XR.TestSupport.asmdef using Guid(174dd372073128d46a2d10d2daaf414f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '637007c180390afa359f8b5c70a63c3b') in 0.011014 seconds
+  Import took 0.016228 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 184.699179 seconds.
+  path: Packages/com.unity.collab-proxy/Editor/Assets/Icons/added-file-dark.png
+  artifactKey: Guid(1a4f52b613391cd449af3ad2e44affeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.collab-proxy/Editor/Assets/Icons/added-file-dark.png using Guid(1a4f52b613391cd449af3ad2e44affeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc0fa178ea12f7d3385f59ceb88415da') in 0.017101 seconds
+  Import took 0.021524 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000295 seconds.
+  path: Packages/com.unity.collab-proxy/Editor/Assets/Styles/BetterTextField.uss
+  artifactKey: Guid(1526405b75c937f4b9f26bef99e5e692) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.collab-proxy/Editor/Assets/Styles/BetterTextField.uss using Guid(1526405b75c937f4b9f26bef99e5e692) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b568bb9e907a82d17971365334a0dd7f') in 0.015388 seconds
+  Import took 0.019050 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000282 seconds.
+  path: Packages/com.unity.collab-proxy/Editor/Assets/Icons/conflicted-file-dark@2x.png
+  artifactKey: Guid(68295f1d2b4db9040ac84ac00d5554a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.collab-proxy/Editor/Assets/Icons/conflicted-file-dark@2x.png using Guid(68295f1d2b4db9040ac84ac00d5554a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9d8a9ae4638a6e14fbfb30e8cefe0ed') in 0.016292 seconds
+  Import took 0.020259 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000311 seconds.
+  path: Packages/com.unity.collab-proxy/Editor/Assets/Icons/conflicted-file-dark.png
+  artifactKey: Guid(16b10562fce5a0f4794872a75d897cc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.collab-proxy/Editor/Assets/Icons/conflicted-file-dark.png using Guid(16b10562fce5a0f4794872a75d897cc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb2ee2ce1defb4a479305c652027316a') in 0.015501 seconds
+  Import took 0.020665 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000288 seconds.
+  path: Packages/com.unity.textmeshpro/Editor Resources/Textures/btn_AlignJustified.psd
+  artifactKey: Guid(92027f7f8cfc4feaa477da0dc38d3d46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.textmeshpro/Editor Resources/Textures/btn_AlignJustified.psd using Guid(92027f7f8cfc4feaa477da0dc38d3d46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f66e40f2962aaadc3a7aa1ac08424a84') in 0.091678 seconds
+  Import took 0.095832 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000386 seconds.
+  path: Packages/com.unity.collab-proxy/Editor/Assets/Icons/added-file-dark@2x.png
+  artifactKey: Guid(c223e0c507e2c6549a2cb97441b62cbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.collab-proxy/Editor/Assets/Icons/added-file-dark@2x.png using Guid(c223e0c507e2c6549a2cb97441b62cbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7117a7a432eba16d6749d5796e9d08f8') in 0.016901 seconds
+  Import took 0.021717 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Packages/com.unity.collab-proxy/Editor/Assets/Icons/added-file-light@2x.png
+  artifactKey: Guid(ec2e3aa6d0ab8ce4eac29b56d65d61d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.collab-proxy/Editor/Assets/Icons/added-file-light@2x.png using Guid(ec2e3aa6d0ab8ce4eac29b56d65d61d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '622efad7252569036afa82c262de1b20') in 0.015527 seconds
+  Import took 0.019568 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000199 seconds.
+  path: Packages/com.unity.textmeshpro/Editor Resources/Textures/btn_AlignJustified_Light.psd
+  artifactKey: Guid(fa6bd40a216346b783a4cce741d277a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.textmeshpro/Editor Resources/Textures/btn_AlignJustified_Light.psd using Guid(fa6bd40a216346b783a4cce741d277a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e55bde9167f14d6bc90b30e58273d0d') in 0.015510 seconds
+  Import took 0.019808 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000289 seconds.
+  path: Packages/com.unity.collab-proxy/Editor/Assets/Icons/added-file-light.png
+  artifactKey: Guid(397fff6c3885f8343bb65714f0064b5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.collab-proxy/Editor/Assets/Icons/added-file-light.png using Guid(397fff6c3885f8343bb65714f0064b5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5dc78012c2fff96379f023a2d15dee63') in 0.016184 seconds
+  Import took 0.020270 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009310 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.01 ms, found 11 plugins.
+Preloading 1 native plugins for Editor in 0.09 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\Users\tajna\Desktop\STUDIO-3\STUDIO-3\VR_Project_Studio3\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\tajna\Desktop\STUDIO-3\STUDIO-3\VR_Project_Studio3\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
+
+(Filename: Library/PackageCache/com.unity.xr.oculus@1.9.1/Runtime/OculusLoader.cs Line: 249)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.130 seconds
+Platform modules already initialized, skipping
+Shader 'Distant Lands/Stylized Terrain First Pass': dependency 'BaseMapShader' shader 'Distant Lands/Stylized Terrain' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.90 ms, found 11 plugins.
+Preloading 1 native plugins for Editor in 0.16 ms.
+Unloading 2493 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 143.5 MB.
+System memory in use after: 143.7 MB.
+
+Unloading 32 unused Assets to reduce memory usage. Loaded Objects now: 3099.
+Total: 3.847300 ms (FindLiveObjects: 0.416000 ms CreateObjectMapping: 0.282900 ms MarkObjects: 2.941000 ms  DeleteObjects: 0.206100 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009170 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.38 ms, found 11 plugins.
+Preloading 1 native plugins for Editor in 0.17 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\Users\tajna\Desktop\STUDIO-3\STUDIO-3\VR_Project_Studio3\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\tajna\Desktop\STUDIO-3\STUDIO-3\VR_Project_Studio3\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
+
+(Filename: Library/PackageCache/com.unity.xr.oculus@1.9.1/Runtime/OculusLoader.cs Line: 249)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.238 seconds
+Platform modules already initialized, skipping
+Shader 'Distant Lands/Stylized Terrain First Pass': dependency 'BaseMapShader' shader 'Distant Lands/Stylized Terrain' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.31 ms, found 11 plugins.
+Preloading 1 native plugins for Editor in 0.11 ms.
+Unloading 2493 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 143.6 MB.
+System memory in use after: 143.8 MB.
+
+Unloading 32 unused Assets to reduce memory usage. Loaded Objects now: 3104.
+Total: 5.322100 ms (FindLiveObjects: 0.338100 ms CreateObjectMapping: 0.198800 ms MarkObjects: 4.427600 ms  DeleteObjects: 0.356200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009093 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.83 ms, found 11 plugins.
+Preloading 1 native plugins for Editor in 0.09 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\Users\tajna\Desktop\STUDIO-3\STUDIO-3\VR_Project_Studio3\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\tajna\Desktop\STUDIO-3\STUDIO-3\VR_Project_Studio3\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
+
+(Filename: Library/PackageCache/com.unity.xr.oculus@1.9.1/Runtime/OculusLoader.cs Line: 249)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.037 seconds
+Platform modules already initialized, skipping
+Shader 'Distant Lands/Stylized Terrain First Pass': dependency 'BaseMapShader' shader 'Distant Lands/Stylized Terrain' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.80 ms, found 11 plugins.
+Preloading 1 native plugins for Editor in 0.13 ms.
+Unloading 2493 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 143.7 MB.
+System memory in use after: 143.8 MB.
+
+Unloading 32 unused Assets to reduce memory usage. Loaded Objects now: 3109.
+Total: 3.145800 ms (FindLiveObjects: 0.331800 ms CreateObjectMapping: 0.120200 ms MarkObjects: 2.499300 ms  DeleteObjects: 0.193500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009649 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.74 ms, found 11 plugins.
+Preloading 1 native plugins for Editor in 0.10 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\Users\tajna\Desktop\STUDIO-3\STUDIO-3\VR_Project_Studio3\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\tajna\Desktop\STUDIO-3\STUDIO-3\VR_Project_Studio3\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
+
+(Filename: Library/PackageCache/com.unity.xr.oculus@1.9.1/Runtime/OculusLoader.cs Line: 249)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.028 seconds
+Platform modules already initialized, skipping
+Shader 'Distant Lands/Stylized Terrain First Pass': dependency 'BaseMapShader' shader 'Distant Lands/Stylized Terrain' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.14 ms, found 11 plugins.
+Preloading 1 native plugins for Editor in 0.08 ms.
+Unloading 2493 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 143.7 MB.
+System memory in use after: 143.9 MB.
+
+Unloading 32 unused Assets to reduce memory usage. Loaded Objects now: 3114.
+Total: 3.071400 ms (FindLiveObjects: 0.269200 ms CreateObjectMapping: 0.086200 ms MarkObjects: 2.524800 ms  DeleteObjects: 0.190500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009849 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.03 ms, found 11 plugins.
+Preloading 1 native plugins for Editor in 0.09 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+NullReferenceException: Object reference not set to an instance of an object
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\Users\tajna\Desktop\STUDIO-3\STUDIO-3\VR_Project_Studio3\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\tajna\Desktop\STUDIO-3\STUDIO-3\VR_Project_Studio3\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
+
+(Filename: Library/PackageCache/com.unity.xr.oculus@1.9.1/Runtime/OculusLoader.cs Line: 249)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.073 seconds
+Platform modules already initialized, skipping
+Shader 'Distant Lands/Stylized Terrain First Pass': dependency 'BaseMapShader' shader 'Distant Lands/Stylized Terrain' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
+Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
+Refreshing native plugins compatible for Editor in 1.17 ms, found 11 plugins.
+Preloading 1 native plugins for Editor in 0.10 ms.
+Unloading 2493 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 143.7 MB.
+System memory in use after: 143.9 MB.
+
+Unloading 32 unused Assets to reduce memory usage. Loaded Objects now: 3119.
+Total: 2.704900 ms (FindLiveObjects: 0.233600 ms CreateObjectMapping: 0.099400 ms MarkObjects: 2.184800 ms  DeleteObjects: 0.186400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 7041.279576 seconds.
+  path: Assets/Materials/Ground.mat
+  artifactKey: Guid(1d3df80a3bc8bb24cb0fb3e4720c01c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Ground.mat using Guid(1d3df80a3bc8bb24cb0fb3e4720c01c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20162e0c22ac9eb293c94ded19dd7196') in 0.255574 seconds
+  Import took 0.260151 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000242 seconds.
+  path: Assets/Materials/DpadButton.mat
+  artifactKey: Guid(f5008f7c8ee503b4a8988b438e16757f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/DpadButton.mat using Guid(f5008f7c8ee503b4a8988b438e16757f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fbe52490c67874c442496c97521c9fd') in 0.016094 seconds
+  Import took 0.020207 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/VR Controller/DefaultControllerMaterial/Controller.mat
+  artifactKey: Guid(9056f7be615b6ca4cb2bcd2ce01e1079) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/VR Controller/DefaultControllerMaterial/Controller.mat using Guid(9056f7be615b6ca4cb2bcd2ce01e1079) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21191b8b168e964627dfcd08dd3a9a50') in 0.016269 seconds
+  Import took 0.020301 seconds .
+
