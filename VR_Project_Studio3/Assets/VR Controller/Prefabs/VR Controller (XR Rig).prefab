@@ -3333,13 +3333,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wristUIObject: {fileID: 2732251219247546241}
-  minHandAngles: {x: 0, y: 0, z: 0}
-  maxHandAngles: {x: 0, y: 0, z: 0}
-  localHand: {x: 0, y: 0, z: 0}
+  desiredRelative: {x: -0.00000085, y: 0.00000145, z: -90}
+  offset: {x: 20, y: 30, z: 20}
   handController: {fileID: 7449520134667973208}
+  waist: {fileID: 8632746287174867982}
   xAngleInBounds: 0
-  yAngleInBounds: 0
-  zAngleInBounds: 0
+  yAngleInBounds: 1
+  zAngleInBounds: 1
   isPoseTrue: 0
 --- !u!1 &7449520133568608270
 GameObject:

@@ -5,13 +5,16 @@ using UnityEngine;
 public class HandPoseUIActivator : MonoBehaviour
 {
     public GameObject wristUIObject;
-
-    public Vector3 minHandAngles;
-    public Vector3 maxHandAngles;
-    [SerializeField] Vector3 localHand;
+    [Space(10)]
+    Vector3 minHandAngles;
+    Vector3 maxHandAngles;
+    Vector3 handRelative;
+    public Vector3 desiredRelative;
+    public Vector3 offset;
 
     [Space(10)]
     public Transform handController;
+    public Transform waist;
     [Space(10)]
     [SerializeField] bool xAngleInBounds = false;
     [SerializeField] bool yAngleInBounds = false;
@@ -22,20 +25,29 @@ public class HandPoseUIActivator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        localHand = handController.localRotation.eulerAngles;
+        handRelative = waist.rotation.eulerAngles - handController.rotation.eulerAngles;
 
-        if ((handController.localRotation.x >= minHandAngles.x) && (handController.localRotation.x <= maxHandAngles.x)) xAngleInBounds = true;
-        if ((handController.localRotation.y >= minHandAngles.y) && (handController.localRotation.y <= maxHandAngles.y)) yAngleInBounds = true;
-        if ((handController.localRotation.z >= minHandAngles.z) && (handController.localRotation.z <= maxHandAngles.z)) zAngleInBounds = true;
+        minHandAngles = desiredRelative - offset;
+        maxHandAngles = desiredRelative + offset;
 
-        if (xAngleInBounds && yAngleInBounds && zAngleInBounds) isPoseTrue = true;
+        xAngleInBounds = WithinRange(handRelative.x, minHandAngles.x, maxHandAngles.x) || WithinRange(handRelative.x, minHandAngles.x - 360, maxHandAngles.x - 360);
+        yAngleInBounds = WithinRange(handRelative.y, minHandAngles.y, maxHandAngles.y) || WithinRange(handRelative.y, minHandAngles.y - 360, maxHandAngles.y - 360);
+        zAngleInBounds = WithinRange(handRelative.z, minHandAngles.z, maxHandAngles.z) || WithinRange(handRelative.z, minHandAngles.z - 360, maxHandAngles.z - 360);
 
-        //xAngleInBounds = (handController.localRotation.x >= minHandAngles.x) && (handController.localRotation.x <= maxHandAngles.x);
-        //yAngleInBounds = (handController.localRotation.y >= minHandAngles.y) && (handController.localRotation.y <= maxHandAngles.y);
-        //zAngleInBounds = (handController.localRotation.z >= minHandAngles.z) && (handController.localRotation.z <= maxHandAngles.z);
-
-        //isPoseTrue = (xAngleInBounds && yAngleInBounds && zAngleInBounds);
+        isPoseTrue = (xAngleInBounds && yAngleInBounds && zAngleInBounds);
 
         wristUIObject.SetActive(isPoseTrue);
+    }
+
+    bool WithinRange(float toCompare, float minLimit, float maxLimit)
+    {
+        if (toCompare >= minLimit && toCompare <= maxLimit)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
