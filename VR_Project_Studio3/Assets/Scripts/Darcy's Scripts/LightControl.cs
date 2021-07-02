@@ -44,10 +44,10 @@ public class LightControl : MonoBehaviour
     void RPC_TurnLightOn() 
     {
         GetComponent<Light>().enabled = true;
-        if (gameObject.name.Contains("Inside")) //if the light is an inside one, it needs to have its mesh changed
-        {
-            GetComponentInChildren<MeshRenderer>().materials[1] = lightOn;
-        }
+        //if (gameObject.name.Contains("Inside")) //if the light is an inside one, it needs to have its mesh changed
+        //{
+        //    GetComponentInChildren<MeshRenderer>().materials[1] = lightOn;
+        //}
         GetComponentInParent<LightCounter>().CountUp();
         AlphaUp();
     }
@@ -56,10 +56,10 @@ public class LightControl : MonoBehaviour
     void RPC_TurnLightOff()
     {
         GetComponent<Light>().enabled = false; 
-        if (gameObject.name.Contains("Inside")) //if the light is an inside one, it needs to have its mesh changed
-        {
-            GetComponentInChildren<MeshRenderer>().materials[1] = lightOff;
-        }
+        //if (gameObject.name.Contains("Inside")) //if the light is an inside one, it needs to have its mesh changed
+        //{
+        //    GetComponentInChildren<MeshRenderer>().materials[1] = lightOff;
+        //}
         GetComponentInParent<LightCounter>().CountDown();
         AlphaDown();
     }
