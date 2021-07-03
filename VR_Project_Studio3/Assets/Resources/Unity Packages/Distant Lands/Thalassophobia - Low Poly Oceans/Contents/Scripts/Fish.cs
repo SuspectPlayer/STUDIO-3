@@ -68,7 +68,7 @@ namespace DistantLands
 
 			Vector3 vCenter = flock.target.transform.position;
 			Vector3 vAvoid = Vector3.zero;
-			float gSpeed = 0.1f;
+			float gSpeed = 0;
 
 			Vector3 goalPos = flock.target.transform.position;
 

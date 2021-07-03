@@ -58,6 +58,7 @@ ModelImporter:
     2100016: Button
     2100018: Screen
     2100020: Switch
+    2100022: Light.002
     2300000: Glass
     2300002: Minisub
     2300004: Roundcube.001
@@ -226,9 +227,9 @@ ModelImporter:
     preserveHierarchy: 0
     indexFormat: 0
     secondaryUVAngleDistortion: 8
-    secondaryUVAreaDistortion: 15.000001
+    secondaryUVAreaDistortion: 15
     secondaryUVHardAngle: 88
-    secondaryUVPackMargin: 4
+    secondaryUVPackMargin: 24
     useFileScale: 0
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 0
