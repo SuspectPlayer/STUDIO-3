@@ -1212,7 +1212,7 @@ GameObject:
   - component: {fileID: 1816604028}
   - component: {fileID: 1816604027}
   - component: {fileID: 1816604026}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1852,6 +1852,14 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 429650471}
+    - target: {fileID: 7756160381919723871, guid: 46b9dc4054281ce4ebb925ab41c2f49b, type: 3}
+      propertyPath: footOffset.y
+      value: 0.076
+      objectReference: {fileID: 0}
+    - target: {fileID: 7756160381919723871, guid: 46b9dc4054281ce4ebb925ab41c2f49b, type: 3}
+      propertyPath: walkableFloor.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 8186312565959298921, guid: 46b9dc4054281ce4ebb925ab41c2f49b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
