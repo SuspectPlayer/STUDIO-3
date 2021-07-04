@@ -13,12 +13,15 @@ public class CorrectSymbolCheck : MonoBehaviour
     [SerializeField]
     GameObject dashboard, door;
 
+    public Sprite temp;
+
     Sprite[] clickedSymbols = new Sprite[4];
 
     [SerializeField]
     Sprite neutral;
 
-    int correctSymbolCount = 0, incorrectSymbolCount = 0, rightOrderCount = 0;
+    public int correctSymbolCount = 0;
+    int incorrectSymbolCount = 0, rightOrderCount = 0;
 
     void Start() //this is only here so i can turn on and off the script component
     {
@@ -27,6 +30,11 @@ public class CorrectSymbolCheck : MonoBehaviour
 
     public void CorrectSymbolCheckMethod(Sprite clickedSymbol)
     {
+        if(clickedSymbol == null)
+        {
+            clickedSymbol = temp;
+        }
+
         for (int i = 0; i < 4; i++) //checking to see if the clicked colour is one of the ones in the "spawned" symbols on the map
         {
             if (clickedSymbol == symbols[i].GetComponentInChildren<Image>().sprite && correctSymbolCount < 4)
@@ -41,9 +49,9 @@ public class CorrectSymbolCheck : MonoBehaviour
                     break;
                 }
 
-                clickedSymbols[i] = clickedSymbol;
+                clickedSymbols[correctSymbolCount] = clickedSymbol;
                 correctSymbolCount++;
-                Debug.Log(correctSymbolCount.ToString());
+                Debug.Log(correctSymbolCount.ToString() + " " + name);
 
                 if (correctSymbolCount >= 4) //"win" condition
                 {
@@ -75,6 +83,7 @@ public class CorrectSymbolCheck : MonoBehaviour
                                 {
                                     if(clickedSymbols[i] == symbols[i].GetComponentInChildren<Image>().sprite)
                                     {
+                                        Debug.Log("right order");
                                         rightOrderCount++;                                     
                                     }
                                     else
@@ -86,8 +95,8 @@ public class CorrectSymbolCheck : MonoBehaviour
                                 }
                                 if(rightOrderCount == 4) //if the 4 symbols were clicked in the right order it opens the door
                                 {
-                                    Debug.Log("right order");
-                                    //dashboard.GetComponent<DoorControl>().UnlockDoor();
+                                    dashboard.GetComponent<DoorControl>().UnlockDoor();
+                                    correctSymbolCount = 0;
                                 }
                                 break;
                             }
