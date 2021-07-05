@@ -157,15 +157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerTag: GameController
-  triggerEntered: 0
-  isProgressive: 0
-  coroutineStarted: 0
-  progressEventStarted: 0
   progressResets: 1
   progressionTime: 60
-  progressFromValue: 0
-  progressionValue: 0
-  progressToValue: 100
   scanComplete: 0
   OnTouch:
     m_PersistentCalls:
@@ -694,7 +687,7 @@ GameObject:
   - component: {fileID: 980341909}
   - component: {fileID: 980341908}
   - component: {fileID: 980341907}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}

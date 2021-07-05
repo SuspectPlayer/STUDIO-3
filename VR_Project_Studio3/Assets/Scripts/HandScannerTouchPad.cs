@@ -3,25 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+
 public class HandScannerTouchPad : MonoBehaviour
 {
     [Tooltip("The tag of the direct interaction controllers")]public string triggerTag;
     
-    [SerializeField] bool triggerEntered;
-    [SerializeField] bool isProgressive;
-    [SerializeField] bool coroutineStarted = false;
-    [SerializeField] bool progressEventStarted = false;
+    /*[SerializeField]*/ bool triggerEntered;
+    /*[SerializeField]*/ bool isProgressive;
+    /*[SerializeField]*/ bool coroutineStarted = false;
+    /*[SerializeField]*/ bool progressEventStarted = false;
     [Space(10)]
     public bool progressResets;
     public float progressionTime;
     
     float timeProgressed = 0;
 
-    [SerializeField] float progressFromValue = 0;
-    [SerializeField] float progressionValue = 0;
-    [SerializeField] float progressToValue = 100;
+    /*[SerializeField]*/ float progressFromValue = 0;
+    /*[SerializeField]*/ float progressionValue = 0;
+    /*[SerializeField]*/ float progressToValue = 100;
     [Space(10)]
-    public bool scanComplete = false;
+    [HideInInspector]public bool scanComplete = false;
     [Space(10)]
     public UnityEvent OnTouch;
     public UnityEvent OnTouchRelease;
@@ -104,4 +105,31 @@ public class HandScannerTouchPad : MonoBehaviour
         progressionValue = progressToValue;
         scanComplete = true;
     }
+
+    /*public void SymbolGet()
+    {
+        switch (name)
+        {
+            case "HandScanner 1":
+                {
+                    GetComponentInParent<CorrectSymbolCheck>().temp = GetComponentInParent<RandomiseSymbols>().symbols[0].GetComponentInChildren<Image>().sprite;
+                    break;
+                }
+            case "HandScanner 2":
+                {
+                    GetComponentInParent<CorrectSymbolCheck>().temp = GetComponentInParent<RandomiseSymbols>().symbols[1].GetComponentInChildren<Image>().sprite;
+                    break;
+                }
+            case "HandScanner 3":
+                {
+                    GetComponentInParent<CorrectSymbolCheck>().temp = GetComponentInParent<RandomiseSymbols>().symbols[2].GetComponentInChildren<Image>().sprite;
+                    break;
+                }
+            case "HandScanner 4":
+                {
+                    GetComponentInParent<CorrectSymbolCheck>().temp = GetComponentInParent<RandomiseSymbols>().symbols[3].GetComponentInChildren<Image>().sprite;
+                    break;
+                }
+        }
+    }*/
 }
