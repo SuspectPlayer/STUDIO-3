@@ -6,6 +6,7 @@ using Photon.Pun;
 public class CameraAssign : MonoBehaviour
 {
     public Camera cam;
+    public AudioListener audioListener;
     PhotonView photonView;
     void Start()
     {
@@ -13,6 +14,7 @@ public class CameraAssign : MonoBehaviour
         if (photonView.IsMine)
         {
             cam.enabled = true;
+            audioListener.enabled = true;
         }
     }
 }
