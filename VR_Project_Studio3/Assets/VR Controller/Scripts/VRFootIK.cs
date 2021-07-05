@@ -8,8 +8,11 @@ public class VRFootIK : MonoBehaviour
 {
     private Animator animator;
 
+    public LayerMask walkableFloor;
+
     public Vector3 footOffset;
 
+    [Space(10)]
     [Range(0,1)]
     public float leftFootPosWeight = 1f;
     [Range(0,1)]
@@ -32,8 +35,8 @@ public class VRFootIK : MonoBehaviour
 
         RaycastHit hitLeft, hitRight;
 
-        bool hitFloorLeft = Physics.Raycast(leftFootPos + Vector3.up, Vector3.down, out hitLeft);
-        bool hitFloorRight = Physics.Raycast(rightFootPos + Vector3.up, Vector3.down, out hitRight);
+        bool hitFloorLeft = Physics.Raycast(leftFootPos + Vector3.up, Vector3.down, out hitLeft, Mathf.Infinity, walkableFloor.value, QueryTriggerInteraction.Ignore);
+        bool hitFloorRight = Physics.Raycast(rightFootPos + Vector3.up, Vector3.down, out hitRight, Mathf.Infinity, walkableFloor.value, QueryTriggerInteraction.Ignore);
 
         if (hitFloorLeft)
         {
