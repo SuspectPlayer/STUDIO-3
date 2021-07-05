@@ -8,8 +8,10 @@ using Photon.Pun;
 
 public class RandomiseSymbols : MonoBehaviour
 {
+    public GameObject[] symbols;
+
     [SerializeField]
-    GameObject[] symbols;
+    GameObject[] symbolsOnMap;
 
     GameObject outside;
 
@@ -43,7 +45,7 @@ public class RandomiseSymbols : MonoBehaviour
             storedRandomNumbers[i] = randomNumber;
         }
         CheckNumbers();
-        if (gameObject.name == "Inside") //checking for the second puzzle, make sure that the symbols are unique
+        if (name == "Inside") //checking for the second puzzle, make sure that the symbols are unique
         {
             outside = GameObject.Find("Outside");
             for (int i = 0; i < 4; i++)
@@ -86,9 +88,18 @@ public class RandomiseSymbols : MonoBehaviour
     [PunRPC]
     void RPC_ApplySymbols(int[] storedNumbers) //applying the symbols to the images to 'spawn' them in
     {
+        Debug.Log(name);
         for (int i = 0; i < 4; i++)
         {
             symbols[i].GetComponentInChildren<Image>().sprite = sprites[storedNumbers[i]];
+        }
+
+        if(name == "Puzzle 3") //for the third puzzle, also needs to apply the symbols to the intelligence's map
+        {
+            for (int x = 0; x < 3; x++) //but only the first 3
+            {
+                symbolsOnMap[x].GetComponentInChildren<Image>().sprite = sprites[storedNumbers[x]];
+            }
         }
     }
 }

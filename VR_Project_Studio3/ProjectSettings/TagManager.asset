@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bullet
   - Clicked
+  - Inside
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - Water
   - UI
   - UIMiniMap
-  - 
+  - HandScanner
   - 
   - 
   - 
