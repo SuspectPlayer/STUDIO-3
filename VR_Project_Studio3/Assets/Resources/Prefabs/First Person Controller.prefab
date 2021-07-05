@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1543862793041506870}
   - component: {fileID: 1543862793041506869}
   - component: {fileID: 1543862793041506868}
+  - component: {fileID: 2206821609574160645}
   m_Layer: 0
   m_Name: FPSCam
   m_TagString: Untagged
@@ -98,6 +99,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 350
   playerBody: {fileID: 3987560332757935707}
+--- !u!114 &2206821609574160645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543862793041506866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bcb6bd5852a0f044b65c7e1bfe7936e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  original: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &3987560331595687807
 GameObject:
   m_ObjectHideFlags: 0

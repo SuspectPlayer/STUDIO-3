@@ -10,6 +10,8 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField]
     GameObject[] puzzles;
 
+    public LayerMask scannerMask; //this is for the hand scanner because of instantiating issues
+
     public int whichPuzzle = 0; //checking which puzzle the player is currently solving
 
     PhotonView photonView;
@@ -27,6 +29,7 @@ public class PuzzleManager : MonoBehaviour
             case 0: 
                 {
                     photonView.RPC("RPC_ActivateFirstPuzzle", RpcTarget.All, whichPuzzle);
+                    photonView.RPC("RPC_ActivateThirdPuzzle", RpcTarget.All, whichPuzzle);
                     break;
                 }
             case 1:
@@ -73,6 +76,7 @@ public class PuzzleManager : MonoBehaviour
     void RPC_ActivateFirstPuzzle(int whichPuzzle)
     {
         puzzles[whichPuzzle].GetComponent<RandomiseSymbols>().enabled = true;
+        puzzles[whichPuzzle].GetComponent<CorrectSymbolCheck>().enabled = true;
     }
 
     [PunRPC]
@@ -88,13 +92,17 @@ public class PuzzleManager : MonoBehaviour
         {
             p.enabled = true;
         }
+        foreach (var p in puzzles[whichPuzzle].GetComponentsInChildren<CorrectSymbolCheck>()) //turning on all the symbol checks
+        {
+            p.enabled = true;
+        }
         GetComponent<DoorControl>().door = GameObject.Find("Door 2"); //switching to the second door for unlocking purposes
     }
 
     [PunRPC]
     void RPC_DeactivateSecondPuzzle(int whichPuzzle)
     {
-        foreach (var p in puzzles[whichPuzzle].GetComponentsInChildren<CorrectSymbolCheck>())
+        foreach (var p in puzzles[whichPuzzle].GetComponentsInChildren<CorrectSymbolCheck>()) //turning off all symbol checks
         {
             p.enabled = false;
         }
@@ -103,8 +111,12 @@ public class PuzzleManager : MonoBehaviour
     [PunRPC]
     void RPC_ActivateThirdPuzzle(int whichPuzzle)
     {
-        puzzles[whichPuzzle].GetComponent<RandomiseSymbols>().enabled = true;
-        GetComponent<DoorControl>().door = GameObject.Find("Door 3");
+        puzzles[2].GetComponent<RandomiseSymbols>().enabled = true; //activates at the start, but,
+        if(whichPuzzle == 2)
+        {
+            puzzles[whichPuzzle].GetComponent<CorrectSymbolCheck>().enabled = true;
+            GetComponent<DoorControl>().door = GameObject.Find("Door 3"); //only sets to the third door if the second puzzle is done
+        }
     }
 
     [PunRPC]
