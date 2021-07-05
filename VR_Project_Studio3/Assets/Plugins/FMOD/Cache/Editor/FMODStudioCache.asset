@@ -1,0 +1,571 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8664337897837326134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Dark Ambience
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Dark Ambience
+  guid: ca74c7b26f42004ba7e46bcb97914a11
+  Banks:
+  - {fileID: 6907762079475355625}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 76944
+--- !u!114 &-7741015070807031995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D World Items/Drips/Wet Hallway
+  m_EditorClassIdentifier: 
+  Path: event:/3D World Items/Drips/Wet Hallway
+  guid: 1785e0af3b31514694460d348c1e7229
+  Banks:
+  - {fileID: 6907762079475355625}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 73728
+--- !u!114 &-6040332381662694591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D World Items/Alien Gloop
+  m_EditorClassIdentifier: 
+  Path: event:/3D World Items/Alien Gloop
+  guid: c33857f95b1cb449931e9cd8ef025c1d
+  Banks:
+  - {fileID: 6907762079475355625}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7632
+--- !u!114 &-4046770276182220837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D World Items/Drips/Drips 1
+  m_EditorClassIdentifier: 
+  Path: event:/3D World Items/Drips/Drips 1
+  guid: 6101a8d574c84543871e01e712c72d6c
+  Banks:
+  - {fileID: 6907762079475355625}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 14424
+--- !u!114 &-3551192261395683910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D World Items/Drips/Drips 3
+  m_EditorClassIdentifier: 
+  Path: event:/3D World Items/Drips/Drips 3
+  guid: ecc96ae6f589034ab6110c107448374b
+  Banks:
+  - {fileID: 6907762079475355625}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 38472
+--- !u!114 &-3371730167020139304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D World Items/Metal/Metal 3
+  m_EditorClassIdentifier: 
+  Path: event:/3D World Items/Metal/Metal 3
+  guid: 38df37f0a957064b921d3fd3b9208f58
+  Banks:
+  - {fileID: 6907762079475355625}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 40608
+--- !u!114 &-3141443137502402340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D World Items/Metal/Metal 1
+  m_EditorClassIdentifier: 
+  Path: event:/3D World Items/Metal/Metal 1
+  guid: 6c608e112d94e446898dbb49ce89d8ad
+  Banks:
+  - {fileID: 6907762079475355625}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 24048
+--- !u!114 &-2366911174409829596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Low Hum Ambience
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Low Hum Ambience
+  guid: 0e80f25c7815104a8d59e33efdbbf80d
+  Banks:
+  - {fileID: 6907762079475355625}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 80040
+--- !u!114 &-182045356242400887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D World Items/Elevator Music
+  m_EditorClassIdentifier: 
+  Path: event:/3D World Items/Elevator Music
+  guid: 1573f6d3833fff4a951e883524f2c657
+  Banks:
+  - {fileID: 6907762079475355625}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 145110
+--- !u!114 &-55721111397536618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D World Items/Computer Noise 1
+  m_EditorClassIdentifier: 
+  Path: event:/3D World Items/Computer Noise 1
+  guid: c5607ad953b2a14a8acdb8769c14f82e
+  Banks:
+  - {fileID: 6907762079475355625}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6072
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 647934296251053428}
+  - {fileID: 6907762079475355625}
+  EditorEvents:
+  - {fileID: -2366911174409829596}
+  - {fileID: -182045356242400887}
+  - {fileID: -7741015070807031995}
+  - {fileID: 2329842097756404533}
+  - {fileID: 8444959854747931082}
+  - {fileID: 1270659003551445448}
+  - {fileID: -3371730167020139304}
+  - {fileID: 4270916433131991643}
+  - {fileID: 7707363076333955158}
+  - {fileID: -4046770276182220837}
+  - {fileID: -3141443137502402340}
+  - {fileID: 624870027013586835}
+  - {fileID: 4982276975637078013}
+  - {fileID: 4164612709383302891}
+  - {fileID: -6040332381662694591}
+  - {fileID: -55721111397536618}
+  - {fileID: -8664337897837326134}
+  - {fileID: 4939267931642740218}
+  - {fileID: 8771285074996768752}
+  - {fileID: 6964743683436071954}
+  - {fileID: -3551192261395683910}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 6907762079475355625}
+  StringsBanks:
+  - {fileID: 647934296251053428}
+  stringsBankWriteTime: 637607588552239670
+  cacheVersion: 6
+--- !u!114 &624870027013586835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D World Items/Radiation
+  m_EditorClassIdentifier: 
+  Path: event:/3D World Items/Radiation
+  guid: 888b640ec598a1409877df6f391063ef
+  Banks:
+  - {fileID: 6907762079475355625}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 80065
+--- !u!114 &647934296251053428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: C:/Users/User/Documents/FMOD Studio/F-mod testing/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637607588552239670
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1706
+  Exists: 1
+--- !u!114 &1270659003551445448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D World Items/Heart Rate Beeping
+  m_EditorClassIdentifier: 
+  Path: event:/3D World Items/Heart Rate Beeping
+  guid: 1be9fd12d945cc42b1e96e7ef66946e8
+  Banks:
+  - {fileID: 6907762079475355625}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 20688
+--- !u!114 &2329842097756404533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D World Items/Metal/Metal 4
+  m_EditorClassIdentifier: 
+  Path: event:/3D World Items/Metal/Metal 4
+  guid: 194fda30771f574494cbf1d4c5c38b2f
+  Banks:
+  - {fileID: 6907762079475355625}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 40296
+--- !u!114 &4164612709383302891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D World Items/Alarm
+  m_EditorClassIdentifier: 
+  Path: event:/3D World Items/Alarm
+  guid: 9abef7752871bd40946f748e2519b909
+  Banks:
+  - {fileID: 6907762079475355625}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 21720
+--- !u!114 &4270916433131991643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Water for tunnels
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Water for tunnels
+  guid: 47539c65cebbea46b1d17e72c70ccf5d
+  Banks:
+  - {fileID: 6907762079475355625}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 27288
+--- !u!114 &4939267931642740218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Computer - Aircon Hum
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Computer - Aircon Hum
+  guid: dae2b1907ecf50498ef0320651ac599b
+  Banks:
+  - {fileID: 6907762079475355625}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 67008
+--- !u!114 &4982276975637078013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D World Items/Drips/Drips 2
+  m_EditorClassIdentifier: 
+  Path: event:/3D World Items/Drips/Drips 2
+  guid: 90a459d59cfda646a37451b10c717c26
+  Banks:
+  - {fileID: 6907762079475355625}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 44496
+--- !u!114 &6907762079475355625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: C:/Users/User/Documents/FMOD Studio/F-mod testing/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637607588552219727
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 12118176
+  Exists: 1
+--- !u!114 &6964743683436071954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D World Items/Computer Bleeps and Bloops
+  m_EditorClassIdentifier: 
+  Path: event:/3D World Items/Computer Bleeps and Bloops
+  guid: ea447364367c814a85bd0955468911c6
+  Banks:
+  - {fileID: 6907762079475355625}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5167
+--- !u!114 &7707363076333955158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D World Items/Drips/Bathtub Hiss
+  m_EditorClassIdentifier: 
+  Path: event:/3D World Items/Drips/Bathtub Hiss
+  guid: 4c9ccf2b26640948b01ef859b8b89d04
+  Banks:
+  - {fileID: 6907762079475355625}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 70728
+--- !u!114 &8444959854747931082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D World Items/Metal/Metal 2
+  m_EditorClassIdentifier: 
+  Path: event:/3D World Items/Metal/Metal 2
+  guid: 1aaed201f9b38246a9af3c71120b444d
+  Banks:
+  - {fileID: 6907762079475355625}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 27360
+--- !u!114 &8771285074996768752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Water LowPass
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Water LowPass
+  guid: e866ba123f07854d95c6ba0f3c0f2c9f
+  Banks:
+  - {fileID: 6907762079475355625}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 156336
