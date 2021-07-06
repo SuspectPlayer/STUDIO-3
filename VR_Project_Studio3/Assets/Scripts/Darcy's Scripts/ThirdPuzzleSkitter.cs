@@ -2,16 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Written by Darcy Glover
+
 public class ThirdPuzzleSkitter : MonoBehaviour
 {
-    GameObject trigger;
+    [SerializeField]
+    Transform target, dashboard;
+
+    float moveSpeed = 1f, step;
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.H)) //devtool to start for testing
-        {
-            trigger.SetActive(true); 
-        }
+        step = moveSpeed * Time.deltaTime;
 
         if(gameObject.activeInHierarchy) //if the skitter is active, starts the co-routine. skitter can ony be active if the trigger is entered.
         {
@@ -19,22 +21,29 @@ public class ThirdPuzzleSkitter : MonoBehaviour
         }
     }
 
-    void SpawnSkitter()
+    public void SpawnSkitter() //this activates the skitter from the trigger being tripped
     {
         gameObject.SetActive(true);
     }
 
-    void OnTriggerEnter(Collider other)
+    IEnumerator MoveAtPlayer() //moving the skitter
     {
-        if(!gameObject.activeInHierarchy)
+        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+
+        if(transform.position == target.position) 
         {
-            gameObject.SetActive(true);
+            Debug.Log("dead");
+            gameObject.SetActive(false); //if it reaches the target, stops the script and the players "die"
+            StopAllCoroutines();
         }
-    }
 
-    IEnumerator MoveAtPlayer()
-    {
-
+        if (dashboard.GetComponent<DoorControl>().doorTwoLocked)
+        {
+            Debug.Log("alive");
+            gameObject.SetActive(false); //if the door is locked, the players are safe
+            dashboard.GetComponent<DoorControl>().door = GameObject.Find("Door 3"); //only sets to the third door if the skitter event is done
+            StopAllCoroutines();
+        }
         yield return null;
     }
 }

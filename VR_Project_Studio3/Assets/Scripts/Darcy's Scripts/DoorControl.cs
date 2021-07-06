@@ -9,6 +9,9 @@ public class DoorControl : MonoBehaviour
 {
     public GameObject door;
 
+    [HideInInspector]
+    public bool doorTwoLocked = false; //this bool is for puzzle 3, to deactivate the skitter if the door is locked
+
     PhotonView photonView;
 
     void Start()
@@ -33,6 +36,10 @@ public class DoorControl : MonoBehaviour
     {
         door.GetComponentInChildren<MeshRenderer>().material.SetColor("_EmissionColor", Color.red); //the light for the door
         door.GetComponentInChildren<Animator>().SetBool("Unlock", false);
+        if(door.name == "Door 2") //if it is the second door, will need to change the bool for puzzle 3
+        {
+            doorTwoLocked = true;
+        }
     }
 
     [PunRPC]
@@ -40,8 +47,15 @@ public class DoorControl : MonoBehaviour
     {
         door.GetComponentInChildren<MeshRenderer>().material.SetColor("_EmissionColor", Color.green);
         door.GetComponentInChildren<Animator>().SetBool("Unlock", true);
-        GetComponent<PuzzleManager>().DeactivatePuzzle();
-        GetComponent<PuzzleManager>().whichPuzzle++;
-        GetComponent<PuzzleManager>().ActivatePuzzle(); //activating the next puzzle
+        if (door.name == "Door 2") //if it is the second door, will need to change the bool for puzzle 3
+        {
+            doorTwoLocked = false;
+        }
+        //GetComponent<PuzzleManager>().DeactivatePuzzle();
+        if(door.name != "Door 3")
+        {
+            GetComponent<PuzzleManager>().whichPuzzle++;
+            GetComponent<PuzzleManager>().ActivatePuzzle(); //activating the next puzzle, only if it isnt the last door
+        }
     }
 }

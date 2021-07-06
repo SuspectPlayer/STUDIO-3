@@ -13,6 +13,7 @@ public class CorrectSymbolCheck : MonoBehaviour
     [SerializeField]
     GameObject dashboard, door;
 
+    [HideInInspector]
     public Sprite temp;
 
     Sprite[] clickedSymbols = new Sprite[4];
@@ -20,6 +21,7 @@ public class CorrectSymbolCheck : MonoBehaviour
     [SerializeField]
     Sprite neutral;
 
+    [HideInInspector]
     public int correctSymbolCount = 0;
     int incorrectSymbolCount = 0, rightOrderCount = 0;
 
