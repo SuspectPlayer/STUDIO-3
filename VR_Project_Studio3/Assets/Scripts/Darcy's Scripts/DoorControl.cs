@@ -9,7 +9,6 @@ public class DoorControl : MonoBehaviour
 {
     public GameObject door;
 
-    [HideInInspector]
     public bool doorTwoLocked = false; //this bool is for puzzle 3, to deactivate the skitter if the door is locked
 
     PhotonView photonView;

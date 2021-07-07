@@ -13,7 +13,7 @@ public class PuzzleManager : MonoBehaviour
     [HideInInspector]
     public LayerMask scannerMask; //this is for the hand scanner because of instantiating issues
 
-    [HideInInspector]
+    //[HideInInspector]
     public int whichPuzzle = 0; //checking which puzzle the player is currently solving
 
     PhotonView photonView;

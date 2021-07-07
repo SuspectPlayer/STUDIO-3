@@ -9,7 +9,8 @@ public class ThirdPuzzleCollisionDetection : MonoBehaviour
     [SerializeField]
     GameObject skitter;
 
-    bool canTrigger = false;
+    [HideInInspector]
+    public bool canTrigger = false;
 
     //this script is the collision detection to spawn the skitter for puzzle 3
     void Update()
