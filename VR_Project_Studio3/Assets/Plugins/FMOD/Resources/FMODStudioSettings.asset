@@ -335,8 +335,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: C:/Users/User/Documents/FMOD Studio/F-mod testing/F-mod testing.fspro
-  sourceBankPath: C:/Users/User/Documents/FMOD Studio/F-mod testing/Build
+  sourceProjectPath: Assets/Audio/F-mod testing/F-mod testing.fspro
+  sourceBankPath: Assets/Audio/F-mod testing/Build
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1

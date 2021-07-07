@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{27942155-1827-403d-9bf9-b42ada1e58e3}">
+		<property name="assetPath">
+			<value>household_bath_tap_broken_leaking_faucet_dripping_hissing.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>70.727999999999994</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{008270d6-d1a0-4dab-bd8f-c1b9e74ab876}</destination>
+		</relationship>
+	</object>
+</objects>
