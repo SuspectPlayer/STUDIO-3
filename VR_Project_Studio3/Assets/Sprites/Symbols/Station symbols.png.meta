@@ -1,7 +1,67 @@
 fileFormatVersion: 2
 guid: 33d09e6e15341c14b83ccd448a684c6b
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4277598324715091699
+    second: Station symbols_0
+  - first:
+      213: -8688589338776161011
+    second: Station symbols_1
+  - first:
+      213: 564873447130532326
+    second: Station symbols_2
+  - first:
+      213: 8372428965372763706
+    second: Station symbols_3
+  - first:
+      213: 6600091054225500372
+    second: Station symbols_5
+  - first:
+      213: -5503847656672009401
+    second: Station symbols_6
+  - first:
+      213: -7999905287167148301
+    second: Station symbols_7
+  - first:
+      213: -2925623438357921911
+    second: Station symbols_8
+  - first:
+      213: 8503010596505639891
+    second: Station symbols_10
+  - first:
+      213: 8774183129414519900
+    second: Station symbols_11
+  - first:
+      213: -2843734420365493300
+    second: Station symbols_12
+  - first:
+      213: -288542301758891959
+    second: Station symbols_13
+  - first:
+      213: -2746113750957783992
+    second: Station symbols_15
+  - first:
+      213: -3828116346850085395
+    second: Station symbols_16
+  - first:
+      213: 6000138726463475015
+    second: Station symbols_17
+  - first:
+      213: -110325482920972201
+    second: Station symbols_18
+  - first:
+      213: -8433451979984341415
+    second: Station symbols_19
+  - first:
+      213: -4234178002797234217
+    second: Station symbols_20
+  - first:
+      213: 3209892783610539614
+    second: Station symbols_21
+  - first:
+      213: -3895691876479581436
+    second: Station symbols_22
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +101,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -89,7 +149,427 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Station symbols_0
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1682
+        width: 257
+        height: 354
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f6f27c33051d5b30800000000000000
+      internalID: 4277598324715091699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Station symbols_1
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 1703
+        width: 312
+        height: 335
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d05300fc70eeb6780800000000000000
+      internalID: -8688589338776161011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Station symbols_2
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 1698
+        width: 249
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e904474865d6d700800000000000000
+      internalID: 564873447130532326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Station symbols_3
+      rect:
+        serializedVersion: 2
+        x: 1396
+        y: 1733
+        width: 373
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3e1c34f8c7d03470800000000000000
+      internalID: 8372428965372763706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Station symbols_5
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 1283
+        width: 372
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d8285458db389b50800000000000000
+      internalID: 6600091054225500372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Station symbols_6
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 1232
+        width: 370
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 743e23687b76e93b0800000000000000
+      internalID: -5503847656672009401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Station symbols_7
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 1265
+        width: 313
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fef1a1d680aaf090800000000000000
+      internalID: -7999905287167148301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Station symbols_8
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 1263
+        width: 329
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98f7e12cbf81667d0800000000000000
+      internalID: -2925623438357921911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Station symbols_10
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 866
+        width: 278
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dbd91e2613c00670800000000000000
+      internalID: 8503010596505639891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Station symbols_11
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 821
+        width: 269
+        height: 339
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5c4afe811924c970800000000000000
+      internalID: 8774183129414519900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Station symbols_12
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 837
+        width: 224
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccb30968c960988d0800000000000000
+      internalID: -2843734420365493300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Station symbols_13
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 862
+        width: 221
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 948dcf82e44eefbf0800000000000000
+      internalID: -288542301758891959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Station symbols_15
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 430
+        width: 277
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8448851d718d3e9d0800000000000000
+      internalID: -2746113750957783992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Station symbols_16
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 438
+        width: 191
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de5722bf67ccfdac0800000000000000
+      internalID: -3828116346850085395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Station symbols_17
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 484
+        width: 211
+        height: 289
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74d8be1b166c44350800000000000000
+      internalID: 6000138726463475015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Station symbols_18
+      rect:
+        serializedVersion: 2
+        x: 1480
+        y: 456
+        width: 360
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75072dcce8b087ef0800000000000000
+      internalID: -110325482920972201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Station symbols_19
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 41
+        width: 272
+        height: 359
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 956f7b64b1c56fa80800000000000000
+      internalID: -8433451979984341415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Station symbols_20
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 41
+        width: 335
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d77f734a8d2d35c0800000000000000
+      internalID: -4234178002797234217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Station symbols_21
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 42
+        width: 273
+        height: 343
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5e223eda74db8c20800000000000000
+      internalID: 3209892783610539614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Station symbols_22
+      rect:
+        serializedVersion: 2
+        x: 1572
+        y: 30
+        width: 307
+        height: 367
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4034f0ce0e8bfe9c0800000000000000
+      internalID: -3895691876479581436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
