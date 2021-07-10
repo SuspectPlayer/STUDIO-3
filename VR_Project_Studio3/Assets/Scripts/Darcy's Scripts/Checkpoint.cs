@@ -11,11 +11,11 @@ public class Checkpoint : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.G))
         {
             Debug.Log("saved");
-            SaveCheckpoint();
+            SaveCheckpointPosition();
         }
     }
 
-    public void SaveCheckpoint() //making the last checkpoint position equal to this checkpoint's position
+    public void SaveCheckpointPosition() //making the last checkpoint position equal to this checkpoint's position
     {
        GetComponentInParent<CheckpointControl>().lastCheckpointPos = transform.position;
     }

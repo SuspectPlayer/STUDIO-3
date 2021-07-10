@@ -13,20 +13,24 @@ public class CheckpointControl : MonoBehaviour
     [SerializeField]
     GameObject vrPlayer;
 
+    [HideInInspector]
     public Vector3 lastCheckpointPos;
+
+    GameObject[] turnedOnLights = new GameObject[2];
 
     PhotonView photonView;
 
     void Awake()
     {
-        if (instance == null) //need to keep checkpoint control in between scene loads
+        photonView = GetComponent<PhotonView>();
+        if(instance == null)
         {
             instance = this;
             DontDestroyOnLoad(instance);
         }
         else
         {
-            Destroy(gameObject); //making sure there arent multiple checkpoint controller
+            Destroy(gameObject);
         }
     }
 
@@ -36,19 +40,44 @@ public class CheckpointControl : MonoBehaviour
         {
             vrPlayer = GameObject.Find("First Person Controller(Clone)");
         }
+        if(photonView == null)
+        {
+            Awake();
+        }
     }
 
     public void LoadCheckpoint()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        vrPlayer.transform.position = lastCheckpointPos;
-        //photonView.RPC("RPC_LoadCheckpoint", RpcTarget.All, lastCheckpointPos);
+        SaveLights();
+        photonView.RPC("RPC_LoadCheckpoint", RpcTarget.All, lastCheckpointPos, turnedOnLights);
+    }
+
+    void SaveLights()
+    {
+        GameObject[] lights = GameObject.Find("Lights").GetComponent<LightCounter>().lights;
+        int y = 0;
+        for (int i = 0; i < lights.Length; i++)
+        {
+            y++;
+            if (lights[i].GetComponent<Light>().enabled)
+            {
+                for(int x = 0; x < 2; x++)
+                {
+                    if(turnedOnLights[x] == null)
+                    {
+                        turnedOnLights[x] = lights[i];
+                        break;
+                    }
+                }
+            }
+            Debug.Log(y.ToString());
+        }
     }
 
     [PunRPC]
-    void RPC_LoadCheckpoint(Vector3 lastCheckpointPos)
+    void RPC_LoadCheckpoint(Vector3 lastCheckpointPos, GameObject[] turnedOnLights)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         vrPlayer.transform.position = lastCheckpointPos;
+        Debug.Log("loaded");
     }
 }
