@@ -22,7 +22,7 @@ public class VRKeyboardManager : MonoBehaviour
 
 	public Vector3 relativePosition = new Vector3(0,1,2);
 
-	public TMP_InputField playerNameInputField;
+	public TMP_InputField textInputField;
 
 	public GameObject leftMarret;
 	public GameObject rightMarret;
@@ -31,13 +31,15 @@ public class VRKeyboardManager : MonoBehaviour
 	public GameObject leftBaseController; 
 	public GameObject rightBaseController;
 
-
 	/// <summary>
 	/// Show the keyboard with a custom input message. Attaching events dynamically,
 	/// but you can also use the inspector.
 	/// </summary>
 	public void EnableVRKeyboard()
-	{		
+	{
+		Debug.Log("Called");
+		textInputField = EventSystem.current.currentSelectedGameObject.GetComponent<TMP_InputField>();
+
 		keyboard.Enable();
 		keyboard.SetPlaceholderMessage("What should we call you?");
 
@@ -114,7 +116,7 @@ public class VRKeyboardManager : MonoBehaviour
 		if (keyboard.disabled)
 		{
 			return;
-		}		
+		}
 	}
 
 	/// <summary>
@@ -123,8 +125,8 @@ public class VRKeyboardManager : MonoBehaviour
 	public void HandleUpdate(string text)
 	{
 		keyboard.HideValidationMessage();
-		playerNameInputField.text = text;
-		playerNameInputField.caretPosition = playerNameInputField.text.Length;
+		textInputField.text = text;
+		textInputField.caretPosition = textInputField.text.Length;
 
 	}
 
