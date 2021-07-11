@@ -50,8 +50,7 @@ public class DoorControl : MonoBehaviour
         {
             doorTwoLocked = false;
         }
-        //GetComponent<PuzzleManager>().DeactivatePuzzle();
-        if(door.name != "Door 3")
+        if (door.name != "Door 3")
         {
             GetComponent<PuzzleManager>().whichPuzzle++;
             GetComponent<PuzzleManager>().ActivatePuzzle(); //activating the next puzzle, only if it isnt the last door

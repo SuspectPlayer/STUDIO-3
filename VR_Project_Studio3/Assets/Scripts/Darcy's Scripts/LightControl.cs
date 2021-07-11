@@ -13,9 +13,6 @@ public class LightControl : MonoBehaviour
 
     Color alphaControl = Color.white;
 
-    [SerializeField]
-    Material lightOn, lightOff;
-
     PhotonView photonView;
 
     void Awake()
@@ -49,10 +46,6 @@ public class LightControl : MonoBehaviour
     void RPC_TurnLightOn() 
     {
         GetComponent<Light>().enabled = true;
-        //if (gameObject.tag == "Inside") //if the light is an inside one, it needs to have its mesh changed
-        //{
-        //    GetComponentInChildren<MeshRenderer>().materials[1] = lightOn;
-        //}
         GetComponentInParent<LightCounter>().CountUp();
         AlphaUp();
     }
@@ -61,10 +54,6 @@ public class LightControl : MonoBehaviour
     void RPC_TurnLightOff()
     {
         GetComponent<Light>().enabled = false; 
-        //if (gameObject.tag == "Inside") //if the light is an inside one, it needs to have its mesh changed
-        //{
-        //    GetComponentInChildren<MeshRenderer>().materials[1] = lightOff;
-        //}
         GetComponentInParent<LightCounter>().CountDown();
         AlphaDown();
     }
