@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{31700191-60ff-496c-ac32-7b7f5d7df5b9}">
+		<property name="assetPath">
+			<value>Water Running River.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>31.716979166666668</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{008270d6-d1a0-4dab-bd8f-c1b9e74ab876}</destination>
+		</relationship>
+	</object>
+</objects>
