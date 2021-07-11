@@ -41,7 +41,7 @@ public class RandomiseSymbols : MonoBehaviour
     {
         for (int i = 0; i < 4; i++) //applying the random numbers into the array
         {
-            randomNumber = Random.Range(0, 16);
+            randomNumber = Random.Range(0, 16 /*20*/);
             storedRandomNumbers[i] = randomNumber;
         }
         CheckNumbers();
@@ -96,7 +96,7 @@ public class RandomiseSymbols : MonoBehaviour
 
         if(name == "Puzzle 3") //for the third puzzle, also needs to apply the symbols to the intelligence's map
         {
-            for (int x = 0; x < 3; x++) //but only the first 3
+            for (int x = 0; x < 4; x++) 
             {
                 symbolsOnMap[x].GetComponentInChildren<Image>().sprite = sprites[storedNumbers[x]];
             }
