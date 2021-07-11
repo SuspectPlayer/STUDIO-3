@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class VRControllerSettings : MonoBehaviour
 {
+    VRRig vRRig;
     GameObject vrControllerObject;
+    public Transform bodySize;
+    public Transform bodyCollider;
+    public Transform nogginBone;
+    [Space(10)]
     [Header("Eye Position Transforms")]
     //Player Camera Transforms
     public Transform playerNeckAxle;
@@ -13,8 +18,8 @@ public class VRControllerSettings : MonoBehaviour
     public Transform playerRightEyeCamera;
 
     //Visual Adjustment Variables
-    [Header("Eye Position Adjustors")]
     [Space(10)]
+    [Header("Eye Position Adjustors")]
     [Range(0, 1)] public float eyeDistInterpolator;
 
     [Space(7)]
@@ -23,27 +28,34 @@ public class VRControllerSettings : MonoBehaviour
     [SerializeField] float dualEyeXPresentFromCentre;
 
     //Player Height Variables
-    [Header("Player Height Adjustment (DOES NOTHING PRESENTLY)")]
+    [Header("Player Height Adjustment")]
     [Space(10)]
-    public float minHeight; // - Minimum allowed height
-    public float maxHeight; // - Maximum allowed height
-    public float metreScaleRatio; // - Modifier to ensure resulting height change is accurate to the world scale
-
-    [SerializeField] float currentHeight; // - Current height
+    public float defaultHeight;
+    public float minBodyHeight; // - Minimum allowed height of actual body
+    public float maxBodyHeight; // - Maximum allowed height of actual body
+    public float intendedBodyHeight;
+    [SerializeField] float bodyScale;
+    public float scaleMultiplier = 1;
     [Range(0,1)] public float heightInterpolator; // - Slider to scale height between minimum and maximum heights
+    [SerializeField] Vector3 scaledOffset;
+    public bool tooFar;
+    public float differentialRange;
+    [SerializeField] bool cameraScaleOffset;
+
 
     // Start is called before the first frame update
     void Start()
     {
         //Probably should get relative height from somewhere, given the controller is instantiated
-
+        vrControllerObject = gameObject;
+        vRRig = GetComponentInChildren<VRRig>();
     }
 
     // Update is called once per frame
     void Update()
     {
         //Height Changes
-        currentHeight = Mathf.Lerp(minHeight, maxHeight, heightInterpolator);
+        SetHeight();
     }
 
     /// <summary>
@@ -52,7 +64,41 @@ public class VRControllerSettings : MonoBehaviour
     /// </summary>
     public void SetHeight()
     {
+        intendedBodyHeight = Mathf.Lerp(minBodyHeight, maxBodyHeight, heightInterpolator);
+        
+        float headHeight = playerNeckAxle.localPosition.y;
+        float scale = headHeight/ defaultHeight;
+        bodyScale = scale * scaleMultiplier;
+        Vector3 scoil = Vector3.one * bodyScale;
+        if (headHeight > 0.2f)
+        {
+            bodySize.localScale = scoil;
+            bodyCollider.localScale = scoil;
+        }
+        Offsetter();
+    }
 
+    void Offsetter()
+    {
+        scaledOffset = playerNeckAxle.position - nogginBone.position;
+
+        bool xFloat = TooFarFloat(scaledOffset.x, differentialRange);
+        bool yFloat = TooFarFloat(scaledOffset.y, differentialRange);
+        bool zFloat = TooFarFloat(scaledOffset.z, differentialRange);
+
+        tooFar = xFloat || yFloat || zFloat;
+
+        if (tooFar && cameraScaleOffset)
+        {
+            vRRig.head.DynamicTrackingOffset(scaledOffset, xFloat, yFloat, zFloat);
+        }
+    }
+
+    bool TooFarFloat(float offset, float diff)
+    {
+        bool floaty = Mathf.Abs(offset) > diff;
+
+        return floaty;
     }
 
     /// <summary>

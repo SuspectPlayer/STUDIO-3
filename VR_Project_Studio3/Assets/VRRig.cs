@@ -14,6 +14,16 @@ public class VRMap
         rigTarget.position = vrTarget.TransformPoint(trackingPositionOffset);
         rigTarget.rotation = vrTarget.rotation * Quaternion.Euler(trackingRotationOffset);
     }
+
+    public void DynamicTrackingOffset(Vector3 trackingDifference, bool x, bool y, bool z)
+    {
+        if(x) trackingPositionOffset.x = (Mathf.Round(trackingDifference.x * 100.0f) * 0.01f);
+        if(y) trackingPositionOffset.y = (Mathf.Round(trackingDifference.y * 100.0f) * 0.01f);
+        if(z) trackingPositionOffset.z = (Mathf.Round(trackingDifference.z * 100.0f) * 0.01f);
+
+
+
+    }
 }
 public class VRRig : MonoBehaviour
 {
@@ -44,4 +54,6 @@ public class VRRig : MonoBehaviour
         leftHand.Map();
         rightHand.Map();
     }
+
+    
 }
