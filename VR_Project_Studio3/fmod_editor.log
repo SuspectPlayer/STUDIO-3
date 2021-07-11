@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 00000111E7EF4BE8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000001C398F8C818 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,5 +16,158 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSound                     : filename = Assets/Audio/F-mod testing/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001C39932DBA8 : node = 000001C2C53A0D60
+[LOG] SystemI::createSound                     : add node to async list : head = 000001C38D38CA78.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001C39932DBA8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Audio/F-mod testing/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 15451296
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 39200
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001C2C53A0E70
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 2000
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Free Sound Effect - Kraken', format=5, channels=2, frequency=48000, lengthbytes=313792, lengthpcm=2481423, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.764587.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001C39932DBA8
+[LOG] SystemI::createSound                     : filename = Assets/Audio/F-mod testing/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001C39932E778 : node = 000001C2C53A0360
+[LOG] SystemI::createSound                     : add node to async list : head = 000001C38D38CA78.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001C39932E778
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Audio/F-mod testing/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 15451296
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 39200
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001C2C53A0470
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Water Running River', format=5, channels=2, frequency=48000, lengthbytes=387456, lengthpcm=1522415, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.503474.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001C39932E778
+[LOG] SoundI::release                          : Water Running River (000001C2AE486958)
+[LOG] SoundI::release                          :     Water Running River (000001C38D377138)
+[LOG] SoundI::release                          :     Water Running River (000001C2A8326AA8)
+[LOG] SoundI::release                          : Free Sound Effect - Kraken (000001C39932DBA8)
+[LOG] SoundI::release                          :     Free Sound Effect - Kraken (000001C2C84D4CA8)
+[LOG] SoundI::release                          :     Free Sound Effect - Kraken (000001C2C42D21C8)
+[LOG] SystemI::createSound                     : filename = Assets/Audio/F-mod testing/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001C2C65E00B8 : node = 000001C39ED387D0
+[LOG] SystemI::createSound                     : add node to async list : head = 000001C38D38CA78.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001C2C65E00B8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Audio/F-mod testing/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 15451296
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 39200
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001C39ED388E0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 2000
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Free Sound Effect - Kraken', format=5, channels=2, frequency=48000, lengthbytes=313792, lengthpcm=2481423, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.764587.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001C2C65E00B8
+[LOG] SystemI::createSound                     : filename = Assets/Audio/F-mod testing/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001C3998DD008 : node = 000001C399F93DE0
+[LOG] SystemI::createSound                     : add node to async list : head = 000001C38D38CA78.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001C3998DD008
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Audio/F-mod testing/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 15451296
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 39200
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001C399F93EF0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Water Running River', format=5, channels=2, frequency=48000, lengthbytes=387456, lengthpcm=1522415, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.503474.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001C3998DD008
+[LOG] SoundI::release                          : Water Running River (000001C39932E778)
+[LOG] SoundI::release                          :     Water Running River (000001C38D378E78)
+[LOG] SoundI::release                          :     Water Running River (000001C2A83285A8)
+[LOG] SystemI::createSound                     : filename = Assets/Audio/F-mod testing/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001C2C65DE408 : node = 000001C39ED36250
+[LOG] SystemI::createSound                     : add node to async list : head = 000001C38D38CA78.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001C2C65DE408
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Audio/F-mod testing/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 15451296
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 39200
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001C39ED36360
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Water Running River', format=5, channels=2, frequency=48000, lengthbytes=387456, lengthpcm=1522415, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.503474.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001C2C65DE408
+[LOG] SoundI::release                          : Water Running River (000001C3998DD008)
+[LOG] SoundI::release                          :     Water Running River (000001C2C6324F18)
+[LOG] SoundI::release                          :     Water Running River (000001C440FCC908)
+[LOG] SoundI::release                          : Free Sound Effect - Kraken (000001C2C65E00B8)
+[LOG] SoundI::release                          :     Free Sound Effect - Kraken (000001C399480EF8)
+[LOG] SoundI::release                          :     Free Sound Effect - Kraken (000001C2C397CC68)
+[LOG] SystemI::createSound                     : filename = Assets/Audio/F-mod testing/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001C2C65DE5B8 : node = 000001C39ED37A10
+[LOG] SystemI::createSound                     : add node to async list : head = 000001C38D38CA78.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001C2C65DE5B8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Audio/F-mod testing/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 15451296
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 39200
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001C39ED37B20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 2000
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Free Sound Effect - Kraken', format=5, channels=2, frequency=48000, lengthbytes=313792, lengthpcm=2481423, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.764587.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001C2C65DE5B8
+[LOG] SystemI::createSound                     : filename = Assets/Audio/F-mod testing/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001C2AE487528 : node = 000001C2AE9F7350
+[LOG] SystemI::createSound                     : add node to async list : head = 000001C38D38CA78.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001C2AE487528
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Audio/F-mod testing/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 15451296
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 39200
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001C2AE9F7460
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Water Running River', format=5, channels=2, frequency=48000, lengthbytes=387456, lengthpcm=1522415, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.503474.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001C2AE487528
+[LOG] SoundI::release                          : Water Running River (000001C2C65DE408)
+[LOG] SoundI::release                          :     Water Running River (000001C2C84D4CA8)
+[LOG] SoundI::release                          :     Water Running River (000001C2C42D6F68)
+[LOG] SoundI::release                          : Thalassorific_-_Menu_Ambience_-_Loop_Proof (1) (000001C2AE485F38)
+[LOG] SoundI::release                          :     Thalassorific_-_Menu_Ambience_-_Loop_Proof (1) (000001C38D377478)
+[LOG] SoundI::release                          :     Thalassorific_-_Menu_Ambience_-_Loop_Proof (1) (000001C2A83299E8)
+[LOG] SoundI::release                          : Free Sound Effect - Kraken (000001C2C65DE5B8)
+[LOG] SoundI::release                          :     Free Sound Effect - Kraken (000001C398E72828)
+[LOG] SoundI::release                          :     Free Sound Effect - Kraken (000001C39932D9F8)
+[LOG] SoundI::release                          : Underwater Amb 2 (000001C2AE486448)
+[LOG] SoundI::release                          :     Underwater Amb 2 (000001C38D378178)
+[LOG] SoundI::release                          :     Underwater Amb 2 (000001C2A8328908)
+[LOG] SoundI::release                          : Water Running River (000001C2AE487528)
+[LOG] SoundI::release                          :     Water Running River (000001C2C84D4628)
+[LOG] SoundI::release                          :     Water Running River (000001C2C42D4028)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.

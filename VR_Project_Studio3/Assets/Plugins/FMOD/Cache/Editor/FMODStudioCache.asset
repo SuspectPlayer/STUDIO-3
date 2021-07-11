@@ -15,11 +15,11 @@ MonoBehaviour:
   Path: Assets/Audio/F-mod testing/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637612746989851742
+  lastModified: 637616229041008290
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1706
+    Value: 1908
   Exists: 1
 --- !u!114 &-8664337897837326134
 MonoBehaviour:
@@ -67,6 +67,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 73728
+--- !u!114 &-6374787425215359925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Menu/Menu Draft - Placeholder
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Menu/Menu Draft - Placeholder
+  guid: 478812fdd1e2aa45a967eb8c4854955d
+  Banks:
+  - {fileID: 3180157659838378319}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 246816
 --- !u!114 &-6040332381662694591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +205,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 24048
+--- !u!114 &-2892357414443939497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Running Water
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Running Water
+  guid: 94b404babd918a4f90691ca83d590030
+  Banks:
+  - {fileID: 3180157659838378319}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 31716
 --- !u!114 &-2366911174409829596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,6 +251,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 80040
+--- !u!114 &-1384156293963686759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience/Water Amb
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience/Water Amb
+  guid: d8015de22fa4c74cb865881eaa9ec450
+  Banks:
+  - {fileID: 3180157659838378319}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 156336
 --- !u!114 &-182045356242400887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,12 +357,16 @@ MonoBehaviour:
   - {fileID: 8771285074996768752}
   - {fileID: 6964743683436071954}
   - {fileID: -3551192261395683910}
+  - {fileID: -1384156293963686759}
+  - {fileID: -2892357414443939497}
+  - {fileID: -6374787425215359925}
+  - {fileID: 7941639642138252707}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3180157659838378319}
   StringsBanks:
   - {fileID: -8915405571162439283}
-  stringsBankWriteTime: 637612746989851742
+  stringsBankWriteTime: 637616229041008290
   cacheVersion: 6
 --- !u!114 &624870027013586835
 MonoBehaviour:
@@ -400,7 +473,7 @@ MonoBehaviour:
   Path: Assets/Audio/F-mod testing/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637612746989821828
+  lastModified: 637616229040978366
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -563,6 +636,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 70728
+--- !u!114 &7941639642138252707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D World Items/Creatures/Kraken
+  m_EditorClassIdentifier: 
+  Path: event:/3D World Items/Creatures/Kraken
+  guid: 5089331fe421b04eb82bf58e5ac4fb76
+  Banks:
+  - {fileID: 3180157659838378319}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 54000
 --- !u!114 &8444959854747931082
 MonoBehaviour:
   m_ObjectHideFlags: 0
