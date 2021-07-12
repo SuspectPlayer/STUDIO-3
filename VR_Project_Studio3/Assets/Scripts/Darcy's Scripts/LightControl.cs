@@ -11,10 +11,13 @@ public class LightControl : MonoBehaviour
     [SerializeField]
     Button assignedButton;
 
-    Color alphaControl = Color.white;
+    //Color alphaControl = Color.white;
 
     [SerializeField]
-    Material lightOn, lightOff;
+    Material lightOnMat;
+
+    [SerializeField]
+    Sprite lightOn, lightOff;
 
     PhotonView photonView;
 
@@ -27,20 +30,26 @@ public class LightControl : MonoBehaviour
     {
         if(GetComponentInParent<LightCounter>().lightCount == 2) //limited to 2 lights on at any time.
         {
-            if (assignedButton.image.color.a == 1) //checks for the alpha first, if the alpha is full it means the light is on
+            if (assignedButton.image.sprite == lightOn) //checks for the sprite first, to see if its on or not.
             {
-                photonView.RPC("RPC_TurnLightOff", RpcTarget.All);
+                GetComponentInParent<LightCounter>().CountDown();
+                SpriteOff();
+                //photonView.RPC("RPC_TurnLightOff", RpcTarget.All);
             }
         }
         else if (GetComponentInParent<LightCounter>().lightCount < 2) 
         {
-            if(assignedButton.image.color.a == 1)
+            if(assignedButton.image.sprite == lightOn)
             {
-                photonView.RPC("RPC_TurnLightOff", RpcTarget.All);
+                GetComponentInParent<LightCounter>().CountDown();
+                SpriteOff();
+                //photonView.RPC("RPC_TurnLightOff", RpcTarget.All);
             }
             else 
             {
-                photonView.RPC("RPC_TurnLightOn", RpcTarget.All);
+                GetComponentInParent<LightCounter>().CountUp();
+                SpriteOn();
+                //photonView.RPC("RPC_TurnLightOn", RpcTarget.All);
             }
         }
     }
@@ -54,7 +63,7 @@ public class LightControl : MonoBehaviour
         //    GetComponentInChildren<MeshRenderer>().materials[1] = lightOn;
         //}
         GetComponentInParent<LightCounter>().CountUp();
-        AlphaUp();
+        SpriteOn();
     }
 
     [PunRPC]
@@ -66,17 +75,17 @@ public class LightControl : MonoBehaviour
         //    GetComponentInChildren<MeshRenderer>().materials[1] = lightOff;
         //}
         GetComponentInParent<LightCounter>().CountDown();
-        AlphaDown();
+        SpriteOff();
     }
 
-    void AlphaUp() //controls the alpha for feedback to the pc player
+    void SpriteOn() //controls the sprites for feedback to the pc player
     {
-        alphaControl.a = 1f;
-        assignedButton.image.color = alphaControl;
+        assignedButton.image.sprite = lightOn;
+        assignedButton.image.material = lightOnMat;
     }
-    void AlphaDown()
+    void SpriteOff()
     {
-        alphaControl.a = 0.5f;
-        assignedButton.image.color = alphaControl;
+        assignedButton.image.sprite = lightOff;
+        assignedButton.image.material = null;
     }
 }
