@@ -54,24 +54,24 @@ public class CheckpointControl : MonoBehaviour
 
     void SaveLights()
     {
-        GameObject[] lights = GameObject.Find("Lights").GetComponent<LightCounter>().lights;
+        //GameObject[] lights = GameObject.Find("Lights").GetComponent<LightCounter>().lights;
         int y = 0;
-        for (int i = 0; i < lights.Length; i++)
-        {
-            y++;
-            if (lights[i].GetComponent<Light>().enabled)
-            {
-                for(int x = 0; x < 2; x++)
-                {
-                    if(turnedOnLights[x] == null)
-                    {
-                        turnedOnLights[x] = lights[i];
-                        break;
-                    }
-                }
-            }
-            Debug.Log(y.ToString());
-        }
+        //for (int i = 0; i < lights.Length; i++)
+        //{
+        //    y++;
+        //    if (lights[i].GetComponent<Light>().enabled)
+        //    {
+        //        for(int x = 0; x < 2; x++)
+        //        {
+        //            if(turnedOnLights[x] == null)
+        //            {
+        //                turnedOnLights[x] = lights[i];
+        //                break;
+        //            }
+        //        }
+        //    }
+        //    Debug.Log(y.ToString());
+        //}
     }
 
     [PunRPC]
