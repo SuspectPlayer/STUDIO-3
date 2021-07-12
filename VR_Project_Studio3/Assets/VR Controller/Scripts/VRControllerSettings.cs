@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class VRControllerSettings : MonoBehaviour
 {
+    public bool heightScaleInUpdate = false;
     VRRig vRRig;
+    VRFootIK vRFoot;
     GameObject vrControllerObject;
     public Transform bodySize;
     public Transform bodyCollider;
-    public Transform nogginBone;
     [Space(10)]
     [Header("Eye Position Transforms")]
-    //Player Camera Transforms
+    //Player Head Transform
     public Transform playerNeckAxle;
-    public Transform playerCentreEyeCamera;
-    public Transform playerLeftEyeCamera;
-    public Transform playerRightEyeCamera;
 
     //Visual Adjustment Variables
     [Space(10)]
@@ -36,11 +34,8 @@ public class VRControllerSettings : MonoBehaviour
     public float intendedBodyHeight;
     [SerializeField] float bodyScale;
     public float scaleMultiplier = 1;
+    Vector3 baseFootOffset;
     [Range(0,1)] public float heightInterpolator; // - Slider to scale height between minimum and maximum heights
-    [SerializeField] Vector3 scaledOffset;
-    public bool tooFar;
-    public float differentialRange;
-    [SerializeField] bool cameraScaleOffset;
 
 
     // Start is called before the first frame update
@@ -49,13 +44,18 @@ public class VRControllerSettings : MonoBehaviour
         //Probably should get relative height from somewhere, given the controller is instantiated
         vrControllerObject = gameObject;
         vRRig = GetComponentInChildren<VRRig>();
+        vRFoot = GetComponentInChildren<VRFootIK>();
+        baseFootOffset = vRFoot.footOffset;
     }
 
     // Update is called once per frame
     void Update()
     {
         //Height Changes
-        SetHeight();
+        if (heightScaleInUpdate)
+        {
+            SetHeight();
+        }
     }
 
     /// <summary>
@@ -74,31 +74,9 @@ public class VRControllerSettings : MonoBehaviour
         {
             bodySize.localScale = scoil;
             bodyCollider.localScale = scoil;
+            vRRig.currentHeadBodyOffset = vRRig.headBodyOffset * bodyScale;
+            vRFoot.footOffset = baseFootOffset * bodyScale;
         }
-        Offsetter();
-    }
-
-    void Offsetter()
-    {
-        scaledOffset = playerNeckAxle.position - nogginBone.position;
-
-        bool xFloat = TooFarFloat(scaledOffset.x, differentialRange);
-        bool yFloat = TooFarFloat(scaledOffset.y, differentialRange);
-        bool zFloat = TooFarFloat(scaledOffset.z, differentialRange);
-
-        tooFar = xFloat || yFloat || zFloat;
-
-        if (tooFar && cameraScaleOffset)
-        {
-            vRRig.head.DynamicTrackingOffset(scaledOffset, xFloat, yFloat, zFloat);
-        }
-    }
-
-    bool TooFarFloat(float offset, float diff)
-    {
-        bool floaty = Mathf.Abs(offset) > diff;
-
-        return floaty;
     }
 
     /// <summary>
