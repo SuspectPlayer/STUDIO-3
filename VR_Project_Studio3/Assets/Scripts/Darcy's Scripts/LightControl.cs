@@ -11,10 +11,11 @@ public class LightControl : MonoBehaviour
     [SerializeField]
     Button assignedButton;
 
-    Color alphaControl = Color.white;
+    [SerializeField]
+    Material lightOnMat, defaultMat;
 
     [SerializeField]
-    Material lightOn, lightOff;
+    Sprite lightOn, lightOff;
 
     PhotonView photonView;
 
@@ -25,16 +26,16 @@ public class LightControl : MonoBehaviour
 
     public void LightParameterCheck() //checks all the parameters to decide which method to use
     {
-        if(GetComponentInParent<LightCounter>().lightCount == 2) //limited to 2 lights on at any time.
+        if(GetComponentInParent<LightManager>().lightCount == 2) //limited to 2 lights on at any time.
         {
-            if (assignedButton.image.color.a == 1) //checks for the alpha first, if the alpha is full it means the light is on
+            if (assignedButton.image.sprite == lightOn) //checks for the sprite first, to see if its on or not.
             {
                 photonView.RPC("RPC_TurnLightOff", RpcTarget.All);
             }
         }
-        else if (GetComponentInParent<LightCounter>().lightCount < 2) 
+        else if (GetComponentInParent<LightManager>().lightCount < 2) 
         {
-            if(assignedButton.image.color.a == 1)
+            if(assignedButton.image.sprite == lightOn)
             {
                 photonView.RPC("RPC_TurnLightOff", RpcTarget.All);
             }
@@ -49,34 +50,57 @@ public class LightControl : MonoBehaviour
     void RPC_TurnLightOn() 
     {
         GetComponent<Light>().enabled = true;
-        //if (gameObject.tag == "Inside") //if the light is an inside one, it needs to have its mesh changed
-        //{
-        //    GetComponentInChildren<MeshRenderer>().materials[1] = lightOn;
-        //}
-        GetComponentInParent<LightCounter>().CountUp();
-        AlphaUp();
+        GetComponentInParent<LightManager>().CountUp();
+        FeedbackLightOn();
+        SpriteOn();
     }
 
     [PunRPC]
     void RPC_TurnLightOff()
     {
         GetComponent<Light>().enabled = false; 
-        //if (gameObject.tag == "Inside") //if the light is an inside one, it needs to have its mesh changed
-        //{
-        //    GetComponentInChildren<MeshRenderer>().materials[1] = lightOff;
-        //}
-        GetComponentInParent<LightCounter>().CountDown();
-        AlphaDown();
+        GetComponentInParent<LightManager>().CountDown();
+        FeedbackLightOff();
+        SpriteOff();
     }
 
-    void AlphaUp() //controls the alpha for feedback to the pc player
+    void FeedbackLightOn()
     {
-        alphaControl.a = 1f;
-        assignedButton.image.color = alphaControl;
+        for (int i = 0; i < 2; i++) //controlling the lights that appear on the top right of the map for feedback to the player
+        {
+            if (GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<SpriteRenderer>().sprite == lightOn)
+            {
+                continue;
+            }
+            else
+            {
+                GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<SpriteRenderer>().sprite = lightOn;
+                GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<SpriteRenderer>().material = lightOnMat;
+                break;
+            }
+        }
     }
-    void AlphaDown()
+    public void FeedbackLightOff()
     {
-        alphaControl.a = 0.5f;
-        assignedButton.image.color = alphaControl;
+        for (int i = 1; i > -1; i--) //controlling the lights that appear on the top right of the map for feedback to the player
+        {
+            if (GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<SpriteRenderer>().sprite == lightOn)
+            {
+                GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<SpriteRenderer>().sprite = lightOff;
+                GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<SpriteRenderer>().material = defaultMat;
+                break;
+            }
+        }
+    }
+
+    void SpriteOn() //controls the sprites for feedback to the pc player
+    {
+        assignedButton.image.sprite = lightOn;
+        assignedButton.image.material = lightOnMat;
+    }
+    public void SpriteOff()
+    {
+        assignedButton.image.sprite = lightOff;
+        assignedButton.image.material = defaultMat;
     }
 }

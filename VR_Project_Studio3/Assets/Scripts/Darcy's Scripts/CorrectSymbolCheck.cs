@@ -13,6 +13,7 @@ public class CorrectSymbolCheck : MonoBehaviour
     [SerializeField]
     GameObject dashboard, door;
 
+    [HideInInspector]
     public Sprite temp;
 
     Sprite[] clickedSymbols = new Sprite[4];
@@ -20,8 +21,9 @@ public class CorrectSymbolCheck : MonoBehaviour
     [SerializeField]
     Sprite neutral;
 
+    [HideInInspector]
     public int correctSymbolCount = 0;
-    int incorrectSymbolCount = 0, rightOrderCount = 0;
+    int incorrectSymbolCount = 0, rightOrderCount = 0, checkpointRightOrderCount = 0;
 
     void Start() //this is only here so i can turn on and off the script component
     {
@@ -100,6 +102,29 @@ public class CorrectSymbolCheck : MonoBehaviour
                                 }
                                 break;
                             }
+                    }
+                }
+                else if(correctSymbolCount == 3 && name == "HandScanner 3") //if the third symbol is reached and the object is handscanner 3, it means the checkpoint needs to be saved.
+                {
+                    for (int x = 0; x < 3; x++) //checking that they are in the right order before saving checkpoint and starting skitter event
+                    {
+                        if (clickedSymbols[i] == symbols[i].GetComponentInChildren<Image>().sprite)
+                        {
+                            Debug.Log("skitter right order");
+                            checkpointRightOrderCount++;
+                        }
+                        else
+                        {
+                            Debug.Log("skitter wrong order");
+                            correctSymbolCount = 0;
+                            break;
+                        }
+                    }
+
+                    if(checkpointRightOrderCount == 3) //all are in correct order
+                    {
+                        GameObject.Find("Checkpoint 1").GetComponent<Checkpoint>().SaveCheckpointPosition(); //saving
+                        GameObject.Find("Trigger").GetComponent<SkitterEventP3Collisions>().canTrigger = true; //turning on the trigger for when the player steps back into the other room to start the skitter event
                     }
                 }
             }
