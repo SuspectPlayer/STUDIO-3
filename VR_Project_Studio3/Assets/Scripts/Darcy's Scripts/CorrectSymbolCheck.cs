@@ -124,7 +124,7 @@ public class CorrectSymbolCheck : MonoBehaviour
                     if(checkpointRightOrderCount == 3) //all are in correct order
                     {
                         GameObject.Find("Checkpoint 1").GetComponent<Checkpoint>().SaveCheckpointPosition(); //saving
-                        GameObject.Find("Trigger").GetComponent<ThirdPuzzleCollisionDetection>().canTrigger = true; //turning on the trigger for when the player steps back into the other room to start the skitter event
+                        GameObject.Find("Trigger").GetComponent<SkitterEventP3Collisions>().canTrigger = true; //turning on the trigger for when the player steps back into the other room to start the skitter event
                     }
                 }
             }
