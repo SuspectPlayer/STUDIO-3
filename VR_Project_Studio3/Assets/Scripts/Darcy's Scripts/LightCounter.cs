@@ -9,6 +9,8 @@ public class LightCounter : MonoBehaviour
 {
     public int lightCount = 0;
 
+    public GameObject[] lights;
+
     public void CountUp()
     {
         lightCount++;

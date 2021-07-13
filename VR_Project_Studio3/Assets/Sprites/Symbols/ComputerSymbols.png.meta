@@ -1,0 +1,588 @@
+fileFormatVersion: 2
+guid: 7514e2d36ccfb574fba6970fa38db801
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2139317084422148838
+    second: ComputerSymbols_0
+  - first:
+      213: 8431963449172372281
+    second: ComputerSymbols_1
+  - first:
+      213: -2566646596363937180
+    second: ComputerSymbols_2
+  - first:
+      213: 5775878041920460173
+    second: ComputerSymbols_3
+  - first:
+      213: 6356836858440145169
+    second: ComputerSymbols_5
+  - first:
+      213: 3074614537890038982
+    second: ComputerSymbols_6
+  - first:
+      213: -7791853113548164422
+    second: ComputerSymbols_7
+  - first:
+      213: 6382962657560243827
+    second: ComputerSymbols_8
+  - first:
+      213: -2404923652463576836
+    second: ComputerSymbols_10
+  - first:
+      213: 1802818869526948014
+    second: ComputerSymbols_11
+  - first:
+      213: -8329451531094794618
+    second: ComputerSymbols_12
+  - first:
+      213: 4350781761042909307
+    second: ComputerSymbols_13
+  - first:
+      213: -6995914194368283616
+    second: ComputerSymbols_15
+  - first:
+      213: 3582401627628554806
+    second: ComputerSymbols_16
+  - first:
+      213: -1506462947591696082
+    second: ComputerSymbols_18
+  - first:
+      213: -7396743042907576363
+    second: ComputerSymbols_19
+  - first:
+      213: 34529040314538313
+    second: ComputerSymbols_20
+  - first:
+      213: 2373524781099189316
+    second: ComputerSymbols_21
+  - first:
+      213: -9166827767783327856
+    second: ComputerSymbols_22
+  - first:
+      213: 814627764094291972
+    second: ComputerSymbols_23
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ComputerSymbols_0
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 1695
+        width: 232
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e218eebd8160bd10800000000000000
+      internalID: 2139317084422148838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComputerSymbols_1
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 1703
+        width: 313
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b2ff2251a540570800000000000000
+      internalID: 8431963449172372281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComputerSymbols_2
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 1715
+        width: 233
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46a13cfe480716cd0800000000000000
+      internalID: -2566646596363937180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComputerSymbols_3
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1743
+        width: 335
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d85d5aa2a7a082050800000000000000
+      internalID: 5775878041920460173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComputerSymbols_5
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 1292
+        width: 340
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1195f6a5175083850800000000000000
+      internalID: 6356836858440145169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComputerSymbols_6
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 1238
+        width: 361
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c40038d1a93baa20800000000000000
+      internalID: 3074614537890038982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComputerSymbols_7
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 1274
+        width: 309
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab2b0f050e6cdd390800000000000000
+      internalID: -7791853113548164422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComputerSymbols_8
+      rect:
+        serializedVersion: 2
+        x: 1589
+        y: 1274
+        width: 341
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e267af7b6d49850800000000000000
+      internalID: 6382962657560243827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComputerSymbols_10
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 875
+        width: 264
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf839fe0eaeff9ed0800000000000000
+      internalID: -2404923652463576836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComputerSymbols_11
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 829
+        width: 260
+        height: 323
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea86688c536e40910800000000000000
+      internalID: 1802818869526948014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComputerSymbols_12
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 849
+        width: 215
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68ed24bb6f7d76c80800000000000000
+      internalID: -8329451531094794618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComputerSymbols_13
+      rect:
+        serializedVersion: 2
+        x: 1562
+        y: 864
+        width: 221
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b780632d5f4116c30800000000000000
+      internalID: 4350781761042909307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComputerSymbols_15
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 429
+        width: 291
+        height: 337
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02cb09d2b1589ee90800000000000000
+      internalID: -6995914194368283616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComputerSymbols_16
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 442
+        width: 245
+        height: 321
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63ac499cc4f37b130800000000000000
+      internalID: 3582401627628554806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComputerSymbols_18
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 489
+        width: 219
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2152854ee7f71be0800000000000000
+      internalID: -1506462947591696082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComputerSymbols_19
+      rect:
+        serializedVersion: 2
+        x: 1483
+        y: 465
+        width: 351
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d7e6a0646d795990800000000000000
+      internalID: -7396743042907576363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComputerSymbols_20
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 60
+        width: 269
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 949126eaafbaa7000800000000000000
+      internalID: 34529040314538313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComputerSymbols_21
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 47
+        width: 311
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4440103863470f020800000000000000
+      internalID: 2373524781099189316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComputerSymbols_22
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 56
+        width: 265
+        height: 331
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 097761096b2e8c080800000000000000
+      internalID: -9166827767783327856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ComputerSymbols_23
+      rect:
+        serializedVersion: 2
+        x: 1567
+        y: 43
+        width: 294
+        height: 347
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 400d207a2a32e4b00800000000000000
+      internalID: 814627764094291972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
