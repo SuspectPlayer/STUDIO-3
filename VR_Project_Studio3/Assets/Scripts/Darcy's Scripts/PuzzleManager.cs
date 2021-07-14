@@ -13,7 +13,7 @@ public class PuzzleManager : MonoBehaviour
     [HideInInspector]
     public LayerMask scannerMask; //this is for the hand scanner because of instantiating issues
 
-    //[HideInInspector]
+    [HideInInspector]
     public int whichPuzzle = 0; //checking which puzzle the player is currently solving
 
     PhotonView photonView;
@@ -74,6 +74,7 @@ public class PuzzleManager : MonoBehaviour
         puzzles[2].GetComponent<RandomiseSymbols>().enabled = true; //activates at the start, but,
         if (whichPuzzle == 2)
         {
+            GetComponent<SpawnMapSymbols>().SpawnSymbols(); //spawning map symbols
             puzzles[whichPuzzle].GetComponent<CorrectSymbolCheck>().enabled = true; //only activates the symbol check if puzzle 2 has been completed
         }
     }

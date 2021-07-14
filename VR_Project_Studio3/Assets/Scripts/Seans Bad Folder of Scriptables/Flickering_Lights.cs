@@ -12,16 +12,28 @@ public class Flickering_Lights : MonoBehaviour
 	void Start()
 	{
 		testLight = GetComponent<Light>();
-		StartCoroutine(Flashing());
+		//StartCoroutine(Flashing());
 	}
 
-	IEnumerator Flashing()
+    void Update()
+    {
+        if(GetComponent<LightControl>().assignedButton.image.sprite == GetComponent<LightControl>().lightOn)
+        {
+			StartCoroutine(Flashing());
+        }
+        else
+        {
+			StopAllCoroutines();
+        }
+    }
+
+    IEnumerator Flashing()
 	{
 		while (true)
 		{
+			Debug.Log("Flash");
 			yield return new WaitForSeconds(Random.Range(minWaitTime, maxWaitTime));
 			testLight.enabled = !testLight.enabled;
-
 		}
 	}
 }

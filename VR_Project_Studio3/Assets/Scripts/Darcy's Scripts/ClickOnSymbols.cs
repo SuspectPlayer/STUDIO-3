@@ -14,6 +14,9 @@ public class ClickOnSymbols : MonoBehaviour
     [SerializeField]
     GameObject[] puzzles;
 
+    [SerializeField]
+    Material[] greens, oranges;
+
     public void ClickOnSymbolsMethod(Button clickedButton)                    
     {
         clickedSymbol = clickedButton.GetComponent<Image>().sprite; //finding the symbol of the clicked button      
@@ -41,5 +44,18 @@ public class ClickOnSymbols : MonoBehaviour
                     break;
                 }
         }
+    }
+
+    public void ChangeButtonColour(GameObject assignedVisualButton) //this method just changes the color of the button for feedback to the player
+    {
+        StartCoroutine(ButtonColour(assignedVisualButton));
+        StopAllCoroutines();
+    }
+
+    IEnumerator ButtonColour(GameObject assignedVisualButton)
+    {
+        assignedVisualButton.GetComponent<MeshRenderer>().materials = greens;
+        Debug.Log(assignedVisualButton.GetComponent<MeshRenderer>().materials);
+        yield return null;
     }
 }

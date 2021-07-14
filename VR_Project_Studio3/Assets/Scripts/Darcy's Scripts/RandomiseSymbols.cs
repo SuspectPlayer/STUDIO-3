@@ -94,12 +94,12 @@ public class RandomiseSymbols : MonoBehaviour
             symbols[i].GetComponentInChildren<Image>().sprite = sprites[storedNumbers[i]];
         }
 
-        //if(name == "Puzzle 3") //for the third puzzle, also needs to apply the symbols to the intelligence's map
-        //{
-        //    for (int x = 0; x < 4; x++) 
-        //    {
-        //        symbolsOnMap[x].GetComponentInChildren<Image>().sprite = sprites[storedNumbers[x]];
-        //    }
-        //}
+        if (name == "Puzzle 3") //for the third puzzle, also needs to apply the symbols to the intelligence's map
+        {
+            for (int x = 0; x < 4; x++)
+            {
+                symbolsOnMap[x].GetComponentInChildren<Image>().sprite = sprites[storedNumbers[x]];
+            }
+        }
     }
 }

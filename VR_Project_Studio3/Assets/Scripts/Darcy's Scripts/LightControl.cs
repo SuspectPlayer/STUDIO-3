@@ -8,14 +8,15 @@ using Photon.Pun;
 
 public class LightControl : MonoBehaviour
 {
-    [SerializeField]
-    Button assignedButton;
+    public Button assignedButton;
 
     [SerializeField]
     Material lightOnMat, defaultMat;
 
+    public Sprite lightOn;
+
     [SerializeField]
-    Sprite lightOn, lightOff;
+    Sprite lightOff;
 
     PhotonView photonView;
 
@@ -49,7 +50,17 @@ public class LightControl : MonoBehaviour
     [PunRPC]
     void RPC_TurnLightOn() 
     {
-        GetComponent<Light>().enabled = true;
+        if (!GetComponent<Flickering_Lights>())
+        {
+            if (!GetComponent<Light>())
+            {
+                GetComponentInChildren<Light>().enabled = true;
+            }
+            else
+            {
+                GetComponent<Light>().enabled = true;
+            }
+        }
         GetComponentInParent<LightManager>().CountUp();
         FeedbackLightOn();
         SpriteOn();
@@ -58,7 +69,17 @@ public class LightControl : MonoBehaviour
     [PunRPC]
     void RPC_TurnLightOff()
     {
-        GetComponent<Light>().enabled = false; 
+        if (!GetComponent<Flickering_Lights>())
+        {
+            if (!GetComponent<Light>())
+            {
+                GetComponentInChildren<Light>().enabled = false;
+            }
+            else
+            {
+                GetComponent<Light>().enabled = false;
+            }
+        }       
         GetComponentInParent<LightManager>().CountDown();
         FeedbackLightOff();
         SpriteOff();
