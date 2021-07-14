@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{0a214dd8-b616-4bf5-92e4-4b5ec2ab0969}">
+		<property name="assetPath">
+			<value>Whispering 1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>6.9557083333333329</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{008270d6-d1a0-4dab-bd8f-c1b9e74ab876}</destination>
+		</relationship>
+	</object>
+</objects>
