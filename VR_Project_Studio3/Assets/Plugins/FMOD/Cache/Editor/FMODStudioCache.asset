@@ -15,12 +15,34 @@ MonoBehaviour:
   Path: Assets/Audio/F-mod testing/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637616229041008290
+  lastModified: 637618969865069221
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1908
+    Value: 2654
   Exists: 1
+--- !u!114 &-8904351311515036356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Walking/Substation Footsteps/metalbox_walk4
+  m_EditorClassIdentifier: 
+  Path: event:/Walking/Substation Footsteps/metalbox_walk4
+  guid: cf0c2a3ddf345042908bb648c53e5c6c
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 329
 --- !u!114 &-8664337897837326134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44,6 +66,52 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 76944
+--- !u!114 &-8251638889610036858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Feedback Sounds/Puzzles/Open Substation Door
+  m_EditorClassIdentifier: 
+  Path: event:/Feedback Sounds/Puzzles/Open Substation Door
+  guid: 8db6db2289291e439a9dcecb15eaa138
+  Banks:
+  - {fileID: 3180157659838378319}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7900
+--- !u!114 &-7870256780968431903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Skitter/Skitter Scream 1
+  m_EditorClassIdentifier: 
+  Path: event:/Skitter/Skitter Scream 1
+  guid: 8de32a34618f2b428a9c62511edfe5e9
+  Banks:
+  - {fileID: 3180157659838378319}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4650
 --- !u!114 &-7741015070807031995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,6 +135,51 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 73728
+--- !u!114 &-6435753882282410576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Walking/Substation Footsteps/metalbox_walk6
+  m_EditorClassIdentifier: 
+  Path: event:/Walking/Substation Footsteps/metalbox_walk6
+  guid: ab95482f751d604ea30e698a67b6e2fb
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 372
+--- !u!114 &-6401796916467674572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Feedback Sounds/Intel Feedback/Light Clicks
+  m_EditorClassIdentifier: 
+  Path: event:/Feedback Sounds/Intel Feedback/Light Clicks
+  guid: c3d6964fb622b949a8098df6c17328b8
+  Banks:
+  - {fileID: 3180157659838378319}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
 --- !u!114 &-6374787425215359925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,6 +203,28 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 246816
+--- !u!114 &-6085288916597104046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Walking/Substation Footsteps/metalbox_walk1
+  m_EditorClassIdentifier: 
+  Path: event:/Walking/Substation Footsteps/metalbox_walk1
+  guid: 11116f3a9d05e64f883529710074ab19
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 309
 --- !u!114 &-6040332381662694591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,6 +248,50 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7632
+--- !u!114 &-5882765671521630845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Walking/Substation Footsteps/metalbox_wander3
+  m_EditorClassIdentifier: 
+  Path: event:/Walking/Substation Footsteps/metalbox_wander3
+  guid: f97951a3528d0b4792d3a4a703bb84f4
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 341
+--- !u!114 &-4783451700372590629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Feedback Sounds/Intel Feedback/Symbol Buttons/Intel Button 5
+  m_EditorClassIdentifier: 
+  Path: event:/Feedback Sounds/Intel Feedback/Symbol Buttons/Intel Button 5
+  guid: 5ce207396492f54c8d5f57f9badc20b7
+  Banks: []
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 456
 --- !u!114 &-4046770276182220837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +315,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 14424
+--- !u!114 &-3792513594142040328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Feedback Sounds/Intel Feedback/Symbol Buttons/Intel Button 3
+  m_EditorClassIdentifier: 
+  Path: event:/Feedback Sounds/Intel Feedback/Symbol Buttons/Intel Button 3
+  guid: 00d8a50a75aa0244a009c823b64d588c
+  Banks: []
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 528
 --- !u!114 &-3551192261395683910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +383,51 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 40608
+--- !u!114 &-3215453533413466228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Walking/Substation Footsteps/metalbox_walk8
+  m_EditorClassIdentifier: 
+  Path: event:/Walking/Substation Footsteps/metalbox_walk8
+  guid: f06c242813fbf84c857071a440e5e574
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 274
+--- !u!114 &-3164258899407926442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Walking/Metal Walking
+  m_EditorClassIdentifier: 
+  Path: event:/Walking/Metal Walking
+  guid: 9d61cabc3075d74b8f3f0b15cb275feb
+  Banks:
+  - {fileID: 3180157659838378319}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &-3141443137502402340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,6 +451,52 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 24048
+--- !u!114 &-2955327251438395760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D World Items/Whispering/Whispering 3
+  m_EditorClassIdentifier: 
+  Path: event:/3D World Items/Whispering/Whispering 3
+  guid: c8411ae1951ed944ad07be917e46bb25
+  Banks:
+  - {fileID: 3180157659838378319}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7608
+--- !u!114 &-2915619770813483042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Feedback Sounds/Handscanner/Handscanner - Scanning
+  m_EditorClassIdentifier: 
+  Path: event:/Feedback Sounds/Handscanner/Handscanner - Scanning
+  guid: cf59c24f8aed8a40b4550c3c9d6774d6
+  Banks:
+  - {fileID: 3180157659838378319}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3936
 --- !u!114 &-2892357414443939497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +520,50 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 31716
+--- !u!114 &-2681140847524189752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Walking/Substation Footsteps/metalbox_wander2
+  m_EditorClassIdentifier: 
+  Path: event:/Walking/Substation Footsteps/metalbox_wander2
+  guid: 9bd865867c133c4f90dc28205317d47f
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 288
+--- !u!114 &-2394241166958885417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Walking/Substation Footsteps/Metal Walking
+  m_EditorClassIdentifier: 
+  Path: event:/Walking/Substation Footsteps/Metal Walking
+  guid: 9d61cabc3075d74b8f3f0b15cb275feb
+  Banks: []
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
 --- !u!114 &-2366911174409829596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,6 +610,51 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 156336
+--- !u!114 &-972327933106926973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Walking/Substation Footsteps/metalbox_walk5
+  m_EditorClassIdentifier: 
+  Path: event:/Walking/Substation Footsteps/metalbox_walk5
+  guid: 0afdf14ec3de8449b621fe05dd943b33
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 329
+--- !u!114 &-966921840057401387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D World Items/Whispering/Whispering 1
+  m_EditorClassIdentifier: 
+  Path: event:/3D World Items/Whispering/Whispering 1
+  guid: ca0a052cccfc0440843ec412a14436c2
+  Banks:
+  - {fileID: 3180157659838378319}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6955
 --- !u!114 &-182045356242400887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,12 +742,26 @@ MonoBehaviour:
   - {fileID: -2892357414443939497}
   - {fileID: -6374787425215359925}
   - {fileID: 7941639642138252707}
+  - {fileID: 7475354780485046003}
+  - {fileID: 8362937299106176943}
+  - {fileID: 5228425664120866928}
+  - {fileID: 4606206339244881653}
+  - {fileID: -8251638889610036858}
+  - {fileID: -7870256780968431903}
+  - {fileID: 8150042635867379993}
+  - {fileID: 1775857794169546163}
+  - {fileID: -2955327251438395760}
+  - {fileID: -966921840057401387}
+  - {fileID: -2915619770813483042}
+  - {fileID: 3975246345457582051}
+  - {fileID: -3164258899407926442}
+  - {fileID: -6401796916467674572}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3180157659838378319}
   StringsBanks:
   - {fileID: -8915405571162439283}
-  stringsBankWriteTime: 637616229041008290
+  stringsBankWriteTime: 637618969865069221
   cacheVersion: 6
 --- !u!114 &624870027013586835
 MonoBehaviour:
@@ -412,6 +807,28 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1706
   Exists: 0
+--- !u!114 &841263744066645124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Feedback Sounds/Intel Feedback/Light Buttons/Light Click 3
+  m_EditorClassIdentifier: 
+  Path: event:/Feedback Sounds/Intel Feedback/Light Buttons/Light Click 3
+  guid: 0ffef6a77198e24ea45556d80029d2c9
+  Banks: []
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 216
 --- !u!114 &1270659003551445448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,6 +852,73 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 20688
+--- !u!114 &1775857794169546163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D World Items/Whispering/Whispering 2
+  m_EditorClassIdentifier: 
+  Path: event:/3D World Items/Whispering/Whispering 2
+  guid: aa9fc95a1f0ae549bdc0bf6b1310a151
+  Banks:
+  - {fileID: 3180157659838378319}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4863
+--- !u!114 &1785498460277185946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Walking/Substation Footsteps/metalbox_wander1
+  m_EditorClassIdentifier: 
+  Path: event:/Walking/Substation Footsteps/metalbox_wander1
+  guid: 5085c60b1b5abb49bdd8c8acce3ac272
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 303
+--- !u!114 &1979013556543480514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Walking/Substation Footsteps/metalbox_walk9
+  m_EditorClassIdentifier: 
+  Path: event:/Walking/Substation Footsteps/metalbox_walk9
+  guid: b5fae3fc9ac71343ace0c15206ec6d94
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 312
 --- !u!114 &2329842097756404533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,6 +942,50 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 40296
+--- !u!114 &2628911985704382454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Feedback Sounds/Intel Feedback/Symbol Buttons/Intel Button 1
+  m_EditorClassIdentifier: 
+  Path: event:/Feedback Sounds/Intel Feedback/Symbol Buttons/Intel Button 1
+  guid: 07444c2bfe5a2f4685983c3ed2c9a6a2
+  Banks: []
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 456
+--- !u!114 &2889064575876973121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Walking/Substation Footsteps/metalbox_walk7
+  m_EditorClassIdentifier: 
+  Path: event:/Walking/Substation Footsteps/metalbox_walk7
+  guid: b34c1c6a273b454e85bdae2efd76898a
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 291
 --- !u!114 &3180157659838378319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,10 +1001,33 @@ MonoBehaviour:
   Path: Assets/Audio/F-mod testing/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637616229040978366
+  lastModified: 637618969865027484
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &3975246345457582051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Feedback Sounds/Intel Feedback/Intel Buttons
+  m_EditorClassIdentifier: 
+  Path: event:/Feedback Sounds/Intel Feedback/Intel Buttons
+  guid: 6aa22cafdf23d74495c992642aa5dbe6
+  Banks:
+  - {fileID: 3180157659838378319}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
 --- !u!114 &4164612709383302891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,6 +1074,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 27288
+--- !u!114 &4606206339244881653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Skitter/Skitter Idle 1
+  m_EditorClassIdentifier: 
+  Path: event:/Skitter/Skitter Idle 1
+  guid: 8c0aa0008cfdc84c831963d9f72428d2
+  Banks:
+  - {fileID: 3180157659838378319}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7600
 --- !u!114 &4939267931642740218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -569,6 +1143,117 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 44496
+--- !u!114 &5106266470077979495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Walking/Substation Footsteps/metalbox_walk3
+  m_EditorClassIdentifier: 
+  Path: event:/Walking/Substation Footsteps/metalbox_walk3
+  guid: 79787701e2d34d4fb58b7eea73bd6411
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 300
+--- !u!114 &5228425664120866928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Skitter/Skitter Angry 1
+  m_EditorClassIdentifier: 
+  Path: event:/Skitter/Skitter Angry 1
+  guid: 5631dc2fead465408d75c0316fc9bb12
+  Banks:
+  - {fileID: 3180157659838378319}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3104
+--- !u!114 &5304190516426759916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Walking/Substation Footsteps/metalbox_walk2
+  m_EditorClassIdentifier: 
+  Path: event:/Walking/Substation Footsteps/metalbox_walk2
+  guid: f25ecd44137d164ea139ccd7ac6bb9cb
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 367
+--- !u!114 &6426875483915975477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Feedback Sounds/Intel Feedback/Symbol Buttons/Intel Button 4
+  m_EditorClassIdentifier: 
+  Path: event:/Feedback Sounds/Intel Feedback/Symbol Buttons/Intel Button 4
+  guid: 3a8a3e1289f0654e80ecdcf949d78ea7
+  Banks: []
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2232
+--- !u!114 &6448659649907011290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Feedback Sounds/Intel Feedback/Light Buttons/Light Click 1
+  m_EditorClassIdentifier: 
+  Path: event:/Feedback Sounds/Intel Feedback/Light Buttons/Light Click 1
+  guid: 64148d4fb12b054ab3814b3e64090255
+  Banks: []
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 336
 --- !u!114 &6907762079475355625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -590,6 +1275,28 @@ MonoBehaviour:
   - Name: Desktop
     Value: 12118176
   Exists: 0
+--- !u!114 &6936852414046650620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Feedback Sounds/Intel Feedback/Light Buttons/Light Click 2
+  m_EditorClassIdentifier: 
+  Path: event:/Feedback Sounds/Intel Feedback/Light Buttons/Light Click 2
+  guid: e180f7e4c5d20e419453fb794ea7203d
+  Banks: []
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 216
 --- !u!114 &6964743683436071954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -613,6 +1320,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5167
+--- !u!114 &7475354780485046003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Feedback Sounds/Puzzles/Door Lock
+  m_EditorClassIdentifier: 
+  Path: event:/Feedback Sounds/Puzzles/Door Lock
+  guid: 2a519009e9c97b42afc8fbe87b6373d7
+  Banks:
+  - {fileID: 3180157659838378319}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4499
 --- !u!114 &7707363076333955158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -659,6 +1389,74 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 54000
+--- !u!114 &8059695470063993367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Walking/Substation Footsteps/metalbox_wander4
+  m_EditorClassIdentifier: 
+  Path: event:/Walking/Substation Footsteps/metalbox_wander4
+  guid: 4d6707600900bd43b1a376170b60151e
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 346
+--- !u!114 &8150042635867379993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Feedback Sounds/Handscanner/Handscanner - Complete
+  m_EditorClassIdentifier: 
+  Path: event:/Feedback Sounds/Handscanner/Handscanner - Complete
+  guid: a0706348b5231a4abef57bc909cf83cc
+  Banks:
+  - {fileID: 3180157659838378319}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 576
+--- !u!114 &8362937299106176943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Feedback Sounds/Handscanner/Handscanner Beacon - On
+  m_EditorClassIdentifier: 
+  Path: event:/Feedback Sounds/Handscanner/Handscanner Beacon - On
+  guid: 42dd15b301517b43820e46c5048b6c48
+  Banks:
+  - {fileID: 3180157659838378319}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 576
 --- !u!114 &8444959854747931082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -682,6 +1480,28 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 27360
+--- !u!114 &8606298565278810621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Feedback Sounds/Intel Feedback/Symbol Buttons/Intel Button 2
+  m_EditorClassIdentifier: 
+  Path: event:/Feedback Sounds/Intel Feedback/Symbol Buttons/Intel Button 2
+  guid: e626cbb23a1cc94d91a3fd886c9bdb41
+  Banks: []
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1080
 --- !u!114 &8771285074996768752
 MonoBehaviour:
   m_ObjectHideFlags: 0
