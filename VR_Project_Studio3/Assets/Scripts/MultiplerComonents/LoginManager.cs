@@ -3,34 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using TMPro;
+using PlayFab;
+using PlayFab.ClientModels;
 public class LoginManager : MonoBehaviourPunCallbacks
 {
-    #region Unity Metods
-
-    public TMP_InputField playerNameInputField;
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    #endregion
+    public GameObject[] disableOnConnect;
+    public GameObject[] enableOnConnect;
 
     #region UI Callback Methods
 
-    public void ConnecteToPhotonServer()
+    public static void ConnecteToPhotonServer(string username)
     {
-        if(playerNameInputField != null)
-        {
-            PhotonNetwork.NickName = playerNameInputField.text;
-            PhotonNetwork.ConnectUsingSettings();
-        }
+        PhotonNetwork.NickName = username;
+        PhotonNetwork.ConnectUsingSettings();
         
     }
 
@@ -48,6 +33,14 @@ public class LoginManager : MonoBehaviourPunCallbacks
         Debug.Log("Connected to Master Server with player name: " + PhotonNetwork.NickName);
         PhotonNetwork.AutomaticallySyncScene = false;
         PhotonNetwork.JoinLobby(Photon.Realtime.TypedLobby.Default);
+        foreach (GameObject g in disableOnConnect)
+        {
+            g.SetActive(false);
+        }
+        foreach (GameObject g in enableOnConnect)
+        {
+            g.SetActive(true);
+        }
     }
 
     public override void OnJoinedLobby()

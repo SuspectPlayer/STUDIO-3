@@ -37,12 +37,12 @@ public class GameSetup : MonoBehaviourPunCallbacks
         }
         
 
-        PhotonNetwork.LoadLevel("Darcy_Main_Level");
+        PhotonNetwork.LoadLevel("Main_Level");
     }
 
     private void OnSceneFinishedLoading(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "Darcy_Main_Level")
+        if (scene.name == "Main_Level")
         {
             if (PhotonNetwork.IsMasterClient)
             {
@@ -68,7 +68,7 @@ public class GameSetup : MonoBehaviourPunCallbacks
     [PunRPC]
     void RPC_LoadGameOthers()
     {
-        PhotonNetwork.LoadLevel("Darcy_Main_Level");
+        PhotonNetwork.LoadLevel("Main_Level");
     }
     [PunRPC]
     void RPC_LoadedGameScene()
