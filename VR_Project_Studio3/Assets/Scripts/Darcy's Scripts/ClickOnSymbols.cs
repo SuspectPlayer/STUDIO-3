@@ -17,7 +17,7 @@ public class ClickOnSymbols : MonoBehaviour
     [SerializeField]
     Material[] greens, oranges;
 
-    bool condition;
+    bool firstCondition, secondCondition;
 
     public void ClickOnSymbolsMethod(Button clickedButton)                    
     {
@@ -30,23 +30,35 @@ public class ClickOnSymbols : MonoBehaviour
             case "Door 1":
                 {
                     currentPuzzle = puzzles[0];
-                    currentPuzzle.GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
+                    firstCondition = currentPuzzle.GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
+                    if(!firstCondition)
+                    {
+                        OrangeButtonColours();
+                    }
                     break;
                 }
             case "Door 2":
                 {
-                    condition = GameObject.Find("Inside").GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
-                    if (!condition)
+                    firstCondition = GameObject.Find("Inside").GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
+                    if(!firstCondition)
                     {
-                        Debug.Log(condition);
-                        GameObject.Find("Outside").GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
+                       secondCondition = GameObject.Find("Outside").GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
+                    }
+                
+                    if(!secondCondition)
+                    {
+                       OrangeButtonColours();
                     }
                     break;
                 }
             case "Door 3":
                 {
                     currentPuzzle = puzzles[2];
-                    currentPuzzle.GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
+                    firstCondition = currentPuzzle.GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
+                    if(!firstCondition)
+                    {
+                        OrangeButtonColours();
+                    }
                     break;
                 }
         }

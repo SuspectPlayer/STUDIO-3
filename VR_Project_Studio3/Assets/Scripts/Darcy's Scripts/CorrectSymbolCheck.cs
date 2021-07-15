@@ -42,18 +42,21 @@ public class CorrectSymbolCheck : MonoBehaviour
         {
             if (clickedSymbol == symbols[i].GetComponentInChildren<Image>().sprite && correctSymbolCount < 4)
             {
-                if (clickedSymbol == clickedSymbols[i])
+                for (int z = 0; z < 4; z++)
                 {
-                    Debug.Log("wrong");
-                    condition = false;
-                    dashboard.GetComponent<ClickOnSymbols>().OrangeButtonColours();
-                    correctSymbolCount = 0;
-                    for (int x = 0; x < 4; x++) //refreshing the array after a failed attempt
+                    if(clickedSymbol == clickedSymbols[z])
                     {
-                        clickedSymbols[x] = neutral;
+                        Debug.Log("wrong");
+                        condition = false;
+                        //dashboard.GetComponent<ClickOnSymbols>().OrangeButtonColours();
+                        correctSymbolCount = 0;
+                        for (int x = 0; x < 4; x++) //refreshing the array after a failed attempt
+                        {
+                            clickedSymbols[x] = neutral;
+                        }
+                        return condition;
+                        //break;
                     }
-                    return condition;
-                    //break;
                 }
 
                 clickedSymbols[correctSymbolCount] = clickedSymbol;
@@ -149,10 +152,11 @@ public class CorrectSymbolCheck : MonoBehaviour
             else
             {
                 incorrectSymbolCount++; //counts when the player hits a wrong button
+                Debug.Log(incorrectSymbolCount.ToString());
                 if (incorrectSymbolCount >= 4)
                 {
                     Debug.Log("incorrect");
-                    dashboard.GetComponent<ClickOnSymbols>().OrangeButtonColours();
+                    //dashboard.GetComponent<ClickOnSymbols>().OrangeButtonColours();
                     correctSymbolCount = 0;
                     for (int x = 0; x < 4; x++) //refreshing the array after a failed attempt
                     {
@@ -162,7 +166,14 @@ public class CorrectSymbolCheck : MonoBehaviour
             }
         }
         incorrectSymbolCount = 0;
-        condition = false;
+        if (correctSymbolCount > 0)
+        {
+            condition = true;
+        }
+        else
+        {
+            condition = false;
+        }
         return condition;
     }
 }
