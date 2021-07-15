@@ -12,10 +12,12 @@ public class ClickOnSymbols : MonoBehaviour
     GameObject currentPuzzle, currentDoor;
 
     [SerializeField]
-    GameObject[] puzzles;
+    GameObject[] puzzles, visualButtons;
 
     [SerializeField]
     Material[] greens, oranges;
+
+    bool condition;
 
     public void ClickOnSymbolsMethod(Button clickedButton)                    
     {
@@ -33,8 +35,12 @@ public class ClickOnSymbols : MonoBehaviour
                 }
             case "Door 2":
                 {
-                    GameObject.Find("Inside").GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
-                    GameObject.Find("Outside").GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
+                    condition = GameObject.Find("Inside").GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
+                    if (!condition)
+                    {
+                        Debug.Log(condition);
+                        GameObject.Find("Outside").GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
+                    }
                     break;
                 }
             case "Door 3":
@@ -46,16 +52,21 @@ public class ClickOnSymbols : MonoBehaviour
         }
     }
 
-    public void ChangeButtonColour(GameObject assignedVisualButton) //this method just changes the color of the button for feedback to the player
+    public void GreenButtonColours(GameObject visualButton)
     {
-        StartCoroutine(ButtonColour(assignedVisualButton));
-        StopAllCoroutines();
+        visualButton.GetComponent<MeshRenderer>().materials = greens;
     }
 
-    IEnumerator ButtonColour(GameObject assignedVisualButton)
+    public void OrangeButtonColours() //this method just changes the colour of the buttons for feedback to the player
     {
-        assignedVisualButton.GetComponent<MeshRenderer>().materials = greens;
-        Debug.Log(assignedVisualButton.GetComponent<MeshRenderer>().materials);
-        yield return null;
+        for (int i = 0; i < visualButtons.Length; i++)
+        {
+            MeshRenderer rend = visualButtons[i].GetComponent<MeshRenderer>();
+
+            if (rend.materials != oranges)
+            {
+                rend.materials = oranges;
+            }
+        }
     }
 }

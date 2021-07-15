@@ -30,8 +30,9 @@ public class CorrectSymbolCheck : MonoBehaviour
         
     }
 
-    public void CorrectSymbolCheckMethod(Sprite clickedSymbol)
+    public bool CorrectSymbolCheckMethod(Sprite clickedSymbol)
     {
+        bool condition;
         if(clickedSymbol == null)
         {
             clickedSymbol = temp;
@@ -43,12 +44,16 @@ public class CorrectSymbolCheck : MonoBehaviour
             {
                 if (clickedSymbol == clickedSymbols[i])
                 {
+                    Debug.Log("wrong");
+                    condition = false;
+                    dashboard.GetComponent<ClickOnSymbols>().OrangeButtonColours();
                     correctSymbolCount = 0;
                     for (int x = 0; x < 4; x++) //refreshing the array after a failed attempt
                     {
                         clickedSymbols[x] = neutral;
                     }
-                    break;
+                    return condition;
+                    //break;
                 }
 
                 clickedSymbols[correctSymbolCount] = clickedSymbol;
@@ -61,23 +66,30 @@ public class CorrectSymbolCheck : MonoBehaviour
                     {
                         case "Door 1":
                             {
+                                dashboard.GetComponent<ClickOnSymbols>().OrangeButtonColours(); //this turns the buttons back to orange for feedback
                                 dashboard.GetComponent<DoorControl>().UnlockDoor();
                                 correctSymbolCount = 0;
-                                break;
+                                condition = true;
+                                return condition;
+                                //break;
                             }
                         case "Door 2":
                             {
                                 if(gameObject.name == "Inside")
                                 {
+                                    dashboard.GetComponent<ClickOnSymbols>().OrangeButtonColours(); 
                                     dashboard.GetComponent<DoorControl>().LockDoor();
                                     correctSymbolCount = 0;
                                 }
                                 else
                                 {
+                                    dashboard.GetComponent<ClickOnSymbols>().OrangeButtonColours();
                                     dashboard.GetComponent<DoorControl>().UnlockDoor();
                                     correctSymbolCount = 0;
                                 }
-                                break;
+                                condition = true;
+                                return condition;
+                                //break;
                             }
                         case "Door 3": //for door 3, the symbols will need to be in a particular order
                             {
@@ -92,13 +104,17 @@ public class CorrectSymbolCheck : MonoBehaviour
                                     {
                                         Debug.Log("wrong order");
                                         correctSymbolCount = 0;
-                                        break;
+                                        condition = false;
+                                        return condition;
+                                        //break;
                                     }
                                 }
                                 if(rightOrderCount == 4) //if the 4 symbols were clicked in the right order it opens the door
                                 {
                                     dashboard.GetComponent<DoorControl>().UnlockDoor();
                                     correctSymbolCount = 0;
+                                    condition = true;
+                                    return condition;
                                 }
                                 break;
                             }
@@ -117,7 +133,9 @@ public class CorrectSymbolCheck : MonoBehaviour
                         {
                             Debug.Log("skitter wrong order");
                             correctSymbolCount = 0;
-                            break;
+                            condition = false;
+                            return condition;
+                            //break;
                         }
                     }
 
@@ -133,6 +151,8 @@ public class CorrectSymbolCheck : MonoBehaviour
                 incorrectSymbolCount++; //counts when the player hits a wrong button
                 if (incorrectSymbolCount >= 4)
                 {
+                    Debug.Log("incorrect");
+                    dashboard.GetComponent<ClickOnSymbols>().OrangeButtonColours();
                     correctSymbolCount = 0;
                     for (int x = 0; x < 4; x++) //refreshing the array after a failed attempt
                     {
@@ -142,5 +162,7 @@ public class CorrectSymbolCheck : MonoBehaviour
             }
         }
         incorrectSymbolCount = 0;
+        condition = false;
+        return condition;
     }
 }
