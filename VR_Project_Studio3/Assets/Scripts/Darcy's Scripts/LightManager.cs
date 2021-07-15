@@ -11,14 +11,16 @@ public class LightManager : MonoBehaviour
 
     public GameObject[] feedbackLights, visibleLights;
 
+    PhotonView photonView;
+
+    void Awake()
+    {
+        photonView = GetComponent<PhotonView>();
+    }
+
     public void TurnOffAllLights()
     {
-        foreach(var l in visibleLights) //this is for puzzle 3, to turn off all the lights at the same time
-        {
-            l.GetComponent<Light>().enabled = false;
-            l.GetComponent<LightControl>().SpriteOff();
-            l.GetComponent<LightControl>().FeedbackLightOff();
-        }
+        photonView.RPC("RPC_TurnOffAllLights", RpcTarget.All);
     }
 
     public void CountUp()
@@ -29,5 +31,24 @@ public class LightManager : MonoBehaviour
     public void CountDown()
     {
         lightCount--;
+    }
+
+    [PunRPC]
+    void RPC_TurnOffAllLights()
+    {
+        Debug.Log("turning off");
+        for (int i = 0; i < visibleLights.Length; i++) //this is for puzzle 3, to turn off all the lights at the same time
+        {
+            if (!visibleLights[i].GetComponent<Light>())
+            {
+                visibleLights[i].GetComponentInChildren<Light>().enabled = false;
+            }
+            else
+            {
+                visibleLights[i].GetComponent<Light>().enabled = false;
+            }
+            visibleLights[i].GetComponent<LightControl>().SpriteOff();
+            visibleLights[i].GetComponent<LightControl>().FeedbackLightOff();
+        }
     }
 }

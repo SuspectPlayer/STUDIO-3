@@ -59,6 +59,7 @@ MonoBehaviour:
   - RPC_TurnLightOn
   - RPC_UnlockDoor
   - RPC_LoadCheckpoint
+  - RPC_TurnOffAllLights
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

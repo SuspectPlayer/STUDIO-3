@@ -8,11 +8,11 @@ public class Checkpoint : MonoBehaviour
 {
     void Update() //dev tool
     {
-        if(Input.GetKeyDown(KeyCode.G))
-        {
-            Debug.Log("saved");
-            SaveCheckpointPosition();
-        }
+        //if(Input.GetKeyDown(KeyCode.G))
+        //{
+        //    Debug.Log("saved");
+        //    SaveCheckpointPosition();
+        //}
     }
 
     public void SaveCheckpointPosition() //making the last checkpoint position equal to this checkpoint's position
