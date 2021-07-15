@@ -21,7 +21,7 @@ public class ClickOnSymbols : MonoBehaviour
 
     public void ClickOnSymbolsMethod(Button clickedButton)                    
     {
-        clickedSymbol = clickedButton.GetComponent<Image>().sprite; //finding the symbol of the clicked button      
+        clickedSymbol = clickedButton.GetComponentInChildren<Image>().sprite; //finding the symbol of the clicked button      
 
         currentDoor = GetComponent<DoorControl>().door;
 

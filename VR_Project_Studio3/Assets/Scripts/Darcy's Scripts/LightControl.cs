@@ -66,7 +66,7 @@ public class LightControl : MonoBehaviour
         {
             for (int i = 0; i < assignedSymbols.Length; i++) //this loop enables the symbols to only been seen when the light is on
             {
-                assignedSymbols[i].GetComponentInChildren<Image>().enabled = true;
+                assignedSymbols[i].GetComponent<SpriteRenderer>().enabled = true;
             }
         }
 
@@ -91,7 +91,7 @@ public class LightControl : MonoBehaviour
         {
             for (int i = 0; i < assignedSymbols.Length; i++) //this loop enables the symbols to only been seen when the light is on
             {
-                assignedSymbols[i].GetComponentInChildren<Image>().enabled = false;
+                assignedSymbols[i].GetComponent<SpriteRenderer>().enabled = false;
             }
         }
 

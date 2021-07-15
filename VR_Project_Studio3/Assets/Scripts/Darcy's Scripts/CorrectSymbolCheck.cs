@@ -40,7 +40,7 @@ public class CorrectSymbolCheck : MonoBehaviour
 
         for (int i = 0; i < 4; i++) //checking to see if the clicked colour is one of the ones in the "spawned" symbols on the map
         {
-            if (clickedSymbol == symbols[i].GetComponentInChildren<Image>().sprite && correctSymbolCount < 4)
+            if (clickedSymbol == symbols[i].GetComponent<SpriteRenderer>().sprite && correctSymbolCount < 4)
             {
                 for (int z = 0; z < 4; z++)
                 {
@@ -98,7 +98,7 @@ public class CorrectSymbolCheck : MonoBehaviour
                             {
                                 for(int x = 0; x < 4; x++)
                                 {
-                                    if(clickedSymbols[i] == symbols[i].GetComponentInChildren<Image>().sprite)
+                                    if(clickedSymbols[i] == symbols[i].GetComponent<SpriteRenderer>().sprite)
                                     {
                                         Debug.Log("right order");
                                         rightOrderCount++;                                     
@@ -127,7 +127,7 @@ public class CorrectSymbolCheck : MonoBehaviour
                 {
                     for (int x = 0; x < 3; x++) //checking that they are in the right order before saving checkpoint and starting skitter event
                     {
-                        if (clickedSymbols[i] == symbols[i].GetComponentInChildren<Image>().sprite)
+                        if (clickedSymbols[i] == symbols[i].GetComponent<SpriteRenderer>().sprite)
                         {
                             Debug.Log("skitter right order");
                             checkpointRightOrderCount++;
