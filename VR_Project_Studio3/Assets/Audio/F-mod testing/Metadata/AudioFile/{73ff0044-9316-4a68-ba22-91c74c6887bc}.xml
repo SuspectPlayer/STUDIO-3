@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{73ff0044-9316-4a68-ba22-91c74c6887bc}">
+		<property name="assetPath">
+			<value>metalbox_wander3.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.34104308390022675</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{008270d6-d1a0-4dab-bd8f-c1b9e74ab876}</destination>
+		</relationship>
+	</object>
+</objects>

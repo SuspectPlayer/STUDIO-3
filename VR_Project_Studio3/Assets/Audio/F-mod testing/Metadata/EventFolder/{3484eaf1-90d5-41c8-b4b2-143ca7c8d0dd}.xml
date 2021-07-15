@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="EventFolder" id="{3484eaf1-90d5-41c8-b4b2-143ca7c8d0dd}">
+		<property name="name">
+			<value>Intel Feedback</value>
+		</property>
+		<relationship name="folder">
+			<destination>{9d3f4ce3-aedb-4da0-b513-033650bcae12}</destination>
+		</relationship>
+	</object>
+</objects>

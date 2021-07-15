@@ -37,12 +37,12 @@ public class GameSetup : MonoBehaviourPunCallbacks
         }
         
 
-        PhotonNetwork.LoadLevel("Darcy's Scene");
+        PhotonNetwork.LoadLevel("Main_Level");
     }
 
     private void OnSceneFinishedLoading(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "Darcy's Scene")
+        if (scene.name == "Main_Level")
         {
             if (PhotonNetwork.IsMasterClient)
             {
@@ -68,7 +68,7 @@ public class GameSetup : MonoBehaviourPunCallbacks
     [PunRPC]
     void RPC_LoadGameOthers()
     {
-        PhotonNetwork.LoadLevel("Darcy's Scene");
+        PhotonNetwork.LoadLevel("Main_Level");
     }
     [PunRPC]
     void RPC_LoadedGameScene()
@@ -86,7 +86,7 @@ public class GameSetup : MonoBehaviourPunCallbacks
         }
         else if (!isVRPlayer)
         {
-            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "ViewerCam Variant"), new Vector3(129.344f, 58.23893f, 111.8366f), new Quaternion(-0.1686531f, -0.2294462f, 0.04041884f, -0.9577457f));
+            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "ViewerCam Variant"), new Vector3(113.9993f, 81.38101f, 111.2712f), new Quaternion(0.2233047f, 0.2072154f, -0.05212184f, 0.9510416f));
         }
     }
 }
