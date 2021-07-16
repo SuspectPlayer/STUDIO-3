@@ -82,11 +82,11 @@ public class GameSetup : MonoBehaviourPunCallbacks
         //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Test PC player"), Vector3.up, Quaternion.identity);
         if (isVRPlayer)
         { 
-            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "First Person Controller"), new Vector3(29.1312f, 55.27f, 272.6982f), Quaternion.identity);
+            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "VR Player (XR Rig)"), new Vector3(29.1312f, 55.27f, 272.6982f), Quaternion.identity);
         }
         else if (!isVRPlayer)
         {
-            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "ViewerCam Variant"), new Vector3(113.9993f, 81.38101f, 111.2712f), new Quaternion(0.2233047f, 0.2072154f, -0.05212184f, 0.9510416f));
+            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "ViewerCam Variant"), new Vector3(113.126f, 81.38101f, 111.611f), new Quaternion(0.2233047f, 0.2072154f, -0.05212184f, 0.9510416f));
         }
     }
 }
