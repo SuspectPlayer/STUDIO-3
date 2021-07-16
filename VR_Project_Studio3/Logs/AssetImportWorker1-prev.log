@@ -11784,3 +11784,4 @@ Received Import Request.
 Start importing Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Contents/Prefabs/Environment/Rocks/Round Rocks/Arch 5.prefab using Guid(557f373b85c277541ab740797624bf58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c252eb1a5d9eac05174293dd00e7984') in 0.024508 seconds
   Import took 0.033453 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
