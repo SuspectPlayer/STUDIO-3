@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.XR.OpenXR;
 using UnityEngine.UI;
 
 public class InitialiseIfVR : MonoBehaviour
@@ -48,11 +49,12 @@ static class HMDExists
     public static bool XRPresent()
     {
         List<XRDisplaySubsystem> subsystems = new List<XRDisplaySubsystem>();
-        SubsystemManager.GetInstances(subsystems);
+        SubsystemManager.GetSubsystems(subsystems);
+
 
         foreach (XRDisplaySubsystem instance in subsystems)
         {
-            if(instance.running)
+            if (instance.running)
             {
                 Debug.Log("HMD found");
                 return true;
