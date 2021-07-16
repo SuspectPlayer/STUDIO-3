@@ -11,6 +11,8 @@ public class CheckpointControl : MonoBehaviour
     [HideInInspector]
     public GameObject vrPlayer;
 
+    public GameObject skitter, trigger;
+
     [HideInInspector]
     public Vector3 lastCheckpointPos;
 
@@ -32,10 +34,10 @@ public class CheckpointControl : MonoBehaviour
             Awake();
         }
 
-        if(Input.GetKeyDown(KeyCode.Y))
-        {
-            LoadCheckpoint();
-        }
+        //if(Input.GetKeyDown(KeyCode.Y)) //dev tool
+        //{
+        //    LoadCheckpoint();
+        //}
     }
 
     public void LoadCheckpoint()
@@ -46,10 +48,12 @@ public class CheckpointControl : MonoBehaviour
     [PunRPC]
     void RPC_LoadCheckpoint()
     {
-        vrPlayer.GetComponent<CharacterController>().enabled = false;
+        vrPlayer.GetComponent<CharacterController>().enabled = false; //moving the player back to the checkpoint
         vrPlayer.transform.position = lastCheckpointPos;
         vrPlayer.GetComponent<CharacterController>().enabled = true;
-
+                                                              
+        skitter.GetComponent<SkitterEventP3>().playersLose = false; //resetting skitter event
+        trigger.SetActive(true);
 
         Debug.Log("loaded");
     }

@@ -8,14 +8,18 @@ using Photon.Pun;
 
 public class LightControl : MonoBehaviour
 {
-    [SerializeField]
-    Button assignedButton;
+    public Button assignedButton;
 
     [SerializeField]
     Material lightOnMat, defaultMat;
 
+    public Sprite lightOn;
+
     [SerializeField]
-    Sprite lightOn, lightOff;
+    Sprite lightOff;
+
+    [SerializeField]
+    GameObject[] assignedSymbols;
 
     PhotonView photonView;
 
@@ -49,7 +53,23 @@ public class LightControl : MonoBehaviour
     [PunRPC]
     void RPC_TurnLightOn() 
     {
-        GetComponent<Light>().enabled = true;
+        if (!GetComponent<Light>()) //checking to see if the light component is on the object or its children
+        {
+            GetComponentInChildren<Light>().enabled = true;
+        }
+        else
+        {
+            GetComponent<Light>().enabled = true;
+        }
+
+        if(assignedSymbols.Length > 0)
+        {
+            for (int i = 0; i < assignedSymbols.Length; i++) //this loop enables the symbols to only been seen when the light is on
+            {
+                assignedSymbols[i].GetComponent<SpriteRenderer>().enabled = true;
+            }
+        }
+
         GetComponentInParent<LightManager>().CountUp();
         FeedbackLightOn();
         SpriteOn();
@@ -58,7 +78,23 @@ public class LightControl : MonoBehaviour
     [PunRPC]
     void RPC_TurnLightOff()
     {
-        GetComponent<Light>().enabled = false; 
+        if (!GetComponent<Light>()) //checking to see if the light component is on the object or its children
+        {
+            GetComponentInChildren<Light>().enabled = false;
+        }
+        else
+        {
+            GetComponent<Light>().enabled = false;
+        }
+
+        if(assignedSymbols.Length > 0)
+        {
+            for (int i = 0; i < assignedSymbols.Length; i++) //this loop enables the symbols to only been seen when the light is on
+            {
+                assignedSymbols[i].GetComponent<SpriteRenderer>().enabled = false;
+            }
+        }
+
         GetComponentInParent<LightManager>().CountDown();
         FeedbackLightOff();
         SpriteOff();
