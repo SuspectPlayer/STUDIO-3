@@ -2377,7 +2377,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -6080,19 +6080,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 200130473221430184, guid: ecbed988f719fdf49a9bd974fad36b50, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.70710677
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 200130473221430184, guid: ecbed988f719fdf49a9bd974fad36b50, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 200130473221430184, guid: ecbed988f719fdf49a9bd974fad36b50, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 200130473221430184, guid: ecbed988f719fdf49a9bd974fad36b50, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 200130473221430184, guid: ecbed988f719fdf49a9bd974fad36b50, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -6102,6 +6102,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4055250748380659474, guid: ecbed988f719fdf49a9bd974fad36b50, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c29f7f5e5d0660440aafadb5cbb96ac2, type: 3}
     - target: {fileID: 7841960560545374518, guid: ecbed988f719fdf49a9bd974fad36b50, type: 3}
       propertyPath: m_Name
       value: PlayerIcon
