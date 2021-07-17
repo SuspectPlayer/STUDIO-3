@@ -44,4 +44,6 @@ public class VRRig : MonoBehaviour
         leftHand.Map();
         rightHand.Map();
     }
+
+    
 }

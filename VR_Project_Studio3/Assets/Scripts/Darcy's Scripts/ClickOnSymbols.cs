@@ -12,11 +12,16 @@ public class ClickOnSymbols : MonoBehaviour
     GameObject currentPuzzle, currentDoor;
 
     [SerializeField]
-    GameObject[] puzzles;
+    GameObject[] puzzles, visualButtons;
+
+    [SerializeField]
+    Material[] greens, oranges;
+
+    bool firstCondition, secondCondition;
 
     public void ClickOnSymbolsMethod(Button clickedButton)                    
     {
-        clickedSymbol = clickedButton.GetComponent<Image>().sprite; //finding the symbol of the clicked button      
+        clickedSymbol = clickedButton.GetComponentInChildren<Image>().sprite; //finding the symbol of the clicked button      
 
         currentDoor = GetComponent<DoorControl>().door;
 
@@ -25,21 +30,55 @@ public class ClickOnSymbols : MonoBehaviour
             case "Door 1":
                 {
                     currentPuzzle = puzzles[0];
-                    currentPuzzle.GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
+                    firstCondition = currentPuzzle.GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
+                    if(!firstCondition)
+                    {
+                        OrangeButtonColours();
+                    }
                     break;
                 }
             case "Door 2":
                 {
-                    GameObject.Find("Inside").GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
-                    GameObject.Find("Outside").GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
+                    firstCondition = GameObject.Find("Inside").GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
+                    if(!firstCondition)
+                    {
+                       secondCondition = GameObject.Find("Outside").GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
+                    }
+                
+                    if(!secondCondition)
+                    {
+                       OrangeButtonColours();
+                    }
                     break;
                 }
             case "Door 3":
                 {
                     currentPuzzle = puzzles[2];
-                    currentPuzzle.GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
+                    firstCondition = currentPuzzle.GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
+                    if(!firstCondition)
+                    {
+                        OrangeButtonColours();
+                    }
                     break;
                 }
+        }
+    }
+
+    public void GreenButtonColours(GameObject visualButton)
+    {
+        visualButton.GetComponent<MeshRenderer>().materials = greens;
+    }
+
+    public void OrangeButtonColours() //this method just changes the colour of the buttons for feedback to the player
+    {
+        for (int i = 0; i < visualButtons.Length; i++)
+        {
+            MeshRenderer rend = visualButtons[i].GetComponent<MeshRenderer>();
+
+            if (rend.materials != oranges)
+            {
+                rend.materials = oranges;
+            }
         }
     }
 }
