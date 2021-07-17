@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
+using PlayFab.ProfilesModels;
 
 public class ScannerFXBehaviours : MonoBehaviour
 {
@@ -24,7 +25,11 @@ public class ScannerFXBehaviours : MonoBehaviour
 
     public void ScanStartedMat()
     {
-        if (scanMaterial != null) rendiBoi.material = scanMaterial;
+        if (!touchPad.scanComplete)
+        {
+            scanEmitter.Play();
+            if (scanMaterial != null) rendiBoi.material = scanMaterial;
+        }
     }
 
     public void ScanCancelledMat()
@@ -32,12 +37,15 @@ public class ScannerFXBehaviours : MonoBehaviour
         if (!touchPad.scanComplete)
         {
             if (defaultMaterial != null) rendiBoi.material = defaultMaterial;
+            scanEmitter.Stop();
         }
         
     }
 
     public void ScanFinishedMat()
     {
+        scanEmitter.Stop();
+        gameObject.GetComponent<BoxCollider>().enabled = false;
         if (completeMaterial != null) rendiBoi.material = completeMaterial;
         if (scanEmitter != null) scanEmitter.enabled = false;
         if (finishEmitter != null) finishEmitter.enabled = true;
