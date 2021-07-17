@@ -11,15 +11,15 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - IKWalkable
   - Water
   - UI
   - UIMiniMap
   - HandScanner
+  - Obstacle
   - 
   - 
-  - 
-  - 
+  - Fish
   - 
   - 
   - 

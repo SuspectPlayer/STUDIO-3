@@ -37,12 +37,12 @@ public class GameSetup : MonoBehaviourPunCallbacks
         }
         
 
-        PhotonNetwork.LoadLevel("Darcy_Abyss_Greybox");
+        PhotonNetwork.LoadLevel("Main_Level");
     }
 
     private void OnSceneFinishedLoading(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "Darcy_Abyss_Greybox")
+        if (scene.name == "Main_Level")
         {
             if (PhotonNetwork.IsMasterClient)
             {
@@ -68,7 +68,7 @@ public class GameSetup : MonoBehaviourPunCallbacks
     [PunRPC]
     void RPC_LoadGameOthers()
     {
-        PhotonNetwork.LoadLevel("Darcy_Abyss_Greybox");
+        PhotonNetwork.LoadLevel("Main_Level");
     }
     [PunRPC]
     void RPC_LoadedGameScene()
@@ -82,11 +82,11 @@ public class GameSetup : MonoBehaviourPunCallbacks
         //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Test PC player"), Vector3.up, Quaternion.identity);
         if (isVRPlayer)
         { 
-            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "VR Controller (XR Rig)"), new Vector3(29.74253f, 54.87f, 272.5221f), Quaternion.identity);
+            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "VR Player (XR Rig)"), new Vector3(29.1312f, 55.27f, 272.6982f), Quaternion.identity);
         }
         else if (!isVRPlayer)
         {
-            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "ViewerCam Variant"), new Vector3(31.72129f, 88.86247f, 232.3835f), new Quaternion(-0.1970741f, 0.01013365f, 0.001838408f, -0.9803345f));
+            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "ViewerCam Variant"), new Vector3(113.126f, 81.38101f, 111.611f), new Quaternion(0.2233047f, 0.2072154f, -0.05212184f, 0.9510416f));
         }
     }
 }

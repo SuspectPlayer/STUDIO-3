@@ -21,18 +21,18 @@ public class LobbySetup : MonoBehaviourPunCallbacks
         //DontDestroyOnLoad(this);
     }
 
-    public void VRJoinLobby()
+    public void JoinLobby()
     {
         PhotonNetwork.JoinRoom("Room_" + roomCode.text);
     }
 
-    public void PCJoinLobby()
-    {
-        PhotonNetwork.JoinRoom("Room_" + roomCode.text);
-        player1.transform.Find("Player Name").GetComponent<TextMeshProUGUI>().text = PhotonNetwork.NickName;
-    }
+    //public void PCJoinLobby()
+    //{
+    //    PhotonNetwork.JoinRoom("Room_" + roomCode.text);
+    //    player1.transform.Find("Player Name").GetComponent<TextMeshProUGUI>().text = PhotonNetwork.NickName;
+    //}
 
-    public void VRStartLobby()
+    public void StartLobby()
     {
         string randomRoomName = "Room_" + Random.Range(0, 10000);
         RoomOptions roomOptions = new RoomOptions();
