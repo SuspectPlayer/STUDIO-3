@@ -13,7 +13,7 @@ public class CorrectSymbolCheck : MonoBehaviour
     [SerializeField]
     GameObject dashboard, door;
 
-    [HideInInspector]
+    //[HideInInspector]
     public Sprite temp;
 
     Sprite[] clickedSymbols = new Sprite[4];
@@ -21,7 +21,7 @@ public class CorrectSymbolCheck : MonoBehaviour
     [SerializeField]
     Sprite neutral;
 
-    [HideInInspector]
+    //[HideInInspector]
     public int correctSymbolCount = 0;
     int incorrectSymbolCount = 0, rightOrderCount = 0, checkpointRightOrderCount = 0;
 
@@ -30,13 +30,14 @@ public class CorrectSymbolCheck : MonoBehaviour
         
     }
 
+    public void HandScanSymbolCheck() //this is for the handscanners to check if the symbols are correct
+    {       
+        CorrectSymbolCheckMethod(temp);
+    }
+
     public bool CorrectSymbolCheckMethod(Sprite clickedSymbol)
     {
         bool condition;
-        if(clickedSymbol == null)
-        {
-            clickedSymbol = temp;
-        }
 
         for (int i = 0; i < 4; i++) //checking to see if the clicked colour is one of the ones in the "spawned" symbols on the map
         {
@@ -48,7 +49,6 @@ public class CorrectSymbolCheck : MonoBehaviour
                     {
                         Debug.Log("wrong");
                         condition = false;
-                        //dashboard.GetComponent<ClickOnSymbols>().OrangeButtonColours();
                         correctSymbolCount = 0;
                         for (int x = 0; x < 4; x++) //refreshing the array after a failed attempt
                         {
@@ -107,6 +107,7 @@ public class CorrectSymbolCheck : MonoBehaviour
                                     {
                                         Debug.Log("wrong order");
                                         correctSymbolCount = 0;
+                                        rightOrderCount = 0;
                                         condition = false;
                                         return condition;
                                         //break;
@@ -116,6 +117,7 @@ public class CorrectSymbolCheck : MonoBehaviour
                                 {
                                     dashboard.GetComponent<DoorControl>().UnlockDoor();
                                     correctSymbolCount = 0;
+                                    rightOrderCount = 0;
                                     condition = true;
                                     return condition;
                                 }
@@ -136,6 +138,7 @@ public class CorrectSymbolCheck : MonoBehaviour
                         {
                             Debug.Log("skitter wrong order");
                             correctSymbolCount = 0;
+                            checkpointRightOrderCount = 0;
                             condition = false;
                             return condition;
                             //break;
@@ -144,6 +147,7 @@ public class CorrectSymbolCheck : MonoBehaviour
 
                     if(checkpointRightOrderCount == 3) //all are in correct order
                     {
+                        checkpointRightOrderCount = 0;
                         GameObject.Find("4 - Lights").GetComponent<LightManager>().TurnOffAllLights(); //turning off lights
                         GameObject.Find("Checkpoint 1").GetComponent<Checkpoint>().SaveCheckpointPosition(); //saving
                         GameObject.Find("Skitter Trigger").GetComponent<SkitterEventP3Collisions>().canTrigger = true; //turning on the trigger for when the player steps back into the other room to start the skitter event
@@ -157,7 +161,6 @@ public class CorrectSymbolCheck : MonoBehaviour
                 if (incorrectSymbolCount >= 4)
                 {
                     Debug.Log("incorrect");
-                    //dashboard.GetComponent<ClickOnSymbols>().OrangeButtonColours();
                     correctSymbolCount = 0;
                     for (int x = 0; x < 4; x++) //refreshing the array after a failed attempt
                     {
