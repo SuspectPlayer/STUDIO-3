@@ -45,7 +45,6 @@ public class SkitterEventP3 : MonoBehaviour
             Debug.Log("lose");
             canMove = false;
             StopAllCoroutines();
-            GameObject.Find("4 - Lights").GetComponent<LightManager>().TurnOffAllLights(); //turning off lights
             GetComponent<Animator>().SetBool("canMove", false);
             GameObject.Find("6 - Checkpoints").GetComponent<CheckpointControl>().LoadCheckpoint(); //loading the checkpoint
             gameObject.SetActive(false);

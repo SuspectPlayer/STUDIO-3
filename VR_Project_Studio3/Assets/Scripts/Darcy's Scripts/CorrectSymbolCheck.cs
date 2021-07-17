@@ -123,7 +123,7 @@ public class CorrectSymbolCheck : MonoBehaviour
                             }
                     }
                 }
-                else if(correctSymbolCount == 3 && name == "HandScanner 3") //if the third symbol is reached and the object is handscanner 3, it means the checkpoint needs to be saved.
+                else if(correctSymbolCount == 3 && name == "Puzzle 3") //if the third symbol is reached and the object is puzzle 3, it means the checkpoint needs to be saved.
                 {
                     for (int x = 0; x < 3; x++) //checking that they are in the right order before saving checkpoint and starting skitter event
                     {
@@ -144,8 +144,9 @@ public class CorrectSymbolCheck : MonoBehaviour
 
                     if(checkpointRightOrderCount == 3) //all are in correct order
                     {
+                        GameObject.Find("4 - Lights").GetComponent<LightManager>().TurnOffAllLights(); //turning off lights
                         GameObject.Find("Checkpoint 1").GetComponent<Checkpoint>().SaveCheckpointPosition(); //saving
-                        GameObject.Find("Trigger").GetComponent<SkitterEventP3Collisions>().canTrigger = true; //turning on the trigger for when the player steps back into the other room to start the skitter event
+                        GameObject.Find("Skitter Trigger").GetComponent<SkitterEventP3Collisions>().canTrigger = true; //turning on the trigger for when the player steps back into the other room to start the skitter event
                     }
                 }
             }
