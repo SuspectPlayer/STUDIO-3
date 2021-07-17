@@ -105,31 +105,4 @@ public class HandScannerTouchPad : MonoBehaviour
         progressionValue = progressToValue;
         scanComplete = true;
     }
-
-    /*public void SymbolGet()
-    {
-        switch (name)
-        {
-            case "HandScanner 1":
-                {
-                    GetComponentInParent<CorrectSymbolCheck>().temp = GetComponentInParent<RandomiseSymbols>().symbols[0].GetComponentInChildren<Image>().sprite;
-                    break;
-                }
-            case "HandScanner 2":
-                {
-                    GetComponentInParent<CorrectSymbolCheck>().temp = GetComponentInParent<RandomiseSymbols>().symbols[1].GetComponentInChildren<Image>().sprite;
-                    break;
-                }
-            case "HandScanner 3":
-                {
-                    GetComponentInParent<CorrectSymbolCheck>().temp = GetComponentInParent<RandomiseSymbols>().symbols[2].GetComponentInChildren<Image>().sprite;
-                    break;
-                }
-            case "HandScanner 4":
-                {
-                    GetComponentInParent<CorrectSymbolCheck>().temp = GetComponentInParent<RandomiseSymbols>().symbols[3].GetComponentInChildren<Image>().sprite;
-                    break;
-                }
-        }
-    }*/
 }
