@@ -23,7 +23,7 @@ Material:
   m_Name: Glitch
   m_Shader: {fileID: -6465566751694194690, guid: 91dd0ea67eb50054491c589232b72c67, type: 3}
   m_ShaderKeywords: 
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -33,15 +33,15 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_2ECFD88A:
-        m_Texture: {fileID: 2800000, guid: 8df91d42b0dcb8d4cb21985c3cde56c7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3133dee0754cc6b439217e494e7ef384, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_72274142:
-        m_Texture: {fileID: 2800000, guid: 8df91d42b0dcb8d4cb21985c3cde56c7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3133dee0754cc6b439217e494e7ef384, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_DC57BE32:
-        m_Texture: {fileID: 2800000, guid: 8df91d42b0dcb8d4cb21985c3cde56c7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3133dee0754cc6b439217e494e7ef384, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -66,6 +66,18 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_b2b4d95855a9a882b3a4a811244333ed_Texture_1:
+        m_Texture: {fileID: 2800000, guid: d4ce983a1c836934f96f6dd0452c897b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_c99811a3cc43fe87a107a964e5a7fd48_Texture_1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_d8967b2ebe334381bcbdadfca102f2c5_Texture_1:
+        m_Texture: {fileID: 2800000, guid: d4ce983a1c836934f96f6dd0452c897b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -109,7 +121,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_785622C2: {r: 1, g: 0.8857106, b: 0.34433958, a: 0.87058824}
+    - Color_0b5e1013ff624e8bb18a83c6efa7050f: {r: 60.418774, g: 60.418774, b: 60.418774, a: 0}
+    - Color_785622C2: {r: 1, g: 1, b: 1, a: 1}
     - Vector2_14791149: {r: 10, g: 55, b: 0, a: 0}
     - Vector2_5A5481A4: {r: 0.1, g: -0.1, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
