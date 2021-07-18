@@ -1,25 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 //Written by Darcy Glover
 
 public class SkitterEventP3Collisions : MonoBehaviour
 {
+    PhotonView photonView;
+
     [SerializeField]
     GameObject skitter;
 
-    [HideInInspector]
+    //[HideInInspector]
     public bool canTrigger = false;
 
     //this script is the collision detection to spawn the skitter and to end the event for puzzle 3
+
+    void Start()
+    {
+        photonView = GetComponent<PhotonView>();
+    }
+
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.H)) //devtool to start for testing
-        //{
-        //    canTrigger = true;
-        //    Debug.Log("trigger active");
-        //}
+        if(photonView == null)
+        {
+            Start();
+        }
+    }
+
+    public void TurnTriggerOn()
+    {
+        photonView.RPC("RPC_TurnTriggerOn", RpcTarget.All);
+    }
+
+    [PunRPC]
+    void RPC_TurnTriggerOn()
+    {
+        canTrigger = true;
     }
 
 

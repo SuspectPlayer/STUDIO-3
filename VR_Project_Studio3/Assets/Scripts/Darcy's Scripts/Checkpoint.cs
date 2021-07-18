@@ -6,17 +6,17 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    void Update() //dev tool
-    {
-        //if(Input.GetKeyDown(KeyCode.G))
-        //{
-        //    Debug.Log("saved");
-        //    SaveCheckpointPosition();
-        //}
-    }
+    //void Update() //dev tool
+    //{
+    //    //if(Input.GetKeyDown(KeyCode.G))
+    //    //{
+    //    //    Debug.Log("saved");
+    //    //    SaveCheckpointPosition();
+    //    //}
+    //}
 
-    public void SaveCheckpointPosition() //making the last checkpoint position equal to this checkpoint's position
-    {
-       GetComponentInParent<CheckpointControl>().lastCheckpointPos = transform.position;
-    }
+    //public void SaveCheckpointPosition() //making the last checkpoint position equal to this checkpoint's position
+    //{
+    //   GetComponentInParent<CheckpointControl>().lastCheckpointPos = transform.position;
+    //}
 }
