@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 
-//Written by Darcy Glover and Jack Hobbs
+//Written by Darcy Glover, Jack Hobbs and Jasper von Riegen
+//All programmers assisted with the Photon parts of this script.
 
 public class RandomiseSymbols : MonoBehaviour
 {
@@ -14,12 +15,12 @@ public class RandomiseSymbols : MonoBehaviour
     GameObject[] symbolsOnMap;
 
     //[HideInInspector]
-    public GameObject outside;
+    GameObject outside;
 
     [SerializeField]
     Sprite[] sprites;
 
-    int randomNumber, numberChecker;
+    int randomNumber, numberChecker, arrayLength;
     int[] fourStoredRandomNumbers = new int[4], eightStoredRandomNumbers = new int[8];
 
     PhotonView photonView;
@@ -48,25 +49,27 @@ public class RandomiseSymbols : MonoBehaviour
                 randomNumber = Random.Range(0, 20);
                 eightStoredRandomNumbers[i] = randomNumber;
             }
-            CheckNumbers(eightStoredRandomNumbers);
+            arrayLength = 8;
+            CheckNumbers(eightStoredRandomNumbers, arrayLength);
         }
-        else
+        else if(name != "Outside") //we dont want to apply symbols to outside twice
         {
             for (int i = 0; i < 4; i++) //applying the random numbers into the array
             {
                 randomNumber = Random.Range(0, 20);
                 fourStoredRandomNumbers[i] = randomNumber;
             }
-            CheckNumbers(fourStoredRandomNumbers);
+            arrayLength = 4;
+            CheckNumbers(fourStoredRandomNumbers, arrayLength);
         }
     }
 
-    void CheckNumbers(int[] storedNumbers)
+    void CheckNumbers(int[] storedNumbers, int arrayL)
     {
-        for (int i = 0; i < 4; i++) //cross referencing the array to make sure all the numbers are unique.
+        for (int i = 0; i < arrayL; i++) //cross referencing the array to make sure all the numbers are unique.
         {
             numberChecker = storedNumbers[i];
-            for (int x = 0; x < 4; x++)
+            for (int x = 0; x < arrayL; x++)
             {
                 if (x == i)
                 {
@@ -74,7 +77,8 @@ public class RandomiseSymbols : MonoBehaviour
                 }
                 else if (numberChecker == storedNumbers[x])
                 {
-                    PickUniqueRandomNumbers();
+                    storedNumbers[x] = Random.Range(0, 20);
+                    CheckNumbers(storedNumbers, arrayL);
                 }
             }
         }
@@ -89,24 +93,25 @@ public class RandomiseSymbols : MonoBehaviour
     void RPC_ApplySymbols(int[] eightStored, int[] fourStored) //applying the symbols to the images to 'spawn' them in
     {
         Debug.Log(name);
-        if(name == "Inside")
+        GameObject outsideSymbols = GameObject.Find("Outside");
+
+        if(name == "Inside") //inside applies half its array to outside and half to inside
         {
             for (int i = 0; i < 4; i++)
             {
                 symbols[i].GetComponent<SpriteRenderer>().sprite = sprites[eightStored[i]];
             }
-            for (int i = 4; i < 8; i++)
+            for (int x = 4; x < 8; x++)
             {
-                outside.GetComponent<RandomiseSymbols>().symbols[i].GetComponent<SpriteRenderer>().sprite = sprites[eightStored[i]];
+                outsideSymbols.GetComponent<RandomiseSymbols>().symbols[x - 4].GetComponent<SpriteRenderer>().sprite = sprites[eightStored[x]];
             }
         }
-        else
+        else if(name != "Outside") //we dont want to apply symbols to outside twice
         {
             for (int i = 0; i < 4; i++)
             {
                 symbols[i].GetComponent<SpriteRenderer>().sprite = sprites[fourStored[i]];
             }
-
         }
 
         if (name == "Puzzle 3") //for the third puzzle, also needs to apply the symbols to the intelligence's map

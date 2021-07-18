@@ -30,17 +30,12 @@ public class CheckpointControl : MonoBehaviour
     {
         if(vrPlayer == null) //assigning the vr aplyer once they have been instantiated
         {
-            vrPlayer = GameObject.FindGameObjectWithTag("Player");
+            vrPlayer = GameObject.Find("VR Player (XR Rig)(Clone)");
         }
         if(photonView == null)
         {
             Awake();
         }
-
-        //if(Input.GetKeyDown(KeyCode.Y)) //dev tool
-        //{
-        //    LoadCheckpoint();
-        //}
     }
 
     public void LoadCheckpoint()
@@ -51,13 +46,11 @@ public class CheckpointControl : MonoBehaviour
     [PunRPC]
     void RPC_LoadCheckpoint()
     {
-        vrPlayer.GetComponent<CharacterController>().enabled = false; //moving the player back to the checkpoint
         vrPlayer.transform.position = checkpoint.position;
-        vrPlayer.GetComponent<CharacterController>().enabled = true;
                                                               
         skitter.GetComponent<SkitterEventP3>().playersLose = false; //resetting skitter event
         trigger.SetActive(true);
 
-        Debug.Log("loaded");
+        Debug.Log("loaded " + PhotonNetwork.IsMasterClient.ToString());
     }
 }

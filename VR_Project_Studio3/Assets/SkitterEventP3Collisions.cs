@@ -41,14 +41,20 @@ public class SkitterEventP3Collisions : MonoBehaviour
         canTrigger = true;
     }
 
+    [PunRPC]
+    void RPC_Triggered()
+    {
+        Debug.Log("trigger " + PhotonNetwork.IsMasterClient.ToString());
+        gameObject.SetActive(false); //turn off the collider to prevent from happening more than once
+        skitter.GetComponent<SkitterEventP3>().SpawnSkitter();
+    }
+
 
     void OnTriggerEnter(Collider other) //this collider is positioned across the entrance to the second room, which means the player will have to step through it.
     {
         if(canTrigger && other.CompareTag("Player"))
         {
-            Debug.Log("trigger");
-            gameObject.SetActive(false); //turn off the collider to prevent from happening more than once
-            skitter.GetComponent<SkitterEventP3>().SpawnSkitter();
+            photonView.RPC("RPC_Triggered", RpcTarget.All);
         }
     }
 }

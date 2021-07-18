@@ -13,7 +13,7 @@ public class SkitterEventP3 : MonoBehaviour
     GameObject dashboard, mesh;
 
     bool canMove = false, wait = false;
-    [HideInInspector]
+    //[HideInInspector]
     public bool playersLose = false;
 
     void Start()
@@ -43,9 +43,9 @@ public class SkitterEventP3 : MonoBehaviour
         photonView.RPC("RPC_SpawnSkitter", RpcTarget.All);
     }
 
-    public void PlayersLose() //event for the end of the animation, once animation is done, players lose
+    public void PlayersLoseBool() //event for the end of the animation, once animation is done, players lose
     {
-        playersLose = true;
+        photonView.RPC("RPC_PlayersLoseBool", RpcTarget.All);        
     }
 
     IEnumerator SkitterAnimation() //checking the skitter variables for win/lose
@@ -53,12 +53,12 @@ public class SkitterEventP3 : MonoBehaviour
         Debug.Log("anime");
         if(playersLose) 
         {
-            photonView.RPC("RPC_PlayersLose", RpcTarget.All);
+            photonView.RPC("RPC_PlayersLose", RpcTarget.All); 
         }
 
         if (dashboard.GetComponent<DoorControl>().doorTwoLocked) //if the players manage to close the door, the script waits for them to open the door again to move on to the final door.
         {
-            photonView.RPC("RPC_WaitStart", RpcTarget.All);
+            photonView.RPC("RPC_WaitForDoor", RpcTarget.All);
         }
         yield return null;
     }
@@ -72,19 +72,27 @@ public class SkitterEventP3 : MonoBehaviour
         yield return null;
     }
 
+    [PunRPC]
+    void RPC_PlayersLoseBool()
+    {
+        playersLose = true;
+    }
 
     [PunRPC]
     void RPC_SpawnSkitter()
     {
-        mesh.GetComponent<SkinnedMeshRenderer>().enabled = true;
-        canMove = true;
-        GetComponent<Animator>().SetBool("canMove", true);
+        if(FindObjectOfType<GameSetup>().isVRPlayer)
+        {
+            mesh.GetComponent<SkinnedMeshRenderer>().enabled = true;
+            canMove = true;
+            GetComponent<Animator>().SetBool("canMove", true);
+        }
     }
 
     [PunRPC]
     void RPC_PlayersLose()
     {
-        Debug.Log("lose");
+        Debug.Log("lose " + PhotonNetwork.IsMasterClient.ToString());
         canMove = false;
         StopAllCoroutines();
         GetComponent<Animator>().SetBool("canMove", false);
@@ -93,7 +101,7 @@ public class SkitterEventP3 : MonoBehaviour
     }
 
     [PunRPC]
-    void RPC_WaitStart()
+    void RPC_WaitForDoor()
     {
         StopAllCoroutines();
         canMove = false;
