@@ -49,6 +49,7 @@ public class LightManager : MonoBehaviour
             }
             visibleLights[i].GetComponent<LightControl>().SpriteOff();
             visibleLights[i].GetComponent<LightControl>().FeedbackLightOff();
+            lightCount = 0;
         }
     }
 }

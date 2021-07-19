@@ -60,6 +60,14 @@ MonoBehaviour:
   - RPC_UnlockDoor
   - RPC_LoadCheckpoint
   - RPC_TurnOffAllLights
+  - RPC_TurnTriggerOn
+  - RPC_PlayersLose
+  - RPC_PlayersWin
+  - RPC_SpawnSkitter
+  - RPC_WaitStart
+  - RPC_WaitForDoor
+  - RPC_PlayersLoseBool
+  - RPC_Triggered
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
