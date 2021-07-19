@@ -25,7 +25,7 @@ Material:
   m_ShaderKeywords: 
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
@@ -33,15 +33,15 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_2ECFD88A:
-        m_Texture: {fileID: 2800000, guid: 3133dee0754cc6b439217e494e7ef384, type: 3}
+        m_Texture: {fileID: 2800000, guid: ee38f06e895c72b43b3417f3583d93bd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_72274142:
-        m_Texture: {fileID: 2800000, guid: 3133dee0754cc6b439217e494e7ef384, type: 3}
+        m_Texture: {fileID: 2800000, guid: ee38f06e895c72b43b3417f3583d93bd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_DC57BE32:
-        m_Texture: {fileID: 2800000, guid: 3133dee0754cc6b439217e494e7ef384, type: 3}
+        m_Texture: {fileID: 2800000, guid: 09314217c40beb6488181962d5fccd43, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -62,6 +62,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalFromTexture_0dcce7dcd0ad437483e9f508bf7d8003_Texture_0:
+        m_Texture: {fileID: 2800000, guid: 0c193f51f4573834faabcdb3779213a4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -97,8 +101,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_7F77BEA4: 1.24
-    - Vector1_EF5DE998: 0.655
+    - Vector1_7F77BEA4: 0.05
+    - Vector1_EF5DE998: 0.01
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -122,7 +126,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_0b5e1013ff624e8bb18a83c6efa7050f: {r: 60.418774, g: 60.418774, b: 60.418774, a: 0}
-    - Color_785622C2: {r: 1, g: 1, b: 1, a: 1}
+    - Color_785622C2: {r: 0.5471698, g: 0.33294767, b: 0.33294767, a: 1}
     - Vector2_14791149: {r: 10, g: 55, b: 0, a: 0}
     - Vector2_5A5481A4: {r: 0.1, g: -0.1, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
