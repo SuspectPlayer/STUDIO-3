@@ -6632,3 +6632,212 @@ Received Import Request.
 Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Detail_Pipe_Pillar_01_Convex.asset using Guid(6fac9e24b94bfa541a5c9b2c0499ebc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54476babeac2f7f2f3cf5c46ffdcecd4') in 0.019222 seconds
   Import took 0.027538 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 45927.401620 seconds.
+  path: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI Button.prefab
+  artifactKey: Guid(f6ce33b91f6ffe54cadacbf4bb112440) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI Button.prefab using Guid(f6ce33b91f6ffe54cadacbf4bb112440) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87504945d4ea0319b6987b15ded1af79') in 0.027435 seconds
+  Import took 0.037679 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000298 seconds.
+  path: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI EnumField.prefab
+  artifactKey: Guid(988db55689193434fb0b3b89538f978f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI EnumField.prefab using Guid(988db55689193434fb0b3b89538f978f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f35ffd92b30838de742cdfc45d7998c') in 0.010547 seconds
+  Import took 0.018524 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000278 seconds.
+  path: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI HBox.prefab
+  artifactKey: Guid(f7f5e36797cf0c1408561665c67b179b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI HBox.prefab using Guid(f7f5e36797cf0c1408561665c67b179b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5d662633081701baa1b3b868f62efa1') in 0.008410 seconds
+  Import took 0.015357 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Resources/DebugUI Persistent Canvas.prefab
+  artifactKey: Guid(f6b1a0fe75d5009449cf55ae76220e2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Resources/DebugUI Persistent Canvas.prefab using Guid(f6b1a0fe75d5009449cf55ae76220e2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82c3453cf6a7d5cc2c15da40cfe44ac0') in 0.020684 seconds
+  Import took 0.027915 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000268 seconds.
+  path: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI ToggleHistory.prefab
+  artifactKey: Guid(5088d0220f0c4df439cf06c5c270eacb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI ToggleHistory.prefab using Guid(5088d0220f0c4df439cf06c5c270eacb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0190646a782f993b1c7de729349cd28') in 0.019716 seconds
+  Import took 0.026667 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI UIntField.prefab
+  artifactKey: Guid(f22bcc84a5f4a1944b075a2c4ac71493) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI UIntField.prefab using Guid(f22bcc84a5f4a1944b075a2c4ac71493) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9202bf3e0dc18a3ba7ef86ff7f72084e') in 0.008030 seconds
+  Import took 0.015742 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI Color.prefab
+  artifactKey: Guid(77c185820dd1a464eac89cae3abccddf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI Color.prefab using Guid(77c185820dd1a464eac89cae3abccddf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e05eb101c449ad09c59444dd925cc365') in 0.022582 seconds
+  Import took 0.029216 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000246 seconds.
+  path: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI Value.prefab
+  artifactKey: Guid(dc0f88987826e6e48b1fe9c7c2b53a53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI Value.prefab using Guid(dc0f88987826e6e48b1fe9c7c2b53a53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e438be480bf09c16993967e8aa6561db') in 0.008739 seconds
+  Import took 0.015547 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000288 seconds.
+  path: Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI Vector4.prefab
+  artifactKey: Guid(d47f009476100f545971a81ede14c750) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/Runtime/Debugging/Prefabs/Widgets/DebugUI Vector4.prefab using Guid(d47f009476100f545971a81ede14c750) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c9cd0264efa48ede8169e025e82d314') in 0.011209 seconds
+  Import took 0.019688 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 86270.085156 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Stairs_03_Convex.asset
+  artifactKey: Guid(ab00c21562258924c9de59382bbc4296) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Stairs_03_Convex.asset using Guid(ab00c21562258924c9de59382bbc4296) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7a4752a6ac7317fe37426941eae6b2d') in 0.067295 seconds
+  Import took 0.091153 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000414 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Stairs_04_Convex.asset
+  artifactKey: Guid(5005afb1c6385174db4f18e98130bc53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Stairs_04_Convex.asset using Guid(5005afb1c6385174db4f18e98130bc53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c13cb1a83e0c9c27bb520f04f006e6c') in 0.028391 seconds
+  Import took 0.037548 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000412 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Stairs_03_Convex.asset
+  artifactKey: Guid(ab00c21562258924c9de59382bbc4296) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Stairs_03_Convex.asset using Guid(ab00c21562258924c9de59382bbc4296) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7a4752a6ac7317fe37426941eae6b2d') in 0.016925 seconds
+  Import took 0.025803 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000281 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_StairsPlatform_02_Convex.asset
+  artifactKey: Guid(1bee297a1e4fb4d45989b037df078b2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_StairsPlatform_02_Convex.asset using Guid(1bee297a1e4fb4d45989b037df078b2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87616df953709cfe65356b5fad686d92') in 0.018555 seconds
+  Import took 0.027549 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000382 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_StairsPlatform_01_Convex.asset
+  artifactKey: Guid(d04665c69e25ff541b835d6bc9ca0c64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_StairsPlatform_01_Convex.asset using Guid(d04665c69e25ff541b835d6bc9ca0c64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '452bb445a8eb322608a47024f3e16359') in 0.019411 seconds
+  Import took 0.028732 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.016910 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Stairs_04_Convex.asset
+  artifactKey: Guid(5005afb1c6385174db4f18e98130bc53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Stairs_04_Convex.asset using Guid(5005afb1c6385174db4f18e98130bc53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c13cb1a83e0c9c27bb520f04f006e6c') in 0.012656 seconds
+  Import took 0.020828 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.281811 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Stairs_01_Convex.asset
+  artifactKey: Guid(e643606c50cc79f4dac0de1de4470fe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Stairs_01_Convex.asset using Guid(e643606c50cc79f4dac0de1de4470fe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5df8d1b17ef507522f600da061d768aa') in 0.020838 seconds
+  Import took 0.031583 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000339 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Stairs_02_Convex.asset
+  artifactKey: Guid(a104406f735bc594783c45690b4901ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Stairs_02_Convex.asset using Guid(a104406f735bc594783c45690b4901ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc3c175fd3f15e48b653efa9b1e91ff6') in 0.017702 seconds
+  Import took 0.026446 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000494 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Stairs_01_Convex.asset
+  artifactKey: Guid(e643606c50cc79f4dac0de1de4470fe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Stairs_01_Convex.asset using Guid(e643606c50cc79f4dac0de1de4470fe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5df8d1b17ef507522f600da061d768aa') in 0.010750 seconds
+  Import took 0.025829 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 146.716558 seconds.
+  path: Assets/Materials/Cliffs.mat
+  artifactKey: Guid(edf61c5714f406e4a80e35e49d9bbb19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Cliffs.mat using Guid(edf61c5714f406e4a80e35e49d9bbb19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '690b8a480badd0a0c21d266c12f5f9d2') in 0.055801 seconds
+  Import took 0.066125 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1020.419233 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Ladder_01_Convex.asset
+  artifactKey: Guid(f72a8fbd66b71c64a9967ff9738197eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Ladder_01_Convex.asset using Guid(f72a8fbd66b71c64a9967ff9738197eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd196af8abe0bf58325c06b74c94cc927') in 0.022007 seconds
+  Import took 0.032152 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000275 seconds.
+  path: Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Ladder_Handles_01_Convex.asset
+  artifactKey: Guid(4f034cce80131b0478a7ba547303b393) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/PolygonSciFiSpace/Models/Collision/SM_Prop_Ladder_Handles_01_Convex.asset using Guid(4f034cce80131b0478a7ba547303b393) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e50eee1bcbda3560b35f8bc545c0873') in 0.014474 seconds
+  Import took 0.021790 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 327.762107 seconds.
+  path: Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Contents/Materials/Rock.mat
+  artifactKey: Guid(666e56d92f9c3004ab5dd573b83d1f65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Contents/Materials/Rock.mat using Guid(666e56d92f9c3004ab5dd573b83d1f65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4451987ed57346b3af1d37efc7e68b5') in 0.031780 seconds
+  Import took 0.041655 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000191 seconds.
+  path: Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Contents/Materials/Rock 2.mat
+  artifactKey: Guid(dac3ea97d6bd8f2459885caaa05f9801) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Contents/Materials/Rock 2.mat using Guid(dac3ea97d6bd8f2459885caaa05f9801) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bda3990d592b9ad5fa59694749140f6') in 0.018121 seconds
+  Import took 0.025486 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000301 seconds.
+  path: Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Contents/Materials/Rock 1.mat
+  artifactKey: Guid(b172519ac0d541649ac6681d04c3bb4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Contents/Materials/Rock 1.mat using Guid(b172519ac0d541649ac6681d04c3bb4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02f47958d36e04fe837a81682a42220f') in 0.017181 seconds
+  Import took 0.025244 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000287 seconds.
+  path: Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Contents/Materials/Rock.mat
+  artifactKey: Guid(666e56d92f9c3004ab5dd573b83d1f65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Contents/Materials/Rock.mat using Guid(666e56d92f9c3004ab5dd573b83d1f65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4451987ed57346b3af1d37efc7e68b5') in 0.010734 seconds
+  Import took 0.017779 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.021888 seconds.
+  path: Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Contents/Materials/Rock 1.mat
+  artifactKey: Guid(b172519ac0d541649ac6681d04c3bb4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Unity Packages/Distant Lands/Thalassophobia - Low Poly Oceans/Contents/Materials/Rock 1.mat using Guid(b172519ac0d541649ac6681d04c3bb4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02f47958d36e04fe837a81682a42220f') in 0.016192 seconds
+  Import took 0.023521 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
