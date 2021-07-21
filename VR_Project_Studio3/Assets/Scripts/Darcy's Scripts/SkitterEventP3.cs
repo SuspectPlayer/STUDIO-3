@@ -1,40 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 //Written by Darcy Glover
 
 public class SkitterEventP3 : MonoBehaviour
 {
-    [SerializeField]
-    GameObject dashboard;
+    PhotonView photonView;
 
-    bool canMove = false, wait = false; 
-    [HideInInspector]
+    [SerializeField]
+    GameObject dashboard, mesh;
+
+    bool canMove = false, wait = false;
+    //[HideInInspector]
     public bool playersLose = false;
+
+    void Start()
+    {
+        photonView = GetComponent<PhotonView>();
+    }
 
     void Update()
     {
-        if(canMove) //starts the co-routine. skitter can ony be active if the trigger is entered.
+        if (canMove) //starts the co-routine. skitter can ony be active if the trigger is entered.
         {
             StartCoroutine("SkitterAnimation");
         }
-        if(wait)
+        if (wait)
         {
             StartCoroutine("WaitForDoorUnlock");
+        }
+
+        if (photonView == null)
+        {
+            Start();
         }
     }
 
     public void SpawnSkitter() //this activates the skitter from the trigger being tripped
     {
-        gameObject.SetActive(true);
-        canMove = true;
-        GetComponent<Animator>().SetBool("canMove", true);
+        photonView.RPC("RPC_SpawnSkitter", RpcTarget.All);
     }
 
-    public void PlayersLose() //event for the end of the animation, once animation is done, players lose
+    public void PlayersLoseBool() //event for the end of the animation, once animation is done, players lose
     {
-        playersLose = true;
+        photonView.RPC("RPC_PlayersLoseBool", RpcTarget.All);        
     }
 
     IEnumerator SkitterAnimation() //checking the skitter variables for win/lose
@@ -42,19 +53,12 @@ public class SkitterEventP3 : MonoBehaviour
         Debug.Log("anime");
         if(playersLose) 
         {
-            Debug.Log("lose");
-            canMove = false;
-            StopAllCoroutines();
-            GetComponent<Animator>().SetBool("canMove", false);
-            GameObject.Find("6 - Checkpoints").GetComponent<CheckpointControl>().LoadCheckpoint(); //loading the checkpoint
-            gameObject.SetActive(false);
+            photonView.RPC("RPC_PlayersLose", RpcTarget.All); 
         }
 
         if (dashboard.GetComponent<DoorControl>().doorTwoLocked) //if the players manage to close the door, the script waits for them to open the door again to move on to the final door.
         {
-            StopAllCoroutines();
-            canMove = false;
-            wait = true;
+            photonView.RPC("RPC_WaitForDoor", RpcTarget.All);
         }
         yield return null;
     }
@@ -63,11 +67,53 @@ public class SkitterEventP3 : MonoBehaviour
     {
         if (!dashboard.GetComponent<DoorControl>().doorTwoLocked)
         {
-            gameObject.SetActive(false); //if the door is locked, the players are safe
-            dashboard.GetComponent<DoorControl>().door = GameObject.Find("Door 3"); //only sets to the third door if the skitter event is done
-            wait = false;
-            StopAllCoroutines();
+            photonView.RPC("RPC_PlayersWin", RpcTarget.All);
         }
         yield return null;
+    }
+
+    [PunRPC]
+    void RPC_PlayersLoseBool()
+    {
+        playersLose = true;
+    }
+
+    [PunRPC]
+    void RPC_SpawnSkitter()
+    {
+        if(FindObjectOfType<GameSetup>().isVRPlayer)
+        {
+            mesh.GetComponent<SkinnedMeshRenderer>().enabled = true;
+            canMove = true;
+            GetComponent<Animator>().SetBool("canMove", true);
+        }
+    }
+
+    [PunRPC]
+    void RPC_PlayersLose()
+    {
+        Debug.Log("lose " + PhotonNetwork.IsMasterClient.ToString());
+        canMove = false;
+        StopAllCoroutines();
+        GetComponent<Animator>().SetBool("canMove", false);
+        GameObject.Find("6 - Checkpoints").GetComponent<CheckpointControl>().LoadCheckpoint(); //loading the checkpoint
+        mesh.GetComponent<SkinnedMeshRenderer>().enabled = false;
+    }
+
+    [PunRPC]
+    void RPC_WaitForDoor()
+    {
+        StopAllCoroutines();
+        canMove = false;
+        wait = true;
+    }
+
+    [PunRPC]
+    void RPC_PlayersWin()
+    {
+        mesh.GetComponent<SkinnedMeshRenderer>().enabled = false; //if the door is locked, the players are safe
+        dashboard.GetComponent<DoorControl>().door = GameObject.Find("Door 3"); //only sets to the third door if the skitter event is done
+        wait = false;
+        StopAllCoroutines();
     }
 }

@@ -8,13 +8,16 @@ using Photon.Pun;
 
 public class CheckpointControl : MonoBehaviour
 {
-    [HideInInspector]
+    //[HideInInspector]
     public GameObject vrPlayer;
+    
+    [SerializeField]
+    Transform checkpoint;
 
     public GameObject skitter, trigger;
 
-    [HideInInspector]
-    public Vector3 lastCheckpointPos;
+    //[HideInInspector]
+    //public Vector3 lastCheckpointPos;
 
     PhotonView photonView;
 
@@ -27,17 +30,12 @@ public class CheckpointControl : MonoBehaviour
     {
         if(vrPlayer == null) //assigning the vr aplyer once they have been instantiated
         {
-            vrPlayer = GameObject.Find("First Person Controller(Clone)");
+            vrPlayer = GameObject.Find("VR Player (XR Rig)(Clone)");
         }
         if(photonView == null)
         {
             Awake();
         }
-
-        //if(Input.GetKeyDown(KeyCode.Y)) //dev tool
-        //{
-        //    LoadCheckpoint();
-        //}
     }
 
     public void LoadCheckpoint()
@@ -48,13 +46,11 @@ public class CheckpointControl : MonoBehaviour
     [PunRPC]
     void RPC_LoadCheckpoint()
     {
-        vrPlayer.GetComponent<CharacterController>().enabled = false; //moving the player back to the checkpoint
-        vrPlayer.transform.position = lastCheckpointPos;
-        vrPlayer.GetComponent<CharacterController>().enabled = true;
+        vrPlayer.transform.position = checkpoint.position;
                                                               
         skitter.GetComponent<SkitterEventP3>().playersLose = false; //resetting skitter event
         trigger.SetActive(true);
 
-        Debug.Log("loaded");
+        Debug.Log("loaded " + PhotonNetwork.IsMasterClient.ToString());
     }
 }

@@ -149,8 +149,7 @@ public class CorrectSymbolCheck : MonoBehaviour
                     {
                         checkpointRightOrderCount = 0;
                         GameObject.Find("4 - Lights").GetComponent<LightManager>().TurnOffAllLights(); //turning off lights
-                        GameObject.Find("Checkpoint 1").GetComponent<Checkpoint>().SaveCheckpointPosition(); //saving
-                        GameObject.Find("Skitter Trigger").GetComponent<SkitterEventP3Collisions>().canTrigger = true; //turning on the trigger for when the player steps back into the other room to start the skitter event
+                        GameObject.Find("Skitter Trigger").GetComponent<SkitterEventP3Collisions>().TurnTriggerOn(); //turning on the trigger for when the player steps back into the other room to start the skitter event
                     }
                 }
             }
@@ -180,4 +179,6 @@ public class CorrectSymbolCheck : MonoBehaviour
         }
         return condition;
     }
+
+    
 }
