@@ -18,7 +18,6 @@ public class LobbySetup : MonoBehaviourPunCallbacks
     private void Awake()
     {
         photonView = GetComponent<PhotonView>();
-        //DontDestroyOnLoad(this);
     }
 
     public void JoinLobby()
@@ -26,15 +25,10 @@ public class LobbySetup : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinRoom("Room_" + roomCode.text);
     }
 
-    //public void PCJoinLobby()
-    //{
-    //    PhotonNetwork.JoinRoom("Room_" + roomCode.text);
-    //    player1.transform.Find("Player Name").GetComponent<TextMeshProUGUI>().text = PhotonNetwork.NickName;
-    //}
 
     public void StartLobby()
     {
-        string randomRoomName = "Room_" + Random.Range(0, 10000);
+        string randomRoomName = "Room_" + Random.Range(1000, 9999);
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.IsOpen = true;
         roomOptions.IsVisible = true;
@@ -54,21 +48,6 @@ public class LobbySetup : MonoBehaviourPunCallbacks
         }
         roomNumber.text = randomRoomName;
     }
-
-    //public void PCStartLobby()
-    //{
-    //    string randomRoomName = "Room_" + Random.Range(0, 10000);
-    //    RoomOptions roomOptions = new RoomOptions();
-    //    roomOptions.IsOpen = true;
-    //    roomOptions.IsVisible = true;
-    //    roomOptions.MaxPlayers = 2;
-
-
-    //    PhotonNetwork.CreateRoom(randomRoomName, roomOptions);
-
-    //    player1.transform.Find("Player Name").GetComponent<TextMeshProUGUI>().text = PhotonNetwork.NickName;
-    //    roomNumber.text = randomRoomName;
-    //}
 
     public override void OnCreatedRoom()
     {
@@ -105,20 +84,6 @@ public class LobbySetup : MonoBehaviourPunCallbacks
         }
        
     }
-
-
-    //public override void OnRoomListUpdate(List<RoomInfo> roomList)
-    //{
-    //    if (PhotonNetwork.IsMasterClient)
-    //    {
-            
-    //    }
-    //}
-
-    //public override void OnJoinedLobby()
-    //{
-    //    photonView.RPC("RPC_SetName", RpcTarget.Others, PhotonNetwork.NickName.ToString());
-    //}
 
 
     [PunRPC]
