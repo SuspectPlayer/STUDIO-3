@@ -1194,11 +1194,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1639ed85461b52e418c053f63f4b4c86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wristUIPrefab: {fileID: 4794340282805570519, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
-  leftWrist: {fileID: 387691633314884074}
-  rightWrist: {fileID: 5505239714007021541}
-  leftUIActive: 0
-  rightUIActive: 0
+  wristCanvas: {fileID: 0}
+  mainTitle: {fileID: 0}
+  mainContent: {fileID: 0}
+  sendEmotesTitle: {fileID: 0}
+  sendEmotesContent: {fileID: 0}
+  getEmotesTitle: {fileID: 0}
+  getEmotesContent: {fileID: 0}
+  gotEmoteHappy: {fileID: 0}
+  gotEmoteSad: {fileID: 0}
+  gotEmoteQuery: {fileID: 0}
+  gotEmoteExclaim: {fileID: 0}
+  gotEmoteLeft: {fileID: 0}
+  gotEmoteRight: {fileID: 0}
+  gotEmoteUp: {fileID: 0}
+  gotEmoteDown: {fileID: 0}
+  mainTabWhenActive: {fileID: 0}
+  mainTabWhenInactive: {fileID: 0}
+  sendTabWhenActive: {fileID: 0}
+  sendTabWhenInactive: {fileID: 0}
+  m_EmoteHappy: 0
+  m_EmoteSad: 0
+  m_EmoteQuery: 0
+  m_EmoteExclaim: 0
+  m_EmoteLeft: 0
+  m_EmoteRight: 0
+  m_EmoteUp: 0
+  m_EmoteDown: 0
 --- !u!114 &1808184286045810371
 MonoBehaviour:
   m_ObjectHideFlags: 0
