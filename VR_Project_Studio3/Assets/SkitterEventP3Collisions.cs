@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using FMODUnity;
+
 
 //Written by Darcy Glover
 
 public class SkitterEventP3Collisions : MonoBehaviour
 {
     PhotonView photonView;
-
+    public StudioEventEmitter skitterMusic;
+    public GameObject skitterCursor;
     [SerializeField]
     GameObject skitter;
 
@@ -47,6 +50,8 @@ public class SkitterEventP3Collisions : MonoBehaviour
         Debug.Log("trigger " + PhotonNetwork.IsMasterClient.ToString());
         gameObject.SetActive(false); //turn off the collider to prevent from happening more than once
         skitter.GetComponent<SkitterEventP3>().SpawnSkitter();
+        skitterMusic.Play();
+        skitterCursor.SetActive(true);
     }
 
 
