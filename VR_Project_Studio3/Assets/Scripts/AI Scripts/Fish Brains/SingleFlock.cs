@@ -110,7 +110,11 @@ public class SingleFlock : MonoBehaviour
     void FlockInit() //Initializes and creates flock
     {
         Units = new FlockMember[flockSize];
-
+        if (uniqueFish && unitPrefabAlt == null && unitPrefabAltTwo == null && unitPrefabAltThree == null)
+        {
+            Debug.LogWarning("No alternate fish assigned. Please assign alternate fish if you wish to use unique fish.");
+            uniqueFish = false;
+        }
         for (int i = 0; i < flockSize; i++)
         {
             float randScale = Random.Range(0.1f, 0.7f);
@@ -118,6 +122,7 @@ public class SingleFlock : MonoBehaviour
             randVec = new Vector3(randVec.x * spawnArea.x, randVec.y * spawnArea.y, randVec.z * spawnArea.z);
             Vector3 spawnLoc = transform.position + randVec;
             Quaternion rotie = Quaternion.Euler(0, Random.Range(0, 360), 0);
+            int num = UnitNum();
 
             if (uniqueFish)
             {
@@ -125,20 +130,102 @@ public class SingleFlock : MonoBehaviour
 
                 Debug.Log(chosenIndex);
 
-                if (chosenIndex > flockSize * upperQuart)
+                if (chosenIndex > flockSize * lowerQuart)
                 {
-                    Units[i] = Instantiate(unitPrefabAltThree, spawnLoc, rotie);
-                    Units[i].transform.localScale = new Vector3(randScale, randScale, randScale);
+                    if (unitPrefabAltThree != null)
+                    {
+                        Units[i] = Instantiate(unitPrefabAltThree, spawnLoc, rotie);
+                        Units[i].transform.localScale = new Vector3(randScale, randScale, randScale);
+                    }
+                    else
+                    {
+                        int newUnitNum = Random.Range(0, num);
+                        if (newUnitNum == 0)
+                        {
+                            Units[i] = Instantiate(unitPrefab, spawnLoc, rotie);
+                            Units[i].transform.localScale = new Vector3(randScale, randScale, randScale);
+                        }
+                        else if (newUnitNum == 1)
+                        {
+                            Units[i] = Instantiate(unitPrefabAlt, spawnLoc, rotie);
+                            Units[i].transform.localScale = new Vector3(randScale, randScale, randScale);
+                        }
+                        else if (newUnitNum == 2)
+                        {
+                            Units[i] = Instantiate(unitPrefabAltTwo, spawnLoc, rotie);
+                            Units[i].transform.localScale = new Vector3(randScale, randScale, randScale);
+                        }
+                        else if (newUnitNum == 3)
+                        {
+                            Units[i] = Instantiate(unitPrefabAltThree, spawnLoc, rotie);
+                            Units[i].transform.localScale = new Vector3(randScale, randScale, randScale);
+                        }
+                    }
+                    
                 }
-                else if (chosenIndex <= flockSize * upperQuart && chosenIndex > flockSize * midQuart)
+                else if (chosenIndex <= flockSize * lowerQuart && chosenIndex > flockSize * midQuart)
                 {
-                    Units[i] = Instantiate(unitPrefabAltTwo, spawnLoc, rotie);
-                    Units[i].transform.localScale = new Vector3(randScale, randScale, randScale);
+                    if (unitPrefabAltTwo != null)
+                    {
+                        Units[i] = Instantiate(unitPrefabAltTwo, spawnLoc, rotie);
+                        Units[i].transform.localScale = new Vector3(randScale, randScale, randScale);
+                    }
+                    else
+                    {
+                        int newUnitNum = Random.Range(0, num);
+                        if (newUnitNum == 0)
+                        {
+                            Units[i] = Instantiate(unitPrefab, spawnLoc, rotie);
+                            Units[i].transform.localScale = new Vector3(randScale, randScale, randScale);
+                        }
+                        else if (newUnitNum == 1)
+                        {
+                            Units[i] = Instantiate(unitPrefabAlt, spawnLoc, rotie);
+                            Units[i].transform.localScale = new Vector3(randScale, randScale, randScale);
+                        }
+                        else if (newUnitNum == 2)
+                        {
+                            Units[i] = Instantiate(unitPrefabAltTwo, spawnLoc, rotie);
+                            Units[i].transform.localScale = new Vector3(randScale, randScale, randScale);
+                        }
+                        else if (newUnitNum == 3)
+                        {
+                            Units[i] = Instantiate(unitPrefabAltThree, spawnLoc, rotie);
+                            Units[i].transform.localScale = new Vector3(randScale, randScale, randScale);
+                        }
+                    }
                 }
-                else if (chosenIndex <= flockSize * midQuart && chosenIndex > flockSize * lowerQuart)
+                else if (chosenIndex <= flockSize * midQuart && chosenIndex > flockSize * upperQuart)
                 {
-                    Units[i] = Instantiate(unitPrefabAlt, spawnLoc, rotie);
-                    Units[i].transform.localScale = new Vector3(randScale, randScale, randScale);
+                    if (unitPrefabAlt != null)
+                    {
+                        Units[i] = Instantiate(unitPrefabAlt, spawnLoc, rotie);
+                        Units[i].transform.localScale = new Vector3(randScale, randScale, randScale);
+                    }
+                    else
+                    {
+                        int newUnitNum = Random.Range(0, num);
+                        if (newUnitNum == 0)
+                        {
+                            Units[i] = Instantiate(unitPrefab, spawnLoc, rotie);
+                            Units[i].transform.localScale = new Vector3(randScale, randScale, randScale);
+                        }
+                        else if (newUnitNum == 1)
+                        {
+                            Units[i] = Instantiate(unitPrefabAlt, spawnLoc, rotie);
+                            Units[i].transform.localScale = new Vector3(randScale, randScale, randScale);
+                        }
+                        else if (newUnitNum == 2)
+                        {
+                            Units[i] = Instantiate(unitPrefabAltTwo, spawnLoc, rotie);
+                            Units[i].transform.localScale = new Vector3(randScale, randScale, randScale);
+                        }
+                        else if (newUnitNum == 3)
+                        {
+                            Units[i] = Instantiate(unitPrefabAltThree, spawnLoc, rotie);
+                            Units[i].transform.localScale = new Vector3(randScale, randScale, randScale);
+                        }
+                    }
                 }
                 else
                 {
@@ -156,4 +243,17 @@ public class SingleFlock : MonoBehaviour
             Units[i].SpeedInit(Random.Range(minSpeed, maxSpeed));
         }
     }
+
+    int UnitNum()
+    {
+        int num = 4;
+        if (unitPrefabAltThree == null) num--;
+        if (unitPrefabAltTwo == null) num--;
+        if (unitPrefabAlt == null) num--;
+        if (unitPrefab == null) num--;
+        Debug.Log(num);
+        return num;
+    }
+
+
 }
