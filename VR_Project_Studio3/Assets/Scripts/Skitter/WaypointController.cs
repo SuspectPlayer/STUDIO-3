@@ -14,6 +14,13 @@ public class WaypointController : MonoBehaviour
     public float moveSpeed = 5f;
     NavMeshAgent agent;
 
+    public float fieldOfViewAngle = 100f;
+    public float losePlayerTimer = 5;
+    bool losingPlayer;
+    bool playerFound;
+    public GameObject player;
+
+    public GameObject redLight;
     private void Awake()
     {
         agent = gameObject.GetComponent<NavMeshAgent>();
@@ -29,9 +36,16 @@ public class WaypointController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector3.Distance(transform.position, targetWaypoint.position);
-        //Debug.Log(distance);
-        CheckDistanceToWaypoint(distance);
+        if (!playerFound)
+        {
+            float distance = Vector3.Distance(transform.position, targetWaypoint.position);
+            CheckDistanceToWaypoint(distance);
+        }
+        else
+        {
+            agent.SetDestination(player.transform.position);
+        }
+        
     }
 
     void CheckDistanceToWaypoint(float currentDistance)
@@ -51,5 +65,47 @@ public class WaypointController : MonoBehaviour
         }
         targetWaypoint = waypoints[targetWaypointIndex];
         agent.SetDestination(targetWaypoint.position);
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject == player)
+        {
+            Vector3 direction = other.transform.position - transform.position;
+            float angle = Vector3.Angle(direction, transform.forward);
+
+            if (angle < fieldOfViewAngle * 0.5f)
+            {
+                Debug.Log("playerFound");
+                
+                playerFound = true;
+                redLight.SetActive(true);
+                //Put something here to play when the player is found
+                if (losingPlayer)
+                {
+                    StopCoroutine("LosePlayer");
+                    losingPlayer = false;
+                }
+            }
+            else
+            {
+                StartCoroutine("LosePlayer");
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        StartCoroutine("LosePlayer");
+        
+    }
+
+    IEnumerator LosePlayer()
+    {
+        losingPlayer = true;
+        yield return new WaitForSeconds(losePlayerTimer);
+        playerFound = false;
+        UpdateTargetWaypoint();
+        redLight.SetActive(false);
     }
 }
