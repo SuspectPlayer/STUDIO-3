@@ -95,13 +95,16 @@
 		<property name="length">
 			<value>21.719999999999999</value>
 		</property>
+		<property name="volume">
+			<value>-2.5</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{40ce1b64-9029-45df-b8b6-51d8e4da4cf6}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{b991105f-bfbd-4499-aa36-7929c6085e4a}">
 		<property name="volume">
-			<value>-17</value>
+			<value>-8</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -153,13 +156,13 @@
 			<value>5</value>
 		</property>
 		<property name="frequencyA">
-			<value>420.499817</value>
+			<value>1314.21655</value>
 		</property>
 		<property name="frequencyB">
 			<value>100</value>
 		</property>
 		<property name="qualityA">
-			<value>4.58620644</value>
+			<value>6.89655209</value>
 		</property>
 		<property name="gainB">
 			<value>0.5</value>

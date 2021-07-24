@@ -15,11 +15,11 @@ MonoBehaviour:
   Path: Assets/Audio/F-mod testing/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637626531040064775
+  lastModified: 637627367641275800
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 2852
+    Value: 2910
   Exists: 1
 --- !u!114 &-8904351311515036356
 MonoBehaviour:
@@ -700,6 +700,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 227555
+--- !u!114 &-502680822961998388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D World Items/Machine Whirrling
+  m_EditorClassIdentifier: 
+  Path: event:/3D World Items/Machine Whirrling
+  guid: e9e9daabac5ce147a9f8f8f83e884839
+  Banks:
+  - {fileID: 3180157659838378319}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 17100
 --- !u!114 &-182045356242400887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -739,13 +762,13 @@ MonoBehaviour:
   guid: c5607ad953b2a14a8acdb8769c14f82e
   Banks:
   - {fileID: 3180157659838378319}
-  IsStream: 0
+  IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 6072
+  Length: 60840
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -805,12 +828,13 @@ MonoBehaviour:
   - {fileID: -7462707687386022875}
   - {fileID: 6137182361243612469}
   - {fileID: 1423965314301152448}
+  - {fileID: -502680822961998388}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3180157659838378319}
   StringsBanks:
   - {fileID: -8915405571162439283}
-  stringsBankWriteTime: 637626531040064775
+  stringsBankWriteTime: 637627367641275800
   cacheVersion: 6
 --- !u!114 &624870027013586835
 MonoBehaviour:
@@ -1073,7 +1097,7 @@ MonoBehaviour:
   Path: Assets/Audio/F-mod testing/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637626531040024879
+  lastModified: 637627367641235902
   LoadResult: 0
   FileSizes: []
   Exists: 1

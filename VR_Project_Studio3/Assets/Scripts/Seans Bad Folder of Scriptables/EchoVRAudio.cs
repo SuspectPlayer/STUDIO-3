@@ -8,6 +8,7 @@ using UnityEngine;
 public class EchoVRAudio : MonoBehaviour
 {
     public StudioEventEmitter[] audiofiles;
+    [Tooltip("The tag of the direct interaction controllers")] public string triggerTag;
 
 
     public bool audioTog;
@@ -15,15 +16,9 @@ public class EchoVRAudio : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("GameController"))
+        if(other.CompareTag(triggerTag))
         {
-            Debug.Log("audio collider");
-            audioTog = true;
-            foreach(StudioEventEmitter s in audiofiles) 
-            {
-                s.Play();
-            }
-            ToggleCheck();
+            PlayingAmbience();
         }
     }
 
@@ -36,4 +31,14 @@ public class EchoVRAudio : MonoBehaviour
         }
     }
 
+    public void PlayingAmbience()
+    {
+        Debug.Log("audio collider");
+        audioTog = true;
+        foreach (StudioEventEmitter s in audiofiles)
+        {
+            s.Play();
+        }
+        ToggleCheck();
+    }
 }
