@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class MoveOnPath : MonoBehaviour
 {
+    SingleFlock pathFlock;
+
     public NodePath designatedNodePath;
     [Space(10)]
-    public int movingTowards = 0;
+    [HideInInspector]public int movingTowards = 0;
     public float moveSpeed;
     public float distanceTillSwitch = 1.0f;
     public float rotationSpeed = 0.5f;
 
+    void Awake()
+    {
+        pathFlock = GetComponentInParent<SingleFlock>();
+        pathFlock.pathLeader = gameObject;
+    }
 
     // Update is called once per frame
     void Update()
     {
+
         float distToDest = Vector3.Distance(designatedNodePath.nodes[movingTowards].position, transform.position);
         transform.position = Vector3.MoveTowards(transform.position, designatedNodePath.nodes[movingTowards].position, Time.deltaTime * moveSpeed);
 

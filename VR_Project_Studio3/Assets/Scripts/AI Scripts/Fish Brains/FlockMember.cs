@@ -53,7 +53,6 @@ public class FlockMember : MonoBehaviour
         Vector3 moveVec = cohesionVec + avoVec + alignVec + boundsVec + obstVec;
         moveVec = Vector3.SmoothDamp(thisTrans.forward, moveVec, ref currentVelocity, smoothTime);
         moveVec = moveVec.normalized * speed;
-
         thisTrans.forward = moveVec;
         thisTrans.position += moveVec * Time.deltaTime;
     }
@@ -121,7 +120,7 @@ public class FlockMember : MonoBehaviour
             return cohesionVec;
         cohesionVec /= seenPeers;
         cohesionVec -= thisTrans.position;
-        cohesionVec = cohesionVec.normalized; ;
+        cohesionVec = cohesionVec.normalized;
         return cohesionVec;
     }
 
