@@ -43,10 +43,6 @@ public class PlayFabAuthenticator : MonoBehaviour
         username = login_User.text;
 
         PlayFabClientAPI.LoginWithPlayFab(request, RequestToken, OnError);
-        foreach (GameObject g in enableOnAuthentication)
-        {
-            g.SetActive(true);
-        }
     }
     
     public void AuthenticateWithPlayFabRegister()
@@ -56,10 +52,6 @@ public class PlayFabAuthenticator : MonoBehaviour
         request.Username = register_User.text;
         request.Password = register_Pass.text;
         request.Email = register_Email.text;
-        foreach (GameObject g in enableOnAuthentication)
-        {
-            g.SetActive(true);
-        }
 
         PlayFabClientAPI.RegisterPlayFabUser(request, result => { Debug.Log("Account Made"); AuthenticateWithPlayFabAfterReg(); }, OnError);
     }
@@ -93,6 +85,10 @@ public class PlayFabAuthenticator : MonoBehaviour
         PhotonNetwork.AuthValues = customAuth;
 
         LoginManager.ConnecteToPhotonServer(username);
+        foreach (GameObject g in enableOnAuthentication)
+        {
+            g.SetActive(true);
+        }
     }
 
     void OnError(PlayFabError error)

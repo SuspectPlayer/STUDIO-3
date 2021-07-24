@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 using UnityEngine.UI;
 
-//Written by Darcy Glover
+//Written by Darcy Glover - Any FMOD scripting was done by Sean Casey
 
 public class CorrectSymbolCheck : MonoBehaviour
 {
+    [SerializeField]
+    StudioEventEmitter[] doorCloseSounds; //When wrong answer
+
     [SerializeField]
     GameObject[] symbols;
 
@@ -159,6 +163,7 @@ public class CorrectSymbolCheck : MonoBehaviour
                 Debug.Log(incorrectSymbolCount.ToString());
                 if (incorrectSymbolCount >= 4)
                 {
+                    doorCloseSounds[dashboard.GetComponent<PuzzleManager>().whichPuzzle].Play(); // Plays feedback song that players were wrong
                     Debug.Log("incorrect");
                     correctSymbolCount = 0;
                     for (int x = 0; x < 4; x++) //refreshing the array after a failed attempt

@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using FMODUnity;
 
 //Written by Darcy Glover
 
 public class SkitterEventP3 : MonoBehaviour
 {
     PhotonView photonView;
+
+    public StudioEventEmitter skitterMusic;
 
     [SerializeField]
     GameObject dashboard, mesh;
@@ -96,6 +99,7 @@ public class SkitterEventP3 : MonoBehaviour
         canMove = false;
         StopAllCoroutines();
         GetComponent<Animator>().SetBool("canMove", false);
+        skitterMusic.Stop();
         GameObject.Find("6 - Checkpoints").GetComponent<CheckpointControl>().LoadCheckpoint(); //loading the checkpoint
         mesh.GetComponent<SkinnedMeshRenderer>().enabled = false;
     }

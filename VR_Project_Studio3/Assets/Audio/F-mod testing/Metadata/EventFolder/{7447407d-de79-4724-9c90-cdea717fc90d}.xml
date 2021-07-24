@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="EventFolder" id="{7447407d-de79-4724-9c90-cdea717fc90d}">
+		<property name="name">
+			<value>Substation Echo</value>
+		</property>
+		<relationship name="folder">
+			<destination>{e5bceb0d-3ce2-4664-a228-b3045d768d00}</destination>
+		</relationship>
+	</object>
+</objects>
