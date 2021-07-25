@@ -25,6 +25,11 @@ public class CorrectSymbolCheck : MonoBehaviour
     [SerializeField]
     Sprite neutral;
 
+    [Tooltip("The bool or trigger name for the animation")] public string animParameter;
+    [SerializeField]
+    public Animator intelPuzzleAnims;
+
+        
     //[HideInInspector]
     public int correctSymbolCount = 0;
     int incorrectSymbolCount = 0, rightOrderCount = 0, checkpointRightOrderCount = 0;
@@ -73,6 +78,7 @@ public class CorrectSymbolCheck : MonoBehaviour
                     {
                         case "Door 1":
                             {
+                                intelPuzzleAnims.SetBool(animParameter, true);
                                 dashboard.GetComponent<ClickOnSymbols>().OrangeButtonColours(); //this turns the buttons back to orange for feedback
                                 dashboard.GetComponent<DoorControl>().UnlockDoor();
                                 correctSymbolCount = 0;
@@ -84,6 +90,7 @@ public class CorrectSymbolCheck : MonoBehaviour
                             {
                                 if(gameObject.name == "Inside")
                                 {
+                                    intelPuzzleAnims.SetBool(animParameter, true);
                                     dashboard.GetComponent<ClickOnSymbols>().OrangeButtonColours(); 
                                     dashboard.GetComponent<DoorControl>().LockDoor();
                                     correctSymbolCount = 0;
@@ -140,6 +147,7 @@ public class CorrectSymbolCheck : MonoBehaviour
                         }
                         else
                         {
+                            intelPuzzleAnims.SetTrigger("dead"); //Plays animation animation
                             Debug.Log("skitter wrong order");
                             correctSymbolCount = 0;
                             checkpointRightOrderCount = 0;
@@ -151,6 +159,7 @@ public class CorrectSymbolCheck : MonoBehaviour
 
                     if(checkpointRightOrderCount == 3) //all are in correct order
                     {
+                        intelPuzzleAnims.SetBool("puz3comp", true);
                         checkpointRightOrderCount = 0;
                         GameObject.Find("4 - Lights").GetComponent<LightManager>().TurnOffAllLights(); //turning off lights
                         GameObject.Find("Skitter Trigger").GetComponent<SkitterEventP3Collisions>().TurnTriggerOn(); //turning on the trigger for when the player steps back into the other room to start the skitter event
