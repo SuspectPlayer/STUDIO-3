@@ -12,6 +12,10 @@ public class SkitterEventP3 : MonoBehaviour
 
     public StudioEventEmitter skitterMusic;
 
+    [Tooltip("The bool or trigger name for the animation")] public string animParameter;
+    [SerializeField]
+    public Animator intelPuzzleAnims;
+
     [SerializeField]
     GameObject dashboard, mesh;
 

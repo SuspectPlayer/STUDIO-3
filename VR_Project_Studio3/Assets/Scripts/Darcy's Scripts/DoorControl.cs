@@ -32,9 +32,9 @@ public class DoorControl : MonoBehaviour
     public void UnlockDoor()
     {
         photonView.RPC("RPC_UnlockDoor", RpcTarget.All);
-        doorOpenSounds[0].Play();
-        doorOpenSounds[1].Play();
-        doorOpenSounds[2].Play();
+        //doorOpenSounds[0].Play();
+        //doorOpenSounds[1].Play();
+        //doorOpenSounds[2].Play();
     }
 
     [PunRPC]

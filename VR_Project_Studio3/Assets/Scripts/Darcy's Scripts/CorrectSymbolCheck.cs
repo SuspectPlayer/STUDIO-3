@@ -4,7 +4,7 @@ using UnityEngine;
 using FMODUnity;
 using UnityEngine.UI;
 
-//Written by Darcy Glover, assisted by Jasper von Reigen - Any FMOD scripting was done by Sean Casey
+//Written by Darcy Glover - Any FMOD scripting was done by Sean Casey
 
 public class CorrectSymbolCheck : MonoBehaviour
 {
@@ -17,19 +17,31 @@ public class CorrectSymbolCheck : MonoBehaviour
     [SerializeField]
     GameObject dashboard, door;
 
+    //[HideInInspector]
+    public Sprite temp;
+
     Sprite[] clickedSymbols = new Sprite[4];
 
     [SerializeField]
     Sprite neutral;
 
+    [Tooltip("The bool or trigger name for the animation")] public string animParameter;
+    [SerializeField]
+    public Animator intelPuzzleAnims;
+
+        
     //[HideInInspector]
     public int correctSymbolCount = 0;
-
-    int incorrectSymbolCount = 0;
+    int incorrectSymbolCount = 0, rightOrderCount = 0, checkpointRightOrderCount = 0;
 
     void Start() //this is only here so i can turn on and off the script component
     {
         
+    }
+
+    public void HandScanSymbolCheck() //this is for the handscanners to check if the symbols are correct
+    {       
+        CorrectSymbolCheckMethod(temp);
     }
 
     public bool CorrectSymbolCheckMethod(Sprite clickedSymbol)
@@ -66,6 +78,7 @@ public class CorrectSymbolCheck : MonoBehaviour
                     {
                         case "Door 1":
                             {
+                                intelPuzzleAnims.SetBool(animParameter, true);
                                 dashboard.GetComponent<ClickOnSymbols>().OrangeButtonColours(); //this turns the buttons back to orange for feedback
                                 dashboard.GetComponent<DoorControl>().UnlockDoor();
                                 correctSymbolCount = 0;
@@ -83,6 +96,7 @@ public class CorrectSymbolCheck : MonoBehaviour
                                 }
                                 else
                                 {
+                                    intelPuzzleAnims.SetBool("puz2", true);
                                     dashboard.GetComponent<ClickOnSymbols>().OrangeButtonColours();
                                     dashboard.GetComponent<DoorControl>().UnlockDoor();
                                     correctSymbolCount = 0;
@@ -91,6 +105,65 @@ public class CorrectSymbolCheck : MonoBehaviour
                                 return condition;
                                 //break;
                             }
+                        case "Door 3": //for door 3, the symbols will need to be in a particular order
+                            {
+                                for(int x = 0; x < 4; x++)
+                                {
+                                    if(clickedSymbols[i] == symbols[i].GetComponent<SpriteRenderer>().sprite)
+                                    {
+
+                                        Debug.Log("right order");
+                                        rightOrderCount++;                                     
+                                    }
+                                    else
+                                    {
+                                        Debug.Log("wrong order");
+                                        correctSymbolCount = 0;
+                                        rightOrderCount = 0;
+                                        condition = false;
+                                        return condition;
+                                        //break;
+                                    }
+                                }
+                                if(rightOrderCount == 4) //if the 4 symbols were clicked in the right order it opens the door
+                                {
+                                    dashboard.GetComponent<DoorControl>().UnlockDoor();
+                                    intelPuzzleAnims.SetBool("puz3comp", true);
+                                    correctSymbolCount = 0;
+                                    rightOrderCount = 0;
+                                    condition = true;
+                                    return condition;
+                                }
+                                break;
+                            }
+                    }
+                }
+                else if(correctSymbolCount == 3 && name == "Puzzle 3") //if the third symbol is reached and the object is puzzle 3, it means the checkpoint needs to be saved.
+                {
+                    for (int x = 0; x < 3; x++) //checking that they are in the right order before saving checkpoint and starting skitter event
+                    {
+                        if (clickedSymbols[i] == symbols[i].GetComponent<SpriteRenderer>().sprite)
+                        {
+                            Debug.Log("skitter right order");
+                            checkpointRightOrderCount++;
+                        }
+                        else
+                        {
+                            intelPuzzleAnims.SetTrigger("dead"); //Plays animation animation
+                            Debug.Log("skitter wrong order");
+                            correctSymbolCount = 0;
+                            checkpointRightOrderCount = 0;
+                            condition = false;
+                            return condition;
+                            //break;
+                        }
+                    }
+
+                    if(checkpointRightOrderCount == 3) //all are in correct order
+                    {
+                        checkpointRightOrderCount = 0;
+                        GameObject.Find("4 - Lights").GetComponent<LightManager>().TurnOffAllLights(); //turning off lights
+                        GameObject.Find("Skitter Trigger").GetComponent<SkitterEventP3Collisions>().TurnTriggerOn(); //turning on the trigger for when the player steps back into the other room to start the skitter event
                     }
                 }
             }
@@ -121,4 +194,6 @@ public class CorrectSymbolCheck : MonoBehaviour
         }
         return condition;
     }
+
+    
 }
