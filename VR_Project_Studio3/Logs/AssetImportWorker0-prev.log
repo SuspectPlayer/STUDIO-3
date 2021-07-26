@@ -15,12 +15,12 @@ C:/Users/tajna/Desktop/STUDIO-3/STUDIO-3/VR_Project_Studio3
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-64606
+65136
 Successfully changed project path to: C:/Users/tajna/Desktop/STUDIO-3/STUDIO-3/VR_Project_Studio3
 C:/Users/tajna/Desktop/STUDIO-3/STUDIO-3/VR_Project_Studio3
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 155.89 ms, found 17 plugins.
-Preloading 1 native plugins for Editor in 1.21 ms.
+Refreshing native plugins compatible for Editor in 2006.91 ms, found 17 plugins.
+Preloading 1 native plugins for Editor in 1.02 ms.
 Initialize engine version: 2020.3.9f1 (108be757e447)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/tajna/Desktop/STUDIO-3/STUDIO-3/VR_Project_Studio3/Assets
@@ -39,125 +39,16 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56892
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56272
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001915 seconds.
+Registered in 0.115863 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 115.56 ms, found 17 plugins.
+Refreshing native plugins compatible for Editor in 108.06 ms, found 17 plugins.
 Preloading 1 native plugins for Editor in 0.08 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.274 seconds
+- Completed reload, in  3.771 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.019266 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 113.43 ms, found 17 plugins.
-Preloading 1 native plugins for Editor in 0.08 ms.
-RefreshInfo: StopAssetImportingV2(NoUpdateAssetOptions) scanfilter: 
-RefreshProfiler: Total: 0.000ms
-RefreshInfo: StopAssetImportingV2(NoUpdateAssetOptions) scanfilter: 
-RefreshProfiler: Total: 0.000ms
-[XR] OculusXRPlugin: registering subsystems
-[XR] Unable to register display lifecyle provider: [1]
-[XR] Oculus Input lifecycle provider registered.
-[XR] Unable to register input lifecyle provider: [1]
-NullReferenceException: Object reference not set to an instance of an object
-  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x00048] in C:\Users\tajna\Desktop\STUDIO-3\STUDIO-3\VR_Project_Studio3\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:249 
-  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\tajna\Desktop\STUDIO-3\STUDIO-3\VR_Project_Studio3\Library\PackageCache\com.unity.xr.oculus@1.9.1\Runtime\OculusLoader.cs:234 
-
-(Filename: Library/PackageCache/com.unity.xr.oculus@1.9.1/Runtime/OculusLoader.cs Line: 249)
-
-Mono: successfully reloaded assembly
-- Completed reload, in  2.129 seconds
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Shader 'Nature/Terrain/StylizedTerrain': dependency 'BaseMapShader' shader 'ASESampleShaders/SimpleTerrainBase' not found
-Shader 'Nature/Terrain/StylizedTerrain': dependency 'AddPassShader' shader 'ASESampleShaders/Terrain/SimpleTerrainAddPass' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Distant Lands/Stylized Terrain First Pass': dependency 'BaseMapShader' shader 'Distant Lands/Stylized Terrain' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 2.05 ms, found 17 plugins.
-Preloading 1 native plugins for Editor in 0.08 ms.
-Unloading 53 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 149.3 MB.
-System memory in use after: 149.3 MB.
-
-Unloading 135 unused Assets to reduce memory usage. Loaded Objects now: 5225.
-Total: 4.026700 ms (FindLiveObjects: 0.394400 ms CreateObjectMapping: 0.200100 ms MarkObjects: 3.230900 ms  DeleteObjects: 0.200500 ms)
-
-========================================================================
-Received Import Request.
-  path: Packages/com.unity.cinemachine/Editor/EditorResources/PostProcessLayer.png
-  artifactKey: Guid(ba6fb66d108240a4a98dea11660dc646) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.cinemachine/Editor/EditorResources/PostProcessLayer.png using Guid(ba6fb66d108240a4a98dea11660dc646) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3d0109e56771a2d3944e971edde2619') in 0.111514 seconds
-  Import took 0.118737 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000296 seconds.
-  path: Packages/com.unity.postprocessing/PostProcessing/Gizmos/PostProcessLayer.png
-  artifactKey: Guid(5f51e0b22aa8cb84b9f422576ce87ff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.postprocessing/PostProcessing/Gizmos/PostProcessLayer.png using Guid(5f51e0b22aa8cb84b9f422576ce87ff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac77c49d29423d61935cc9b4f2a5dff2') in 0.012789 seconds
-  Import took 0.019374 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000339 seconds.
-  path: Packages/com.unity.render-pipelines.universal/Runtime/Data/PostProcessData.asset
-  artifactKey: Guid(41439944d30ece34e96484bdb6645b55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.render-pipelines.universal/Runtime/Data/PostProcessData.asset using Guid(41439944d30ece34e96484bdb6645b55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63dddc8604d9a729605887daea0d281b') in 0.011140 seconds
-  Import took 0.018286 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000349 seconds.
-  path: Packages/com.unity.render-pipelines.universal/Editor/Gizmos/Camera_PostProcessing.png
-  artifactKey: Guid(916f43e9d8e15c448a2c8a5d30b26dbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.render-pipelines.universal/Editor/Gizmos/Camera_PostProcessing.png using Guid(916f43e9d8e15c448a2c8a5d30b26dbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b9824911443e6753e3c808f0ab5375c') in 0.016765 seconds
-  Import took 0.023721 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 104.430897 seconds.
-  path: Packages/com.unity.collab-proxy/Editor/Assets/Styles/ChangesTabPageView.uss
-  artifactKey: Guid(105b0e05b7ff8d147ad5c7aeed41e3b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.collab-proxy/Editor/Assets/Styles/ChangesTabPageView.uss using Guid(105b0e05b7ff8d147ad5c7aeed41e3b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98cc935fdf74608c845b0e3efbafd6e4') in 0.019088 seconds
-  Import took 0.030136 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000320 seconds.
-  path: Packages/com.unity.collab-proxy/Editor/Assets/Layouts/ChangesTabPageView.uxml
-  artifactKey: Guid(a1c552fb05993cf4eac00d572aa408f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.collab-proxy/Editor/Assets/Layouts/ChangesTabPageView.uxml using Guid(a1c552fb05993cf4eac00d572aa408f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62ce191240f28430e6e8b697bae8f005') in 0.009278 seconds
-  Import took 0.017304 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000287 seconds.
-  path: Assets/Editor Default Resources/FMOD/DeleteStatusIcon.png
-  artifactKey: Guid(2d74d7f58d34f6f4b98497186d0a309a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Editor Default Resources/FMOD/DeleteStatusIcon.png using Guid(2d74d7f58d34f6f4b98497186d0a309a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33afd3c0ead851349d300d8933266f5e') in 0.016806 seconds
-  Import took 0.024575 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000364 seconds.
-  path: Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
-  artifactKey: Guid(e559cbc9da883d4448892424046347cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset using Guid(e559cbc9da883d4448892424046347cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a939f9ac3dc9a6a5ece535ed3b666c5') in 0.017942 seconds
-  Import took 0.026604 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000342 seconds.
-  path: Assets/Editor Default Resources/FMOD/CheckedOutStatusIcon.png
-  artifactKey: Guid(c9c020c90ed2b7740ba185f716af4fbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Editor Default Resources/FMOD/CheckedOutStatusIcon.png using Guid(c9c020c90ed2b7740ba185f716af4fbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b25005dd6e53018d8c4be16b7223a509') in 0.019647 seconds
-  Import took 0.027118 seconds .
-
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+Registered in 1.011184 seconds.
