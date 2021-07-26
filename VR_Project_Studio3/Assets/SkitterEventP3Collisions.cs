@@ -4,8 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using FMODUnity;
 
-
-//Written by Darcy Glover
+//Written by Darcy Glover, assisted by Jasper von Riegen
 
 public class SkitterEventP3Collisions : MonoBehaviour
 {
