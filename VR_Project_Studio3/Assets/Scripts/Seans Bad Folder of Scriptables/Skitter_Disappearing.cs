@@ -6,12 +6,14 @@ public class Skitter_Disappearing : MonoBehaviour
 {
     public GameObject tankSkitter;
     public GameObject biomass;
+    public GameObject airbagColliderBox;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("GameController"))
         {
             tankSkitter.SetActive(false);
             biomass.SetActive(true);
+            airbagColliderBox.SetActive(true);
         }
     }
 }

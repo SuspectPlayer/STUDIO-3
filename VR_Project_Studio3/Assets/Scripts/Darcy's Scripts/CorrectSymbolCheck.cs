@@ -90,13 +90,13 @@ public class CorrectSymbolCheck : MonoBehaviour
                             {
                                 if(gameObject.name == "Inside")
                                 {
-                                    intelPuzzleAnims.SetBool(animParameter, true);
                                     dashboard.GetComponent<ClickOnSymbols>().OrangeButtonColours(); 
                                     dashboard.GetComponent<DoorControl>().LockDoor();
                                     correctSymbolCount = 0;
                                 }
                                 else
                                 {
+                                    intelPuzzleAnims.SetBool("puz2", true);
                                     dashboard.GetComponent<ClickOnSymbols>().OrangeButtonColours();
                                     dashboard.GetComponent<DoorControl>().UnlockDoor();
                                     correctSymbolCount = 0;
@@ -111,6 +111,7 @@ public class CorrectSymbolCheck : MonoBehaviour
                                 {
                                     if(clickedSymbols[i] == symbols[i].GetComponent<SpriteRenderer>().sprite)
                                     {
+
                                         Debug.Log("right order");
                                         rightOrderCount++;                                     
                                     }
@@ -127,6 +128,7 @@ public class CorrectSymbolCheck : MonoBehaviour
                                 if(rightOrderCount == 4) //if the 4 symbols were clicked in the right order it opens the door
                                 {
                                     dashboard.GetComponent<DoorControl>().UnlockDoor();
+                                    intelPuzzleAnims.SetBool("puz3comp", true);
                                     correctSymbolCount = 0;
                                     rightOrderCount = 0;
                                     condition = true;
@@ -159,7 +161,6 @@ public class CorrectSymbolCheck : MonoBehaviour
 
                     if(checkpointRightOrderCount == 3) //all are in correct order
                     {
-                        intelPuzzleAnims.SetBool("puz3comp", true);
                         checkpointRightOrderCount = 0;
                         GameObject.Find("4 - Lights").GetComponent<LightManager>().TurnOffAllLights(); //turning off lights
                         GameObject.Find("Skitter Trigger").GetComponent<SkitterEventP3Collisions>().TurnTriggerOn(); //turning on the trigger for when the player steps back into the other room to start the skitter event
