@@ -96,3 +96,4 @@ Received Import Request.
 Start importing Assets/Models/AbyssGeo_Updated.prefab using Guid(bff94e5de35117849826eeea32c4cad9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cd637ae634b784e8c11d95f24f6cf92') in 0.090676 seconds
   Import took 0.099224 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
