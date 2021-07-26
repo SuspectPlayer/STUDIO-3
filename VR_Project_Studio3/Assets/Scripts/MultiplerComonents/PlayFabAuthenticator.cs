@@ -27,11 +27,19 @@ public class PlayFabAuthenticator : MonoBehaviour
     public int runes = 0;
     public int clues = 0;
     public GetPlayerCombinedInfoRequestParams infoRequest;
+    public TextMeshProUGUI displayRunes;
+    public TextMeshProUGUI displayClues;
 
     public void Awake()
     {
         PlayFabSettings.TitleId = "D61DD";
         //AuthenticateWithPlayFab();
+    }
+
+    private void Update()
+    {
+        displayClues.text = "Clues: " + clues;
+        displayRunes.text = "Runes: " + runes;
     }
 
     public void AuthenticateWithPlayFabLogin()
@@ -79,7 +87,7 @@ public class PlayFabAuthenticator : MonoBehaviour
         Debug.Log("PlayFab authenticated. Requesting photon token...");
 
         runes = result.InfoResultPayload.UserVirtualCurrency["RU"];
-        clues = result.InfoResultPayload.UserInventory[0].RemainingUses.Value;
+        //clues = result.InfoResultPayload.UserInventory[0].RemainingUses.Value;
 
         _playFabPlayerIdCache = result.PlayFabId;
         GetPhotonAuthenticationTokenRequest request = new GetPhotonAuthenticationTokenRequest();
