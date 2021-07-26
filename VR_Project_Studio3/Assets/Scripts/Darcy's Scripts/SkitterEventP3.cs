@@ -23,6 +23,9 @@ public class SkitterEventP3 : MonoBehaviour
     //[HideInInspector]
     public bool playersLose = false;
 
+    [SerializeField]
+
+
     void Start()
     {
         photonView = GetComponent<PhotonView>();
@@ -99,6 +102,7 @@ public class SkitterEventP3 : MonoBehaviour
     [PunRPC]
     void RPC_PlayersLose()
     {
+        intelPuzzleAnims.SetTrigger("dead"); //Plays animation animation
         Debug.Log("lose " + PhotonNetwork.IsMasterClient.ToString());
         canMove = false;
         StopAllCoroutines();
@@ -119,6 +123,7 @@ public class SkitterEventP3 : MonoBehaviour
     [PunRPC]
     void RPC_PlayersWin()
     {
+        intelPuzzleAnims.SetBool("puz3comp", true);
         mesh.GetComponent<SkinnedMeshRenderer>().enabled = false; //if the door is locked, the players are safe
         dashboard.GetComponent<DoorControl>().door = GameObject.Find("Door 3"); //only sets to the third door if the skitter event is done
         wait = false;

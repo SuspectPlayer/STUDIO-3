@@ -13,7 +13,6 @@ public class Echo_Airbag_Collider : MonoBehaviour
     private void Start()
     {
         photonView = GetComponent<PhotonView>();
-
     }
 
     private void OnTriggerEnter(Collider other)
