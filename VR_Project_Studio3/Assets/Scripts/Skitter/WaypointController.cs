@@ -21,6 +21,7 @@ public class WaypointController : MonoBehaviour
     public GameObject player;
 
     public GameObject redLight;
+    bool spotted;
     private void Awake()
     {
         agent = gameObject.GetComponent<NavMeshAgent>();
@@ -80,7 +81,13 @@ public class WaypointController : MonoBehaviour
                 
                 playerFound = true;
                 redLight.SetActive(true);
-                //Put something here to play when the player is found
+                if(spotted == false)
+                {
+                    //Put something here to play when the player is found
+                    spotted = true;
+
+                }
+                
                 if (losingPlayer)
                 {
                     StopCoroutine("LosePlayer");
@@ -107,5 +114,6 @@ public class WaypointController : MonoBehaviour
         playerFound = false;
         UpdateTargetWaypoint();
         redLight.SetActive(false);
+        spotted == false
     }
 }
