@@ -86,8 +86,22 @@ public class PlayFabAuthenticator : MonoBehaviour
     {
         Debug.Log("PlayFab authenticated. Requesting photon token...");
 
+
+        GetUserInventoryRequest inv = new GetUserInventoryRequest();
+        PlayFabClientAPI.GetUserInventory(inv, invResult => 
+        { 
+            List<ItemInstance> items = invResult.Inventory;
+            if(items.Count > 0)
+            {
+                clues = result.InfoResultPayload.UserInventory[0].RemainingUses.Value;
+            }
+            else
+            {
+                clues = 0;
+            }
+        }, OnError);
+        
         runes = result.InfoResultPayload.UserVirtualCurrency["RU"];
-        //clues = result.InfoResultPayload.UserInventory[0].RemainingUses.Value;
 
         _playFabPlayerIdCache = result.PlayFabId;
         GetPhotonAuthenticationTokenRequest request = new GetPhotonAuthenticationTokenRequest();
