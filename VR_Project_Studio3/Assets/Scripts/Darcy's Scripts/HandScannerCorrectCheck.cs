@@ -97,8 +97,7 @@ public class HandScannerCorrectCheck : MonoBehaviour
         string reset = "reset";
         photonView.RPC("RPC_Message", RpcTarget.All, reset);
         GetComponent<ScannerFXBehaviours>().ResetFromFinished();
-        GetComponent<HandScannerTouchPad>().scanComplete = false;
-        GetComponent<HandScannerTouchPad>().progressEventStarted = false;
+        GetComponent<HandScannerTouchPad>().ResetBools();
         StopAllCoroutines();
     }
 }

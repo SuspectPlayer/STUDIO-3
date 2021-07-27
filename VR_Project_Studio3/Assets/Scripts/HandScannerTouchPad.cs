@@ -11,9 +11,9 @@ public class HandScannerTouchPad : MonoBehaviour
     /*[SerializeField]*/ bool triggerEntered;
     /*[SerializeField]*/ bool isProgressive;
     /*[SerializeField]*/ bool coroutineStarted = false;
-    /*[SerializeField]*/
+    /*[SerializeField]*/ bool progressEventStarted = false;
     [Space(10)]
-    public bool progressResets, progressEventStarted = false;
+    public bool progressResets;
     public float progressionTime;
     
     float timeProgressed = 0;
@@ -79,6 +79,13 @@ public class HandScannerTouchPad : MonoBehaviour
             progressEventStarted = true;
             OnTouchProgressive.Invoke();
         }
+    }
+
+    public void ResetBools()
+    {
+        progressEventStarted = false;
+        scanComplete = false;
+        coroutineStarted = false;
     }
 
     IEnumerator Progression()
