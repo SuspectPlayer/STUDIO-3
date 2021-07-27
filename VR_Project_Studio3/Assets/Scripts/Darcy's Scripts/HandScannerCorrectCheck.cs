@@ -76,10 +76,7 @@ public class HandScannerCorrectCheck : MonoBehaviour
     {
         for(int i = 0; i < 4; i++) //resetting the scanned symbols back to default
         {
-            if(scannedSymbols[i] != null)
-            {
-                scannedSymbols[i] = null;
-            }
+            scannedSymbols[i] = null;
         }
     }
 
@@ -97,11 +94,11 @@ public class HandScannerCorrectCheck : MonoBehaviour
 
         yield return new WaitForSeconds(2);
 
-
         string reset = "reset";
         photonView.RPC("RPC_Message", RpcTarget.All, reset);
         GetComponent<ScannerFXBehaviours>().ResetFromFinished();
         GetComponent<HandScannerTouchPad>().scanComplete = false;
+        GetComponent<HandScannerTouchPad>().progressEventStarted = false;
         StopAllCoroutines();
     }
 }
