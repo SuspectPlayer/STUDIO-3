@@ -42,6 +42,7 @@ public class HandScannerCorrectCheck : MonoBehaviour
             }
             else
             {
+                Debug.Log("failed");
                 correctCount = 0; //resetting the count and the puzzle as a whole after an incorrect sequence
                 ResetPuzzle();
                 StartCoroutine(FailScan());
@@ -75,10 +76,13 @@ public class HandScannerCorrectCheck : MonoBehaviour
 
     IEnumerator FailScan()
     {
+        Debug.Log("red");
         GetComponent<ScannerFXBehaviours>().ScanFailedMat();
 
         yield return new WaitForSeconds(2);
 
+
+        Debug.Log("reset");
         GetComponent<ScannerFXBehaviours>().ResetFromFinished();
         StopAllCoroutines();
     }
