@@ -23,14 +23,31 @@ public class HandScannerCorrectCheck : MonoBehaviour
 
     public void HandScanSymbolCheck() //this is for the handscanners to check if the symbols have been scanned in the right order
     {
-        if(photonView == null)
+        photonView.RPC("RPC_HandScanSymbolCheck", RpcTarget.All);
+    }
+
+    void ResetPuzzle()
+    {
+        photonView.RPC("RPC_ResetPuzzle", RpcTarget.All);
+    }
+
+    [PunRPC]
+    void RPC_Message(string message)
+    {
+        Debug.Log(message);
+    }
+
+    [PunRPC]
+    void RPC_HandScanSymbolCheck()
+    {
+        if (photonView == null)
         {
             photonView = GetComponent<PhotonView>();
         }
 
         for (int i = 0; i < 4; i++)
         {
-            if(scannedSymbols[i] == null) //check to see which position in the array it needs to apply the newest scanned symbol
+            if (scannedSymbols[i] == null) //check to see which position in the array it needs to apply the newest scanned symbol
             {
                 scannedSymbols[i] = scannedSymbol;
                 break;
@@ -51,7 +68,7 @@ public class HandScannerCorrectCheck : MonoBehaviour
             else
             {
                 string failed = "failed";
-                photonView.RPC("RPC_Message", RpcTarget.All, failed);             
+                photonView.RPC("RPC_Message", RpcTarget.All, failed);
                 correctCount = 0; //resetting the count and the puzzle as a whole after an incorrect sequence
                 ResetPuzzle();
                 StartCoroutine(FailScan());
@@ -65,25 +82,20 @@ public class HandScannerCorrectCheck : MonoBehaviour
             GameObject.Find("Skitter Trigger").GetComponent<SkitterEventP3Collisions>().TurnTriggerOn(); //turning on the trigger for when the player steps back into the other room to start the skitter event
         }
 
-        if(correctCount >= 4)
+        if (correctCount >= 4)
         {
             dashboard.GetComponent<DoorControl>().UnlockDoor();
             //other win condition stuff in here
         }
     }
 
-    void ResetPuzzle()
+    [PunRPC]
+    void RPC_ResetPuzzle()
     {
-        for(int i = 0; i < 4; i++) //resetting the scanned symbols back to default
+        for (int i = 0; i < 4; i++) //resetting the scanned symbols back to default
         {
             scannedSymbols[i] = null;
         }
-    }
-
-    [PunRPC]
-    void RPC_Message(string message)
-    {
-        Debug.Log(message);
     }
 
     IEnumerator FailScan()
