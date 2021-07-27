@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 //Written by Darcy Glover
 
 public class HandScannerCorrectCheck : MonoBehaviour
 {
+    PhotonView photonView;
+
     public Sprite scannedSymbol;
 
     Sprite[] scannedSymbols = new Sprite[4];
@@ -20,6 +23,11 @@ public class HandScannerCorrectCheck : MonoBehaviour
 
     public void HandScanSymbolCheck() //this is for the handscanners to check if the symbols have been scanned in the right order
     {
+        if(photonView == null)
+        {
+            photonView = GetComponent<PhotonView>();
+        }
+
         for (int i = 0; i < 4; i++)
         {
             if(scannedSymbols[i] == null) //check to see which position in the array it needs to apply the newest scanned symbol
@@ -42,7 +50,8 @@ public class HandScannerCorrectCheck : MonoBehaviour
             }
             else
             {
-                Debug.Log("failed");
+                string failed = "failed";
+                photonView.RPC("RPC_Message", RpcTarget.All, failed);             
                 correctCount = 0; //resetting the count and the puzzle as a whole after an incorrect sequence
                 ResetPuzzle();
                 StartCoroutine(FailScan());
@@ -74,15 +83,23 @@ public class HandScannerCorrectCheck : MonoBehaviour
         }
     }
 
+    [PunRPC]
+    void RPC_Message(string message)
+    {
+        Debug.Log(message);
+    }
+
     IEnumerator FailScan()
     {
-        Debug.Log("red");
+        string red = "red";
+        photonView.RPC("RPC_Message", RpcTarget.All, red);
         GetComponent<ScannerFXBehaviours>().ScanFailedMat();
 
         yield return new WaitForSeconds(2);
 
 
-        Debug.Log("reset");
+        string reset = "reset";
+        photonView.RPC("RPC_Message", RpcTarget.All, reset);
         GetComponent<ScannerFXBehaviours>().ResetFromFinished();
         StopAllCoroutines();
     }
