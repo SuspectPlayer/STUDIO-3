@@ -4,7 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using FMODUnity;
 
-//Written by Darcy Glover
+//Written by Darcy Glover, assisted by Jasper von Reigen
 
 public class SkitterEventP3 : MonoBehaviour
 {
@@ -22,6 +22,9 @@ public class SkitterEventP3 : MonoBehaviour
     bool canMove = false, wait = false;
     //[HideInInspector]
     public bool playersLose = false;
+
+    [SerializeField]
+
 
     void Start()
     {
@@ -99,6 +102,7 @@ public class SkitterEventP3 : MonoBehaviour
     [PunRPC]
     void RPC_PlayersLose()
     {
+        intelPuzzleAnims.SetTrigger("dead"); //Plays animation animation
         Debug.Log("lose " + PhotonNetwork.IsMasterClient.ToString());
         canMove = false;
         StopAllCoroutines();
@@ -119,6 +123,7 @@ public class SkitterEventP3 : MonoBehaviour
     [PunRPC]
     void RPC_PlayersWin()
     {
+        intelPuzzleAnims.SetBool("puz3comp", true);
         mesh.GetComponent<SkinnedMeshRenderer>().enabled = false; //if the door is locked, the players are safe
         dashboard.GetComponent<DoorControl>().door = GameObject.Find("Door 3"); //only sets to the third door if the skitter event is done
         wait = false;

@@ -68,6 +68,7 @@ MonoBehaviour:
   - RPC_WaitForDoor
   - RPC_PlayersLoseBool
   - RPC_Triggered
+  - Puz3Bool
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

@@ -13,6 +13,7 @@ public class ScannerFXBehaviours : MonoBehaviour
     public StudioEventEmitter finishEmitter;
     [Space(10)]
     public Material scanMaterial;
+    public Material failMaterial;
     public Material defaultMaterial;
     public Material completeMaterial;
 
@@ -51,8 +52,18 @@ public class ScannerFXBehaviours : MonoBehaviour
         if (finishEmitter != null) finishEmitter.enabled = true;
     }
 
+    public void ScanFailedMat()
+    {
+        scanEmitter.Stop();
+        //fail sound here
+        GetComponent<BoxCollider>().enabled = false;
+        if (failMaterial != null) rendiBoi.material = failMaterial;
+        if (scanEmitter != null) scanEmitter.enabled = false;
+    }
+
     public void ResetFromFinished()
     {
+        GetComponent<BoxCollider>().enabled = true;
         if (defaultMaterial != null) rendiBoi.material = defaultMaterial;
         if (scanEmitter != null) scanEmitter.enabled = true;
         if (finishEmitter != null) finishEmitter.enabled = false;

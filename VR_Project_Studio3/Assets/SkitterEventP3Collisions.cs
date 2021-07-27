@@ -4,8 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using FMODUnity;
 
-
-//Written by Darcy Glover
+//Written by Darcy Glover, assisted by Jasper von Riegen
 
 public class SkitterEventP3Collisions : MonoBehaviour
 {
@@ -14,6 +13,7 @@ public class SkitterEventP3Collisions : MonoBehaviour
     public GameObject skitterCursor;
     [SerializeField]
     GameObject skitter;
+    public Animator airbags;
 
     //[HideInInspector]
     public bool canTrigger = false;
@@ -52,6 +52,7 @@ public class SkitterEventP3Collisions : MonoBehaviour
         skitter.GetComponent<SkitterEventP3>().SpawnSkitter();
         skitterMusic.Play();
         skitterCursor.SetActive(true);
+        airbags.SetTrigger("skit");
     }
 
 
