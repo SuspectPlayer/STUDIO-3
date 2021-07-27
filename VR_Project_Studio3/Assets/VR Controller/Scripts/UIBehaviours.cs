@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIBehaviours : MonoBehaviour
 {
+    public EmoteSending emoteSender;
     ///UI Elements
     //UI Root
     [Header("Wrist UI Main GameObject")]
@@ -20,8 +22,11 @@ public class UIBehaviours : MonoBehaviour
     public GameObject receiveContent;
     //Emotes For Get Emotes
     [Space(5)]
-    [Header("Wrist UI specific emote Objects")]
-    public GameObject[] uiEmoteReceive;
+    [Header("Wrist UI specific emote components")]
+    public Image uiEmoteJustSent;
+    public Image uiEmoteReceiveRecent;
+    public Image uiEmoteReceivePrevious;
+    public Image[] emoteButtons;
 
     //Tabs
     [Space(5)]
@@ -29,18 +34,17 @@ public class UIBehaviours : MonoBehaviour
     public GameObject switchToSend;
     public GameObject switchToReceive;
 
-    //EmoteStates
-    [Space(5)]
-    [Header("Wrist UI Receive Emote booleans")]
-    [SerializeField]
-    bool[] m_EmoteList = new bool[8];
-
-    public bool[] emoteList { get { return m_EmoteList; } set { m_EmoteList = value; } }
+    
 
 
     void Awake()
     {
+        emoteSender.uiObject = this;
 
+        for (int i = 0; i < 4; i++)
+        {
+            emoteButtons[i].sprite = emoteSender.emoteSprites[i];
+        }
     }
     // Start is called before the first frame update
     void Start()
@@ -65,14 +69,32 @@ public class UIBehaviours : MonoBehaviour
         receiveContent.SetActive(!openSendWindow);
     }
 
-    public void SendEmoteToDiver(int emoteIndex)
-    {
-        
-    }
-
     public void SendEmoteToIntelligence(int emoteIndex)
     {
-
+        emoteSender.ToIntelligence(emoteIndex);
     }
 
+    public void ReceiveFromIntelligence(int emoteIndex)
+    {
+        StartCoroutine(Receive(emoteIndex));
+    }
+
+    void MoveSprite()
+    {
+        //Do the Thing
+    }
+
+    IEnumerator Receive(int emote)
+    {
+        //Play Some doopity dooo
+        uiEmoteReceiveRecent.sprite = emoteSender.emoteSprites[emote];
+
+        while (wristCanvas.activeInHierarchy == false)
+        {
+            yield return null;
+        }
+        yield return new WaitForSeconds(10f);
+
+        MoveSprite();
+    }
 }
