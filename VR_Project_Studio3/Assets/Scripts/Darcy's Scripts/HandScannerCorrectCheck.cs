@@ -29,7 +29,7 @@ public class HandScannerCorrectCheck : MonoBehaviour
             }
         }
 
-        for (int x = 0; x < 0; x++)
+        for (int x = 0; x < 4; x++)
         {
             if (scannedSymbols[x] == null) //if the array position returns null, the players havent reached that part yet and the check doesnt need to be done
             {
