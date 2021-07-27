@@ -8,7 +8,7 @@ public class HandScannerCorrectCheck : MonoBehaviour
 {
     public Sprite scannedSymbol;
 
-    Sprite[] scannedSymbols;
+    Sprite[] scannedSymbols = new Sprite[4];
 
     [SerializeField]
     GameObject dashboard;
