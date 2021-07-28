@@ -86,7 +86,7 @@ public class GameSetup : MonoBehaviourPunCallbacks
         }
         else if (!isVRPlayer)
         {
-            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "ViewerCam Variant"), new Vector3(113.126f, 81.38101f, 111.611f), new Quaternion(0.2233047f, 0.2072154f, -0.05212184f, 0.9510416f));
+            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "ViewerCam Variant"), new Vector3(113.118f, 81.136f, 111.906f), new Quaternion(0.04510248f, 0.2137172f, -0.0101695f, 0.9758009f));
         }
     }
 }

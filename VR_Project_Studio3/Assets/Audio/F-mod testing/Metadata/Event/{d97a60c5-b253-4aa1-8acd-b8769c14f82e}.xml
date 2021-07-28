@@ -23,7 +23,7 @@
 			<destination>{15244933-1dd5-49f0-ab69-d6aa03b5df81}</destination>
 		</relationship>
 		<relationship name="markerTracks">
-			<destination>{c68f49ea-35fc-493e-acfa-fa02118c9af5}</destination>
+			<destination>{2b43e8ab-d970-41c7-81e5-efdd2643db85}</destination>
 		</relationship>
 		<relationship name="groupTracks">
 			<destination>{9b067e56-26dd-4e34-b5ca-99ba605591ab}</destination>
@@ -57,10 +57,13 @@
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{15244933-1dd5-49f0-ab69-d6aa03b5df81}" />
-	<object class="MarkerTrack" id="{c68f49ea-35fc-493e-acfa-fa02118c9af5}" />
+	<object class="MarkerTrack" id="{2b43e8ab-d970-41c7-81e5-efdd2643db85}" />
 	<object class="GroupTrack" id="{9b067e56-26dd-4e34-b5ca-99ba605591ab}">
 		<relationship name="modules">
 			<destination>{6222c40f-a814-457a-a5ee-7060d456911b}</destination>
+			<destination>{d9412702-f5c2-4fe4-87ee-d4a4e20a11b8}</destination>
+			<destination>{1f902d77-2278-4f57-8636-3e34e252b6c1}</destination>
+			<destination>{33e4792a-6a73-49fb-9d2f-15102e894143}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{8ac77cd5-791c-4250-8be7-60bd1358adf1}</destination>
@@ -69,9 +72,12 @@
 	<object class="Timeline" id="{61bd629d-5adc-4261-8061-7e047c303457}">
 		<relationship name="modules">
 			<destination>{6222c40f-a814-457a-a5ee-7060d456911b}</destination>
+			<destination>{d9412702-f5c2-4fe4-87ee-d4a4e20a11b8}</destination>
+			<destination>{1f902d77-2278-4f57-8636-3e34e252b6c1}</destination>
+			<destination>{33e4792a-6a73-49fb-9d2f-15102e894143}</destination>
 		</relationship>
 		<relationship name="markers">
-			<destination>{72b023ef-6b57-4969-9db5-31a54df07cdb}</destination>
+			<destination>{839b177f-ca66-4f47-b457-67f48a73194f}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{b7e8a19e-0311-4cd1-9e6e-89ed35e66212}">
@@ -98,11 +104,53 @@
 		<property name="length">
 			<value>6.0720000000000001</value>
 		</property>
+		<property name="volume">
+			<value>-6</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{c1aca980-2eeb-4a50-9d83-868f85f59bb4}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{d9412702-f5c2-4fe4-87ee-d4a4e20a11b8}">
+		<property name="length">
+			<value>60.840000000000003</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{5077e02b-1905-4b05-a9c9-6ea44f2cb0a6}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{1f902d77-2278-4f57-8636-3e34e252b6c1}">
+		<property name="start">
+			<value>26.205565517241379</value>
+		</property>
+		<property name="length">
+			<value>6.0720000000000001</value>
+		</property>
+		<property name="volume">
+			<value>-6</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{c1aca980-2eeb-4a50-9d83-868f85f59bb4}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{33e4792a-6a73-49fb-9d2f-15102e894143}">
+		<property name="start">
+			<value>50.175259113300491</value>
+		</property>
+		<property name="length">
+			<value>6.0720000000000001</value>
+		</property>
+		<property name="volume">
+			<value>-6</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{c1aca980-2eeb-4a50-9d83-868f85f59bb4}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{8ac77cd5-791c-4250-8be7-60bd1358adf1}">
+		<property name="volume">
+			<value>-20.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -116,18 +164,18 @@
 			<destination>{b7e8a19e-0311-4cd1-9e6e-89ed35e66212}</destination>
 		</relationship>
 	</object>
-	<object class="LoopRegion" id="{72b023ef-6b57-4969-9db5-31a54df07cdb}">
+	<object class="LoopRegion" id="{839b177f-ca66-4f47-b457-67f48a73194f}">
 		<property name="position">
 			<value>0</value>
 		</property>
 		<property name="length">
-			<value>6.0720000000000001</value>
+			<value>60.840000000000003</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{61bd629d-5adc-4261-8061-7e047c303457}</destination>
 		</relationship>
 		<relationship name="markerTrack">
-			<destination>{c68f49ea-35fc-493e-acfa-fa02118c9af5}</destination>
+			<destination>{2b43e8ab-d970-41c7-81e5-efdd2643db85}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{650e16e1-b8b5-4cc9-b02e-de25ba6fa2f7}">

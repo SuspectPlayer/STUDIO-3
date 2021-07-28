@@ -24,10 +24,22 @@ public class PlayFabAuthenticator : MonoBehaviour
 
     string username;
 
+    public int runes = 0;
+    public int clues = 0;
+    public GetPlayerCombinedInfoRequestParams infoRequest;
+    public TextMeshProUGUI displayRunes;
+    public TextMeshProUGUI displayClues;
+
     public void Awake()
     {
         PlayFabSettings.TitleId = "D61DD";
         //AuthenticateWithPlayFab();
+    }
+
+    private void Update()
+    {
+        displayClues.text = "Clues: " + clues;
+        displayRunes.text = "Runes: " + runes;
     }
 
     public void AuthenticateWithPlayFabLogin()
@@ -42,11 +54,9 @@ public class PlayFabAuthenticator : MonoBehaviour
         request.Password = login_Pass.text;
         username = login_User.text;
 
+        request.InfoRequestParameters = infoRequest;
+
         PlayFabClientAPI.LoginWithPlayFab(request, RequestToken, OnError);
-        foreach (GameObject g in enableOnAuthentication)
-        {
-            g.SetActive(true);
-        }
     }
     
     public void AuthenticateWithPlayFabRegister()
@@ -56,10 +66,6 @@ public class PlayFabAuthenticator : MonoBehaviour
         request.Username = register_User.text;
         request.Password = register_Pass.text;
         request.Email = register_Email.text;
-        foreach (GameObject g in enableOnAuthentication)
-        {
-            g.SetActive(true);
-        }
 
         PlayFabClientAPI.RegisterPlayFabUser(request, result => { Debug.Log("Account Made"); AuthenticateWithPlayFabAfterReg(); }, OnError);
     }
@@ -71,12 +77,32 @@ public class PlayFabAuthenticator : MonoBehaviour
         request.Password = register_Pass.text;
         username = register_User.text;
 
+        request.InfoRequestParameters = infoRequest;
+
         PlayFabClientAPI.LoginWithPlayFab(request, RequestToken, OnError);
     }
 
     void RequestToken(LoginResult result)
     {
         Debug.Log("PlayFab authenticated. Requesting photon token...");
+
+
+        GetUserInventoryRequest inv = new GetUserInventoryRequest();
+        PlayFabClientAPI.GetUserInventory(inv, invResult => 
+        { 
+            List<ItemInstance> items = invResult.Inventory;
+            if(items.Count > 0)
+            {
+                clues = result.InfoResultPayload.UserInventory[0].RemainingUses.Value;
+            }
+            else
+            {
+                clues = 0;
+            }
+        }, OnError);
+        
+        runes = result.InfoResultPayload.UserVirtualCurrency["RU"];
+
         _playFabPlayerIdCache = result.PlayFabId;
         GetPhotonAuthenticationTokenRequest request = new GetPhotonAuthenticationTokenRequest();
         request.PhotonApplicationId = PhotonNetwork.PhotonServerSettings.AppSettings.AppIdRealtime;
@@ -93,6 +119,10 @@ public class PlayFabAuthenticator : MonoBehaviour
         PhotonNetwork.AuthValues = customAuth;
 
         LoginManager.ConnecteToPhotonServer(username);
+        foreach (GameObject g in enableOnAuthentication)
+        {
+            g.SetActive(true);
+        }
     }
 
     void OnError(PlayFabError error)
@@ -102,5 +132,35 @@ public class PlayFabAuthenticator : MonoBehaviour
         {
             g.SetActive(false);
         }
+    }
+
+    public void BuyItem(string itemID)
+    {
+        PurchaseItemRequest pr = new PurchaseItemRequest();
+        pr.CatalogVersion = "Player Clues";
+        pr.ItemId = itemID;
+        pr.VirtualCurrency = "RU";
+        pr.Price = 2;
+
+        PlayFabClientAPI.PurchaseItem(pr, result => 
+        {
+            runes -= 2;
+            clues += 1;
+            Debug.Log("Item Purchased: " + result.Items[0].DisplayName); 
+        }, OnError);
+    }
+
+    public void AddCurrency(int amount)
+    {
+        AddUserVirtualCurrencyRequest addRunes = new AddUserVirtualCurrencyRequest();
+
+        addRunes.VirtualCurrency = "RU";
+        addRunes.Amount = amount;
+
+        PlayFabClientAPI.AddUserVirtualCurrency(addRunes, result => 
+        {
+            runes += amount;
+        }, OnError);
+
     }
 }

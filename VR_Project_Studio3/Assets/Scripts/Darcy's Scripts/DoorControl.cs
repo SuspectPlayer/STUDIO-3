@@ -2,17 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using FMODUnity;
+
 
 //Written by Darcy Glover
 
 public class DoorControl : MonoBehaviour
 {
     public GameObject door;
+    public StudioEventEmitter ambienceMusic02;
+    public StudioEventEmitter[] doorOpenSounds; //When right answer
 
     public bool doorTwoLocked = false; //this bool is for puzzle 3, to deactivate the skitter if the door is locked
 
     PhotonView photonView;
-
+    
     void Start()
     {
         door.GetComponentInChildren<MeshRenderer>().material.SetColor("_EmissionColor", Color.red);
@@ -28,6 +32,9 @@ public class DoorControl : MonoBehaviour
     public void UnlockDoor()
     {
         photonView.RPC("RPC_UnlockDoor", RpcTarget.All);
+        //doorOpenSounds[0].Play();
+        //doorOpenSounds[1].Play();
+        //doorOpenSounds[2].Play();
     }
 
     [PunRPC]
@@ -48,6 +55,7 @@ public class DoorControl : MonoBehaviour
         door.GetComponentInChildren<Animator>().SetBool("Unlock", true);
         if (door.name == "Door 2") //if it is the second door, will need to change the bool for puzzle 3
         {
+            ambienceMusic02.Stop();
             doorTwoLocked = false;
         }
         if (door.name != "Door 3")
