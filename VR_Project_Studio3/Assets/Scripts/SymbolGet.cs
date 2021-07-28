@@ -21,29 +21,25 @@ public class SymbolGet : MonoBehaviour
             case "HandScanner 1":
                 {
                     number = 0;
-                    GetComponent<HandScannerCorrectCheck>().scannedSymbol = GetComponentInParent<RandomiseSymbols>().symbols[number].GetComponent<SpriteRenderer>().sprite;
-                    //photonView.RPC("RPC_SymbolGet", RpcTarget.All, number);
+                    photonView.RPC("RPC_SymbolGet", RpcTarget.All, number);
                     break;
                 }
             case "HandScanner 2":
                 {
                     number = 1;
-                    GetComponent<HandScannerCorrectCheck>().scannedSymbol = GetComponentInParent<RandomiseSymbols>().symbols[number].GetComponent<SpriteRenderer>().sprite;
-                    //photonView.RPC("RPC_SymbolGet", RpcTarget.All, number);
+                    photonView.RPC("RPC_SymbolGet", RpcTarget.All, number);
                     break;
                 }
             case "HandScanner 3":
                 {
                     number = 2;
-                    GetComponent<HandScannerCorrectCheck>().scannedSymbol = GetComponentInParent<RandomiseSymbols>().symbols[number].GetComponent<SpriteRenderer>().sprite;
-                    //photonView.RPC("RPC_SymbolGet", RpcTarget.All, number);
+                    photonView.RPC("RPC_SymbolGet", RpcTarget.All, number);
                     break;
                 }
             case "HandScanner 4":
                 {
                     number = 3;
-                    GetComponent<HandScannerCorrectCheck>().scannedSymbol = GetComponentInParent<RandomiseSymbols>().symbols[number].GetComponent<SpriteRenderer>().sprite;
-                    //photonView.RPC("RPC_SymbolGet", RpcTarget.All, number);
+                    photonView.RPC("RPC_SymbolGet", RpcTarget.All, number);
                     break;
                 }
         }
@@ -53,7 +49,6 @@ public class SymbolGet : MonoBehaviour
     void RPC_SymbolGet(int number)
     {
         GetComponent<HandScannerCorrectCheck>().scannedSymbol = GetComponentInParent<RandomiseSymbols>().symbols[number].GetComponent<SpriteRenderer>().sprite;
-        Debug.Log(GetComponent<HandScannerCorrectCheck>().scannedSymbol.ToString());
     }
 }
     

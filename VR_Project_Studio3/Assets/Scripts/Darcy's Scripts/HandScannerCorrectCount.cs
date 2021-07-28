@@ -5,9 +5,7 @@ using Photon.Pun;
 
 public class HandScannerCorrectCount : MonoBehaviour
 {
-    public int correctCount = 0;
-
-    public Sprite[] totalScannedSymbols = new Sprite[4];
+    public int correctCount = 0, realCount = 0;
 
     PhotonView photonView;
 
@@ -19,7 +17,7 @@ public class HandScannerCorrectCount : MonoBehaviour
         }
 
         correctCount++;
-        //photonView.RPC("RPC_CountUp", RpcTarget.All);
+        photonView.RPC("RPC_UpdateCount", RpcTarget.All);
     }
 
     public void ResetCount()
@@ -34,9 +32,9 @@ public class HandScannerCorrectCount : MonoBehaviour
     }
 
     [PunRPC]
-    void RPC_CountUp()
+    void RPC_UpdateCount()
     {
-        correctCount++;
+        realCount = correctCount;
     }
 
     [PunRPC]

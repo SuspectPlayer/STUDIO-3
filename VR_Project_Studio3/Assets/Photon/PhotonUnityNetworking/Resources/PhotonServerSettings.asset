@@ -75,6 +75,9 @@ MonoBehaviour:
   - RPC_CountUp
   - RPC_ResetCount
   - RPC_SymbolGet
+  - RPC_UpdateCount
+  - RPC_Fail
+  - RPC_Correct
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
