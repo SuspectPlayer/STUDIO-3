@@ -83,6 +83,13 @@ public class HandScannerTouchPad : MonoBehaviour
         }
     }
 
+    public void ResetBools()
+    {
+        progressEventStarted = false;
+        scanComplete = false;
+        coroutineStarted = false;
+    }
+
     IEnumerator Progression()
     {
         //Halts Progression if hand is not being scanned, or if scanning is complete

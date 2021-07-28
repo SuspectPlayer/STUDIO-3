@@ -75,7 +75,7 @@ public class PuzzleManager : MonoBehaviour
         if (whichPuzzle == 2)
         {
             GetComponent<SpawnMapSymbols>().SpawnSymbols(); //spawning map symbols
-            puzzles[whichPuzzle].GetComponent<CorrectSymbolCheck>().enabled = true; //only activates the symbol check if puzzle 2 has been completed
+            //puzzles[whichPuzzle].GetComponent<CorrectSymbolCheck>().enabled = true; //only activates the symbol check if puzzle 2 has been completed
         }
     }
 }

@@ -69,6 +69,7 @@ MonoBehaviour:
   - RPC_PlayersLoseBool
   - RPC_Triggered
   - Puz3Bool
+  - RPC_Message
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
