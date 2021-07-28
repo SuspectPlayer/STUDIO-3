@@ -70,6 +70,8 @@ MonoBehaviour:
   - RPC_Triggered
   - Puz3Bool
   - RPC_Message
+  - RPC_HandScanSymbolCheck
+  - RPC_ResetPuzzle
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
