@@ -39,6 +39,8 @@ public class UIBehaviours : MonoBehaviour
 
     void Awake()
     {
+        emoteSender = GameObject.Find("EmoteManager").GetComponent<EmoteSending>();
+
         emoteSender.uiObject = this;
 
         for (int i = 0; i < 4; i++)
