@@ -51,16 +51,16 @@ public class ClickOnSymbols : MonoBehaviour
                     }
                     break;
                 }
-            case "Door 3":
-                {
-                    currentPuzzle = puzzles[2];
-                    firstCondition = currentPuzzle.GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
-                    if(!firstCondition)
-                    {
-                        OrangeButtonColours();
-                    }
-                    break;
-                }
+            //case "Door 3":
+            //    {
+            //        currentPuzzle = puzzles[2];
+            //        firstCondition = currentPuzzle.GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
+            //        if(!firstCondition)
+            //        {
+            //            OrangeButtonColours();
+            //        }
+            //        break;
+            //    }
         }
     }
 
