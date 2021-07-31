@@ -104,3 +104,4 @@ Received Import Request.
 Start importing Assets/Prefabs/Beacon.prefab using Guid(d68f42841d7457b42af9e03ebf763196) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46f42b489c527cd3f6615b294b465f1b') in 0.034557 seconds
   Import took 0.041255 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
