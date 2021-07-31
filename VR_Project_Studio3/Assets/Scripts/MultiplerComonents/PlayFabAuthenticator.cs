@@ -30,6 +30,8 @@ public class PlayFabAuthenticator : MonoBehaviour
     public TextMeshProUGUI displayRunes;
     public TextMeshProUGUI displayClues;
 
+    public GameObject errorPopup;
+
     public void Awake()
     {
         PlayFabSettings.TitleId = "D61DD";
@@ -132,6 +134,9 @@ public class PlayFabAuthenticator : MonoBehaviour
         {
             g.SetActive(false);
         }
+
+        errorPopup.SetActive(true);
+        errorPopup.GetComponentInChildren<TextMeshProUGUI>().text = error.ErrorMessage;
     }
 
     public void BuyItem(string itemID)
