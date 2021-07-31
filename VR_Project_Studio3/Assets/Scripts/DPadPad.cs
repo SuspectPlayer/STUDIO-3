@@ -7,7 +7,10 @@ public class DPadPad : MonoBehaviour
 {
     public EmoteSending emoteSender;
 
-    public Image uiEmoteReceiveRecent;
+    public Image uiEmoteReceive;
+    public Image uiEmoteOverride;
+
+    public Animator animator;
 
     public Image[] emoteButtons;
 
@@ -35,6 +38,38 @@ public class DPadPad : MonoBehaviour
 
     public void DPadReceive(int emote)
     {
+        StartCoroutine(DPadReceiveSequence(emote));
+    }
 
+    IEnumerator DPadReceiveSequence(int emote) //Lays out timing to receive emote
+    {
+        while(animator.GetCurrentAnimatorStateInfo(0).IsName("IntelEmoteOpening") || animator.GetCurrentAnimatorStateInfo(0).IsName("IntelEmoteClosing") || animator.IsInTransition(0))
+        {
+            yield return null;
+        } //Holds Coroutine if Transitioning or in transition anim
+        Debug.Log("Sequence Can Proceed");
+
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("IntelEmoteOpen"))
+        {
+            DPadFromOpen(emote);
+            animator.SetBool("IntelEmoteOverride", false);
+        }
+        else
+        {
+            uiEmoteReceive.sprite = emoteSender.emoteSprites[emote];
+            animator.SetTrigger("IntelOpen");
+        }
+
+        yield return new WaitForSeconds(7f);
+
+        animator.SetTrigger("IntelCloseOrOver");
+    }
+
+    void DPadFromOpen(int emote)
+    {
+        uiEmoteOverride.sprite = uiEmoteReceive.sprite;
+        animator.SetBool("IntelEmoteOverride", true);
+        animator.SetTrigger("IntelCloseOrOver");
+        uiEmoteReceive.sprite = emoteSender.emoteSprites[emote];
     }
 }

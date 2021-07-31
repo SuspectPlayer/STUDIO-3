@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UIBehaviours : MonoBehaviour
 {
     public EmoteSending emoteSender;
+    Animator animator;
     ///UI Elements
     //UI Root
     [Header("Wrist UI Main GameObject")]
@@ -34,7 +35,7 @@ public class UIBehaviours : MonoBehaviour
     public GameObject switchToSend;
     public GameObject switchToReceive;
 
-    
+    bool seenEmote;
 
 
     void Awake()
@@ -42,6 +43,8 @@ public class UIBehaviours : MonoBehaviour
         emoteSender = GameObject.Find("EmoteManager").GetComponent<EmoteSending>();
 
         emoteSender.uiObject = this;
+
+        animator = wristCanvas.GetComponent<Animator>();
 
         for (int i = 0; i < 4; i++)
         {
@@ -57,7 +60,14 @@ public class UIBehaviours : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (wristCanvas.activeInHierarchy == true && receiveContent.activeInHierarchy == true)
+        {
+            seenEmote = true;
+        }
+        else
+        {
+            seenEmote = false;
+        }
     }
 
     public void SwitchTab(bool openSendWindow)
@@ -91,7 +101,7 @@ public class UIBehaviours : MonoBehaviour
         //Play Some doopity dooo
         uiEmoteReceiveRecent.sprite = emoteSender.emoteSprites[emote];
 
-        while (wristCanvas.activeInHierarchy == false)
+        while (!seenEmote)
         {
             yield return null;
         }
