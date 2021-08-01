@@ -40,6 +40,8 @@ public class CorrectSymbolCheck : MonoBehaviour
     {
         bool condition;
 
+        incorrectSymbolCount = 0;
+
         for (int i = 0; i < 4; i++) //checking to see if the clicked colour is one of the ones in the "spawned" symbols on the map
         {
             if (clickedSymbol == symbols[i].GetComponent<SpriteRenderer>().sprite && correctSymbolCount < 4)
@@ -74,6 +76,7 @@ public class CorrectSymbolCheck : MonoBehaviour
                                 dashboard.GetComponent<ClickOnSymbols>().OrangeButtonColours(); //this turns the buttons back to orange for feedback
                                 dashboard.GetComponent<DoorControl>().UnlockDoor();
                                 correctSymbolCount = 0;
+                                incorrectSymbolCount = 0;
                                 condition = true;
                                 return condition;
                                 //break;
@@ -85,6 +88,7 @@ public class CorrectSymbolCheck : MonoBehaviour
                                     dashboard.GetComponent<ClickOnSymbols>().OrangeButtonColours(); 
                                     dashboard.GetComponent<DoorControl>().LockDoor();
                                     correctSymbolCount = 0;
+                                    incorrectSymbolCount = 0;
                                 }
                                 else
                                 {
@@ -95,6 +99,7 @@ public class CorrectSymbolCheck : MonoBehaviour
                                     dashboard.GetComponent<ClickOnSymbols>().OrangeButtonColours();
                                     dashboard.GetComponent<DoorControl>().UnlockDoor();
                                     correctSymbolCount = 0;
+                                    incorrectSymbolCount = 0;
                                 }
                                 condition = true;
                                 return condition;
