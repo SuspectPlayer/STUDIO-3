@@ -831,7 +831,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 41.85, y: 40.24}
+  m_SizeDelta: {x: 41.4, y: 40.2}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &2469486969978222962
 CanvasRenderer:
@@ -1200,7 +1200,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 41.4, y: 40.24}
+  m_SizeDelta: {x: 41.4, y: 40.2}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &2041830156271089757
 CanvasRenderer:
@@ -1381,7 +1381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 69e6a15ddb667ee45abd1e579f0204dd, type: 2}
+  m_Material: {fileID: 2100000, guid: 229ca53b83542f141bee1e272f01d154, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 0.74509805}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1949,6 +1949,7 @@ GameObject:
   - component: {fileID: 3104592013046563750}
   - component: {fileID: 212850200222903305}
   - component: {fileID: 1798251787059099186}
+  - component: {fileID: 3958948071542896182}
   m_Layer: 5
   m_Name: WristMenuCanvasExample
   m_TagString: Untagged
@@ -2020,7 +2021,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &212850200222903305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2057,6 +2058,25 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
+--- !u!95 &3958948071542896182
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4794340282805570519}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bb430613ded1dfb4d948d4d88af2e512, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5204918513985048794
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,7 +2114,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 41.4, y: 39.71}
+  m_SizeDelta: {x: 41.4, y: 40.2}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &5034584664464298098
 CanvasRenderer:
@@ -4378,7 +4398,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 41.85, y: 39.71}
+  m_SizeDelta: {x: 41.4, y: 40.2}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &2306242414095159775
 CanvasRenderer:

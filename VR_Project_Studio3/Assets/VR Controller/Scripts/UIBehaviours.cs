@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UIBehaviours : MonoBehaviour
 {
     public EmoteSending emoteSender;
-    Animator animator;
+    public Animator animator;
     ///UI Elements
     //UI Root
     [Header("Wrist UI Main GameObject")]
