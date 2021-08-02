@@ -4,18 +4,37 @@ using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class EchoVRAudio : MonoBehaviour
 {
     public StudioEventEmitter[] audiofiles;
     [Tooltip("The tag of the direct interaction controllers")] public string triggerTag;
+
+    PhotonView photonView;
+
+    bool isVRPlayer;
     
     public bool audioTog;
 
     private void Start()
     {
+        photonView = GetComponent<PhotonView>();
 
-        StartCoroutine("AmbiStart");
+        isVRPlayer = GameObject.Find("GameSetup").GetComponent<GameSetup>().isVRPlayer;
+
+        if (!isVRPlayer) //only plays sounds for the vr player
+        {
+            photonView.RPC("RPC_AmbiStart", RpcTarget.Others);
+        }
+    }
+
+    private void Update()
+    {
+        if(photonView == null)
+        {
+            Start();
+        }
     }
     //private void OnTriggerEnter(Collider other)
     //{
@@ -44,6 +63,12 @@ public class EchoVRAudio : MonoBehaviour
     //    }
     //    ToggleCheck();
     //}
+
+    [PunRPC]
+    void RPC_AmbiStart()
+    {
+        StartCoroutine("AmbiStart");
+    }
 
     IEnumerator AmbiStart()
     {
