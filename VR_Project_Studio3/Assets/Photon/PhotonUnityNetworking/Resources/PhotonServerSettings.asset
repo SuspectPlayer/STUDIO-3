@@ -78,6 +78,8 @@ MonoBehaviour:
   - RPC_UpdateCount
   - RPC_Fail
   - RPC_Correct
+  - RPC_AmbiStart
+  - RPC_Whispering
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
