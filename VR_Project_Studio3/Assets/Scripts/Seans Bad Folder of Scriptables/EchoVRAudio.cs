@@ -9,7 +9,8 @@ using Photon.Pun;
 public class EchoVRAudio : MonoBehaviour
 {
     public StudioEventEmitter[] audiofiles;
-    [Tooltip("The tag of the direct interaction controllers")] public string triggerTag;
+
+    //[Tooltip("The tag of the player")] public string triggerTag;
 
     PhotonView photonView;
 
@@ -36,13 +37,6 @@ public class EchoVRAudio : MonoBehaviour
             Start();
         }
     }
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if(other.CompareTag(triggerTag))
-    //    {
-    //        PlayingAmbience();
-    //    }
-    //}
 
     //public void ToggleCheck()
     //{

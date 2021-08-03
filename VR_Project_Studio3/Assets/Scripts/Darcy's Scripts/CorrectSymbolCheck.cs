@@ -26,6 +26,7 @@ public class CorrectSymbolCheck : MonoBehaviour
     [SerializeField]
     public Animator intelPuzzleAnims;
 
+    bool isVRPlayer;
         
     //[HideInInspector]
     public int correctSymbolCount = 0;
@@ -39,6 +40,7 @@ public class CorrectSymbolCheck : MonoBehaviour
     public bool CorrectSymbolCheckMethod(Sprite clickedSymbol)
     {
         bool condition;
+        isVRPlayer = GameObject.Find("GameSetup").GetComponent<GameSetup>().isVRPlayer;
 
         incorrectSymbolCount = 0;
 
@@ -109,12 +111,16 @@ public class CorrectSymbolCheck : MonoBehaviour
                 }
             }
             else
-                {
+            {
                 incorrectSymbolCount++; //counts when the player hits a wrong button
                 Debug.Log(incorrectSymbolCount.ToString());
                 if (incorrectSymbolCount >= 4)
                 {
-                    doorCloseSounds[dashboard.GetComponent<PuzzleManager>().whichPuzzle].Play(); // Plays feedback song that players were wrong
+                    if(dashboard.GetComponent<PuzzleManager>().whichPuzzle < 2 && isVRPlayer)
+                    {
+                        doorCloseSounds[dashboard.GetComponent<PuzzleManager>().whichPuzzle].Play(); // Plays feedback song that players were wrong
+                    }
+
                     Debug.Log("incorrect");
                     correctSymbolCount = 0;
                     incorrectSymbolCount = 0;
