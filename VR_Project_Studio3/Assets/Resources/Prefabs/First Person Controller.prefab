@@ -266,6 +266,7 @@ Transform:
   - {fileID: 3987560332857286431}
   - {fileID: 438630804267829056}
   - {fileID: 2210677530123958954}
+  - {fileID: 327142067863725993}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -436,6 +437,77 @@ Transform:
   m_Father: {fileID: 3987560332757935707}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4667989234435584224
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 327142067863725993}
+  - component: {fileID: 4209040770251982234}
+  - component: {fileID: 498614011696538392}
+  m_Layer: 0
+  m_Name: Footsteps
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &327142067863725993
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4667989234435584224}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -2.24, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3987560332757935707}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4209040770251982234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4667989234435584224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Walking/Metal Walking
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1.3536911
+  OverrideMaxDistance: 2.313963
+--- !u!114 &498614011696538392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4667989234435584224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 113e5609ab8e922429c51fc0160f040e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 0
+  audioTog: 0
+  metalFootsteps: {fileID: 4209040770251982234}
+  cam: {fileID: 1543862793041506867}
 --- !u!1 &7265343107916412905
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,7 +681,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7495511960631098846}
   m_LocalRotation: {x: -0.70710677, y: -0, z: 0.000000029802322, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.1, y: 0, z: 0}
   m_LocalScale: {x: 0.81642926, y: 0.6709536, z: 0.8164292}
   m_Children: []
   m_Father: {fileID: 3987560332757935707}
@@ -655,7 +727,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a7b9a2f6e460bed4bbb50b85c78278fc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 50fdda683c10f8d47a9a5b497d738f31, type: 3}
   m_Color: {r: 0.0816766, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
