@@ -15,11 +15,11 @@ MonoBehaviour:
   Path: Assets/Audio/F-mod testing/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637636855098039456
+  lastModified: 637636898833552874
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 2910
+    Value: 2950
   Exists: 1
 --- !u!114 &-8904351311515036356
 MonoBehaviour:
@@ -158,6 +158,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 506482
+--- !u!114 &-7324009541721897147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Feedback Sounds/Handscanner/Handscanner - Incorrect
+  m_EditorClassIdentifier: 
+  Path: event:/Feedback Sounds/Handscanner/Handscanner - Incorrect
+  guid: 7516cf9f04aecf43911fa3feec7f4e71
+  Banks:
+  - {fileID: 3180157659838378319}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 360
 --- !u!114 &-6435753882282410576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -829,12 +852,13 @@ MonoBehaviour:
   - {fileID: 6137182361243612469}
   - {fileID: 1423965314301152448}
   - {fileID: -502680822961998388}
+  - {fileID: -7324009541721897147}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3180157659838378319}
   StringsBanks:
   - {fileID: -8915405571162439283}
-  stringsBankWriteTime: 637636855098039456
+  stringsBankWriteTime: 637636898833552874
   cacheVersion: 6
 --- !u!114 &624870027013586835
 MonoBehaviour:
@@ -1097,7 +1121,7 @@ MonoBehaviour:
   Path: Assets/Audio/F-mod testing/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637636855097999558
+  lastModified: 637636898833513063
   LoadResult: 0
   FileSizes: []
   Exists: 1
