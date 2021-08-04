@@ -2952,6 +2952,7 @@ MonoBehaviour:
   emoteButtons: []
   switchToSend: {fileID: 0}
   switchToReceive: {fileID: 0}
+  timeTilNextEmote: 3
 --- !u!114 &6898273933080198930
 MonoBehaviour:
   m_ObjectHideFlags: 0

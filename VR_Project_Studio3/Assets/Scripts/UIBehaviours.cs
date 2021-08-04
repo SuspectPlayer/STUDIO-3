@@ -7,6 +7,7 @@ public class UIBehaviours : MonoBehaviour
 {
     public EmoteSending emoteSender;
     public Animator animator;
+    ReorganiseChiddlers organ;
     ///UI Elements
     //UI Root
     [Header("Wrist UI Main GameObject")]
@@ -37,6 +38,9 @@ public class UIBehaviours : MonoBehaviour
 
     bool seenEmote;
 
+    [Space(5)]
+    public float timeTilNextEmote = 3f;
+    bool canNextEmote = true;
 
     void Awake()
     {
@@ -45,6 +49,7 @@ public class UIBehaviours : MonoBehaviour
         emoteSender.uiObject = this;
 
         animator = wristCanvas.GetComponent<Animator>();
+        organ = wristCanvas.GetComponent<ReorganiseChiddlers>();
 
         for (int i = 0; i < 4; i++)
         {
@@ -83,7 +88,17 @@ public class UIBehaviours : MonoBehaviour
 
     public void SendEmoteToIntelligence(int emoteIndex)
     {
-        emoteSender.ToIntelligence(emoteIndex);
+        //StartCoroutine(SiblingIndex(emoteIndex, 3));
+        if (canNextEmote)
+        {
+            StartCoroutine(EmoteTimer());
+            emoteSender.ToIntelligence(emoteIndex);
+        }
+        else
+        {
+            //Do some error stuff
+        }
+        
     }
 
     public void ReceiveFromIntelligence(int emoteIndex)
@@ -91,22 +106,28 @@ public class UIBehaviours : MonoBehaviour
         StartCoroutine(Receive(emoteIndex));
     }
 
-    void MoveSprite()
+    /*IEnumerator SiblingIndex(int child, int index)
     {
-        //Do the Thing
-    }
+        organ.chiddlers[child].OrganiseChildIndex(index);
+        yield return new WaitForSeconds(1f);
+        organ.chiddlers[child].ResetChildIndex();
+    }*/
 
     IEnumerator Receive(int emote)
     {
-        //Play Some doopity dooo
         uiEmoteReceiveRecent.sprite = emoteSender.emoteSprites[emote];
 
         while (!seenEmote)
         {
             yield return null;
         }
-        yield return new WaitForSeconds(10f);
 
-        MoveSprite();
+    }
+
+    IEnumerator EmoteTimer()
+    {
+        canNextEmote = false;
+        yield return new WaitForSeconds(timeTilNextEmote);
+        canNextEmote = true;
     }
 }

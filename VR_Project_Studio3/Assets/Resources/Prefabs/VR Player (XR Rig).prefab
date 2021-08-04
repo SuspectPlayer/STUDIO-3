@@ -3118,6 +3118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emoteSender: {fileID: 0}
+  animator: {fileID: 0}
   wristCanvas: {fileID: 2732251219247546241}
   sendTitle: {fileID: 0}
   sendContent: {fileID: 0}
@@ -3129,6 +3130,7 @@ MonoBehaviour:
   emoteButtons: []
   switchToSend: {fileID: 0}
   switchToReceive: {fileID: 0}
+  timeTilNextEmote: 3
 --- !u!114 &6898273933080198930
 MonoBehaviour:
   m_ObjectHideFlags: 0
