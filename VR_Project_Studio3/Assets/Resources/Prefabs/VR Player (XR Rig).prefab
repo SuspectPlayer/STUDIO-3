@@ -3120,10 +3120,8 @@ MonoBehaviour:
   emoteSender: {fileID: 0}
   animator: {fileID: 0}
   wristCanvas: {fileID: 2732251219247546241}
-  sendTitle: {fileID: 0}
-  sendContent: {fileID: 0}
-  receiveTitle: {fileID: 0}
-  receiveContent: {fileID: 0}
+  outBox: {fileID: 0}
+  inBox: {fileID: 0}
   uiEmoteJustSent: {fileID: 0}
   uiEmoteReceiveRecent: {fileID: 0}
   uiEmoteReceivePrevious: {fileID: 0}
@@ -3859,14 +3857,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wristUIObject: {fileID: 2732251219247546241}
+  uiBehave: {fileID: 0}
+  openAnimator: {fileID: 0}
   desiredRelative: {x: -0.00000085, y: 0.00000145, z: -90}
   offset: {x: 20, y: 30, z: 20}
   handController: {fileID: 7449520134667973208}
   waist: {fileID: 8632746287174867982}
-  xAngleInBounds: 0
-  yAngleInBounds: 1
-  zAngleInBounds: 1
-  isPoseTrue: 0
 --- !u!1 &7449520133568608270
 GameObject:
   m_ObjectHideFlags: 0

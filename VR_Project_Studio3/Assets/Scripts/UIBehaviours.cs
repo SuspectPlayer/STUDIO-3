@@ -7,21 +7,13 @@ public class UIBehaviours : MonoBehaviour
 {
     public EmoteSending emoteSender;
     public Animator animator;
-    ReorganiseChiddlers organ;
     ///UI Elements
     //UI Root
     [Header("Wrist UI Main GameObject")]
     public GameObject wristCanvas;
-    //Main Options
     [Space(5)]
-    [Header("Wrist UI 'Send' Objects")]
-    public GameObject sendTitle;
-    public GameObject sendContent;
-    //Send Emotes
-    [Space(5)]
-    [Header("Wrist UI 'Receive' Objects")]
-    public GameObject receiveTitle;
-    public GameObject receiveContent;
+    public GameObject outBox;
+    public GameObject inBox;
     //Emotes For Get Emotes
     [Space(5)]
     [Header("Wrist UI specific emote components")]
@@ -36,11 +28,12 @@ public class UIBehaviours : MonoBehaviour
     public GameObject switchToSend;
     public GameObject switchToReceive;
 
-    bool seenEmote;
+    bool firstReceived = false;
 
     [Space(5)]
     public float timeTilNextEmote = 3f;
     bool canNextEmote = true;
+    bool receiveAlert = false;
 
     void Awake()
     {
@@ -49,7 +42,6 @@ public class UIBehaviours : MonoBehaviour
         emoteSender.uiObject = this;
 
         animator = wristCanvas.GetComponent<Animator>();
-        organ = wristCanvas.GetComponent<ReorganiseChiddlers>();
 
         for (int i = 0; i < 4; i++)
         {
@@ -65,34 +57,40 @@ public class UIBehaviours : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (wristCanvas.activeInHierarchy == true && receiveContent.activeInHierarchy == true)
-        {
-            seenEmote = true;
-        }
-        else
-        {
-            seenEmote = false;
-        }
+
     }
 
-    public void SwitchTab(bool openSendWindow)
+    public void OpenToCorrect()
+    {
+        animator.SetBool("IsSend", outBox.activeSelf);
+        animator.SetTrigger("SelfOpen");
+    }
+
+    public void Close()
+    {
+        animator.SetTrigger("SelfClose");
+    }
+
+    public void SwitchTab(bool openSendWindow) //Attached to SwitchTab Button
     {
         switchToSend.SetActive(!openSendWindow);
         switchToReceive.SetActive(openSendWindow);
 
-        sendTitle.SetActive(openSendWindow);
-        sendContent.SetActive(openSendWindow);
-        receiveTitle.SetActive(!openSendWindow);
-        receiveContent.SetActive(!openSendWindow);
+        StartCoroutine(QueueTillAtOpenSwitch());
+
+        //sendTitle.SetActive(openSendWindow);
+        //sendContent.SetActive(openSendWindow);
+        //receiveTitle.SetActive(!openSendWindow);
+        //receiveContent.SetActive(!openSendWindow);
+
     }
 
-    public void SendEmoteToIntelligence(int emoteIndex)
+    public void SendEmoteToIntelligence(int emoteIndex) //Attach to Diver's Emote Buttons
     {
-        //StartCoroutine(SiblingIndex(emoteIndex, 3));
         if (canNextEmote)
         {
             StartCoroutine(EmoteTimer());
-            emoteSender.ToIntelligence(emoteIndex);
+            StartCoroutine(QueueTillSendReady(emoteIndex));
         }
         else
         {
@@ -104,24 +102,30 @@ public class UIBehaviours : MonoBehaviour
     public void ReceiveFromIntelligence(int emoteIndex)
     {
         StartCoroutine(Receive(emoteIndex));
+        receiveAlert = true; // Set some alerter active
     }
-
-    /*IEnumerator SiblingIndex(int child, int index)
-    {
-        organ.chiddlers[child].OrganiseChildIndex(index);
-        yield return new WaitForSeconds(1f);
-        organ.chiddlers[child].ResetChildIndex();
-    }*/
 
     IEnumerator Receive(int emote)
     {
-        uiEmoteReceiveRecent.sprite = emoteSender.emoteSprites[emote];
-
-        while (!seenEmote)
+        while (!inBox.activeInHierarchy || !animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpen"))
         {
             yield return null;
         }
 
+        if (firstReceived)
+        {
+            uiEmoteReceiveRecent.sprite = emoteSender.emoteSprites[emote];
+            animator.SetBool("SelfReceivedFirst", firstReceived);
+            animator.SetTrigger("SelfSendReceive");
+        }
+        else
+        {
+            uiEmoteReceivePrevious.sprite = uiEmoteReceiveRecent.sprite;
+            animator.SetBool("SelfReceivedFirst", firstReceived);
+            uiEmoteReceiveRecent.sprite = emoteSender.emoteSprites[emote];
+            animator.SetTrigger("SelfSendReceive");
+        }
+        receiveAlert = false; // Set some alerter inactive
     }
 
     IEnumerator EmoteTimer()
@@ -129,5 +133,24 @@ public class UIBehaviours : MonoBehaviour
         canNextEmote = false;
         yield return new WaitForSeconds(timeTilNextEmote);
         canNextEmote = true;
+    }
+
+    IEnumerator QueueTillAtOpenSwitch()
+    {
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpen")) yield return null;
+
+        animator.SetBool("IsSend", outBox.activeSelf);
+        animator.SetTrigger("SelfSwitch");
+        yield return new WaitForSeconds(1.5f);
+        animator.SetBool("IsSend", outBox.activeSelf);
+    }
+
+    IEnumerator QueueTillSendReady(int emote)
+    {
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpen")) yield return null;
+
+        animator.SetInteger("SelfWhichEmote", emote+1);
+        animator.SetTrigger("SelfSendReceive");
+        emoteSender.ToIntelligence(emote);
     }
 }
