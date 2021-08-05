@@ -94,6 +94,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Emmision: {r: 0, g: 0, b: 0, a: 1}
-    - _MainColor: {r: 0.6603774, g: 0.24463037, b: 0.21493416, a: 1}
+    - _MainColor: {r: 0.21698111, g: 0.07584738, b: 0.06652723, a: 1}
     - _Position1: {r: 0, g: 3.7, b: 0, a: 0}
-    - _TopColor: {r: 0.94509804, g: 0.27843142, b: 0.550776, a: 1}
+    - _TopColor: {r: 0.33962262, g: 0.107333556, b: 0.20161559, a: 1}
+  m_BuildTextureStacks: []
