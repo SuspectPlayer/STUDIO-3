@@ -15,6 +15,7 @@ public class PlayFabAuthenticator : MonoBehaviour
     public TMP_InputField register_User;
     public TMP_InputField register_Pass;
     public TMP_InputField register_Email;
+    public GameObject loginGRP;
 
     public GameObject[] disableOnFail;
     public GameObject[] enableOnAuthentication;
@@ -136,7 +137,39 @@ public class PlayFabAuthenticator : MonoBehaviour
         }
 
         errorPopup.SetActive(true);
-        errorPopup.GetComponentInChildren<TextMeshProUGUI>().text = error.ErrorMessage;
+        string message = error.GenerateErrorReport();
+        if (message.Contains("Password: The Password field is required."))
+        {
+            errorPopup.GetComponentInChildren<TextMeshProUGUI>().text = "Password is Missing";
+        }
+        else if (message.Contains("Username: The Username field is required."))
+        {
+            errorPopup.GetComponentInChildren<TextMeshProUGUI>().text = "Username is Missing";
+        }
+        else if (message.Contains("Username: Username must be between 3 and 20 characters.") && loginGRP.activeSelf == true)
+        {
+            errorPopup.GetComponentInChildren<TextMeshProUGUI>().text = "Invalid username or password";
+        }
+        else if (message.Contains("Password: Password must be between 6 and 100 characters.") && loginGRP.activeSelf == true)
+        {
+            errorPopup.GetComponentInChildren<TextMeshProUGUI>().text = "Invalid username or password";
+        }
+        else if (message.Contains("Username: Username must be between 3 and 20 characters.") && loginGRP.activeSelf == false)
+        {
+            errorPopup.GetComponentInChildren<TextMeshProUGUI>().text = "Username must be between 3 and 20 characters";
+        }
+        else if (message.Contains("Password: Password must be between 6 and 100 characters.") && loginGRP.activeSelf == false)
+        {
+            errorPopup.GetComponentInChildren<TextMeshProUGUI>().text = "Password must be between 6 and 100 characters";
+        }
+        else if (message.Contains("Email: Email address is not valid."))
+        {
+            errorPopup.GetComponentInChildren<TextMeshProUGUI>().text = "Invalid Email address";
+        }
+        else
+        {
+            errorPopup.GetComponentInChildren<TextMeshProUGUI>().text = error.ErrorMessage;
+        }
     }
 
     public void BuyItem(string itemID)

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
+//Written by Darcy Glover
+
 public class HandScannerCorrectCount : MonoBehaviour
 {
     public int correctCount = 0, realCount = 0;

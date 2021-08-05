@@ -53,15 +53,23 @@ public class DoorControl : MonoBehaviour
     {
         door.GetComponentInChildren<MeshRenderer>().material.SetColor("_EmissionColor", Color.green);
         door.GetComponentInChildren<Animator>().SetBool("Unlock", true);
-        if (door.name == "Door 2") //if it is the second door, will need to change the bool for puzzle 3
+
+        switch(door.name)
         {
-            ambienceMusic02.Stop();
-            doorTwoLocked = false;
-        }
-        if (door.name != "Door 3")
-        {
-            GetComponent<PuzzleManager>().whichPuzzle++;
-            GetComponent<PuzzleManager>().ActivatePuzzle(); //activating the next puzzle, only if it isnt the last door
+            case "Door 1":
+                {
+                    GetComponent<PuzzleManager>().whichPuzzle = 1;
+                    GetComponent<PuzzleManager>().ActivatePuzzle();
+                    break;
+                }
+            case "Door 2":
+                {
+                    GetComponent<PuzzleManager>().whichPuzzle = 2;
+                    GetComponent<PuzzleManager>().ActivatePuzzle();
+                    ambienceMusic02.Stop();
+                    doorTwoLocked = false;
+                    break;
+                }
         }
     }
 }
