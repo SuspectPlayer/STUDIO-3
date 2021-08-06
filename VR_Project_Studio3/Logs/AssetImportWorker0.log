@@ -160,3 +160,4 @@ Received Import Request.
 Start importing Packages/com.unity.cinemachine/Tests/Editor/com.unity.cinemachine.EditorTests.asmdef using Guid(d5ada0dcd11a06049936072bb3b3ed73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '461ac7523ee382039eab818fe08f87a5') in 0.013204 seconds
   Import took 0.025834 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
