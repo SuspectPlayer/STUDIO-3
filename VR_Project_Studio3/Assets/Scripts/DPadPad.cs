@@ -12,7 +12,15 @@ public class DPadPad : MonoBehaviour
 
     public Animator animator;
 
-    public Image[] emoteButtons;
+    public Image[] emoteButtonSprites;
+
+    public MeshRenderer[] renderers;
+
+
+    public Material buttonReady;
+    public Material buttonPressed;
+
+    bool pressOkay;
 
     // Start is called before the first frame update
     void Awake()
@@ -21,7 +29,7 @@ public class DPadPad : MonoBehaviour
 
         for (int i = 0; i < 4; i++)
         {
-            emoteButtons[i].sprite = emoteSender.emoteSprites[i];
+            emoteButtonSprites[i].sprite = emoteSender.emoteSprites[i];
         }
     }
 
@@ -33,7 +41,8 @@ public class DPadPad : MonoBehaviour
 
     public void DPadSend(int emote)
     {
-        emoteSender.ToDiver(emote);
+        if (pressOkay) StartCoroutine(DPadSendTimer(emote));
+        else { }
     }
 
     public void DPadReceive(int emote)
@@ -43,33 +52,41 @@ public class DPadPad : MonoBehaviour
 
     IEnumerator DPadReceiveSequence(int emote) //Lays out timing to receive emote
     {
-        while(animator.GetCurrentAnimatorStateInfo(0).IsName("IntelEmoteOpening") || animator.GetCurrentAnimatorStateInfo(0).IsName("IntelEmoteClosing") || animator.IsInTransition(0))
+        while(!animator.GetCurrentAnimatorStateInfo(2).IsName("EmoteBase") || !animator.GetCurrentAnimatorStateInfo(2).IsName("HasReceived") || animator.IsInTransition(2))
         {
             yield return null;
         } //Holds Coroutine if Transitioning or in transition anim
         Debug.Log("Sequence Can Proceed");
 
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("IntelEmoteOpen"))
+        if (animator.GetCurrentAnimatorStateInfo(2).IsName("EmoteBase"))
         {
+            animator.SetBool("ReceivedFirst", false);
             DPadFromOpen(emote);
-            animator.SetBool("IntelEmoteOverride", false);
         }
         else
         {
-            uiEmoteReceive.sprite = emoteSender.emoteSprites[emote];
-            animator.SetTrigger("IntelOpen");
+            animator.SetBool("ReceivedFirst", true);
+            DPadFromOpen(emote);
         }
-
-        yield return new WaitForSeconds(7f);
-
-        animator.SetTrigger("IntelCloseOrOver");
     }
 
     void DPadFromOpen(int emote)
     {
-        uiEmoteOverride.sprite = uiEmoteReceive.sprite;
-        animator.SetBool("IntelEmoteOverride", true);
-        animator.SetTrigger("IntelCloseOrOver");
+        if(animator.GetBool("ReceivedFirst")) uiEmoteOverride.sprite = uiEmoteReceive.sprite;
         uiEmoteReceive.sprite = emoteSender.emoteSprites[emote];
+        animator.SetTrigger("ReceiveFromDiver");
+    }
+
+    IEnumerator DPadSendTimer(int emote)
+    {
+        emoteSender.ToDiver(emote);
+        animator.SetTrigger("SendToDiver");
+        pressOkay = false;
+        renderers[emote].material = buttonPressed;
+
+        yield return new WaitForSeconds(3f);
+
+        pressOkay = true;
+        renderers[emote].material = buttonReady;
     }
 }
