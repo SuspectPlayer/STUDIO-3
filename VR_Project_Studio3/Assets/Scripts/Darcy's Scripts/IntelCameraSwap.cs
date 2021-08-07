@@ -12,31 +12,24 @@ public class IntelCameraSwap : MonoBehaviour
 
     CinemachineVirtualCamera newVCam;
 
-    Transform intelHead;
-
     [HideInInspector]
     public bool zoomedIn = false;
-
-    void Start()
-    {
-        intelHead = transform;
-        Debug.Log("Intel head is the " + transform.gameObject.name + " object");
-    }
 
     void Update()
     {
         RaycastHit hit;
 
-        if(Physics.Raycast(intelHead.position, Vector3.forward, out hit, 3f) && Input.GetKeyDown(KeyCode.E))
+        Debug.DrawRay(transform.position, Vector3.forward, Color.cyan, 1.5f);
+
+        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 1.5f) && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Raycast has hit: " + hit.transform.gameObject.name);
+            Debug.Log("Raycast has hit: " + hit.transform.name);
             if(!zoomedIn && hit.transform.gameObject.GetComponent<VirtualCameraAssign>())
             {
                 Debug.Log("It has hit a cinemachine camera object");
                 newVCam = hit.transform.gameObject.GetComponent<VirtualCameraAssign>().cam;
                 int head = 0;
                 int screen = 10;
-                Debug.Log(head + " " + screen);
                 SwapPriority(head, screen);
                 zoomedIn = true;
             }
