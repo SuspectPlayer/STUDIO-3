@@ -114,6 +114,6 @@ public class WaypointController : MonoBehaviour
         playerFound = false;
         UpdateTargetWaypoint();
         redLight.SetActive(false);
-        spotted == false
+        spotted = false;
     }
 }
