@@ -1,6 +1,5 @@
 //Written by Jack
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WhiskyPuzzle1_Adjustments : MonoBehaviour

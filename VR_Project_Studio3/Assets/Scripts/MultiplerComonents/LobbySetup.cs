@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+//Written by Jack
 using UnityEngine;
 using Photon.Pun;
 using TMPro;
@@ -25,7 +24,7 @@ public class LobbySetup : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinRoom("Room Code: " + roomCode.text);
     }
 
-
+    //Creates the room (lobby) for the other player to join with the correct options
     public void StartLobby()
     {
         string randomRoomName = "Room Code: " + Random.Range(1000, 9999);
@@ -49,20 +48,24 @@ public class LobbySetup : MonoBehaviourPunCallbacks
         roomNumber.text = randomRoomName;
     }
 
+    //logs when the room is created
     public override void OnCreatedRoom()
     {
         Debug.Log("A room is created with the name: " + PhotonNetwork.CurrentRoom.Name);
     }
 
+    //logs when failing to join room 
     public override void OnJoinRoomFailed(short returnCode, string message)
     {
         Debug.Log("Room Unavalable");
     }
 
+    //calls when joining the room (lobby)
     public override void OnJoinedRoom()
     {
         lobbySetupPannel.SetActive(false);
         lobbyPannel.SetActive(true);
+        //sets the information in the room for the joining player
         if (!PhotonNetwork.IsMasterClient)
         {
             roomNumber.text = PhotonNetwork.CurrentRoom.Name;
@@ -85,19 +88,21 @@ public class LobbySetup : MonoBehaviourPunCallbacks
        
     }
 
-
+    //sets the joining player name for the room host
     [PunRPC]
     void RPC_SetName(string nickName)
     {
         player2.transform.Find("Player Name").GetComponent<TextMeshProUGUI>().text = nickName;
     }
 
+    //sets the joining player platfrom for the room host
     [PunRPC]
     void RPC_SetPlatform(int platform)
     {
         player2.transform.Find("Platform").GetComponent<TMP_Dropdown>().value = platform;
     }
 
+    //sets the platform of the host to see for the joining player
     [PunRPC]
     void RPC_PlatformRequest()
     {
