@@ -22,13 +22,13 @@ public class LobbySetup : MonoBehaviourPunCallbacks
 
     public void JoinLobby()
     {
-        PhotonNetwork.JoinRoom("Room_" + roomCode.text);
+        PhotonNetwork.JoinRoom("Room Code: " + roomCode.text);
     }
 
 
     public void StartLobby()
     {
-        string randomRoomName = "Room_" + Random.Range(1000, 9999);
+        string randomRoomName = "Room Code: " + Random.Range(1000, 9999);
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.IsOpen = true;
         roomOptions.IsVisible = true;

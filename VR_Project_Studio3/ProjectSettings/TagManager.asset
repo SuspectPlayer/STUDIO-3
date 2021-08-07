@@ -8,6 +8,7 @@ TagManager:
   - Clicked
   - Inside
   - MetalFloor
+  - ScannieBoi
   layers:
   - Default
   - TransparentFX

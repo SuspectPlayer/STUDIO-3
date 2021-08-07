@@ -45,19 +45,9 @@ public class ClickOnSymbols : MonoBehaviour
                        secondCondition = GameObject.Find("Outside").GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
                     }
                 
-                    if(!secondCondition)
+                    if(!secondCondition && !firstCondition)
                     {
                        OrangeButtonColours();
-                    }
-                    break;
-                }
-            case "Door 3":
-                {
-                    currentPuzzle = puzzles[2];
-                    firstCondition = currentPuzzle.GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
-                    if(!firstCondition)
-                    {
-                        OrangeButtonColours();
                     }
                     break;
                 }

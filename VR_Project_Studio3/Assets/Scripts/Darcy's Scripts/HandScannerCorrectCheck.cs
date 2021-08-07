@@ -11,7 +11,8 @@ public class HandScannerCorrectCheck : MonoBehaviour
 
     public Sprite scannedSymbol;
 
-    Sprite[] scannedSymbols = new Sprite[4];
+    [SerializeField]
+    Sprite[] localScannedSymbols = new Sprite[4];
 
     [SerializeField]
     GameObject dashboard;
@@ -19,70 +20,58 @@ public class HandScannerCorrectCheck : MonoBehaviour
     [SerializeField]
     GameObject[] assignedSymbols;
 
-    int correctCount;
+    public bool isCorrect = false;
 
     public void HandScanSymbolCheck() //this is for the handscanners to check if the symbols have been scanned in the right order
-    {
-        photonView.RPC("RPC_HandScanSymbolCheck", RpcTarget.All);
-    }
-
-    void ResetPuzzle()
-    {
-        photonView.RPC("RPC_ResetPuzzle", RpcTarget.All);
-    }
-
-    [PunRPC]
-    void RPC_Message(string message)
-    {
-        Debug.Log(message);
-    }
-
-    [PunRPC]
-    void RPC_HandScanSymbolCheck()
     {
         if (photonView == null)
         {
             photonView = GetComponent<PhotonView>();
         }
+        photonView.RPC("RPC_HandScanSymbolCheck", RpcTarget.All);
+    }
 
-        for (int i = 0; i < 4; i++)
+    void ResetPuzzle()
+    {
+        if (photonView == null)
         {
-            if (scannedSymbols[i] == null) //check to see which position in the array it needs to apply the newest scanned symbol
-            {
-                scannedSymbols[i] = scannedSymbol;
-                break;
-            }
+            photonView = GetComponent<PhotonView>();
         }
+        photonView.RPC("RPC_ResetPuzzle", RpcTarget.All);
+    }
+
+    [PunRPC]
+    void RPC_HandScanSymbolCheck()
+    {
+        localScannedSymbols[GetComponentInParent<HandScannerCorrectCount>().realCount] = scannedSymbol;
+
+        Debug.Log("started " + scannedSymbol.ToString());
 
         for (int x = 0; x < 4; x++)
         {
-            if (scannedSymbols[x] == null) //if the array position returns null, the players havent reached that part yet and the check doesnt need to be done
+            //Debug.Log(localScannedSymbols[x].ToString() + " " + gameObject.name + " " + x.ToString());
+            if (localScannedSymbols[x] == assignedSymbols[x].GetComponent<SpriteRenderer>().sprite) //checks the symbol against the static array, if they are the same it means they are in the right order
             {
+                //photonView.RPC("RPC_Correct", RpcTarget.Others);
+                Correct();
                 break;
             }
-
-            if (scannedSymbols[x] == assignedSymbols[x]) //checks the symbol against the static array, if they are the same it means they are in the right order
+            else if (localScannedSymbols[x] != null && !isCorrect)
             {
-                correctCount++;
-            }
-            else
-            {
-                string failed = "failed";
-                photonView.RPC("RPC_Message", RpcTarget.All, failed);
-                correctCount = 0; //resetting the count and the puzzle as a whole after an incorrect sequence
-                ResetPuzzle();
-                StartCoroutine(FailScan());
+                Debug.Log("calling fail " + x.ToString());
+                //photonView.RPC("RPC_Fail", RpcTarget.Others);
+                Fail();
                 break;
             }
         }
 
-        if (correctCount == 3)
+        if (GetComponentInParent<HandScannerCorrectCount>().realCount == 3)
         {
             GameObject.Find("4 - Lights").GetComponent<LightManager>().TurnOffAllLights(); //turning off lights
             GameObject.Find("Skitter Trigger").GetComponent<SkitterEventP3Collisions>().TurnTriggerOn(); //turning on the trigger for when the player steps back into the other room to start the skitter event
         }
 
-        if (correctCount >= 4)
+        if (GetComponentInParent<HandScannerCorrectCount>().realCount >= 4)
         {
             dashboard.GetComponent<DoorControl>().UnlockDoor();
             //other win condition stuff in here
@@ -94,20 +83,39 @@ public class HandScannerCorrectCheck : MonoBehaviour
     {
         for (int i = 0; i < 4; i++) //resetting the scanned symbols back to default
         {
-            scannedSymbols[i] = null;
+            localScannedSymbols[i] = null;
         }
+        isCorrect = false;
+    }
+
+    //[PunRPC]
+    void Fail()
+    {
+        Debug.Log("called fail");
+        if(!isCorrect)
+        {
+            Debug.Log("failed " + gameObject.name);
+            GetComponentInParent<HandScannerCorrectCount>().ResetCount(); //resetting the count and the puzzle as a whole after an incorrect sequence
+            ResetPuzzle();
+            StartCoroutine(FailScan());
+        }
+    }
+
+    //[PunRPC]
+    void Correct()
+    {
+        Debug.Log("correct");
+        GetComponent<ScannerFXBehaviours>().ScanFinishedMat();
+        GetComponentInParent<HandScannerCorrectCount>().CountUp();
     }
 
     IEnumerator FailScan()
     {
-        string red = "red";
-        photonView.RPC("RPC_Message", RpcTarget.All, red);
         GetComponent<ScannerFXBehaviours>().ScanFailedMat();
 
         yield return new WaitForSeconds(2);
 
-        string reset = "reset";
-        photonView.RPC("RPC_Message", RpcTarget.All, reset);
+        Debug.Log("reset");
         GetComponent<ScannerFXBehaviours>().ResetFromFinished();
         GetComponent<HandScannerTouchPad>().ResetBools();
         StopAllCoroutines();

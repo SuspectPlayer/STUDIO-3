@@ -23,9 +23,6 @@ public class SkitterEventP3 : MonoBehaviour
     //[HideInInspector]
     public bool playersLose = false;
 
-    [SerializeField]
-
-
     void Start()
     {
         photonView = GetComponent<PhotonView>();

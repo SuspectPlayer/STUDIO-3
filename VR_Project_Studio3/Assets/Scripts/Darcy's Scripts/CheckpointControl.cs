@@ -31,7 +31,12 @@ public class CheckpointControl : MonoBehaviour
         if(vrPlayer == null) //assigning the vr aplyer once they have been instantiated
         {
             vrPlayer = GameObject.Find("VR Player (XR Rig)(Clone)");
+            if (vrPlayer == null) 
+            {
+                vrPlayer = GameObject.Find("First Person Controller(Clone)"); //if its still unassigned, it means the player it using the first person controller
+            }
         }
+
         if(photonView == null)
         {
             Awake();
