@@ -39,7 +39,7 @@ public class RandomiseSymbols : MonoBehaviour
         }
     }
 
-    void PickUniqueRandomNumbers()
+    public void PickUniqueRandomNumbers()
     {
         if (name == "Inside") //checking for the second puzzle, make sure that the symbols are unique
         {
@@ -84,7 +84,7 @@ public class RandomiseSymbols : MonoBehaviour
         }
     }
 
-    void ApplySymbols()
+    public void ApplySymbols()
     {
         photonView.RPC("RPC_ApplySymbols", RpcTarget.All, eightStoredRandomNumbers, fourStoredRandomNumbers);
     }
