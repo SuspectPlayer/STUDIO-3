@@ -9,9 +9,7 @@ public class WhiskyPuzzle1_Adjustments : MonoBehaviour
 
     public void TurnOnLight1()
     {
-        light1Control.LightParameterCheck();
-
-        if (light1Control.GetComponentInParent<LightManager>().lightCount == 2) //limited to 2 lights on at any time.
+        if (light1Control.gameObject.GetComponentInParent<LightManager>().lightCount == 2) //limited to 2 lights on at any time.
         {
             //nothing will be sent back if the light is off as it can only be turned off, not on at this point
             //Check is needed as couroutine needs to stop if the light is turned off
@@ -25,7 +23,7 @@ public class WhiskyPuzzle1_Adjustments : MonoBehaviour
             }
 
         }
-        else if (light1Control.GetComponentInParent<LightManager>().lightCount < 2)
+        else if (light1Control.gameObject.GetComponentInParent<LightManager>().lightCount < 2)
         {
             if (light1Control.assignedButton.image.sprite == light1Control.lightOn)
             {
@@ -39,7 +37,7 @@ public class WhiskyPuzzle1_Adjustments : MonoBehaviour
             {
                 //The light will be turned on
                 light1Control.LightParameterCheck();
-                StartCoroutine("turnOffAllLights");
+                StartCoroutine("TurnOffAllLights");
             }
         }
     }
