@@ -6,6 +6,9 @@ using Photon.Pun;
 public class PlayerMovement : MonoBehaviour
 {
     PhotonView photonView;
+
+    [SerializeField]
+    GameObject intelCamSwap;
     
     //the controller
     public CharacterController controller;
@@ -50,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (photonView.IsMine)
+        if (photonView.IsMine && !intelCamSwap.GetComponent<IntelCameraSwap>().zoomedIn)
         {
 
             #region Grounding
