@@ -80,6 +80,8 @@ MonoBehaviour:
   - RPC_Correct
   - RPC_AmbiStart
   - RPC_Whispering
+  - RPC_ToDiver
+  - RPC_ToIntelligence
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
