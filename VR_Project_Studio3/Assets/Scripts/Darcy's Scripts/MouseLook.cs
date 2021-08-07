@@ -12,26 +12,25 @@ public class MouseLook : MonoBehaviour
 
     float xRotation = 0f;
 
-    PhotonView photonview;
+    PhotonView photonView;
 
     void Awake()
     {
-        photonview = GetComponentInParent<PhotonView>();
+        photonView = GetComponentInParent<PhotonView>();
     }
-
-    void Start()
-    {
-        if (photonview.IsMine)
-        {
-           Cursor.lockState = CursorLockMode.Locked;
-        }
-
-    }
-
 
     void Update()
     {
-        if(photonview.IsMine)
+        if (photonView.IsMine && !GetComponent<IntelCameraSwap>().zoomedIn)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else if(photonView.IsMine && GetComponent<IntelCameraSwap>().zoomedIn)
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+
+        if (photonView.IsMine)
         {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
