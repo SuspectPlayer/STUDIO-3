@@ -66,7 +66,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 2103
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -301,6 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c6bfdb4c2a1fce44976664e7cd1490e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intelCamSwap: {fileID: 0}
   controller: {fileID: 3987560332757935706}
   player: {fileID: 3987560332757935707}
   pov: {fileID: 1543862793041506867}

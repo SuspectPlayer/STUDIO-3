@@ -12,6 +12,7 @@ public class SingleFlock : MonoBehaviour
 
     [SerializeField] private int flockSize; // How many flock members are allowed to exist
     [SerializeField] private Vector3 spawnArea; // The space that flock members may exist within
+    [SerializeField] private Transform spawnParent; // Flock house
 
     [Header("Speed Variables")]
     //Minimum Speed
@@ -238,7 +239,9 @@ public class SingleFlock : MonoBehaviour
                 Units[i] = Instantiate(unitPrefab, spawnLoc, rotie);
                 Units[i].transform.localScale = new Vector3(randScale, randScale, randScale);
             }
-            
+
+            if (spawnParent != null) Units[i].transform.parent = spawnParent;
+
             Units[i].Assign(this);
             Units[i].SpeedInit(Random.Range(minSpeed, maxSpeed));
         }
