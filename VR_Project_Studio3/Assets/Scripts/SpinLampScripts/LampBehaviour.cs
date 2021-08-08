@@ -18,7 +18,7 @@ public class LampBehaviour : MonoBehaviour
     void Awake()
     {
         spinner = GetComponent<Animator>();
-        SetLamp(lampOnDefault, startColour, !lampSpinningDefault);
+        SetLamp(false, startColour, false);
     }
 
 
