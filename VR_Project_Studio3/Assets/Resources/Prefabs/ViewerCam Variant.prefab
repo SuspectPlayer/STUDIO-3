@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 3603344359464678961}
+  camera: {fileID: 3603344359464678965}
   audioListener: {fileID: 3603344359464678962}
 --- !u!114 &995104744148276747
 MonoBehaviour:
@@ -322,6 +323,11 @@ Transform:
 --- !u!1 &3603344359464678961 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4466607561364754221, guid: ccaeecca208f4f6489634432a783888d, type: 3}
+  m_PrefabInstance: {fileID: 1152135851798755612}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &3603344359464678965 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4466607561364754217, guid: ccaeecca208f4f6489634432a783888d, type: 3}
   m_PrefabInstance: {fileID: 1152135851798755612}
   m_PrefabAsset: {fileID: 0}
 --- !u!81 &3603344359464678962 stripped

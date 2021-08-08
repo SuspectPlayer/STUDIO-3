@@ -10,6 +10,7 @@ using FMODUnity;
 public class DoorControl : MonoBehaviour
 {
     public GameObject door;
+    public GameObject lampSupport;
     public StudioEventEmitter ambienceMusic02;
     public StudioEventEmitter[] doorOpenSounds; //When right answer
 
@@ -19,8 +20,7 @@ public class DoorControl : MonoBehaviour
     
     void Start()
     {
-        door.GetComponentInChildren<MeshRenderer>().material.SetColor("_EmissionColor", Color.red);
-        GameObject.Find("Door 3").GetComponentInChildren<MeshRenderer>().material.SetColor("_EmissionColor", Color.red);
+        door.GetComponent<DoorLamp>().lampy.SetLamp(false, Color.white, false);
         photonView = GetComponent<PhotonView>();
     }
 
@@ -40,7 +40,7 @@ public class DoorControl : MonoBehaviour
     [PunRPC]
     void RPC_LockDoor()
     {
-        door.GetComponentInChildren<MeshRenderer>().material.SetColor("_EmissionColor", Color.red); //the light for the door
+        door.GetComponent<DoorLamp>().lampy.SetLamp(true, Color.red, true); //the light for the door
         door.GetComponentInChildren<Animator>().SetBool("Unlock", false);
         if(door.name == "Door 2") //if it is the second door, will need to change the bool for puzzle 3
         {
@@ -51,7 +51,7 @@ public class DoorControl : MonoBehaviour
     [PunRPC]
     void RPC_UnlockDoor()
     {
-        door.GetComponentInChildren<MeshRenderer>().material.SetColor("_EmissionColor", Color.green);
+        door.GetComponent<DoorLamp>().lampy.SetLamp(true, Color.green, true);
         door.GetComponentInChildren<Animator>().SetBool("Unlock", true);
 
         switch(door.name)
