@@ -14,6 +14,7 @@ public class CameraAssign : MonoBehaviour
         if (photonView.IsMine)
         {
             cam.SetActive(true);
+            cam.GetComponent<Camera>().enabled = true;
             audioListener.enabled = true;
         }
     }

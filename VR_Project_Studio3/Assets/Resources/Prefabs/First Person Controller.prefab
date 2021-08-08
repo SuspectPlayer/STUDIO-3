@@ -302,6 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c6bfdb4c2a1fce44976664e7cd1490e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intelCamSwap: {fileID: 0}
   controller: {fileID: 3987560332757935706}
   player: {fileID: 3987560332757935707}
   pov: {fileID: 1543862793041506867}
@@ -372,7 +373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612ee0fc4a60c304b8b411aa1920b009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1543862793041506870}
+  cam: {fileID: 1543862793041506866}
   audioListener: {fileID: 1543862793041506869}
 --- !u!114 &718915839939356127
 MonoBehaviour:
