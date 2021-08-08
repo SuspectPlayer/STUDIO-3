@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
     //booleans
     public bool firstStep = true;
-    bool isGrounded;
+    bool isGrounded, canMove = true;
     public bool sprinting;
 
     void Start()
@@ -53,7 +53,21 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (photonView.IsMine && !intelCamSwap.GetComponent<IntelCameraSwap>().zoomedIn)
+        if(intelCamSwap == null)
+        {
+            intelCamSwap = GameObject.Find("Intel Head");
+        }
+
+        if(!intelCamSwap.GetComponent<IntelCameraSwap>().zoomedIn /*&& !FindObjectOfType<GameSetup>().isVRPlayer*/)
+        {
+            canMove = true;
+        }
+        else if (intelCamSwap.GetComponent<IntelCameraSwap>().zoomedIn/* && !FindObjectOfType<GameSetup>().isVRPlayer*/)
+        {
+            canMove = false;
+        }
+
+        if (photonView.IsMine && canMove)
         {
 
             #region Grounding

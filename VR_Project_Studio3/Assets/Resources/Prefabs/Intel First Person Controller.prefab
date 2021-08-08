@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 2603233732157599775}
   - component: {fileID: 7211871059660883461}
   - component: {fileID: 2692981495848236829}
-  - component: {fileID: 1315057736317065764}
   - component: {fileID: 2014189562821014682}
   m_Layer: 0
   m_Name: Intel First Person Controller
@@ -179,22 +178,6 @@ MonoBehaviour:
   AutoCreateRecorderIfNotFound: 1
   UsePrimaryRecorder: 1
   SetupDebugSpeaker: 0
---- !u!114 &1315057736317065764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2014189562821014683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6701ddc9c636ca0479a55c68d86d08d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layerizor:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  camSpot: {fileID: 7517699912762556254}
 --- !u!114 &2014189562821014682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,7 +423,7 @@ GameObject:
   - component: {fileID: 7517699912106532815}
   - component: {fileID: 7517699912106532814}
   m_Layer: 0
-  m_Name: Head
+  m_Name: Intel Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -620,7 +603,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7517699912762556242}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
