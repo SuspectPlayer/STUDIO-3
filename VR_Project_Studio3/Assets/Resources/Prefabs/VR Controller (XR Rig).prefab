@@ -2999,6 +2999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 7449520133152144597, guid: 207d8f2379168d54a9032420839f9361, type: 3}
+  camera: {fileID: 0}
   audioListener: {fileID: 5354149819287687554, guid: 207d8f2379168d54a9032420839f9361, type: 3}
 --- !u!114 &4467463539034673493
 MonoBehaviour:
