@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612ee0fc4a60c304b8b411aa1920b009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 7517699912762556252}
+  cam: {fileID: 7517699912762556242}
   audioListener: {fileID: 7517699912762556241}
 --- !u!1 &5221590970633020715
 GameObject:
@@ -456,6 +456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   intelVCam: {fileID: 7517699912586802823}
+  intelCam: {fileID: 7517699912762556252}
   zoomedIn: 0
 --- !u!114 &7517699912106532814
 MonoBehaviour:
@@ -558,7 +559,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7517699912762556254
 Transform:
   m_ObjectHideFlags: 0
@@ -603,7 +604,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7517699912762556242}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
