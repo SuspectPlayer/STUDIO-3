@@ -12,6 +12,9 @@ public class SingleFlock : MonoBehaviour
 
     [SerializeField] private int flockSize; // How many flock members are allowed to exist
     [SerializeField] private Vector3 spawnArea; // The space that flock members may exist within
+    [SerializeField] private Transform spawnParent; // Flock house
+
+    [SerializeField] private Color spawnAreaColour; // Gizmo Colour
 
     [Header("Speed Variables")]
     //Minimum Speed
@@ -86,17 +89,31 @@ public class SingleFlock : MonoBehaviour
     [SerializeField] private FlockMember unitPrefabAltThree; //
 
     [Header("Variety Weighting")]
-    [Tooltip("Dictates upper limit of spawn randomiser. i.e. a value of 0.75 means that the 1st prefab will appear 25 times in a flock of 100")] [SerializeField] [Range(0f, 1f)] private float upperQuart = 0.75f;
-    [Tooltip("Dictates middle limit of spawn randomiser. i.e. a value of 0.5, upper limit of 0.75, and lower limit of 0.25 means that the 2nd prefab will appear 25 times, and the 3rd prefab will appear 25 times in a flock of 100")] [SerializeField] [Range(0f, 1f)] private float midQuart = 0.5f;
-    [Tooltip("Dictates lower limit of spawn randomiser. i.e. a value of 0.25 means that the 4th prefab will appear 25 times in a flock of 100")] [SerializeField] [Range(0f, 1f)] private float lowerQuart = 0.25f;
+    [Tooltip("Dictates upper limit of spawn randomiser. i.e. a value of 0.75 means that the 1st prefab will appear 25 times in a flock of 100")] 
+    [SerializeField] [Range(0f, 1f)] private float upperQuart = 0.75f;
+    [Tooltip("Dictates middle limit of spawn randomiser. i.e. a value of 0.5, upper limit of 0.75, and lower limit of 0.25 means that the 2nd prefab will appear 25 times, and the 3rd prefab will appear 25 times in a flock of 100")] 
+    [SerializeField] [Range(0f, 1f)] private float midQuart = 0.5f;
+    [Tooltip("Dictates lower limit of spawn randomiser. i.e. a value of 0.25 means that the 4th prefab will appear 25 times in a flock of 100")] 
+    [SerializeField] [Range(0f, 1f)] private float lowerQuart = 0.25f;
 
     [Header("Optional Variables: Flock Leader")]
     public bool beingLed;
     public GameObject pathLeader;
 
+    [Header("Debug Rays")]
+    public bool drawRays;
+
+    bool firstCall = false;
+
     private void Start()
     {
         FlockInit();
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = spawnAreaColour;
+        Gizmos.DrawWireCube(transform.position, spawnArea);
     }
 
     private void Update()
@@ -109,6 +126,7 @@ public class SingleFlock : MonoBehaviour
 
     void FlockInit() //Initializes and creates flock
     {
+        firstCall = true;
         Units = new FlockMember[flockSize];
         if (uniqueFish && unitPrefabAlt == null && unitPrefabAltTwo == null && unitPrefabAltThree == null)
         {
@@ -238,7 +256,9 @@ public class SingleFlock : MonoBehaviour
                 Units[i] = Instantiate(unitPrefab, spawnLoc, rotie);
                 Units[i].transform.localScale = new Vector3(randScale, randScale, randScale);
             }
-            
+
+            if (spawnParent != null) Units[i].transform.parent = spawnParent;
+
             Units[i].Assign(this);
             Units[i].SpeedInit(Random.Range(minSpeed, maxSpeed));
         }

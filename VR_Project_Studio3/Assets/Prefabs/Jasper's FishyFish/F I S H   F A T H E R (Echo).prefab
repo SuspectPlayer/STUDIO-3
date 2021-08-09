@@ -302,6 +302,36 @@ Transform:
   m_Father: {fileID: 5294926891474366789}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4400007742746199998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6422698977323481809}
+  m_Layer: 0
+  m_Name: FishHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6422698977323481809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4400007742746199998}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5663662699074958545}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5663662698445897256
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +469,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5663662699074958545}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5663662698592105524
 MonoBehaviour:
@@ -456,6 +486,7 @@ MonoBehaviour:
   unitPrefab: {fileID: 8657632692154742079, guid: dfb44db5982e881489a0e19ad22edb29, type: 3}
   flockSize: 10
   spawnArea: {x: 0.5, y: 10, z: 0.5}
+  spawnParent: {fileID: 6422698977323481809}
   minSpeed: 1.5
   maxSpeed: 3
   cohesionDist: 5
@@ -538,7 +569,7 @@ Transform:
   - {fileID: 5663662699645039485}
   - {fileID: 5663662700086105425}
   m_Father: {fileID: 5663662699074958545}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5663662698844732884
 MonoBehaviour:
@@ -555,6 +586,7 @@ MonoBehaviour:
   unitPrefab: {fileID: 7735319632090376263, guid: 2198538d04695264c95f6804c8556ddd, type: 3}
   flockSize: 5
   spawnArea: {x: 2, y: 5, z: 2}
+  spawnParent: {fileID: 6422698977323481809}
   minSpeed: 1.5
   maxSpeed: 3
   cohesionDist: 5
@@ -633,6 +665,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 6422698977323481809}
   - {fileID: 7597900612593131006}
   - {fileID: 5663662698844732891}
   - {fileID: 5663662699441001178}
@@ -793,7 +826,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5663662699074958545}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5663662699381797009
 MonoBehaviour:
@@ -810,6 +843,7 @@ MonoBehaviour:
   unitPrefab: {fileID: 7735319632090376263, guid: 2198538d04695264c95f6804c8556ddd, type: 3}
   flockSize: 40
   spawnArea: {x: 10, y: 10, z: 10}
+  spawnParent: {fileID: 6422698977323481809}
   minSpeed: 1.5
   maxSpeed: 3
   cohesionDist: 5
@@ -862,7 +896,7 @@ Transform:
   - {fileID: 5663662700382577726}
   - {fileID: 5663662698523389427}
   m_Father: {fileID: 5663662699074958545}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5663662699441001179
 MonoBehaviour:
@@ -879,6 +913,7 @@ MonoBehaviour:
   unitPrefab: {fileID: 5756125494848916292, guid: 1cf97083af4beea499ae644d25bfe886, type: 3}
   flockSize: 5
   spawnArea: {x: 2, y: 5, z: 2}
+  spawnParent: {fileID: 6422698977323481809}
   minSpeed: 1.5
   maxSpeed: 3
   cohesionDist: 5
@@ -959,7 +994,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5663662699074958545}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5663662699551223138
 MonoBehaviour:
@@ -976,6 +1011,7 @@ MonoBehaviour:
   unitPrefab: {fileID: 8657632692154742079, guid: dfb44db5982e881489a0e19ad22edb29, type: 3}
   flockSize: 40
   spawnArea: {x: 10, y: 10, z: 10}
+  spawnParent: {fileID: 6422698977323481809}
   minSpeed: 1.5
   maxSpeed: 3
   cohesionDist: 5
@@ -1148,7 +1184,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5663662699074958545}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5663662700021886318
 MonoBehaviour:
@@ -1165,6 +1201,7 @@ MonoBehaviour:
   unitPrefab: {fileID: 5756125494848916292, guid: 6321ca179dadf194485b4479c77ccd5e, type: 3}
   flockSize: 40
   spawnArea: {x: 10, y: 15, z: 10}
+  spawnParent: {fileID: 6422698977323481809}
   minSpeed: 1.5
   maxSpeed: 3
   cohesionDist: 5
@@ -1525,7 +1562,7 @@ Transform:
   - {fileID: 5294926891474366789}
   - {fileID: 2085011564889553462}
   m_Father: {fileID: 5663662699074958545}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3088891254393839451
 MonoBehaviour:
@@ -1542,6 +1579,7 @@ MonoBehaviour:
   unitPrefab: {fileID: 8657632692154742079, guid: dfb44db5982e881489a0e19ad22edb29, type: 3}
   flockSize: 5
   spawnArea: {x: 2, y: 5, z: 2}
+  spawnParent: {fileID: 6422698977323481809}
   minSpeed: 1.5
   maxSpeed: 3
   cohesionDist: 5
@@ -1572,7 +1610,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6720235171196413457, guid: 943b9b94f238cb544b6834da4eb1f04e, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6720235171196413457, guid: 943b9b94f238cb544b6834da4eb1f04e, type: 3}
       propertyPath: m_LocalPosition.x

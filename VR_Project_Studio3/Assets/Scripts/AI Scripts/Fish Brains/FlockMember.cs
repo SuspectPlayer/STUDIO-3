@@ -22,6 +22,15 @@ public class FlockMember : MonoBehaviour
     private Vector3 storedDir;
     private float speed;
 
+    private Color mainCol = Color.white;
+    private Color cohCol = Color.green;
+    private Color avoCol = Color.red;
+    private Color aliCol = Color.blue;
+
+    private Vector3 cohRay;
+    private Vector3 avoRay;
+    private Vector3 aliRay;
+
     public Transform thisTrans { get; set; }
 
     private void Awake()
@@ -49,6 +58,10 @@ public class FlockMember : MonoBehaviour
         Vector3 alignVec = GetAlignVec() * flockAssigned.alignWeightProp; //The unit's alignment vector
         Vector3 boundsVec = GetBoundsVec() * flockAssigned.boundsWeightProp; //The unit's movement bounds
         Vector3 obstVec = GetObstVec() * flockAssigned.obstWeightProp; //The unit's obstacle avoidance vector
+
+        cohRay = cohesionVec;
+        avoRay = avoVec;
+        aliRay = alignVec;
 
         Vector3 moveVec = cohesionVec + avoVec + alignVec + boundsVec + obstVec;
         moveVec = Vector3.SmoothDamp(thisTrans.forward, moveVec, ref currentVelocity, smoothTime);
@@ -105,6 +118,7 @@ public class FlockMember : MonoBehaviour
         Vector3 cohesionVec = Vector3.zero;
         if (cohesionPeers.Count == 0)
         {
+            Debug.Log("No align peers");
             return cohesionVec;
         }
         int seenPeers = 0;
@@ -129,6 +143,7 @@ public class FlockMember : MonoBehaviour
         Vector3 alignVec = thisTrans.forward;
         if (alignPeers.Count == 0)
         {
+            Debug.Log("No align peers");
             return thisTrans.forward;
         }
         int seenPeers = 0;
@@ -151,6 +166,7 @@ public class FlockMember : MonoBehaviour
         Vector3 avoVec = Vector3.zero;
         if (avoPeers.Count == 0)
         {
+            Debug.Log("No avoid peers");
             return Vector3.zero;
         }
         int seenPeers = 0;
@@ -238,5 +254,20 @@ public class FlockMember : MonoBehaviour
     private bool CanSee(Vector3 position) // Detects if a unit is seeing other units
     {
         return Vector3.Angle(thisTrans.forward, position - thisTrans.position) <= unitFOV;
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (flockAssigned.drawRays)
+        {
+            Gizmos.color = mainCol;
+            Gizmos.DrawRay(transform.position, transform.forward);
+            Gizmos.color = cohCol;
+            Gizmos.DrawRay(transform.position, cohRay.normalized);
+            Gizmos.color = avoCol;
+            Gizmos.DrawRay(transform.position, avoRay.normalized);
+            Gizmos.color = aliCol;
+            Gizmos.DrawRay(transform.position, aliRay.normalized);
+        }
     }
 }
