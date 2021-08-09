@@ -46,14 +46,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wristUIObject: {fileID: 6911919938862717780}
+  uiBehave: {fileID: 0}
+  openAnimator: {fileID: 844956886742838079}
   desiredRelative: {x: -0.00000085, y: 0.00000145, z: -90}
   offset: {x: 20, y: 30, z: 20}
   handController: {fileID: 0}
   waist: {fileID: 0}
-  xAngleInBounds: 0
-  yAngleInBounds: 1
-  zAngleInBounds: 1
-  isPoseTrue: 0
 --- !u!95 &844956886742838079
 Animator:
   serializedVersion: 3
@@ -83,6 +81,34 @@ PrefabInstance:
     - target: {fileID: 154770934102036152, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
       propertyPath: m_Camera
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 170056954728585910, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 170056954728585910, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 170056954728585910, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 170056954728585910, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SendEmoteToIntelligence
+      objectReference: {fileID: 0}
+    - target: {fileID: 170056954728585910, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIBehaviours, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 170056954728585910, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 170056954728585910, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 550478459536675010, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
       propertyPath: m_AnchorMax.y
@@ -154,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2457138488549433800, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2457138488549433800, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -166,7 +192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2457138488549433800, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SwitchToMain
+      value: SwitchTab
       objectReference: {fileID: 0}
     - target: {fileID: 2457138488549433800, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -183,6 +209,30 @@ PrefabInstance:
     - target: {fileID: 3104592013046563750, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3295172894211624460, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3295172894211624460, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3295172894211624460, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3295172894211624460, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SendEmoteToIntelligence
+      objectReference: {fileID: 0}
+    - target: {fileID: 3295172894211624460, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIBehaviours, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3295172894211624460, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3413171587417100943, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
       propertyPath: m_AnchorMax.y
@@ -207,6 +257,34 @@ PrefabInstance:
     - target: {fileID: 3413171587417100943, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -74
+      objectReference: {fileID: 0}
+    - target: {fileID: 4260799781840863809, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4260799781840863809, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4260799781840863809, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4260799781840863809, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SendEmoteToIntelligence
+      objectReference: {fileID: 0}
+    - target: {fileID: 4260799781840863809, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIBehaviours, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4260799781840863809, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4260799781840863809, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4794340282805570519, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
       propertyPath: m_Name
@@ -237,6 +315,34 @@ PrefabInstance:
       value: UIBehaviours, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5013413654086980558, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024545646719547486, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024545646719547486, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024545646719547486, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024545646719547486, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SendEmoteToIntelligence
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024545646719547486, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIBehaviours, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024545646719547486, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5024545646719547486, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}

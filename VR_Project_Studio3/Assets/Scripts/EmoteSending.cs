@@ -22,7 +22,7 @@ public class EmoteSending : MonoBehaviour
         photonView = GetComponent<PhotonView>();
     }
 
-    public void ToIntelligence(int emote) //Called from wrist UI
+    public void ToIntelligence(int emote) //Called from diver's UI
     {
         photonView.RPC("RPC_ToIntelligence", RpcTarget.Others, emote);
     }
@@ -35,12 +35,14 @@ public class EmoteSending : MonoBehaviour
     [PunRPC]
     void RPC_ToIntelligence(int emote)
     {
+        if(dPad == null) { Debug.LogWarning("Unable to locate DPad. This is quite the big oof."); return; }
         dPad.DPadReceive(emote);
     }
 
     [PunRPC]
     void RPC_ToDiver(int emote)
     {
+        if (dPad == null) { Debug.LogWarning("Unable to locate Diver UI. This is quite the big oof."); return; }
         uiObject.ReceiveFromIntelligence(emote);
     }
 }
