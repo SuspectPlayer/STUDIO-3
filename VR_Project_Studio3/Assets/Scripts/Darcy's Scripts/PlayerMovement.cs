@@ -58,11 +58,11 @@ public class PlayerMovement : MonoBehaviour
             intelCamSwap = GameObject.Find("Intel Head");
         }
 
-        if(!intelCamSwap.GetComponent<IntelCameraSwap>().zoomedIn /*&& !FindObjectOfType<GameSetup>().isVRPlayer*/)
+        if(!intelCamSwap.GetComponent<IntelCameraSwap>().zoomedIn)
         {
             canMove = true;
         }
-        else if (intelCamSwap.GetComponent<IntelCameraSwap>().zoomedIn/* && !FindObjectOfType<GameSetup>().isVRPlayer*/)
+        else if (intelCamSwap.GetComponent<IntelCameraSwap>().zoomedIn)
         {
             canMove = false;
         }
@@ -85,18 +85,18 @@ public class PlayerMovement : MonoBehaviour
 
             move = transform.right * x + transform.forward * z;
 
-            if (player.localScale.y <= 0.5f) //checking to see if the character is crouching or not
-            {
-                speed = 6f;
-            }
-            if (player.localScale.y >= 1.0f && !sprinting) //if the player is crouching, speed is halved
-            {
-                speed = 12f;
-            }
-            if (sprinting) //sprinting increases speed by 50%
-            {
-                speed = 18f;
-            }
+            //if (player.localScale.y <= 0.5f) //checking to see if the character is crouching or not
+            //{
+            //    speed = 6f;
+            //}
+            //if (player.localScale.y >= 1.0f && !sprinting) //if the player is crouching, speed is halved
+            //{
+            //    speed = 12f;
+            //}
+            //if (sprinting) //sprinting increases speed by 50%
+            //{
+            //    speed = 18f;
+            //}
 
             controller.Move(move * speed * Time.deltaTime);
 

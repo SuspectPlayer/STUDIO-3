@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using Photon.Pun;
 
 //Written by Darcy Glover
 
@@ -17,17 +18,24 @@ public class IntelCameraSwap : MonoBehaviour
 
     Camera newCam;
 
+    PhotonView photonView;
+
     //[HideInInspector]
     public bool zoomedIn = false;
 
     void Update()
     {
+        if(photonView == null)
+        {
+            photonView = GetComponent<PhotonView>();
+        }
+
         RaycastHit hit;
 
-        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 1.5f) && Input.GetKeyDown(KeyCode.E)) //pressing e to zoom in on a screen
+        if(photonView.IsMine && Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 2f) && Input.GetKeyDown(KeyCode.E)) //pressing e to zoom in on a screen
         {
             Debug.Log("Raycast has hit: " + hit.transform.name);
-            if(!zoomedIn && hit.transform.gameObject.GetComponent<VirtualCameraAssign>()) //checking to see if the hit object has a virtual camera component
+            if(photonView.IsMine && !zoomedIn && hit.transform.gameObject.GetComponent<VirtualCameraAssign>()) //checking to see if the hit object has a virtual camera component
             {
                 Debug.Log("It has hit a cinemachine camera object");
                 newVCam = hit.transform.gameObject.GetComponent<VirtualCameraAssign>().vCam;
@@ -37,7 +45,7 @@ public class IntelCameraSwap : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.Escape) && zoomedIn) //pressing escape to zoom back out
+        if(photonView.IsMine && Input.GetKeyDown(KeyCode.Escape) && zoomedIn) //pressing escape to zoom back out
         {
             StartCoroutine(ZoomOut());
         }
