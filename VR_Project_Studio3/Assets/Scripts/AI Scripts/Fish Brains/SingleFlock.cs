@@ -14,6 +14,8 @@ public class SingleFlock : MonoBehaviour
     [SerializeField] private Vector3 spawnArea; // The space that flock members may exist within
     [SerializeField] private Transform spawnParent; // Flock house
 
+    [SerializeField] private Color spawnAreaColour; // Gizmo Colour
+
     [Header("Speed Variables")]
     //Minimum Speed
     [Range(0, 10)]
@@ -98,6 +100,12 @@ public class SingleFlock : MonoBehaviour
     private void Start()
     {
         FlockInit();
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = spawnAreaColour;
+        Gizmos.DrawWireCube(transform.position, spawnArea);
     }
 
     private void Update()
