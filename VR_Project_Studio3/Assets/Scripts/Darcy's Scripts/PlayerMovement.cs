@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
     //booleans
     public bool firstStep = true;
-    bool isGrounded;
+    bool isGrounded, canMove = true;
     public bool sprinting;
 
     void Start()
@@ -53,7 +53,21 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (photonView.IsMine && !intelCamSwap.GetComponent<IntelCameraSwap>().zoomedIn)
+        if(intelCamSwap == null)
+        {
+            intelCamSwap = GameObject.Find("Intel Head");
+        }
+
+        if(!intelCamSwap.GetComponent<IntelCameraSwap>().zoomedIn)
+        {
+            canMove = true;
+        }
+        else if (intelCamSwap.GetComponent<IntelCameraSwap>().zoomedIn)
+        {
+            canMove = false;
+        }
+
+        if (photonView.IsMine && canMove)
         {
 
             #region Grounding
@@ -71,18 +85,18 @@ public class PlayerMovement : MonoBehaviour
 
             move = transform.right * x + transform.forward * z;
 
-            if (player.localScale.y <= 0.5f) //checking to see if the character is crouching or not
-            {
-                speed = 6f;
-            }
-            if (player.localScale.y >= 1.0f && !sprinting) //if the player is crouching, speed is halved
-            {
-                speed = 12f;
-            }
-            if (sprinting) //sprinting increases speed by 50%
-            {
-                speed = 18f;
-            }
+            //if (player.localScale.y <= 0.5f) //checking to see if the character is crouching or not
+            //{
+            //    speed = 6f;
+            //}
+            //if (player.localScale.y >= 1.0f && !sprinting) //if the player is crouching, speed is halved
+            //{
+            //    speed = 12f;
+            //}
+            //if (sprinting) //sprinting increases speed by 50%
+            //{
+            //    speed = 18f;
+            //}
 
             controller.Move(move * speed * Time.deltaTime);
 

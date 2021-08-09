@@ -9,6 +9,7 @@ public class DPadPad : MonoBehaviour
 
     public Image uiEmoteReceive;
     public Image uiEmoteOverride;
+    public Image uiEmoteSending;
 
     public Animator animator;
 
@@ -21,10 +22,15 @@ public class DPadPad : MonoBehaviour
     public Material buttonPressed;
 
     bool pressOkay;
+    bool assignAttempt;
 
     // Start is called before the first frame update
     void Awake()
     {
+        assignAttempt = false;
+        if (emoteSender != null) { GameObject.Find("EmoteManager").GetComponent<EmoteSending>(); assignAttempt = true; }
+        if (emoteSender != null && assignAttempt == true) { Debug.LogError("Failed to aquire Emote Manager."); }
+
         emoteSender.dPad = this;
 
         for (int i = 0; i < 4; i++)
@@ -41,8 +47,9 @@ public class DPadPad : MonoBehaviour
 
     public void DPadSend(int emote)
     {
-        if (pressOkay) StartCoroutine(DPadSendTimer(emote));
-        else { }
+        if (pressOkay && emoteSender != null) StartCoroutine(DPadSendTimer(emote));
+        else if (pressOkay && emoteSender == null) Debug.LogError("The Emote Manager could not be found, but I swear I already told you that.");
+        else { Debug.Log("Hold your horses, you can't just fling emotes willy-nilly. Be patient, thanks."); }
     }
 
     public void DPadReceive(int emote)
@@ -80,6 +87,7 @@ public class DPadPad : MonoBehaviour
     IEnumerator DPadSendTimer(int emote)
     {
         emoteSender.ToDiver(emote);
+        uiEmoteSending.sprite = emoteSender.emoteSprites[emote];
         animator.SetTrigger("SendToDiver");
         pressOkay = false;
         renderers[emote].material = buttonPressed;

@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1543862793041506867
 Transform:
   m_ObjectHideFlags: 0
@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 4532160857228544230}
   m_Layer: 0
   m_Name: First Person Controller
-  m_TagString: GameController
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -310,7 +310,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 0
-  speed: 0
+  speed: 2.5
   gravity: -9.81
   jumpHeight: 3
   move: {x: 0, y: 0, z: 0}
