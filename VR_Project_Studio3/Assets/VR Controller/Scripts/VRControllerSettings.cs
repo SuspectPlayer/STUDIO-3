@@ -1,15 +1,24 @@
+//Written by Jasper von Riegen
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class VRControllerSettings : MonoBehaviour
 {
+    //References/General variables
     public bool heightScaleInUpdate = false;
+
     VRRig vRRig;
     VRFootIK vRFoot;
     GameObject vrControllerObject;
+    ActionBasedContinuousMoveProvider moveProvider;
+    ActionBasedSnapTurnProvider snapProvider;
+
     public Transform bodySize;
     public Transform bodyCollider;
+
     [Space(10)]
     [Header("Eye Position Transforms")]
     //Player Head Transform
@@ -26,17 +35,30 @@ public class VRControllerSettings : MonoBehaviour
     [SerializeField] float dualEyeXPresentFromCentre;
 
     //Player Height Variables
-    [Header("Player Height Adjustment")]
     [Space(10)]
+    [Header("Player Height Adjustment")]
     public float defaultHeight;
     public float minBodyHeight; // - Minimum allowed height of actual body
     public float maxBodyHeight; // - Maximum allowed height of actual body
     public float intendedBodyHeight;
+
     [SerializeField] float bodyScale;
     public float scaleMultiplier = 1;
     Vector3 baseFootOffset;
     [Range(0,1)] public float heightInterpolator; // - Slider to scale height between minimum and maximum heights
 
+    //Motion Variables
+    [Range(0.5f, 4f)]
+    public float playerSpeed;
+    [Space(10)]
+    public int snapAmtOne;
+    public int snapAmtTwo;
+    public int snapAmtThree;
+
+    bool snapSetOne = true;
+    bool snapSetTwo = false;
+    bool snapSetThree = false;
+    bool snapSetOff = false; // Will confirm if inclusion is desired
 
     // Start is called before the first frame update
     void Start()
@@ -45,10 +67,12 @@ public class VRControllerSettings : MonoBehaviour
         vrControllerObject = gameObject;
         vRRig = GetComponentInChildren<VRRig>();
         vRFoot = GetComponentInChildren<VRFootIK>();
+        moveProvider = GetComponentInChildren<ActionBasedContinuousMoveProvider>();
+        snapProvider = GetComponentInChildren<ActionBasedSnapTurnProvider>();
         baseFootOffset = vRFoot.footOffset;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         //Height Changes
@@ -58,6 +82,8 @@ public class VRControllerSettings : MonoBehaviour
         }
     }
 
+
+    //Methods for settings
     /// <summary>
     /// This is used to appropriately set player height, intended to make
     /// certain that the player does not feel any sickness from the expansion/contraction
@@ -79,19 +105,77 @@ public class VRControllerSettings : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Allows you to edit a single axis on a Vector3, leaving the other two alone.
-    /// </summary>
-    /// <param name="vectorToChange">The Vector3 to be edited.</param>
-    /// <param name="pos">The position of the axis to edit. (0,1,2) = (x,y,z)</param>
-    /// <param name="newValue">New value for chosen axis.</param>
-    /// <returns>Vector3 with chosen axis changed.</returns>
-    Vector3 VectorThreeAxisSwap(Vector3 vectorToChange, int pos, float newValue)
+    public void SetMoveSpeed()
     {
-        Vector3 vectorResult = vectorToChange;
+        moveProvider.moveSpeed = playerSpeed;
+    }
 
-        vectorResult[pos] = newValue;
+    public void SetTurnSnap()
+    {
+        if (snapSetOne) snapProvider.turnAmount = snapAmtOne;
+        else if (snapSetTwo) snapProvider.turnAmount = snapAmtTwo;
+        else if (snapSetThree) snapProvider.turnAmount = snapAmtThree;
+    }
 
-        return vectorResult;
+    /// <summary>
+    /// Called via button. Used in conjunction with SetTurnSnap() method.
+    /// </summary>
+    public void SnapOne()
+    {
+        snapSetOne = true;
+        snapSetTwo = false;
+        snapSetThree = false;
+        snapSetOff = false;
+    }
+
+    /// <summary>
+    /// Called via button. Used in conjunction with SetTurnSnap() method.
+    /// </summary>
+    public void SnapTwo()
+    {
+        snapSetOne = false;
+        snapSetTwo = true;
+        snapSetThree = false;
+        snapSetOff = false;
+    }
+
+    /// <summary>
+    /// Called via button. Used in conjunction with SetTurnSnap() method.
+    /// </summary>
+    public void SnapThree()
+    {
+        snapSetOne = false;
+        snapSetTwo = false;
+        snapSetThree = true;
+        snapSetOff = false;
+    }
+
+    /// <summary>
+    /// Called via button. Used in conjunction with SetTurnSnap() method. Currently not implemented.
+    /// </summary>
+    public void SnapOff()
+    {
+        snapSetOne = false;
+        snapSetTwo = false;
+        snapSetThree = false;
+        snapSetOff = true;
+    }
+
+    //Methods for updating settings
+    /// <summary>
+    /// Method to be called via button. Starts sequence to update VRController settings.
+    /// </summary>
+    public void SetSettings()
+    {
+        StartCoroutine(SetSettingsSequence());
+    }
+
+    IEnumerator SetSettingsSequence()
+    {
+        //Activate the blinder
+        yield return new WaitForSeconds(1f);
+        //Do the Setting Methods
+        yield return new WaitForSeconds(1f);
+        //Deactivate the blinder
     }
 }

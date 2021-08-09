@@ -5,6 +5,11 @@ using UnityEngine;
 public class HandPoseUIActivator : MonoBehaviour
 {
     public GameObject wristUIObject;
+    public UIBehaviours uiBehave;
+
+    private GameSetup gameSetup;
+
+    [SerializeField]private Animator openAnimator;
     [Space(10)]
     Vector3 minHandAngles;
     Vector3 maxHandAngles;
@@ -16,11 +21,20 @@ public class HandPoseUIActivator : MonoBehaviour
     public Transform handController;
     public Transform waist;
     [Space(10)]
-    [SerializeField] bool xAngleInBounds = false;
-    [SerializeField] bool yAngleInBounds = false;
-    [SerializeField] bool zAngleInBounds = false;
+    bool xAngleInBounds = false;
+    bool yAngleInBounds = false;
+    bool zAngleInBounds = false;
 
-    [SerializeField] bool isPoseTrue = false;
+    bool isPoseTrue = false;
+    bool queueWaiting = false;
+
+    private void Awake()
+    {
+        gameSetup = GameObject.Find("GameSetup").GetComponent<GameSetup>();
+
+        openAnimator.SetBool("IsVRPlayer", !gameSetup.isFlatScreen);
+        openAnimator.SetTrigger("Branch");
+    }
 
     // Update is called once per frame
     void Update()
@@ -36,7 +50,12 @@ public class HandPoseUIActivator : MonoBehaviour
 
         isPoseTrue = (xAngleInBounds && yAngleInBounds && zAngleInBounds);
 
-        wristUIObject.SetActive(isPoseTrue);
+        //wristUIObject.SetActive(isPoseTrue);
+        if(!queueWaiting)
+        {
+            StartCoroutine(QueueAnimator());
+        }
+        
     }
 
     bool WithinRange(float toCompare, float minLimit, float maxLimit)
@@ -49,5 +68,51 @@ public class HandPoseUIActivator : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public void EmoteUIActive()
+    {
+        if (isPoseTrue) openAnimator.SetTrigger("PlayerOpen");
+        else openAnimator.SetTrigger("PlayerClose");
+    }
+
+    public void WristyBoi() // To Call From Animator; Checks if UI should be open
+    {
+        if (!isPoseTrue)
+        {
+            uiBehave.Close();
+        }
+        else
+        {
+            uiBehave.OpenToCorrect();
+        }
+    }
+
+    bool IsAnimatorMoveState()
+    {
+        bool isMoveState;
+        AnimatorStateInfo stateInfo = openAnimator.GetCurrentAnimatorStateInfo(0);
+        if (stateInfo.IsName("VRUIOpening") || stateInfo.IsName("VRUIClosing") || stateInfo.IsName("FPSUIOpening") || stateInfo.IsName("FPSUIClosing"))
+            isMoveState = true;
+        else isMoveState = false;
+
+
+        if (openAnimator.IsInTransition(0) || isMoveState)
+            return true;
+        else
+            return false;
+    }
+
+    IEnumerator QueueAnimator() // Waits for animations to get to a rest state
+    {
+        Debug.Log("Queued");
+        queueWaiting = true;
+        while (IsAnimatorMoveState())
+        {
+            yield return null;
+        }
+
+        EmoteUIActive();
+        queueWaiting = false;
     }
 }

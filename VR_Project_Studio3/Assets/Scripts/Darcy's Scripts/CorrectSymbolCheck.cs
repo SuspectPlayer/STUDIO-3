@@ -26,6 +26,7 @@ public class CorrectSymbolCheck : MonoBehaviour
     [SerializeField]
     public Animator intelPuzzleAnims;
 
+    bool isVRPlayer;
         
     //[HideInInspector]
     public int correctSymbolCount = 0;
@@ -39,6 +40,9 @@ public class CorrectSymbolCheck : MonoBehaviour
     public bool CorrectSymbolCheckMethod(Sprite clickedSymbol)
     {
         bool condition;
+        isVRPlayer = GameObject.Find("GameSetup").GetComponent<GameSetup>().isVRPlayer;
+
+        incorrectSymbolCount = 0;
 
         for (int i = 0; i < 4; i++) //checking to see if the clicked colour is one of the ones in the "spawned" symbols on the map
         {
@@ -74,6 +78,7 @@ public class CorrectSymbolCheck : MonoBehaviour
                                 dashboard.GetComponent<ClickOnSymbols>().OrangeButtonColours(); //this turns the buttons back to orange for feedback
                                 dashboard.GetComponent<DoorControl>().UnlockDoor();
                                 correctSymbolCount = 0;
+                                incorrectSymbolCount = 0;
                                 condition = true;
                                 return condition;
                                 //break;
@@ -85,6 +90,7 @@ public class CorrectSymbolCheck : MonoBehaviour
                                     dashboard.GetComponent<ClickOnSymbols>().OrangeButtonColours(); 
                                     dashboard.GetComponent<DoorControl>().LockDoor();
                                     correctSymbolCount = 0;
+                                    incorrectSymbolCount = 0;
                                 }
                                 else
                                 {
@@ -95,6 +101,7 @@ public class CorrectSymbolCheck : MonoBehaviour
                                     dashboard.GetComponent<ClickOnSymbols>().OrangeButtonColours();
                                     dashboard.GetComponent<DoorControl>().UnlockDoor();
                                     correctSymbolCount = 0;
+                                    incorrectSymbolCount = 0;
                                 }
                                 condition = true;
                                 return condition;
@@ -104,12 +111,16 @@ public class CorrectSymbolCheck : MonoBehaviour
                 }
             }
             else
-                {
+            {
                 incorrectSymbolCount++; //counts when the player hits a wrong button
                 Debug.Log(incorrectSymbolCount.ToString());
                 if (incorrectSymbolCount >= 4)
                 {
-                    doorCloseSounds[dashboard.GetComponent<PuzzleManager>().whichPuzzle].Play(); // Plays feedback song that players were wrong
+                    if(dashboard.GetComponent<PuzzleManager>().whichPuzzle < 2 && isVRPlayer)
+                    {
+                        doorCloseSounds[dashboard.GetComponent<PuzzleManager>().whichPuzzle].Play(); // Plays feedback song that players were wrong
+                    }
+
                     Debug.Log("incorrect");
                     correctSymbolCount = 0;
                     incorrectSymbolCount = 0;
