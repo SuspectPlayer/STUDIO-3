@@ -30,6 +30,7 @@ public class HandScannerCorrectCount : MonoBehaviour
         }
 
         correctCount = 0;
+        photonView.RPC("RPC_UpdateCount", RpcTarget.All);
         //photonView.RPC("RPC_ResetCount", RpcTarget.All);
     }
 

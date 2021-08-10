@@ -42,7 +42,7 @@ public class EmoteSending : MonoBehaviour
     [PunRPC]
     void RPC_ToDiver(int emote)
     {
-        if (dPad == null) { Debug.LogWarning("Unable to locate Diver UI. This is quite the big oof."); return; }
+        if (uiObject == null) { Debug.LogWarning("Unable to locate Diver UI. This is quite the big oof."); return; }
         uiObject.ReceiveFromIntelligence(emote);
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-//Written by Darcy Glover
+//Written by Darcy Glover, Jasper von Riegen, and Jack Hobbs
 
 public class HandScannerCorrectCheck : MonoBehaviour
 {

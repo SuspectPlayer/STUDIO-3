@@ -5,6 +5,8 @@ using Photon.Pun;
 
 public class MouseLook : MonoBehaviour
 {
+    public FPSUIOpener fpsUI;
+
     public float mouseSensitivity = 150f;
 
     public Transform playerBody;
@@ -45,10 +47,14 @@ public class MouseLook : MonoBehaviour
         }
         else
         {
-            if (photonView.IsMine)
+            if (photonView.IsMine && !fpsUI.isTrue)
             {
                 Cursor.lockState = CursorLockMode.Locked;
             }
+            else if(fpsUI.isTrue && photonView.IsMine)
+            {
+                Cursor.lockState = CursorLockMode.None;
+            }    
 
             if (photonView.IsMine)
             {

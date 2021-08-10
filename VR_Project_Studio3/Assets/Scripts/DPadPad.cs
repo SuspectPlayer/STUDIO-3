@@ -21,15 +21,15 @@ public class DPadPad : MonoBehaviour
     public Material buttonReady;
     public Material buttonPressed;
 
-    bool pressOkay;
+    bool pressOkay = true;
     bool assignAttempt;
 
     // Start is called before the first frame update
     void Awake()
     {
         assignAttempt = false;
-        if (emoteSender != null) { GameObject.Find("EmoteManager").GetComponent<EmoteSending>(); assignAttempt = true; }
-        if (emoteSender != null && assignAttempt == true) { Debug.LogError("Failed to aquire Emote Manager."); }
+        if (emoteSender == null) { GameObject.Find("EmoteManager").GetComponent<EmoteSending>(); assignAttempt = true; }
+        if (emoteSender == null && assignAttempt == true) { Debug.LogError("Failed to aquire Emote Manager."); }
 
         emoteSender.dPad = this;
 

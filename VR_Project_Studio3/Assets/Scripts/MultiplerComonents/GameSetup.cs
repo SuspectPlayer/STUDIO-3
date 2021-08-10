@@ -40,13 +40,13 @@ public class GameSetup : MonoBehaviourPunCallbacks
         }
         
         //loads the level for the hosting player
-        PhotonNetwork.LoadLevel("Main_Level");
+        PhotonNetwork.LoadLevel("Main_Level - Sub Test");
     }
 
     //starts the joining of the level after it has finished loading for both players
     private void OnSceneFinishedLoading(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "Main_Level")
+        if (scene.name == "Main_Level - Sub Test")
         {
             if (PhotonNetwork.IsMasterClient)
             {
@@ -72,7 +72,7 @@ public class GameSetup : MonoBehaviourPunCallbacks
     [PunRPC]
     void RPC_LoadGameOthers()
     {
-        PhotonNetwork.LoadLevel("Main_Level");
+        PhotonNetwork.LoadLevel("Main_Level - Sub Test");
     }
     //Creates the players for the game
     [PunRPC]
@@ -91,7 +91,7 @@ public class GameSetup : MonoBehaviourPunCallbacks
         }
         else if (!isVRPlayer)
         {
-            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "ViewerCam Variant"), new Vector3(113.118f, 81.136f, 111.906f), new Quaternion(0.04510248f, 0.2137172f, -0.0101695f, 0.9758009f));
+            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Intel First Person Controller"), new Vector3(127.978f, 80.08208f, 106.0261f), Quaternion.identity);
         }
         else if (isVRPlayer && isFlatScreen)
         {
