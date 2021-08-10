@@ -55,6 +55,10 @@ public class UIBehaviours : MonoBehaviour
         {
             emoteButtons[i].sprite = emoteSender.emoteSprites[i];
         }
+
+        uiEmoteJustSent.enabled = false;
+        uiEmoteReceivePrevious.enabled = false;
+        uiEmoteReceiveRecent.enabled = false;
     }
     // Start is called before the first frame update
     void Start()
@@ -68,28 +72,23 @@ public class UIBehaviours : MonoBehaviour
 
     }
 
-    public void OpenToCorrect() //For Animator. Opens UI to last opened panel.
+    public void OpenToCorrect() //Called from Player's UIOpener. Opens UI to last opened panel.
     {
         animator.SetBool("IsSend", outBox.activeSelf);
         animator.SetTrigger("SelfOpen");
     }
 
-    public void Close()
+    public void Close() //Called from Player's UIOpener. 
     {
         animator.SetTrigger("SelfClose");
     }
 
-    public void SwitchTab(bool openSendWindow) //Attached to SwitchTab Button
+    public void SwitchTab(bool openSendWindow) //Attached to SwitchTab Button (true = open send/close receive, false = close send/open receive)
     {
         switchToSend.SetActive(!openSendWindow);
         switchToReceive.SetActive(openSendWindow);
 
         StartCoroutine(QueueTillAtOpenSwitch());
-
-        //sendTitle.SetActive(openSendWindow);
-        //sendContent.SetActive(openSendWindow);
-        //receiveTitle.SetActive(!openSendWindow);
-        //receiveContent.SetActive(!openSendWindow);
 
     }
 
@@ -109,13 +108,13 @@ public class UIBehaviours : MonoBehaviour
         
     }
 
-    public void ReceiveFromIntelligence(int emoteIndex)
+    public void ReceiveFromIntelligence(int emoteIndex) // Called from Emote Sender
     {
         StartCoroutine(Receive(emoteIndex));
         receiveAlert = true; // Set some alerter active
     }
 
-    IEnumerator Receive(int emote)
+    IEnumerator Receive(int emote) //Sequences Receiving Emotes
     {
         while (!inBox.activeInHierarchy || !animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenS") || !animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenR"))
         {
@@ -124,13 +123,17 @@ public class UIBehaviours : MonoBehaviour
 
         if (firstReceived)
         {
+            uiEmoteReceiveRecent.enabled = true;
             uiEmoteReceiveRecent.sprite = emoteSender.emoteSprites[emote];
+            animator.SetBool("DoTheGet", true);
             animator.SetBool("SelfReceivedFirst", firstReceived);
             animator.SetTrigger("SelfSendReceive");
         }
         else
         {
+            uiEmoteReceivePrevious.enabled = true;
             uiEmoteReceivePrevious.sprite = uiEmoteReceiveRecent.sprite;
+            animator.SetBool("DoTheGet", true);
             animator.SetBool("SelfReceivedFirst", firstReceived);
             uiEmoteReceiveRecent.sprite = emoteSender.emoteSprites[emote];
             animator.SetTrigger("SelfSendReceive");
@@ -147,7 +150,7 @@ public class UIBehaviours : MonoBehaviour
 
     IEnumerator QueueTillAtOpenSwitch()
     {
-        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenS") || !animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenR")) yield return null;
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenS") && !animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenR")) yield return null;
 
         animator.SetBool("IsSend", outBox.activeSelf);
         animator.SetTrigger("SelfSwitch");
@@ -155,10 +158,11 @@ public class UIBehaviours : MonoBehaviour
         animator.SetBool("IsSend", outBox.activeSelf);
     }
 
-    IEnumerator QueueTillSendReady(int emote)
+    IEnumerator QueueTillSendReady(int emote) //Sequences Sending Emotes
     {
-        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenS") || !animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenR")) yield return null;
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenS")) yield return null;
 
+        animator.SetBool("DoTheSend", true);
         animator.SetInteger("SelfWhichEmote", emote+1);
         animator.SetTrigger("SelfSendReceive");
         emoteSender.ToIntelligence(emote);

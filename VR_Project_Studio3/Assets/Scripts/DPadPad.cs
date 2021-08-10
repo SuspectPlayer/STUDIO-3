@@ -59,7 +59,7 @@ public class DPadPad : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        pressOkay = true;
     }
 
     // Update is called once per frame
@@ -82,13 +82,13 @@ public class DPadPad : MonoBehaviour
 
     IEnumerator DPadReceiveSequence(int emote) //Lays out timing to receive emote
     {
-        while(!animator.GetCurrentAnimatorStateInfo(2).IsName("EmoteBase") || !animator.GetCurrentAnimatorStateInfo(2).IsName("HasReceived") || animator.IsInTransition(2))
+        while(!animator.GetCurrentAnimatorStateInfo(2).IsName("SubmarineOpen") || !animator.GetCurrentAnimatorStateInfo(2).IsName("HasReceived") || animator.IsInTransition(2))
         {
             yield return null;
         } //Holds Coroutine if Transitioning or in transition anim
         Debug.Log("Sequence Can Proceed");
 
-        if (animator.GetCurrentAnimatorStateInfo(2).IsName("EmoteBase"))
+        if (animator.GetCurrentAnimatorStateInfo(2).IsName("SubmarineOpen"))
         {
             animator.SetBool("ReceivedFirst", false);
             DPadFromOpen(emote);

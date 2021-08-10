@@ -24,11 +24,13 @@ public class EmoteSending : MonoBehaviour
 
     public void ToIntelligence(int emote) //Called from diver's UI
     {
+        Debug.Log("JASPER'S SHOOP-DE-DOOP: Emote Sender has received request from Diver's client");
         photonView.RPC("RPC_ToIntelligence", RpcTarget.Others, emote);
     }
 
     public void ToDiver(int emote)
     {
+        Debug.Log("JASPER'S SHOOP-DE-DOOP: Emote Sender has received request from Intel's client");
         photonView.RPC("RPC_ToDiver", RpcTarget.Others, emote);
     }
 
