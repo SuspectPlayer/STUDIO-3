@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
 //Written by Darcy Glover
 
 public class ClickOnSymbols : MonoBehaviour
 {
     Sprite clickedSymbol;
+
+    PhotonView photonView;
 
     GameObject currentPuzzle, currentDoor;
 
@@ -18,6 +21,11 @@ public class ClickOnSymbols : MonoBehaviour
     Material[] greens, oranges;
 
     bool firstCondition, secondCondition;
+
+    void Start()
+    {
+        photonView = GetComponent<PhotonView>();
+    }
 
     public void ClickOnSymbolsMethod(Button clickedButton)                    
     {
@@ -30,7 +38,7 @@ public class ClickOnSymbols : MonoBehaviour
             case "Door 1":
                 {
                     currentPuzzle = puzzles[0];
-                    firstCondition = currentPuzzle.GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
+                    firstCondition = currentPuzzle.GetComponent<PuzzleCompletionManager>().CorrectSymbolCheck(clickedSymbol);
                     if(!firstCondition)
                     {
                         OrangeButtonColours();
@@ -39,10 +47,10 @@ public class ClickOnSymbols : MonoBehaviour
                 }
             case "Door 2":
                 {
-                    firstCondition = GameObject.Find("Inside").GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
+                    firstCondition = GameObject.Find("Inside").GetComponent<PuzzleCompletionManager>().CorrectSymbolCheck(clickedSymbol);
                     if(!firstCondition)
                     {
-                       secondCondition = GameObject.Find("Outside").GetComponent<CorrectSymbolCheck>().CorrectSymbolCheckMethod(clickedSymbol);
+                       secondCondition = GameObject.Find("Outside").GetComponent<PuzzleCompletionManager>().CorrectSymbolCheck(clickedSymbol);
                     }
                 
                     if(!secondCondition && !firstCondition)
@@ -60,6 +68,12 @@ public class ClickOnSymbols : MonoBehaviour
     }
 
     public void OrangeButtonColours() //this method just changes the colour of the buttons for feedback to the player
+    {
+        photonView.RPC("RPC_OrangeButtonColours", RpcTarget.All);
+    }
+
+    [PunRPC]
+    void RPC_OrangeButtonColours()
     {
         for (int i = 0; i < visualButtons.Length; i++)
         {
