@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Analytics;
 
 public class UIBehaviours : MonoBehaviour
 {
+    GameSetup setup;
     public EmoteSending emoteSender;
     public Animator animator;
     ///UI Elements
@@ -35,8 +37,14 @@ public class UIBehaviours : MonoBehaviour
     bool canNextEmote = true;
     bool receiveAlert = false;
 
+    //Variables for analytics
+    [HideInInspector]public static int[] uiEmoteSendSuccess = new int[4];
+    [HideInInspector] public static int uiEmoteTotal;
+
     void Awake()
     {
+        setup = FindObjectOfType<GameSetup>();
+
         emoteSender = GameObject.Find("EmoteManager").GetComponent<EmoteSending>();
 
         emoteSender.uiObject = this;
@@ -47,6 +55,10 @@ public class UIBehaviours : MonoBehaviour
         {
             emoteButtons[i].sprite = emoteSender.emoteSprites[i];
         }
+
+        uiEmoteJustSent.enabled = false;
+        uiEmoteReceivePrevious.enabled = false;
+        uiEmoteReceiveRecent.enabled = false;
     }
     // Start is called before the first frame update
     void Start()
@@ -60,28 +72,23 @@ public class UIBehaviours : MonoBehaviour
 
     }
 
-    public void OpenToCorrect()
+    public void OpenToCorrect() //Called from Player's UIOpener. Opens UI to last opened panel.
     {
         animator.SetBool("IsSend", outBox.activeSelf);
         animator.SetTrigger("SelfOpen");
     }
 
-    public void Close()
+    public void Close() //Called from Player's UIOpener. 
     {
         animator.SetTrigger("SelfClose");
     }
 
-    public void SwitchTab(bool openSendWindow) //Attached to SwitchTab Button
+    public void SwitchTab(bool openSendWindow) //Attached to SwitchTab Button (true = open send/close receive, false = close send/open receive)
     {
         switchToSend.SetActive(!openSendWindow);
         switchToReceive.SetActive(openSendWindow);
 
         StartCoroutine(QueueTillAtOpenSwitch());
-
-        //sendTitle.SetActive(openSendWindow);
-        //sendContent.SetActive(openSendWindow);
-        //receiveTitle.SetActive(!openSendWindow);
-        //receiveContent.SetActive(!openSendWindow);
 
     }
 
@@ -91,36 +98,42 @@ public class UIBehaviours : MonoBehaviour
         {
             StartCoroutine(EmoteTimer());
             StartCoroutine(QueueTillSendReady(emoteIndex));
+            uiEmoteSendSuccess[emoteIndex]++;
+
         }
         else
         {
-            //Do some error stuff
+            Debug.Log("Impatience.");
         }
         
     }
 
-    public void ReceiveFromIntelligence(int emoteIndex)
+    public void ReceiveFromIntelligence(int emoteIndex) // Called from Emote Sender
     {
         StartCoroutine(Receive(emoteIndex));
         receiveAlert = true; // Set some alerter active
     }
 
-    IEnumerator Receive(int emote)
+    IEnumerator Receive(int emote) //Sequences Receiving Emotes
     {
-        while (!inBox.activeInHierarchy || !animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpen"))
+        while (!inBox.activeInHierarchy || !animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenS") || !animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenR"))
         {
             yield return null;
         }
 
         if (firstReceived)
         {
+            uiEmoteReceiveRecent.enabled = true;
             uiEmoteReceiveRecent.sprite = emoteSender.emoteSprites[emote];
+            animator.SetBool("DoTheGet", true);
             animator.SetBool("SelfReceivedFirst", firstReceived);
             animator.SetTrigger("SelfSendReceive");
         }
         else
         {
+            uiEmoteReceivePrevious.enabled = true;
             uiEmoteReceivePrevious.sprite = uiEmoteReceiveRecent.sprite;
+            animator.SetBool("DoTheGet", true);
             animator.SetBool("SelfReceivedFirst", firstReceived);
             uiEmoteReceiveRecent.sprite = emoteSender.emoteSprites[emote];
             animator.SetTrigger("SelfSendReceive");
@@ -128,7 +141,7 @@ public class UIBehaviours : MonoBehaviour
         receiveAlert = false; // Set some alerter inactive
     }
 
-    IEnumerator EmoteTimer()
+    IEnumerator EmoteTimer() //Sets timer to prevent emote spam
     {
         canNextEmote = false;
         yield return new WaitForSeconds(timeTilNextEmote);
@@ -137,7 +150,7 @@ public class UIBehaviours : MonoBehaviour
 
     IEnumerator QueueTillAtOpenSwitch()
     {
-        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpen")) yield return null;
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenS") && !animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenR")) yield return null;
 
         animator.SetBool("IsSend", outBox.activeSelf);
         animator.SetTrigger("SelfSwitch");
@@ -145,12 +158,36 @@ public class UIBehaviours : MonoBehaviour
         animator.SetBool("IsSend", outBox.activeSelf);
     }
 
-    IEnumerator QueueTillSendReady(int emote)
+    IEnumerator QueueTillSendReady(int emote) //Sequences Sending Emotes
     {
-        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpen")) yield return null;
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenS")) yield return null;
 
+        animator.SetBool("DoTheSend", true);
         animator.SetInteger("SelfWhichEmote", emote+1);
         animator.SetTrigger("SelfSendReceive");
         emoteSender.ToIntelligence(emote);
+    }
+
+    private void OnApplicationQuit()
+    {
+        if (setup.isVRPlayer)
+        {
+            AnalyticsResult resultDiverSent = Analytics.CustomEvent(
+                "DiverEmoteSent",
+                new Dictionary<string, object>
+                {
+                { "Emote_Happy", uiEmoteSendSuccess[0]},
+                { "Emote_Sad", uiEmoteSendSuccess[1]},
+                { "Emote_Exclaim", uiEmoteSendSuccess[2]},
+                { "Emote_Query", uiEmoteSendSuccess[3]},
+                { "Emote_Up", uiEmoteSendSuccess[4]},
+                { "Emote_Down", uiEmoteSendSuccess[5]},
+                { "Emote_Left", uiEmoteSendSuccess[6]},
+                { "Emote_Right", uiEmoteSendSuccess[7]},
+                { "Emote_Total", uiEmoteTotal}
+                }
+            );
+            Debug.Log("Diver Emote Result: " + resultDiverSent);
+        }
     }
 }

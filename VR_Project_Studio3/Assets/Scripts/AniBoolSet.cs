@@ -9,8 +9,8 @@ public class AniBoolSet : MonoBehaviour
     {
         ani = GetComponent<Animator>();
     }
-    public void AniSetBool(bool booly)
+    public void AniSetBoolTrue()
     {
-        ani.SetBool("IsOpen", booly);
+        ani.SetBool("IsOpen", true);
     }
 }

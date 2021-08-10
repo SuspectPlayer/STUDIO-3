@@ -6,21 +6,23 @@ public class ReorganiseChiddlers : MonoBehaviour
 {
     public Chiddler[] chiddlers;
 
-    public void ChiddlerOrganise(int child, int index)
+    Animator animator;
+
+    private void Awake()
     {
-        int tick = 0;
+        animator = GetComponent<Animator>();
+    }
+
+    public void ChiddlerOrganise(int index)
+    {
         foreach (Chiddler chiddler in chiddlers)
         {
-            if (chiddler == chiddlers[child])
+            if (chiddler == chiddlers[index])
             {
-                chiddler.OrganiseChildIndex(index);
-            }
-            else
-            {
-                chiddler.OrganiseChildIndex(tick);
-                tick++;
+                chiddler.OrganiseChildIndex(0);
             }
         }
+
         StartCoroutine(ChiddlerIndexReset());
     }
 
@@ -31,5 +33,11 @@ public class ReorganiseChiddlers : MonoBehaviour
         {
             chiddler.ResetChildIndex();
         }
+    }
+
+    public void Animu()
+    {
+        animator.SetBool("DoTheSend", false);
+        animator.SetBool("DoTheGet", false);
     }
 }
