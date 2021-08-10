@@ -10,7 +10,6 @@ using FMODUnity;
 public class DoorControl : MonoBehaviour
 {
     public GameObject door;
-    public GameObject lampSupport;
     public StudioEventEmitter ambienceMusic02;
     public StudioEventEmitter[] doorOpenSounds; //When right answer
 

@@ -5,6 +5,8 @@ using Photon.Pun;
 
 public class MouseLook : MonoBehaviour
 {
+    public FPSUIOpener fpsUI;
+
     public float mouseSensitivity = 150f;
 
     public Transform playerBody;
@@ -20,6 +22,11 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
+        if(fpsUI == null)
+        {
+            fpsUI = GameObject.Find("UIHolder").GetComponent<FPSUIOpener>();
+        }
+
         if (!FindObjectOfType<GameSetup>().isVRPlayer)
         {
             if (photonView.IsMine && !GetComponent<IntelCameraSwap>().zoomedIn)
@@ -43,12 +50,16 @@ public class MouseLook : MonoBehaviour
                 playerBody.Rotate(Vector3.up * mouseX);
             }
         }
-        else
+        else if(FindObjectOfType<GameSetup>().isVRPlayer)
         {
-            if (photonView.IsMine)
+            if (photonView.IsMine && !fpsUI.isTrue)
             {
                 Cursor.lockState = CursorLockMode.Locked;
             }
+            else if(fpsUI.isTrue && photonView.IsMine)
+            {
+                Cursor.lockState = CursorLockMode.None;
+            }    
 
             if (photonView.IsMine)
             {

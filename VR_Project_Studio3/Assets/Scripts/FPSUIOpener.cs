@@ -15,7 +15,7 @@ public class FPSUIOpener : MonoBehaviour
 
     float moussel;
 
-    bool isTrue = false;
+    public bool isTrue = false;
     bool queueWaiting = false;
 
     private void Awake()
@@ -67,7 +67,7 @@ public class FPSUIOpener : MonoBehaviour
             if (photonView.IsMine)
             {
                 looker.mouseSensitivity = 0f;
-                Cursor.lockState = CursorLockMode.Confined;
+                Cursor.lockState = CursorLockMode.None;
             }
             
         }

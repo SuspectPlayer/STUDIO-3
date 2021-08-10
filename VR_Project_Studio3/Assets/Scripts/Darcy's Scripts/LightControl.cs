@@ -104,14 +104,14 @@ public class LightControl : MonoBehaviour
     {
         for (int i = 0; i < 2; i++) //controlling the lights that appear on the top right of the map for feedback to the player
         {
-            if (GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<SpriteRenderer>().sprite == lightOn)
+            if (GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<Image>().sprite == lightOn)
             {
                 continue;
             }
             else
             {
-                GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<SpriteRenderer>().sprite = lightOn;
-                GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<SpriteRenderer>().material = lightOnMat;
+                GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<Image>().sprite = lightOn;
+                GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<Image>().material = lightOnMat;
                 break;
             }
         }
@@ -120,10 +120,10 @@ public class LightControl : MonoBehaviour
     {
         for (int i = 1; i > -1; i--) //controlling the lights that appear on the top right of the map for feedback to the player
         {
-            if (GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<SpriteRenderer>().sprite == lightOn)
+            if (GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<Image>().sprite == lightOn)
             {
-                GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<SpriteRenderer>().sprite = lightOff;
-                GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<SpriteRenderer>().material = defaultMat;
+                GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<Image>().sprite = lightOff;
+                GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<Image>().material = defaultMat;
                 break;
             }
         }
