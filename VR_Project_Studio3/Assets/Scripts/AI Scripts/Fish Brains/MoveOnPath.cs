@@ -6,15 +6,20 @@ public class MoveOnPath : MonoBehaviour
 {
     SingleFlock pathFlock;
 
+    public int startFromNode;
+    [Space(10)]
     public NodePath designatedNodePath;
     [Space(10)]
     [HideInInspector]public int movingTowards = 0;
+    [Space(10)]
     public float moveSpeed;
     public float distanceTillSwitch = 1.0f;
     public float rotationSpeed = 0.5f;
 
     void Awake()
     {
+        StartFromNode();
+
         pathFlock = GetComponentInParent<SingleFlock>();
         pathFlock.pathLeader = gameObject;
     }
@@ -38,5 +43,11 @@ public class MoveOnPath : MonoBehaviour
         {
             movingTowards = 0;
         }
+    }
+
+    void StartFromNode()
+    {
+        movingTowards = startFromNode;
+        transform.position = designatedNodePath.nodes[startFromNode].position;
     }
 }
