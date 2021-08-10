@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Analytics;
 
 public class UIBehaviours : MonoBehaviour
 {
+    GameSetup setup;
     public EmoteSending emoteSender;
     public Animator animator;
     ///UI Elements
@@ -35,8 +37,14 @@ public class UIBehaviours : MonoBehaviour
     bool canNextEmote = true;
     bool receiveAlert = false;
 
+    //Variables for analytics
+    [HideInInspector]public static int[] uiEmoteSendSuccess = new int[4];
+    [HideInInspector] public static int uiEmoteTotal;
+
     void Awake()
     {
+        setup = FindObjectOfType<GameSetup>();
+
         emoteSender = GameObject.Find("EmoteManager").GetComponent<EmoteSending>();
 
         emoteSender.uiObject = this;
@@ -60,7 +68,7 @@ public class UIBehaviours : MonoBehaviour
 
     }
 
-    public void OpenToCorrect()
+    public void OpenToCorrect() //For Animator. Opens UI to last opened panel.
     {
         animator.SetBool("IsSend", outBox.activeSelf);
         animator.SetTrigger("SelfOpen");
@@ -91,10 +99,12 @@ public class UIBehaviours : MonoBehaviour
         {
             StartCoroutine(EmoteTimer());
             StartCoroutine(QueueTillSendReady(emoteIndex));
+            uiEmoteSendSuccess[emoteIndex]++;
+
         }
         else
         {
-            //Do some error stuff
+            Debug.Log("Impatience.");
         }
         
     }
@@ -107,7 +117,7 @@ public class UIBehaviours : MonoBehaviour
 
     IEnumerator Receive(int emote)
     {
-        while (!inBox.activeInHierarchy || !animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpen"))
+        while (!inBox.activeInHierarchy || !animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenS") || !animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenR"))
         {
             yield return null;
         }
@@ -128,7 +138,7 @@ public class UIBehaviours : MonoBehaviour
         receiveAlert = false; // Set some alerter inactive
     }
 
-    IEnumerator EmoteTimer()
+    IEnumerator EmoteTimer() //Sets timer to prevent emote spam
     {
         canNextEmote = false;
         yield return new WaitForSeconds(timeTilNextEmote);
@@ -137,7 +147,7 @@ public class UIBehaviours : MonoBehaviour
 
     IEnumerator QueueTillAtOpenSwitch()
     {
-        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpen")) yield return null;
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenS") || !animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenR")) yield return null;
 
         animator.SetBool("IsSend", outBox.activeSelf);
         animator.SetTrigger("SelfSwitch");
@@ -147,10 +157,33 @@ public class UIBehaviours : MonoBehaviour
 
     IEnumerator QueueTillSendReady(int emote)
     {
-        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpen")) yield return null;
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenS") || !animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenR")) yield return null;
 
         animator.SetInteger("SelfWhichEmote", emote+1);
         animator.SetTrigger("SelfSendReceive");
         emoteSender.ToIntelligence(emote);
+    }
+
+    private void OnApplicationQuit()
+    {
+        if (setup.isVRPlayer)
+        {
+            AnalyticsResult resultDiverSent = Analytics.CustomEvent(
+                "DiverEmoteSent",
+                new Dictionary<string, object>
+                {
+                { "Emote_Happy", uiEmoteSendSuccess[0]},
+                { "Emote_Sad", uiEmoteSendSuccess[1]},
+                { "Emote_Exclaim", uiEmoteSendSuccess[2]},
+                { "Emote_Query", uiEmoteSendSuccess[3]},
+                { "Emote_Up", uiEmoteSendSuccess[4]},
+                { "Emote_Down", uiEmoteSendSuccess[5]},
+                { "Emote_Left", uiEmoteSendSuccess[6]},
+                { "Emote_Right", uiEmoteSendSuccess[7]},
+                { "Emote_Total", uiEmoteTotal}
+                }
+            );
+            Debug.Log("Diver Emote Result: " + resultDiverSent);
+        }
     }
 }
