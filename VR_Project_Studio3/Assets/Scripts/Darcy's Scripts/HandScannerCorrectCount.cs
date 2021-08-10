@@ -7,6 +7,9 @@ using Photon.Pun;
 
 public class HandScannerCorrectCount : MonoBehaviour
 {
+    [SerializeField]
+    GameObject[] allScanners;
+
     public int correctCount = 0, realCount = 0;
 
     PhotonView photonView;
@@ -32,6 +35,20 @@ public class HandScannerCorrectCount : MonoBehaviour
         correctCount = 0;
         photonView.RPC("RPC_UpdateCount", RpcTarget.All);
         //photonView.RPC("RPC_ResetCount", RpcTarget.All);
+    }
+
+    public void ResetAllScanners()
+    {
+        if(photonView == null)
+        {
+            photonView = GetComponent<PhotonView>();
+        }
+
+        for(int i = 0; i < 4; i++)
+        {
+            allScanners[i].GetComponent<ScannerFXBehaviours>().ResetFromFinished();
+            allScanners[i].GetComponent<HandScannerTouchPad>().ResetBools();
+        }
     }
 
     [PunRPC]

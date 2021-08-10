@@ -116,8 +116,9 @@ public class HandScannerCorrectCheck : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         Debug.Log("reset");
-        GetComponent<ScannerFXBehaviours>().ResetFromFinished();
-        GetComponent<HandScannerTouchPad>().ResetBools();
+        //GetComponent<ScannerFXBehaviours>().ResetFromFinished();
+        //GetComponent<HandScannerTouchPad>().ResetBools();
+        GetComponentInParent<HandScannerCorrectCount>().ResetAllScanners();
         StopAllCoroutines();
     }
 }

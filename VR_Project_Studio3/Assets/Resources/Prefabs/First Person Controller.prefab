@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9848eeb4922b7d4ab6c4cb81a518d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fpsUI: {fileID: 0}
+  fpsUI: {fileID: 7795296796394679826}
   mouseSensitivity: 350
   playerBody: {fileID: 3987560332757935707}
 --- !u!114 &3035019033892375775
