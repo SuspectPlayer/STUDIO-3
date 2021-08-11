@@ -9,6 +9,7 @@ public class DoingSomeE : MonoBehaviour
 
 
     HandScannerTouchPad currentScanner;
+    BeaconFlavouredHandScanner beaconScanner;
 
     // Update is called once per frame
     void Update()
@@ -28,6 +29,20 @@ public class DoingSomeE : MonoBehaviour
                 {
                     currentScanner.DoTheExitThingFPS();
                     currentScanner = null;
+                }
+            }
+
+            if (boop.collider.CompareTag("BeaconSammich") && Input.GetKey(KeyCode.E))
+            {
+                beaconScanner = boop.collider.gameObject.GetComponent<BeaconFlavouredHandScanner>();
+                beaconScanner.DoTheEnterThingFPS();
+            }
+            else
+            {
+                if (beaconScanner != null)
+                {
+                    beaconScanner.DoTheExitThingFPS();
+                    beaconScanner = null;
                 }
             }
         }

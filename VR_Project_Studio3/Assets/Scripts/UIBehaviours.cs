@@ -43,6 +43,11 @@ public class UIBehaviours : MonoBehaviour
 
     void Awake()
     {
+        
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
         setup = FindObjectOfType<GameSetup>();
 
         emoteSender = GameObject.Find("EmoteManager").GetComponent<EmoteSending>();
@@ -60,16 +65,21 @@ public class UIBehaviours : MonoBehaviour
         uiEmoteReceivePrevious.enabled = false;
         uiEmoteReceiveRecent.enabled = false;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
+        if(emoteSender == null)
+        {
+            emoteSender = GameObject.Find("EmoteManager").GetComponent<EmoteSending>();
 
+            emoteSender.uiObject = this;
+
+            for (int i = 0; i < 4; i++)
+            {
+                emoteButtons[i].sprite = emoteSender.emoteSprites[i];
+            }
+        }
     }
 
     public void OpenToCorrect() //Called from Player's UIOpener. Opens UI to last opened panel.
@@ -171,6 +181,10 @@ public class UIBehaviours : MonoBehaviour
 
         animator.SetBool("DoTheSend", true);
         animator.SetInteger("SelfWhichEmote", emote+1);
+
+        uiEmoteJustSent.enabled = true;
+        uiEmoteJustSent.sprite = emoteSender.emoteSprites[emote];
+
         animator.SetTrigger("SelfSendReceive");
         emoteSender.ToIntelligence(emote);
         Debug.Log("JASPER'S SHOOP-DE-DOOP: DiverUI has sent signal to Emote Sender");
@@ -184,15 +198,15 @@ public class UIBehaviours : MonoBehaviour
                 "DiverEmoteSent",
                 new Dictionary<string, object>
                 {
-                { "Emote_Happy", uiEmoteSendSuccess[0]},
-                { "Emote_Sad", uiEmoteSendSuccess[1]},
-                { "Emote_Exclaim", uiEmoteSendSuccess[2]},
-                { "Emote_Query", uiEmoteSendSuccess[3]},
-                { "Emote_Up", uiEmoteSendSuccess[4]},
-                { "Emote_Down", uiEmoteSendSuccess[5]},
-                { "Emote_Left", uiEmoteSendSuccess[6]},
-                { "Emote_Right", uiEmoteSendSuccess[7]},
-                { "Emote_Total", uiEmoteTotal}
+                { "Emote_HappyYay", uiEmoteSendSuccess[0]},
+                { "Emote_SadYay", uiEmoteSendSuccess[1]},
+                { "Emote_ExclaimYay", uiEmoteSendSuccess[2]},
+                { "Emote_QueryYay", uiEmoteSendSuccess[3]},
+                { "Emote_UpYay", uiEmoteSendSuccess[4]},
+                { "Emote_DownYay", uiEmoteSendSuccess[5]},
+                { "Emote_LeftYay", uiEmoteSendSuccess[6]},
+                { "Emote_RightYay", uiEmoteSendSuccess[7]},
+                { "Emote_TotalYay", uiEmoteTotal}
                 }
             );
             Debug.Log("Diver Emote Result: " + resultDiverSent);
