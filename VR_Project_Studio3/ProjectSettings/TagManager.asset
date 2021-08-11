@@ -9,6 +9,8 @@ TagManager:
   - Inside
   - MetalFloor
   - ScannieBoi
+  - Top
+  - Bottom
   layers:
   - Default
   - TransparentFX
@@ -22,7 +24,7 @@ TagManager:
   - SubstationObstacle
   - 
   - Fish
-  - 
+  - Ladder
   - 
   - 
   - 
