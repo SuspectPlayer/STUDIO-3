@@ -87,6 +87,9 @@ MonoBehaviour:
   - RPC_DoorTwoLocked
   - RPC_DoorTwoUnlocked
   - RPC_SendLightUsage
+  - RPC_ToggleChatOff
+  - RPC_ToggleChatOn
+  - RPC_TurnOnLoadingChanges
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

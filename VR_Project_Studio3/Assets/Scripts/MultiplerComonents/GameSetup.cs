@@ -40,13 +40,13 @@ public class GameSetup : MonoBehaviourPunCallbacks
         }
         
         //loads the level for the hosting player
-        PhotonNetwork.LoadLevel("Main_Level - Sub Test");
+        PhotonNetwork.LoadLevel("Main_Level");
     }
 
     //starts the joining of the level after it has finished loading for both players
     private void OnSceneFinishedLoading(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "Main_Level - Sub Test")
+        if (scene.name == "Main_Level")
         {
             if (PhotonNetwork.IsMasterClient)
             {
@@ -72,7 +72,7 @@ public class GameSetup : MonoBehaviourPunCallbacks
     [PunRPC]
     void RPC_LoadGameOthers()
     {
-        PhotonNetwork.LoadLevel("Main_Level - Sub Test");
+        PhotonNetwork.LoadLevel("Main_Level");
     }
     //Creates the players for the game
     [PunRPC]
