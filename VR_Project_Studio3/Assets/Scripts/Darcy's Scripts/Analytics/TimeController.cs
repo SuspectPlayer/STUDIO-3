@@ -10,9 +10,9 @@ public class TimeController : MonoBehaviour
     public static TimeController instance;
 
     TimeSpan timePlaying;
-    bool timerGoing;
+    bool mainTimerGoing, betweenTimerGoing;
 
-    public float elaspedTime;
+    float mainElapsedTime, betweenElapsedTime;
 
     void Awake()
     {
@@ -21,28 +21,70 @@ public class TimeController : MonoBehaviour
 
     void Start()
     {
-        timerGoing = false;
+        mainTimerGoing = false;
+        betweenTimerGoing = false;
     }
 
-    public void StartTimer()
+    public void StartMainTimer()
     {
-        timerGoing = true;
-        elaspedTime = 0f;
+        mainTimerGoing = true;
+        mainElapsedTime = 0f;
 
-        StartCoroutine(UpdateTimer());
+        StartCoroutine(UpdateMainTimer());
     }
 
-    public void EndTimer()
+    public void StartBetweenTimer()
     {
-        timerGoing = false;
+        betweenTimerGoing = true;
+        betweenElapsedTime = 0f;
+
+        StartCoroutine(UpdateBetweenTimer());
     }
 
-    IEnumerator UpdateTimer()
+    public void EndMainTimer()
     {
-        while(timerGoing)
+        mainTimerGoing = false;
+    }
+
+    public void EndBetweenTimer()
+    {
+        betweenTimerGoing = false;
+    }
+
+    public void ResetBetweenTimer()
+    {
+        betweenElapsedTime = 0f;
+    }
+
+    public float GetTime(int whichTime)
+    {
+        if(whichTime == 0)
         {
-            elaspedTime += Time.deltaTime;
-            timePlaying = TimeSpan.FromSeconds(elaspedTime);
+            return mainElapsedTime;
+        }
+        else
+        {
+            return betweenElapsedTime;
+        }
+    }
+
+    IEnumerator UpdateMainTimer()
+    {
+        while(mainTimerGoing)
+        {
+            mainElapsedTime += Time.deltaTime;
+            timePlaying = TimeSpan.FromSeconds(mainElapsedTime);
+
+            yield return null;
+        }
+    }
+
+    IEnumerator UpdateBetweenTimer()
+    {
+        while(betweenTimerGoing)
+        {
+            betweenElapsedTime += Time.deltaTime;
+            timePlaying = TimeSpan.FromSeconds(betweenElapsedTime);
 
             yield return null;
         }

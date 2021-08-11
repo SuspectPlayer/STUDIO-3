@@ -10,8 +10,8 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField]
     GameObject[] puzzles;
 
-    [HideInInspector]
-    public LayerMask scannerMask; //this is for the hand scanner because of instantiating issues
+    //[HideInInspector]
+    //public LayerMask scannerMask; //this is for the hand scanner because of instantiating issues
 
     [HideInInspector]
     public int whichPuzzle = 0; //checking which puzzle the player is currently solving

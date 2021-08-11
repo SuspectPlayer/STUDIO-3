@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Cinemachine;
 using Photon.Pun;
 
@@ -17,6 +18,8 @@ public class IntelCameraSwap : MonoBehaviour
     CinemachineVirtualCamera newVCam;
 
     Camera newCam;
+
+    GraphicRaycaster graphic;
 
     PhotonView photonView;
 
@@ -40,6 +43,7 @@ public class IntelCameraSwap : MonoBehaviour
                 Debug.Log("It has hit a cinemachine camera object");
                 newVCam = hit.transform.gameObject.GetComponent<VirtualCameraAssign>().vCam;
                 newCam = hit.transform.gameObject.GetComponent<VirtualCameraAssign>().cam;
+                graphic = hit.transform.gameObject.GetComponentInChildren<GraphicRaycaster>();
                 zoomedIn = true; //changed to false before the zoom in so that the player cant look around while zooming in
                 StartCoroutine(ZoomIn());
             }
@@ -62,6 +66,7 @@ public class IntelCameraSwap : MonoBehaviour
 
         newCam.enabled = true;
         intelCam.enabled = false;
+        graphic.enabled = true;
 
         StopCoroutine(ZoomIn());
     }
@@ -78,6 +83,7 @@ public class IntelCameraSwap : MonoBehaviour
         yield return new WaitForSeconds(2.2f);
 
         newCam.enabled = false;
+        graphic.enabled = false;
 
         zoomedIn = false; //changed to false after the zoom out so that the player cant look around while zooming out
 

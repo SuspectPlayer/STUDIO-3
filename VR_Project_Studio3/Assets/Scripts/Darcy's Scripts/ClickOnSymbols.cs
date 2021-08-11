@@ -20,7 +20,7 @@ public class ClickOnSymbols : MonoBehaviour
     [SerializeField]
     Material[] greens, oranges;
 
-    bool firstCondition, secondCondition;
+    bool firstCondition = false, secondCondition = false;
 
     void Start()
     {
@@ -47,10 +47,25 @@ public class ClickOnSymbols : MonoBehaviour
                 }
             case "Door 2":
                 {
-                    firstCondition = GameObject.Find("Inside").GetComponent<PuzzleCompletionManager>().CorrectSymbolCheck(clickedSymbol);
-                    if(!firstCondition)
+                    firstCondition = false;
+
+                    DoorControl doorControl = FindObjectOfType<DoorControl>();
+
+                    Debug.Log("Before first condition");
+
+                    if(!doorControl.doorTwoLocked)
                     {
+                        firstCondition = GameObject.Find("Inside").GetComponent<PuzzleCompletionManager>().CorrectSymbolCheck(clickedSymbol);
+                        Debug.Log("After first condition");
+                    }
+
+                    Debug.Log("Before second condition");
+
+                    if (!firstCondition)
+                    {
+                       Debug.Log("Attempting second condition");
                        secondCondition = GameObject.Find("Outside").GetComponent<PuzzleCompletionManager>().CorrectSymbolCheck(clickedSymbol);
+                       Debug.Log("After second condition");
                     }
                 
                     if(!secondCondition && !firstCondition)

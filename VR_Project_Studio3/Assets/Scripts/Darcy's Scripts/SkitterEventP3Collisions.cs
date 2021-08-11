@@ -9,27 +9,28 @@ using FMODUnity;
 public class SkitterEventP3Collisions : MonoBehaviour
 {
     PhotonView photonView;
+
     public StudioEventEmitter skitterMusic;
+
     public GameObject skitterCursor;
+
+    TimeController timeController;
+
     [SerializeField]
     GameObject skitter;
+
     public Animator airbags;
 
     //[HideInInspector]
     public bool canTrigger = false;
 
-    //this script is the collision detection to spawn the skitter and to end the event for puzzle 3
-
-    void Start()
-    {
-        photonView = GetComponent<PhotonView>();
-    }
+    //this script is the collision detection to spawn the skitter and to end the event for puzzle 
 
     void Update()
     {
         if(photonView == null)
         {
-            Start();
+            photonView = GetComponent<PhotonView>();
         }
     }
 
@@ -47,7 +48,9 @@ public class SkitterEventP3Collisions : MonoBehaviour
     [PunRPC]
     void RPC_Triggered()
     {
-        Debug.Log("trigger " + PhotonNetwork.IsMasterClient.ToString());
+        timeController = FindObjectOfType<TimeController>();
+        timeController.EndBetweenTimer();
+
         gameObject.SetActive(false); //turn off the collider to prevent from happening more than once
         skitter.GetComponent<SkitterEventP3>().SpawnSkitter();
         skitterMusic.Play();

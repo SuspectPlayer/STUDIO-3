@@ -7,7 +7,7 @@ using Photon.Pun;
 //Written by Darcy Glover
 
 public class LightControl : MonoBehaviour
-{
+{ 
     public Button assignedButton;
 
     [SerializeField]
@@ -22,6 +22,8 @@ public class LightControl : MonoBehaviour
     GameObject[] assignedSymbols;
 
     PhotonView photonView;
+
+    public int lightUsed = 0;
 
     void Awake()
     {
@@ -53,6 +55,8 @@ public class LightControl : MonoBehaviour
     [PunRPC]
     void RPC_TurnLightOn() 
     {
+        lightUsed++;
+
         if (!GetComponent<Light>()) //checking to see if the light component is on the object or its children
         {
             GetComponentInChildren<Light>().enabled = true;
