@@ -1,4 +1,4 @@
-using System.Collections;
+//Written by Jack
 using System.Collections.Generic;
 using UnityEngine;
 using PlayFab;
@@ -15,10 +15,10 @@ public class PlayFabAuthenticator : MonoBehaviour
     public TMP_InputField register_User;
     public TMP_InputField register_Pass;
     public TMP_InputField register_Email;
+    public GameObject loginGRP;
 
     public GameObject[] disableOnFail;
     public GameObject[] enableOnAuthentication;
-    //public GameObject[] disableOnAuthentication;
 
     private string _playFabPlayerIdCache;
 
@@ -35,7 +35,6 @@ public class PlayFabAuthenticator : MonoBehaviour
     public void Awake()
     {
         PlayFabSettings.TitleId = "D61DD";
-        //AuthenticateWithPlayFab();
     }
 
     private void Update()
@@ -44,13 +43,10 @@ public class PlayFabAuthenticator : MonoBehaviour
         displayRunes.text = "Runes: " + runes;
     }
 
+    //Requests to authenticate the player using their login details
     public void AuthenticateWithPlayFabLogin()
     {
         Debug.Log("PlayFab authenticating using Custom ID...");
-        //LoginWithCustomIDRequest request = new LoginWithCustomIDRequest();
-        //request.CreateAccount = true;
-        //request.CustomId = PlayFabSettings.DeviceUniqueIdentifier;
-        //PlayFabClientAPI.LoginWithCustomID(request, RequestToken, OnError);
         LoginWithPlayFabRequest request = new LoginWithPlayFabRequest();
         request.Username = login_User.text;
         request.Password = login_Pass.text;
@@ -61,6 +57,7 @@ public class PlayFabAuthenticator : MonoBehaviour
         PlayFabClientAPI.LoginWithPlayFab(request, RequestToken, OnError);
     }
     
+    //Requests to create a new account with the inputed details
     public void AuthenticateWithPlayFabRegister()
     {
         
@@ -72,6 +69,7 @@ public class PlayFabAuthenticator : MonoBehaviour
         PlayFabClientAPI.RegisterPlayFabUser(request, result => { Debug.Log("Account Made"); AuthenticateWithPlayFabAfterReg(); }, OnError);
     }
 
+    //Authenticate the player with their newly registered account
     void AuthenticateWithPlayFabAfterReg()
     {
         LoginWithPlayFabRequest request = new LoginWithPlayFabRequest();
@@ -83,12 +81,12 @@ public class PlayFabAuthenticator : MonoBehaviour
 
         PlayFabClientAPI.LoginWithPlayFab(request, RequestToken, OnError);
     }
-
+    //Requests data from the players account
     void RequestToken(LoginResult result)
     {
         Debug.Log("PlayFab authenticated. Requesting photon token...");
 
-
+        //Requests to see what items are in the player inventory and how much curreny they have
         GetUserInventoryRequest inv = new GetUserInventoryRequest();
         PlayFabClientAPI.GetUserInventory(inv, invResult => 
         { 
@@ -105,6 +103,7 @@ public class PlayFabAuthenticator : MonoBehaviour
         
         runes = result.InfoResultPayload.UserVirtualCurrency["RU"];
 
+        //Requests to use the photon server settings
         _playFabPlayerIdCache = result.PlayFabId;
         GetPhotonAuthenticationTokenRequest request = new GetPhotonAuthenticationTokenRequest();
         request.PhotonApplicationId = PhotonNetwork.PhotonServerSettings.AppSettings.AppIdRealtime;
@@ -112,6 +111,7 @@ public class PlayFabAuthenticator : MonoBehaviour
         PlayFabClientAPI.GetPhotonAuthenticationToken(request, AuthenticatWithPhoton, OnError);
     }
 
+    //Connects to the photon servers if it passed through the authentiction process
     void AuthenticatWithPhoton(GetPhotonAuthenticationTokenResult result)
     {
         Debug.Log("Photon token acquired: " + result.PhotonCustomAuthenticationToken + "  Authentication complete.");
@@ -120,13 +120,14 @@ public class PlayFabAuthenticator : MonoBehaviour
         customAuth.AddAuthParameter("token", result.PhotonCustomAuthenticationToken);
         PhotonNetwork.AuthValues = customAuth;
 
-        LoginManager.ConnecteToPhotonServer(username);
+        LoginManager.ConnectToPhotonServer(username);
         foreach (GameObject g in enableOnAuthentication)
         {
             g.SetActive(true);
         }
     }
 
+    //Produces a error message if the authentication process find an error
     void OnError(PlayFabError error)
     {
         Debug.LogError(error.GenerateErrorReport());
@@ -136,9 +137,41 @@ public class PlayFabAuthenticator : MonoBehaviour
         }
 
         errorPopup.SetActive(true);
-        errorPopup.GetComponentInChildren<TextMeshProUGUI>().text = error.ErrorMessage;
+        string message = error.GenerateErrorReport();
+        if (message.Contains("Password: The Password field is required."))
+        {
+            errorPopup.GetComponentInChildren<TextMeshProUGUI>().text = "Password is Missing";
+        }
+        else if (message.Contains("Username: The Username field is required."))
+        {
+            errorPopup.GetComponentInChildren<TextMeshProUGUI>().text = "Username is Missing";
+        }
+        else if (message.Contains("Username: Username must be between 3 and 20 characters.") && loginGRP.activeSelf == true)
+        {
+            errorPopup.GetComponentInChildren<TextMeshProUGUI>().text = "Invalid username or password";
+        }
+        else if (message.Contains("Password: Password must be between 6 and 100 characters.") && loginGRP.activeSelf == true)
+        {
+            errorPopup.GetComponentInChildren<TextMeshProUGUI>().text = "Invalid username or password";
+        }
+        else if (message.Contains("Username: Username must be between 3 and 20 characters.") && loginGRP.activeSelf == false)
+        {
+            errorPopup.GetComponentInChildren<TextMeshProUGUI>().text = "Username must be between 3 and 20 characters";
+        }
+        else if (message.Contains("Password: Password must be between 6 and 100 characters.") && loginGRP.activeSelf == false)
+        {
+            errorPopup.GetComponentInChildren<TextMeshProUGUI>().text = "Password must be between 6 and 100 characters";
+        }
+        else if (message.Contains("Email: Email address is not valid."))
+        {
+            errorPopup.GetComponentInChildren<TextMeshProUGUI>().text = "Invalid Email address";
+        }
+        else
+        {
+            errorPopup.GetComponentInChildren<TextMeshProUGUI>().text = error.ErrorMessage;
+        }
     }
-
+    //Method for the player to by a specific item if they have enough currency
     public void BuyItem(string itemID)
     {
         PurchaseItemRequest pr = new PurchaseItemRequest();
@@ -154,7 +187,7 @@ public class PlayFabAuthenticator : MonoBehaviour
             Debug.Log("Item Purchased: " + result.Items[0].DisplayName); 
         }, OnError);
     }
-
+    //Method for the player to add more curreny to their account 
     public void AddCurrency(int amount)
     {
         AddUserVirtualCurrencyRequest addRunes = new AddUserVirtualCurrencyRequest();

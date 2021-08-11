@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+//Written by Jack
 using UnityEngine;
 using Photon.Pun;
-using TMPro;
-using PlayFab;
-using PlayFab.ClientModels;
+
 public class LoginManager : MonoBehaviourPunCallbacks
 {
     public GameObject[] disableOnConnect;
@@ -12,7 +9,8 @@ public class LoginManager : MonoBehaviourPunCallbacks
 
     #region UI Callback Methods
 
-    public static void ConnecteToPhotonServer(string username)
+    //connects the to photon sever once passed through the play fab authentication
+    public static void ConnectToPhotonServer(string username)
     {
         PhotonNetwork.NickName = username;
         PhotonNetwork.ConnectUsingSettings();
@@ -28,6 +26,7 @@ public class LoginManager : MonoBehaviourPunCallbacks
         Debug.Log("The Server is Available");
     }
 
+    //sets variables once connected to photon servers
     public override void OnConnectedToMaster()
     {
         Debug.Log("Connected to Master Server with player name: " + PhotonNetwork.NickName);

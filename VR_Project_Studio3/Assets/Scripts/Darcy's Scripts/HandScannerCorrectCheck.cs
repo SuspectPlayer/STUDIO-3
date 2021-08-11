@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-//Written by Darcy Glover
+//Written by Darcy Glover, Jasper von Riegen, and Jack Hobbs
 
 public class HandScannerCorrectCheck : MonoBehaviour
 {
@@ -116,8 +116,9 @@ public class HandScannerCorrectCheck : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         Debug.Log("reset");
-        GetComponent<ScannerFXBehaviours>().ResetFromFinished();
-        GetComponent<HandScannerTouchPad>().ResetBools();
+        //GetComponent<ScannerFXBehaviours>().ResetFromFinished();
+        //GetComponent<HandScannerTouchPad>().ResetBools();
+        GetComponentInParent<HandScannerCorrectCount>().ResetAllScanners();
         StopAllCoroutines();
     }
 }

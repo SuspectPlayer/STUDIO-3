@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+//Written by Jack
 using System.IO;
 using UnityEngine;
 using Photon.Pun;
 using UnityEngine.SceneManagement;
-using TMPro;
-using Photon.Realtime;
 
 public class GameSetup : MonoBehaviourPunCallbacks
 {
@@ -21,6 +18,7 @@ public class GameSetup : MonoBehaviourPunCallbacks
         SceneManager.sceneLoaded += OnSceneFinishedLoading;
     }
 
+    //sets if the player is the diver or the intel
     public void SetIsVRPlayer()
     {
         isVRPlayer = true;
@@ -29,6 +27,8 @@ public class GameSetup : MonoBehaviourPunCallbacks
     {
         isVRPlayer = false;
     }
+
+    //sets if the diver is flatscreen or not
     public void SetIsFlatScreen() { isFlatScreen = true; }
     public void SetIsNotFlatScreen() { isFlatScreen = false; }
 
@@ -39,13 +39,14 @@ public class GameSetup : MonoBehaviourPunCallbacks
             return;
         }
         
-
-        PhotonNetwork.LoadLevel("Main_Level");
+        //loads the level for the hosting player
+        PhotonNetwork.LoadLevel("Main_Level - Sub Test");
     }
 
+    //starts the joining of the level after it has finished loading for both players
     private void OnSceneFinishedLoading(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "Main_Level")
+        if (scene.name == "Main_Level - Sub Test")
         {
             if (PhotonNetwork.IsMasterClient)
             {
@@ -57,39 +58,40 @@ public class GameSetup : MonoBehaviourPunCallbacks
             }
         }
     }
-
+    //tells the none-hosting player to start joining the next level
     private void MasterLoadedGame()
     {
-        //photonView.RPC("RPC_LoadedGameScene", RpcTarget.MasterClient);
         photonView.RPC("RPC_LoadGameOthers", RpcTarget.Others);
     }
+    //tells the master client (the host) to create all the players so there is only one instance of each player
     private void NonMasterLoadedGame()
     {
         photonView.RPC("RPC_LoadedGameScene", RpcTarget.MasterClient);
     }
-
+    //loads the next level for the none hosting player
     [PunRPC]
     void RPC_LoadGameOthers()
     {
-        PhotonNetwork.LoadLevel("Main_Level");
+        PhotonNetwork.LoadLevel("Main_Level - Sub Test");
     }
+    //Creates the players for the game
     [PunRPC]
     void RPC_LoadedGameScene()
     {
         photonView.RPC("RPC_CreatePlayer", RpcTarget.All);
     }
 
+    //Instantiates a player controller into both players games depending on the type of player each has chosen 
     [PunRPC]
     void RPC_CreatePlayer()
     {
-        //PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Test PC player"), Vector3.up, Quaternion.identity);
         if (isVRPlayer && !isFlatScreen)
         { 
             PhotonNetwork.Instantiate(Path.Combine("Prefabs", "VR Player (XR Rig)"), new Vector3(29.1312f, 55.27f, 272.6982f), Quaternion.identity);
         }
         else if (!isVRPlayer)
         {
-            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "ViewerCam Variant"), new Vector3(113.118f, 81.136f, 111.906f), new Quaternion(0.04510248f, 0.2137172f, -0.0101695f, 0.9758009f));
+            PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Intel First Person Controller"), new Vector3(127.978f, 80.08208f, 106.0261f), Quaternion.identity);
         }
         else if (isVRPlayer && isFlatScreen)
         {

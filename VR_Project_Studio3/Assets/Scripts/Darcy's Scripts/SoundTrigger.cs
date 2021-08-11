@@ -4,6 +4,7 @@ using UnityEngine;
 using FMODUnity;
 
 //Written by Darcy Glover
+
 public class SoundTrigger : MonoBehaviour
 {
     //this script can be used to trigger any sound from an object with the correct tag, walking through a trigger of an object that has an event emitter and this script attached

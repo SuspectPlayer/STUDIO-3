@@ -5,6 +5,7 @@ using Photon.Pun;
 
 public class MouseLook : MonoBehaviour
 {
+    public FPSUIOpener fpsUI;
 
     public float mouseSensitivity = 150f;
 
@@ -12,35 +13,65 @@ public class MouseLook : MonoBehaviour
 
     float xRotation = 0f;
 
-    PhotonView photonview;
+    PhotonView photonView;
 
     void Awake()
     {
-        photonview = GetComponentInParent<PhotonView>();
+        photonView = GetComponentInParent<PhotonView>();
     }
-
-    void Start()
-    {
-        if (photonview.IsMine)
-        {
-           Cursor.lockState = CursorLockMode.Locked;
-        }
-
-    }
-
 
     void Update()
     {
-        if(photonview.IsMine)
+        if(fpsUI == null)
         {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+            fpsUI = GameObject.Find("UIHolder").GetComponent<FPSUIOpener>();
+        }
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f); //locks the player to only be able to look forward and not snap their characters neck
+        if (!FindObjectOfType<GameSetup>().isVRPlayer)
+        {
+            if (photonView.IsMine && !GetComponent<IntelCameraSwap>().zoomedIn)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            else if (photonView.IsMine && GetComponent<IntelCameraSwap>().zoomedIn)
+            {
+                Cursor.lockState = CursorLockMode.None;
+            }
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        playerBody.Rotate(Vector3.up * mouseX);
+            if (photonView.IsMine && !GetComponent<IntelCameraSwap>().zoomedIn)
+            {
+                float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+                float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+                xRotation -= mouseY;
+                xRotation = Mathf.Clamp(xRotation, -90f, 90f); //locks the player to only be able to look forward and not snap their characters neck
+
+                transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+                playerBody.Rotate(Vector3.up * mouseX);
+            }
+        }
+        else if(FindObjectOfType<GameSetup>().isVRPlayer)
+        {
+            if (photonView.IsMine && !fpsUI.isTrue)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            else if(fpsUI.isTrue && photonView.IsMine)
+            {
+                Cursor.lockState = CursorLockMode.None;
+            }    
+
+            if (photonView.IsMine)
+            {
+                float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+                float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+                xRotation -= mouseY;
+                xRotation = Mathf.Clamp(xRotation, -90f, 90f); //locks the player to only be able to look forward and not snap their characters neck
+
+                transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+                playerBody.Rotate(Vector3.up * mouseX);
+            }
         }
     }
 }
