@@ -11,6 +11,7 @@ TagManager:
   - ScannieBoi
   - Top
   - Bottom
+  - BeaconSammich
   layers:
   - Default
   - TransparentFX
