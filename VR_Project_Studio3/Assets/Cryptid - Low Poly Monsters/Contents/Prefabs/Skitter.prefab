@@ -535,7 +535,7 @@ Animator:
   m_GameObject: {fileID: 8150968763725539629}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 7b01c0a973142a340b72a9070ce50df9, type: 3}
-  m_Controller: {fileID: 9100000, guid: 76d075a1586af44448c2bb1e5fca5ef4, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -622,11 +622,13 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 3
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 04bf0b2d428efdc4fab38ca262d50a92, type: 2}
-  - {fileID: 2100000, guid: e78754645de8e2b4bb3e33de623b8add, type: 2}
+  - {fileID: 2100000, guid: e442aaa0e916623439c4525751b1ec9a, type: 2}
+  - {fileID: 2100000, guid: 660ab3536072dc14b99564a3626ac1c4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -634,6 +636,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

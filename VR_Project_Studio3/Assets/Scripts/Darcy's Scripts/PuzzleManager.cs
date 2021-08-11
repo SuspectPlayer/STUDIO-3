@@ -10,10 +10,10 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField]
     GameObject[] puzzles;
 
-    [HideInInspector]
-    public LayerMask scannerMask; //this is for the hand scanner because of instantiating issues
-
     //[HideInInspector]
+    //public LayerMask scannerMask; //this is for the hand scanner because of instantiating issues
+
+    [HideInInspector]
     public int whichPuzzle = 0; //checking which puzzle the player is currently solving
 
     PhotonView photonView;
@@ -51,7 +51,7 @@ public class PuzzleManager : MonoBehaviour
     void RPC_ActivateFirstPuzzle(int whichPuzzle)
     {
         puzzles[whichPuzzle].GetComponent<RandomiseSymbols>().enabled = true;
-        puzzles[whichPuzzle].GetComponent<CorrectSymbolCheck>().enabled = true;
+        puzzles[whichPuzzle].GetComponent<PuzzleCompletionManager>().enabled = true;
     }
 
     [PunRPC]
@@ -61,7 +61,7 @@ public class PuzzleManager : MonoBehaviour
         {
             p.enabled = true;
         }
-        foreach (var p in puzzles[whichPuzzle].GetComponentsInChildren<CorrectSymbolCheck>()) //turning on all the symbol checks
+        foreach (var p in puzzles[whichPuzzle].GetComponentsInChildren<PuzzleCompletionManager>()) //turning on all the symbol checks
         {
             p.enabled = true;
         }
@@ -74,7 +74,8 @@ public class PuzzleManager : MonoBehaviour
         puzzles[2].GetComponent<RandomiseSymbols>().enabled = true; //activates at the start, but,
         if (whichPuzzle == 2)
         {
-            puzzles[whichPuzzle].GetComponent<CorrectSymbolCheck>().enabled = true; //only activates the symbol check if puzzle 2 has been completed
+            GetComponent<SpawnMapSymbols>().SpawnSymbols(); //spawning map symbols
+            //puzzles[whichPuzzle].GetComponent<CorrectSymbolCheck>().enabled = true; //only activates the symbol check if puzzle 2 has been completed
         }
     }
 }

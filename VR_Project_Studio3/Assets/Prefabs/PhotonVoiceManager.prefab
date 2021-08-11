@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 4156833082326901627}
   - component: {fileID: 9054612621627540724}
   - component: {fileID: 5346383821496763960}
-  - component: {fileID: 2910711493006670394}
-  - component: {fileID: -164697227337918721}
+  - component: {fileID: 800771142955521530}
   m_Layer: 0
   m_Name: PhotonVoiceManager
   m_TagString: Untagged
@@ -109,9 +108,9 @@ MonoBehaviour:
   reliableMode: 0
   encrypt: 0
   transmitEnabled: 1
-  samplingRate: 24000
-  frameDuration: 20000
-  bitrate: 30000
+  samplingRate: 48000
+  frameDuration: 10000
+  bitrate: 200000
   sourceType: 0
   microphoneType: 0
   audioClip: {fileID: 0}
@@ -135,32 +134,7 @@ MonoBehaviour:
   trySamplingRateMatch: 0
   useMicrophoneTypeFallback: 1
   recordOnlyWhenJoined: 1
---- !u!114 &2910711493006670394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6350940077692036782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ddec46cf6a4c4addbf21b6be8442124, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  logLevel: 3
-  ignoreGlobalLogLevel: 0
-  aec: 1
-  aecHighPass: 0
-  agc: 1
-  agcCompressionGain: 9
-  vad: 0
-  highPass: 0
-  bypass: 0
-  noiseSuppression: 0
-  reverseStreamDelayMs: 120
-  forceNormalAecInMobile: 0
-  AECMobileComfortNoise: 0
---- !u!114 &-164697227337918721
+--- !u!114 &800771142955521530
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,4 +149,4 @@ MonoBehaviour:
   logLevel: 3
   ignoreGlobalLogLevel: 0
   boostValue: 0
-  amplificationFactor: 1
+  amplificationFactor: 5

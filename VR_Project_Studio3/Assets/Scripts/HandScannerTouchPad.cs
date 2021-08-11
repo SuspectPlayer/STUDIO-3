@@ -30,25 +30,11 @@ public class HandScannerTouchPad : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(triggerTag))
-        {
-            if (OnTouch != null) OnTouch.Invoke();
-            triggerEntered = true;
-        }
+        DoTheEnterThingVR(other);
     }
     public void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag(triggerTag))
-        {
-            if (OnTouchRelease != null) OnTouchRelease.Invoke();
-            triggerEntered = false;
-
-            if (progressResets)
-            {
-                progressionValue = 0;
-                timeProgressed = 0;
-            }
-        }
+        DoTheExitThingVR(other);
     }
 
 
@@ -81,6 +67,13 @@ public class HandScannerTouchPad : MonoBehaviour
         }
     }
 
+    public void ResetBools()
+    {
+        progressEventStarted = false;
+        scanComplete = false;
+        coroutineStarted = false;
+    }
+
     IEnumerator Progression()
     {
         //Halts Progression if hand is not being scanned, or if scanning is complete
@@ -106,30 +99,45 @@ public class HandScannerTouchPad : MonoBehaviour
         scanComplete = true;
     }
 
-    /*public void SymbolGet()
+    public void DoTheEnterThingVR(Collider other)
     {
-        switch (name)
+        if (other.CompareTag(triggerTag))
         {
-            case "HandScanner 1":
-                {
-                    GetComponentInParent<CorrectSymbolCheck>().temp = GetComponentInParent<RandomiseSymbols>().symbols[0].GetComponentInChildren<Image>().sprite;
-                    break;
-                }
-            case "HandScanner 2":
-                {
-                    GetComponentInParent<CorrectSymbolCheck>().temp = GetComponentInParent<RandomiseSymbols>().symbols[1].GetComponentInChildren<Image>().sprite;
-                    break;
-                }
-            case "HandScanner 3":
-                {
-                    GetComponentInParent<CorrectSymbolCheck>().temp = GetComponentInParent<RandomiseSymbols>().symbols[2].GetComponentInChildren<Image>().sprite;
-                    break;
-                }
-            case "HandScanner 4":
-                {
-                    GetComponentInParent<CorrectSymbolCheck>().temp = GetComponentInParent<RandomiseSymbols>().symbols[3].GetComponentInChildren<Image>().sprite;
-                    break;
-                }
+            if (OnTouch != null) OnTouch.Invoke();
+            triggerEntered = true;
         }
-    }*/
+    }
+
+    public void DoTheExitThingVR(Collider other)
+    {
+        if (other.CompareTag(triggerTag))
+        {
+            if (OnTouchRelease != null) OnTouchRelease.Invoke();
+            triggerEntered = false;
+
+            if (progressResets)
+            {
+                progressionValue = 0;
+                timeProgressed = 0;
+            }
+        }
+    }
+
+    public void DoTheEnterThingFPS()
+    {
+        if (OnTouch != null) OnTouch.Invoke();
+        triggerEntered = true;
+    }
+
+    public void DoTheExitThingFPS()
+    {
+        if (OnTouchRelease != null) OnTouchRelease.Invoke();
+        triggerEntered = false;
+
+        if (progressResets)
+        {
+            progressionValue = 0;
+            timeProgressed = 0;
+        }
+    }
 }

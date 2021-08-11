@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+//Written by Jack
 using UnityEngine;
 using Photon.Pun;
 using TMPro;
@@ -18,23 +17,17 @@ public class LobbySetup : MonoBehaviourPunCallbacks
     private void Awake()
     {
         photonView = GetComponent<PhotonView>();
-        //DontDestroyOnLoad(this);
     }
 
-    public void VRJoinLobby()
+    public void JoinLobby()
     {
-        PhotonNetwork.JoinRoom("Room_" + roomCode.text);
+        PhotonNetwork.JoinRoom("Room Code: " + roomCode.text);
     }
 
-    public void PCJoinLobby()
+    //Creates the room (lobby) for the other player to join with the correct options
+    public void StartLobby()
     {
-        PhotonNetwork.JoinRoom("Room_" + roomCode.text);
-        player1.transform.Find("Player Name").GetComponent<TextMeshProUGUI>().text = PhotonNetwork.NickName;
-    }
-
-    public void VRStartLobby()
-    {
-        string randomRoomName = "Room_" + Random.Range(0, 10000);
+        string randomRoomName = "Room Code: " + Random.Range(1000, 9999);
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.IsOpen = true;
         roomOptions.IsVisible = true;
@@ -55,35 +48,24 @@ public class LobbySetup : MonoBehaviourPunCallbacks
         roomNumber.text = randomRoomName;
     }
 
-    //public void PCStartLobby()
-    //{
-    //    string randomRoomName = "Room_" + Random.Range(0, 10000);
-    //    RoomOptions roomOptions = new RoomOptions();
-    //    roomOptions.IsOpen = true;
-    //    roomOptions.IsVisible = true;
-    //    roomOptions.MaxPlayers = 2;
-
-
-    //    PhotonNetwork.CreateRoom(randomRoomName, roomOptions);
-
-    //    player1.transform.Find("Player Name").GetComponent<TextMeshProUGUI>().text = PhotonNetwork.NickName;
-    //    roomNumber.text = randomRoomName;
-    //}
-
+    //logs when the room is created
     public override void OnCreatedRoom()
     {
         Debug.Log("A room is created with the name: " + PhotonNetwork.CurrentRoom.Name);
     }
 
+    //logs when failing to join room 
     public override void OnJoinRoomFailed(short returnCode, string message)
     {
         Debug.Log("Room Unavalable");
     }
 
+    //calls when joining the room (lobby)
     public override void OnJoinedRoom()
     {
         lobbySetupPannel.SetActive(false);
         lobbyPannel.SetActive(true);
+        //sets the information in the room for the joining player
         if (!PhotonNetwork.IsMasterClient)
         {
             roomNumber.text = PhotonNetwork.CurrentRoom.Name;
@@ -106,33 +88,21 @@ public class LobbySetup : MonoBehaviourPunCallbacks
        
     }
 
-
-    //public override void OnRoomListUpdate(List<RoomInfo> roomList)
-    //{
-    //    if (PhotonNetwork.IsMasterClient)
-    //    {
-            
-    //    }
-    //}
-
-    //public override void OnJoinedLobby()
-    //{
-    //    photonView.RPC("RPC_SetName", RpcTarget.Others, PhotonNetwork.NickName.ToString());
-    //}
-
-
+    //sets the joining player name for the room host
     [PunRPC]
     void RPC_SetName(string nickName)
     {
         player2.transform.Find("Player Name").GetComponent<TextMeshProUGUI>().text = nickName;
     }
 
+    //sets the joining player platfrom for the room host
     [PunRPC]
     void RPC_SetPlatform(int platform)
     {
         player2.transform.Find("Platform").GetComponent<TMP_Dropdown>().value = platform;
     }
 
+    //sets the platform of the host to see for the joining player
     [PunRPC]
     void RPC_PlatformRequest()
     {

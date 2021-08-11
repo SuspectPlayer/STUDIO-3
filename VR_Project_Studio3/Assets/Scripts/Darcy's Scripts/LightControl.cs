@@ -7,17 +7,23 @@ using Photon.Pun;
 //Written by Darcy Glover
 
 public class LightControl : MonoBehaviour
-{
-    [SerializeField]
-    Button assignedButton;
+{ 
+    public Button assignedButton;
 
     [SerializeField]
     Material lightOnMat, defaultMat;
 
+    public Sprite lightOn;
+
     [SerializeField]
-    Sprite lightOn, lightOff;
+    Sprite lightOff;
+
+    [SerializeField]
+    GameObject[] assignedSymbols;
 
     PhotonView photonView;
+
+    public int lightUsed = 0;
 
     void Awake()
     {
@@ -49,7 +55,25 @@ public class LightControl : MonoBehaviour
     [PunRPC]
     void RPC_TurnLightOn() 
     {
-        GetComponent<Light>().enabled = true;
+        lightUsed++;
+
+        if (!GetComponent<Light>()) //checking to see if the light component is on the object or its children
+        {
+            GetComponentInChildren<Light>().enabled = true;
+        }
+        else
+        {
+            GetComponent<Light>().enabled = true;
+        }
+
+        if(assignedSymbols.Length > 0)
+        {
+            for (int i = 0; i < assignedSymbols.Length; i++) //this loop enables the symbols to only been seen when the light is on
+            {
+                assignedSymbols[i].GetComponent<SpriteRenderer>().enabled = true;
+            }
+        }
+
         GetComponentInParent<LightManager>().CountUp();
         FeedbackLightOn();
         SpriteOn();
@@ -58,7 +82,23 @@ public class LightControl : MonoBehaviour
     [PunRPC]
     void RPC_TurnLightOff()
     {
-        GetComponent<Light>().enabled = false; 
+        if (!GetComponent<Light>()) //checking to see if the light component is on the object or its children
+        {
+            GetComponentInChildren<Light>().enabled = false;
+        }
+        else
+        {
+            GetComponent<Light>().enabled = false;
+        }
+
+        if(assignedSymbols.Length > 0)
+        {
+            for (int i = 0; i < assignedSymbols.Length; i++) //this loop enables the symbols to only been seen when the light is on
+            {
+                assignedSymbols[i].GetComponent<SpriteRenderer>().enabled = false;
+            }
+        }
+
         GetComponentInParent<LightManager>().CountDown();
         FeedbackLightOff();
         SpriteOff();
@@ -68,14 +108,14 @@ public class LightControl : MonoBehaviour
     {
         for (int i = 0; i < 2; i++) //controlling the lights that appear on the top right of the map for feedback to the player
         {
-            if (GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<SpriteRenderer>().sprite == lightOn)
+            if (GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<Image>().sprite == lightOn)
             {
                 continue;
             }
             else
             {
-                GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<SpriteRenderer>().sprite = lightOn;
-                GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<SpriteRenderer>().material = lightOnMat;
+                GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<Image>().sprite = lightOn;
+                GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<Image>().material = lightOnMat;
                 break;
             }
         }
@@ -84,10 +124,10 @@ public class LightControl : MonoBehaviour
     {
         for (int i = 1; i > -1; i--) //controlling the lights that appear on the top right of the map for feedback to the player
         {
-            if (GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<SpriteRenderer>().sprite == lightOn)
+            if (GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<Image>().sprite == lightOn)
             {
-                GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<SpriteRenderer>().sprite = lightOff;
-                GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<SpriteRenderer>().material = defaultMat;
+                GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<Image>().sprite = lightOff;
+                GetComponentInParent<LightManager>().feedbackLights[i].GetComponent<Image>().material = defaultMat;
                 break;
             }
         }

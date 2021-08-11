@@ -1,3 +1,5 @@
+//Written by Jack
+//Script no longer used
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PhotonServerSettings
   m_EditorClassIdentifier: 
   AppSettings:
-    AppIdRealtime: 4abb3a87-472c-4a08-ae18-538e1fa0cb33
+    AppIdRealtime: d9c38800-0f52-471f-ae9d-99d7e0f3627c
     AppIdChat: 
-    AppIdVoice: 5cc2e479-c9d6-4103-87af-2bf1e659dcfc
+    AppIdVoice: 126dd083-42e3-4eb7-b2ed-5d48b2242f29
     AppVersion: 
     UseNameServer: 1
     FixedRegion: 
@@ -59,6 +59,37 @@ MonoBehaviour:
   - RPC_TurnLightOn
   - RPC_UnlockDoor
   - RPC_LoadCheckpoint
+  - RPC_TurnOffAllLights
+  - RPC_TurnTriggerOn
+  - RPC_PlayersLose
+  - RPC_PlayersWin
+  - RPC_SpawnSkitter
+  - RPC_WaitStart
+  - RPC_WaitForDoor
+  - RPC_PlayersLoseBool
+  - RPC_Triggered
+  - Puz3Bool
+  - RPC_Message
+  - RPC_HandScanSymbolCheck
+  - RPC_ResetPuzzle
+  - RPC_CountUp
+  - RPC_ResetCount
+  - RPC_SymbolGet
+  - RPC_UpdateCount
+  - RPC_Fail
+  - RPC_Correct
+  - RPC_AmbiStart
+  - RPC_Whispering
+  - RPC_ToDiver
+  - RPC_ToIntelligence
+  - RPC_PuzzleOneComplete
+  - RPC_OrangeButtonColours
+  - RPC_DoorTwoLocked
+  - RPC_DoorTwoUnlocked
+  - RPC_SendLightUsage
+  - RPC_ToggleChatOff
+  - RPC_ToggleChatOn
+  - RPC_TurnOnLoadingChanges
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

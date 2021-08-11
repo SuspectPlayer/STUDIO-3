@@ -8,33 +8,41 @@ using Photon.Pun;
 
 public class CheckpointControl : MonoBehaviour
 {
-    [HideInInspector]
+    //[HideInInspector]
     public GameObject vrPlayer;
+    
+    [SerializeField]
+    Transform checkpoint;
 
-    [HideInInspector]
-    public Vector3 lastCheckpointPos;
+    public GameObject skitter, trigger;
+
+    PuzzleCompletionManager puzzleCompletionManager;
+
+    LightManager lightManager;
 
     PhotonView photonView;
 
     void Awake()
     {
         photonView = GetComponent<PhotonView>();
+        puzzleCompletionManager = FindObjectOfType<PuzzleCompletionManager>();
+        lightManager = FindObjectOfType<LightManager>();
     }
 
     void Update()
     {
         if(vrPlayer == null) //assigning the vr aplyer once they have been instantiated
         {
-            vrPlayer = GameObject.Find("First Person Controller(Clone)");
+            vrPlayer = GameObject.Find("VR Player (XR Rig)(Clone)");
+            if (vrPlayer == null) 
+            {
+                vrPlayer = GameObject.Find("First Person Controller(Clone)"); //if its still unassigned, it means the player it using the first person controller
+            }
         }
+
         if(photonView == null)
         {
             Awake();
-        }
-
-        if(Input.GetKeyDown(KeyCode.Y))
-        {
-            LoadCheckpoint();
         }
     }
 
@@ -46,11 +54,15 @@ public class CheckpointControl : MonoBehaviour
     [PunRPC]
     void RPC_LoadCheckpoint()
     {
-        vrPlayer.GetComponent<CharacterController>().enabled = false;
-        vrPlayer.transform.position = lastCheckpointPos;
-        vrPlayer.GetComponent<CharacterController>().enabled = true;
+        puzzleCompletionManager.PuzzleAttempt();
 
+        lightManager.TurnOffAllLights();
 
-        Debug.Log("loaded");
+        vrPlayer.transform.position = checkpoint.position;
+                                                              
+        skitter.GetComponent<SkitterEventP3>().playersLose = false; //resetting skitter event
+        trigger.SetActive(true);
+
+        Debug.Log("loaded " + PhotonNetwork.IsMasterClient.ToString());
     }
 }
