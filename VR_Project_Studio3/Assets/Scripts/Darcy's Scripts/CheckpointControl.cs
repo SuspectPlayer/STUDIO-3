@@ -16,14 +16,17 @@ public class CheckpointControl : MonoBehaviour
 
     public GameObject skitter, trigger;
 
-    //[HideInInspector]
-    //public Vector3 lastCheckpointPos;
+    PuzzleCompletionManager puzzleCompletionManager;
+
+    LightManager lightManager;
 
     PhotonView photonView;
 
     void Awake()
     {
         photonView = GetComponent<PhotonView>();
+        puzzleCompletionManager = FindObjectOfType<PuzzleCompletionManager>();
+        lightManager = FindObjectOfType<LightManager>();
     }
 
     void Update()
@@ -51,6 +54,10 @@ public class CheckpointControl : MonoBehaviour
     [PunRPC]
     void RPC_LoadCheckpoint()
     {
+        puzzleCompletionManager.PuzzleAttempt();
+
+        lightManager.TurnOffAllLights();
+
         vrPlayer.transform.position = checkpoint.position;
                                                               
         skitter.GetComponent<SkitterEventP3>().playersLose = false; //resetting skitter event

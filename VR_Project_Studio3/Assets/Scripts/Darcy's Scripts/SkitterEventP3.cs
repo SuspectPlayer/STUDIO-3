@@ -19,9 +19,9 @@ public class SkitterEventP3 : MonoBehaviour
     [SerializeField]
     GameObject dashboard, mesh;
 
-    bool canMove = false, wait = false;
+    bool canMove = false;
     //[HideInInspector]
-    public bool playersLose = false;
+    public bool playersLose = false, eventHappening = false, wait = false;
 
     void Start()
     {
@@ -88,6 +88,7 @@ public class SkitterEventP3 : MonoBehaviour
     [PunRPC]
     void RPC_SpawnSkitter()
     {
+        eventHappening = true;
         if(FindObjectOfType<GameSetup>().isVRPlayer)
         {
             mesh.GetComponent<SkinnedMeshRenderer>().enabled = true;
@@ -99,7 +100,7 @@ public class SkitterEventP3 : MonoBehaviour
     [PunRPC]
     void RPC_PlayersLose()
     {
-        intelPuzzleAnims.SetTrigger("dead"); //Plays animation animation
+        intelPuzzleAnims.SetTrigger("dead"); //Plays animation
         Debug.Log("lose " + PhotonNetwork.IsMasterClient.ToString());
         canMove = false;
         StopAllCoroutines();
@@ -120,6 +121,7 @@ public class SkitterEventP3 : MonoBehaviour
     [PunRPC]
     void RPC_PlayersWin()
     {
+        eventHappening = false;
         intelPuzzleAnims.SetBool("puz3comp", true);
         mesh.GetComponent<SkinnedMeshRenderer>().enabled = false; //if the door is locked, the players are safe
         dashboard.GetComponent<DoorControl>().door = GameObject.Find("Door 3"); //only sets to the third door if the skitter event is done

@@ -9,6 +9,8 @@ public class HandScannerCorrectCheck : MonoBehaviour
 {
     PhotonView photonView;
 
+    TimeController timeController;
+
     public Sprite scannedSymbol;
 
     [SerializeField]
@@ -21,6 +23,8 @@ public class HandScannerCorrectCheck : MonoBehaviour
     GameObject[] assignedSymbols;
 
     public bool isCorrect = false;
+
+    string masterPlayerName, otherPlayerName;
 
     public void HandScanSymbolCheck() //this is for the handscanners to check if the symbols have been scanned in the right order
     {
@@ -43,6 +47,10 @@ public class HandScannerCorrectCheck : MonoBehaviour
     [PunRPC]
     void RPC_HandScanSymbolCheck()
     {
+        timeController = FindObjectOfType<TimeController>();
+
+        timeController.EndBetweenTimer();
+
         localScannedSymbols[GetComponentInParent<HandScannerCorrectCount>().realCount] = scannedSymbol;
 
         Debug.Log("started " + scannedSymbol.ToString());
@@ -73,8 +81,32 @@ public class HandScannerCorrectCheck : MonoBehaviour
 
         if (GetComponentInParent<HandScannerCorrectCount>().realCount >= 4)
         {
-            dashboard.GetComponent<DoorControl>().UnlockDoor();
-            //other win condition stuff in here
+            if(!PhotonNetwork.IsMasterClient)
+            {
+                DarcyAnalyticMethods analyticMethods = FindObjectOfType<DarcyAnalyticMethods>();
+
+                timeController.EndMainTimer();
+
+                masterPlayerName = PhotonNetwork.MasterClient.NickName;
+                otherPlayerName = PhotonNetwork.LocalPlayer.NickName;
+
+                float mainElapsedTime = timeController.GetTime(0);
+
+                string names = masterPlayerName + " and " + otherPlayerName;
+
+                int level = FindObjectOfType<PuzzleCompletionManager>().GetCurrentLevel();
+
+                analyticMethods.PuzzleThreeCompletion(mainElapsedTime, names, level);
+
+                int puzzleThreeAttempts = dashboard.GetComponent<PuzzleCompletionManager>().puzzleThreeAttempts;
+
+                analyticMethods.PuzzleThreeAttemptsMade(puzzleThreeAttempts, level, names);
+
+                dashboard.GetComponent<DoorControl>().UnlockDoor();
+            }
+
+            LightManager lightManager = FindObjectOfType<LightManager>();
+            lightManager.SendLightUsage();
         }
     }
 
@@ -97,6 +129,8 @@ public class HandScannerCorrectCheck : MonoBehaviour
             Debug.Log("failed " + gameObject.name);
             GetComponentInParent<HandScannerCorrectCount>().ResetCount(); //resetting the count and the puzzle as a whole after an incorrect sequence
             ResetPuzzle();
+            PuzzleCompletionManager puzzleCompletionManager = FindObjectOfType<PuzzleCompletionManager>();
+            puzzleCompletionManager.PuzzleAttempt();
             StartCoroutine(FailScan());
         }
     }
@@ -116,8 +150,6 @@ public class HandScannerCorrectCheck : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         Debug.Log("reset");
-        //GetComponent<ScannerFXBehaviours>().ResetFromFinished();
-        //GetComponent<HandScannerTouchPad>().ResetBools();
         GetComponentInParent<HandScannerCorrectCount>().ResetAllScanners();
         StopAllCoroutines();
     }

@@ -9,6 +9,8 @@ public class LightManager : MonoBehaviour
 {
     public int lightCount = 0;
 
+    string masterPlayerName, otherPlayername;
+
     public GameObject[] feedbackLights, visibleLights;
 
     PhotonView photonView;
@@ -21,6 +23,11 @@ public class LightManager : MonoBehaviour
     public void TurnOffAllLights()
     {
         photonView.RPC("RPC_TurnOffAllLights", RpcTarget.All);
+    }
+
+    public void SendLightUsage()
+    {
+        photonView.RPC("RPC_SendLightUsage", RpcTarget.All);
     }
 
     public void CountUp()
@@ -50,6 +57,29 @@ public class LightManager : MonoBehaviour
             visibleLights[i].GetComponent<LightControl>().SpriteOff();
             visibleLights[i].GetComponent<LightControl>().FeedbackLightOff();
             lightCount = 0;
+        }
+    }
+
+    [PunRPC]
+    void RPC_SendLightUsage()
+    {
+        if(!PhotonNetwork.IsMasterClient)
+        {
+            DarcyAnalyticMethods analyticMethods = FindObjectOfType<DarcyAnalyticMethods>();
+
+            PuzzleCompletionManager puzzleCompletionManager = FindObjectOfType<PuzzleCompletionManager>();
+
+            masterPlayerName = PhotonNetwork.MasterClient.NickName;
+            otherPlayername = PhotonNetwork.LocalPlayer.NickName;
+
+            string names = masterPlayerName + " and " + otherPlayername; 
+
+            int level = puzzleCompletionManager.GetCurrentLevel();
+
+            for(int i = 0; i < visibleLights.Length; i++)
+            {
+                analyticMethods.LightsTurnedOn(visibleLights[i].GetComponent<LightControl>().lightUsed, visibleLights[i].gameObject.name, names, level);
+            }
         }
     }
 }
