@@ -20,6 +20,7 @@ public class EmoteSending : MonoBehaviour
     void Start()
     {
         photonView = GetComponent<PhotonView>();
+        Debug.Log("JASPER'S SHOOP-DE-DOOP: " + uiObject.gameObject.name + " ," + dPad.gameObject.name);
     }
 
     public void ToIntelligence(int emote) //Called from diver's UI
@@ -37,16 +38,32 @@ public class EmoteSending : MonoBehaviour
     [PunRPC]
     void RPC_ToIntelligence(int emote)
     {
-        if(dPad == null) { Debug.LogWarning("Unable to locate DPad. This is quite the big oof."); return; }
+        if(dPad == null) 
+        { 
+            Debug.LogWarning("Unable to locate DPad. This is quite the big oof."); 
+            return; 
+        }
+        else
+        {
+            Debug.Log("JASPER'S SHOOP-DE-DOOP: Emote Sender has RPC'ed to Intel's client");
+            dPad.DPadReceive(emote);
+        }
         
-        dPad.DPadReceive(emote);
     }
 
     [PunRPC]
     void RPC_ToDiver(int emote)
     {
-        if (uiObject == null) { Debug.LogWarning("Unable to locate Diver UI. This is quite the big oof."); return; }
+        if (uiObject == null) 
+        { 
+            Debug.LogWarning("Unable to locate Diver UI. This is quite the big oof."); 
+            return; 
+        }
+        else
+        {
+            Debug.Log("JASPER'S SHOOP-DE-DOOP: Emote Sender has RPC'ed to Diver's client");
+            uiObject.ReceiveFromIntelligence(emote);
+        }
         
-        uiObject.ReceiveFromIntelligence(emote);
     }
 }

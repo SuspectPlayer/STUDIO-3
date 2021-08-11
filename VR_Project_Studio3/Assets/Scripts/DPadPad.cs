@@ -77,38 +77,44 @@ public class DPadPad : MonoBehaviour
 
     public void DPadReceive(int emote)
     {
+        Debug.Log("JASPER'S SHOOP-DE-DOOP: Dpad has received RPC call successfully");
         StartCoroutine(DPadReceiveSequence(emote));
     }
 
     IEnumerator DPadReceiveSequence(int emote) //Lays out timing to receive emote
     {
-        while(!animator.GetCurrentAnimatorStateInfo(2).IsName("SubmarineOpen") || !animator.GetCurrentAnimatorStateInfo(2).IsName("HasReceived") || animator.IsInTransition(2))
+        Debug.Log("JASPER'S SHOOP-DE-DOOP: Dpad is waiting to receive");
+        while ((!animator.GetCurrentAnimatorStateInfo(1).IsName("SubmarineOpen") && !animator.GetCurrentAnimatorStateInfo(1).IsName("HasReceived")) || animator.IsInTransition(1))
         {
             yield return null;
         } //Holds Coroutine if Transitioning or in transition anim
         Debug.Log("Sequence Can Proceed");
 
-        if (animator.GetCurrentAnimatorStateInfo(2).IsName("SubmarineOpen"))
+        if (animator.GetCurrentAnimatorStateInfo(1).IsName("SubmarineOpen"))
         {
             animator.SetBool("ReceivedFirst", false);
             DPadFromOpen(emote);
+            Debug.Log("JASPER'S SHOOP-DE-DOOP: Dpad has received first emote");
         }
         else
         {
             animator.SetBool("ReceivedFirst", true);
             DPadFromOpen(emote);
+            Debug.Log("JASPER'S SHOOP-DE-DOOP: Dpad has received subsequent emote");
         }
     }
 
     void DPadFromOpen(int emote)
     {
         if(animator.GetBool("ReceivedFirst")) uiEmoteOverride.sprite = uiEmoteReceive.sprite;
+
         uiEmoteReceive.sprite = emoteSender.emoteSprites[emote];
         animator.SetTrigger("ReceiveFromDiver");
     }
 
     IEnumerator DPadSendTimer(int emote)
     {
+        Debug.Log("JASPER'S SHOOP-DE-DOOP: Dpad has started send timer.");
         dpadEmoteSendSuccess[emote]++;
         dpadEmoteTotal++;
         emoteSender.ToDiver(emote);
@@ -121,6 +127,7 @@ public class DPadPad : MonoBehaviour
 
         pressOkay = true;
         renderers[emote].material = buttonReady;
+        Debug.Log("JASPER'S SHOOP-DE-DOOP: Dpad has finished send timer");
     }
 
     private void OnApplicationQuit()
