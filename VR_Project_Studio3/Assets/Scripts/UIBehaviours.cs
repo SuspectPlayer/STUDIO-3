@@ -202,10 +202,6 @@ public class UIBehaviours : MonoBehaviour
                 { "Emote_SadYay", uiEmoteSendSuccess[1]},
                 { "Emote_ExclaimYay", uiEmoteSendSuccess[2]},
                 { "Emote_QueryYay", uiEmoteSendSuccess[3]},
-                { "Emote_UpYay", uiEmoteSendSuccess[4]},
-                { "Emote_DownYay", uiEmoteSendSuccess[5]},
-                { "Emote_LeftYay", uiEmoteSendSuccess[6]},
-                { "Emote_RightYay", uiEmoteSendSuccess[7]},
                 { "Emote_TotalYay", uiEmoteTotal}
                 }
             );

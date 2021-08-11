@@ -5184,7 +5184,7 @@ AnimationClip:
     intParameter: 1
     messageOptions: 0
   - time: 1.9166666
-    functionName: 
+    functionName: Animu
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
