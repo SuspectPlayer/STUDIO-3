@@ -37,9 +37,17 @@ public class DPadPad : MonoBehaviour
     {
         setup = FindObjectOfType<GameSetup>();
         assignAttempt = false;
-        if (emoteSender == null) 
-        { 
-            GameObject.Find("EmoteManager").GetComponent<EmoteSending>(); 
+        
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        pressOkay = true;
+
+        if (emoteSender == null)
+        {
+            GameObject.Find("EmoteManager").GetComponent<EmoteSending>();
             assignAttempt = true;
 
         }
@@ -54,12 +62,6 @@ public class DPadPad : MonoBehaviour
                 emoteButtonSprites[i].sprite = emoteSender.emoteSprites[i];
             }
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        pressOkay = true;
     }
 
     // Update is called once per frame
@@ -84,13 +86,13 @@ public class DPadPad : MonoBehaviour
     IEnumerator DPadReceiveSequence(int emote) //Lays out timing to receive emote
     {
         Debug.Log("JASPER'S SHOOP-DE-DOOP: Dpad is waiting to receive");
-        while ((!animator.GetCurrentAnimatorStateInfo(1).IsName("SubmarineOpen") && !animator.GetCurrentAnimatorStateInfo(1).IsName("HasReceived")) || animator.IsInTransition(1))
+        while ((!animator.GetCurrentAnimatorStateInfo(1).IsName("Chumby") && !animator.GetCurrentAnimatorStateInfo(1).IsName("HasReceived")))
         {
             yield return null;
         } //Holds Coroutine if Transitioning or in transition anim
         Debug.Log("Sequence Can Proceed");
 
-        if (animator.GetCurrentAnimatorStateInfo(1).IsName("SubmarineOpen"))
+        if (animator.GetCurrentAnimatorStateInfo(1).IsName("Chumby"))
         {
             animator.SetBool("ReceivedFirst", false);
             DPadFromOpen(emote);
