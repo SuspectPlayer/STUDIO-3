@@ -51,7 +51,7 @@ public class PuzzleManager : MonoBehaviour
     void RPC_ActivateFirstPuzzle(int whichPuzzle)
     {
         puzzles[whichPuzzle].GetComponent<RandomiseSymbols>().enabled = true;
-        puzzles[whichPuzzle].GetComponent<CorrectSymbolCheck>().enabled = true;
+        puzzles[whichPuzzle].GetComponent<PuzzleCompletionManager>().enabled = true;
     }
 
     [PunRPC]
@@ -61,7 +61,7 @@ public class PuzzleManager : MonoBehaviour
         {
             p.enabled = true;
         }
-        foreach (var p in puzzles[whichPuzzle].GetComponentsInChildren<CorrectSymbolCheck>()) //turning on all the symbol checks
+        foreach (var p in puzzles[whichPuzzle].GetComponentsInChildren<PuzzleCompletionManager>()) //turning on all the symbol checks
         {
             p.enabled = true;
         }

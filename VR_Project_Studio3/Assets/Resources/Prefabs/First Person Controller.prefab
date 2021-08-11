@@ -972,11 +972,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781486390726900416, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2003875846486083599, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2457138488549433800, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1193,6 +1193,10 @@ PrefabInstance:
     - target: {fileID: 6076727124715603166, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
       propertyPath: m_Sprite
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076727124715603166, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6742160364766029598, guid: e4f634bdaf059884ab9b122174fe46ce, type: 3}
       propertyPath: m_Sprite

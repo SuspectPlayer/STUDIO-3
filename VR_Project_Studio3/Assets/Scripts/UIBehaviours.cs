@@ -55,6 +55,10 @@ public class UIBehaviours : MonoBehaviour
         {
             emoteButtons[i].sprite = emoteSender.emoteSprites[i];
         }
+
+        uiEmoteJustSent.enabled = false;
+        uiEmoteReceivePrevious.enabled = false;
+        uiEmoteReceiveRecent.enabled = false;
     }
     // Start is called before the first frame update
     void Start()
@@ -68,28 +72,23 @@ public class UIBehaviours : MonoBehaviour
 
     }
 
-    public void OpenToCorrect() //For Animator. Opens UI to last opened panel.
+    public void OpenToCorrect() //Called from Player's UIOpener. Opens UI to last opened panel.
     {
         animator.SetBool("IsSend", outBox.activeSelf);
         animator.SetTrigger("SelfOpen");
     }
 
-    public void Close()
+    public void Close() //Called from Player's UIOpener. 
     {
         animator.SetTrigger("SelfClose");
     }
 
-    public void SwitchTab(bool openSendWindow) //Attached to SwitchTab Button
+    public void SwitchTab(bool openSendWindow) //Attached to SwitchTab Button (true = open send/close receive, false = close send/open receive)
     {
         switchToSend.SetActive(!openSendWindow);
         switchToReceive.SetActive(openSendWindow);
 
         StartCoroutine(QueueTillAtOpenSwitch());
-
-        //sendTitle.SetActive(openSendWindow);
-        //sendContent.SetActive(openSendWindow);
-        //receiveTitle.SetActive(!openSendWindow);
-        //receiveContent.SetActive(!openSendWindow);
 
     }
 
@@ -109,29 +108,37 @@ public class UIBehaviours : MonoBehaviour
         
     }
 
-    public void ReceiveFromIntelligence(int emoteIndex)
+    public void ReceiveFromIntelligence(int emoteIndex) // Called from Emote Sender
     {
         StartCoroutine(Receive(emoteIndex));
         receiveAlert = true; // Set some alerter active
     }
 
-    IEnumerator Receive(int emote)
+    IEnumerator Receive(int emote) //Sequences Receiving Emotes
     {
-        while (!inBox.activeInHierarchy || !animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenS") || !animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenR"))
+        Debug.Log("JASPER'S SHOOP-DE-DOOP: DiverUI is waiting to receive");
+        while (!inBox.activeInHierarchy || (!animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenS") && !animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenR")))
         {
             yield return null;
         }
 
-        if (firstReceived)
+        if (!firstReceived)
         {
+            Debug.Log("JASPER'S SHOOP-DE-DOOP: DiverUI is receiving first emote");
+            uiEmoteReceiveRecent.enabled = true;
             uiEmoteReceiveRecent.sprite = emoteSender.emoteSprites[emote];
-            animator.SetBool("SelfReceivedFirst", firstReceived);
+            animator.SetBool("DoTheGet", true);
+            animator.SetBool("SelfReceivedFirst", false);
             animator.SetTrigger("SelfSendReceive");
+            firstReceived = true;
         }
         else
         {
+
+            uiEmoteReceivePrevious.enabled = true;
             uiEmoteReceivePrevious.sprite = uiEmoteReceiveRecent.sprite;
-            animator.SetBool("SelfReceivedFirst", firstReceived);
+            animator.SetBool("DoTheGet", true);
+            animator.SetBool("SelfReceivedFirst", true);
             uiEmoteReceiveRecent.sprite = emoteSender.emoteSprites[emote];
             animator.SetTrigger("SelfSendReceive");
         }
@@ -147,21 +154,26 @@ public class UIBehaviours : MonoBehaviour
 
     IEnumerator QueueTillAtOpenSwitch()
     {
-        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenS") || !animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenR")) yield return null;
+        Debug.Log("JASPER'S SHOOP-DE-DOOP: DiverUI is waiting to switch");
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenS") && !animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenR")) yield return null;
 
         animator.SetBool("IsSend", outBox.activeSelf);
         animator.SetTrigger("SelfSwitch");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(3f);
         animator.SetBool("IsSend", outBox.activeSelf);
+        Debug.Log("JASPER'S SHOOP-DE-DOOP: DiverUI has switched");
     }
 
-    IEnumerator QueueTillSendReady(int emote)
+    IEnumerator QueueTillSendReady(int emote) //Sequences Sending Emotes
     {
-        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenS") || !animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenR")) yield return null;
+        Debug.Log("JASPER'S SHOOP-DE-DOOP: DiverUI is waiting to send");
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName("SelfUIIsOpenS")) yield return null;
 
+        animator.SetBool("DoTheSend", true);
         animator.SetInteger("SelfWhichEmote", emote+1);
         animator.SetTrigger("SelfSendReceive");
         emoteSender.ToIntelligence(emote);
+        Debug.Log("JASPER'S SHOOP-DE-DOOP: DiverUI has sent signal to Emote Sender");
     }
 
     private void OnApplicationQuit()

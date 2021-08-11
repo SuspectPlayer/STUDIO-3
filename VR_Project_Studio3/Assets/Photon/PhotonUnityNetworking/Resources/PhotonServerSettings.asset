@@ -82,6 +82,8 @@ MonoBehaviour:
   - RPC_Whispering
   - RPC_ToDiver
   - RPC_ToIntelligence
+  - RPC_PuzzleOneComplete
+  - RPC_OrangeButtonColours
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
