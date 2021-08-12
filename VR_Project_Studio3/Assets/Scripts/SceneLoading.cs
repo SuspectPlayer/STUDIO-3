@@ -1,7 +1,6 @@
 //Written by Jack
 using System.IO;
 using System.Collections;
-using Unity;
 using UnityEngine;
 using Photon.Pun;
 using UnityEngine.SceneManagement;
@@ -19,6 +18,11 @@ public class SceneLoading : MonoBehaviour
     {
         photonView = GetComponent<PhotonView>();
         SceneManager.sceneLoaded += OnSceneFinishedLoading;
+    }
+
+    private void Start()
+    {
+        setup = FindObjectOfType<GameSetup>();
     }
 
     //Needs to be triggered by only one player
