@@ -1,5 +1,7 @@
 //Written by Jack
 using System.IO;
+using System.Collections;
+using Unity;
 using UnityEngine;
 using Photon.Pun;
 using UnityEngine.SceneManagement;
@@ -22,10 +24,26 @@ public class SceneLoading : MonoBehaviour
     //Needs to be triggered by only one player
     public void LoadScene()
     {
+        StartCoroutine(WaitChanges());     
+    }
+
+    IEnumerator WaitChanges()
+    {
+        yield return new WaitForSeconds(5f);
+
         photonView.RPC("RPC_TurnOnLoadingChanges", RpcTarget.All);
+        StartCoroutine(WaitToLoad());
+    }
+
+
+    IEnumerator WaitToLoad()
+    {
+        yield return new WaitForSeconds(10f);
+
         //Begins loading the next scene
         PhotonNetwork.LoadLevel(sceneName);
     }
+
 
     //Changes to the scene when the game starts loading
     [PunRPC]

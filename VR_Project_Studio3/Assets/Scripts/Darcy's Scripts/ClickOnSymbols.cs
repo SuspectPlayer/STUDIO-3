@@ -53,11 +53,7 @@ public class ClickOnSymbols : MonoBehaviour
 
                     Debug.Log("Before first condition");
 
-                    if(!doorControl.doorTwoLocked)
-                    {
-                        firstCondition = GameObject.Find("Inside").GetComponent<PuzzleCompletionManager>().CorrectSymbolCheck(clickedSymbol);
-                        Debug.Log("After first condition");
-                    }
+                    firstCondition = GameObject.Find("Inside").GetComponent<PuzzleCompletionManager>().CorrectSymbolCheck(clickedSymbol);
 
                     Debug.Log("Before second condition");
 

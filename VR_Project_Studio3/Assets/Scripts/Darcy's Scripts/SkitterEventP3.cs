@@ -113,6 +113,12 @@ public class SkitterEventP3 : MonoBehaviour
     [PunRPC]
     void RPC_WaitForDoor()
     {
+        SceneLoading sceneLoading = FindObjectOfType<SceneLoading>();
+        if (PhotonNetwork.IsMasterClient)
+        {
+            sceneLoading.LoadScene();
+        }
+
         StopAllCoroutines();
         canMove = false;
         wait = true;
