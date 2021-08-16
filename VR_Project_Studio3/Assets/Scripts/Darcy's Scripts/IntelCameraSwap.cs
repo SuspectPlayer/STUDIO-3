@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using Cinemachine;
 using Photon.Pun;
 
@@ -15,6 +16,9 @@ public class IntelCameraSwap : MonoBehaviour
     [SerializeField, Tooltip("The default Camera used for FPC")]
     Camera intelCam;
 
+    [SerializeField, Tooltip("The text to prompt the player to press E or Esc")]
+    GameObject pressText;
+
     CinemachineVirtualCamera newVCam;
 
     Camera newCam;
@@ -26,6 +30,14 @@ public class IntelCameraSwap : MonoBehaviour
     //[HideInInspector]
     public bool zoomedIn = false;
 
+    void Start()
+    {
+        if(!FindObjectOfType<GameSetup>().isVRPlayer)
+        {
+            pressText.SetActive(true);
+        }
+    }
+
     void Update()
     {
         if(photonView == null)
@@ -36,14 +48,16 @@ public class IntelCameraSwap : MonoBehaviour
         RaycastHit hit;
 
         if(photonView.IsMine && Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 2f) && Input.GetKeyDown(KeyCode.E)) //pressing e to zoom in on a screen
-        {
-            Debug.Log("Raycast has hit: " + hit.transform.name);
+        { 
             if(photonView.IsMine && !zoomedIn && hit.transform.gameObject.GetComponent<VirtualCameraAssign>()) //checking to see if the hit object has a virtual camera component
             {
                 Debug.Log("It has hit a cinemachine camera object");
+                pressText.SetActive(false);
+
                 newVCam = hit.transform.gameObject.GetComponent<VirtualCameraAssign>().vCam;
                 newCam = hit.transform.gameObject.GetComponent<VirtualCameraAssign>().cam;
                 graphic = hit.transform.gameObject.GetComponentInChildren<GraphicRaycaster>();
+
                 zoomedIn = true; //changed to false before the zoom in so that the player cant look around while zooming in
                 StartCoroutine(ZoomIn());
             }
@@ -64,6 +78,9 @@ public class IntelCameraSwap : MonoBehaviour
 
         yield return new WaitForSeconds(2.2f);
 
+        pressText.GetComponent<TextMeshProUGUI>().text = "Press ESC to exit";
+        pressText.SetActive(true);
+
         newCam.enabled = true;
         intelCam.enabled = false;
         graphic.enabled = true;
@@ -79,6 +96,8 @@ public class IntelCameraSwap : MonoBehaviour
         newVCam.Priority = 0;
 
         intelCam.enabled = true;
+
+        pressText.GetComponent<TextMeshProUGUI>().text = "Press E to interact with screens";
 
         yield return new WaitForSeconds(2.2f);
 
