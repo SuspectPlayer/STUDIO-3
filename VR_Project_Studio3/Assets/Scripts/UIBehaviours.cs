@@ -64,6 +64,12 @@ public class UIBehaviours : MonoBehaviour
         uiEmoteJustSent.enabled = false;
         uiEmoteReceivePrevious.enabled = false;
         uiEmoteReceiveRecent.enabled = false;
+
+        if(setup.isFlatScreen)
+        {
+            GameObject.Find("UIFPSTAB").SetActive(true);
+        }
+        else GameObject.Find("UIFPSTAB").SetActive(false);
     }
 
     // Update is called once per frame
