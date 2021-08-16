@@ -13,6 +13,9 @@ public class LightControl : MonoBehaviour
     [SerializeField]
     Material lightOnMat, defaultMat;
 
+    [SerializeField]
+    Material[] emissionOn, emissionOff, beaconEmissionOn, beaconEmissionOff;
+
     public Sprite lightOn;
 
     [SerializeField]
@@ -20,6 +23,9 @@ public class LightControl : MonoBehaviour
 
     [SerializeField]
     GameObject[] assignedSymbols;
+
+    [SerializeField]
+    GameObject glowstick;
 
     PhotonView photonView;
 
@@ -74,6 +80,15 @@ public class LightControl : MonoBehaviour
             }
         }
 
+        if (gameObject.tag == "Beacon")
+        {
+            glowstick.GetComponent<MeshRenderer>().materials = beaconEmissionOn;
+        }
+        else
+        {
+            GetComponentInChildren<MeshRenderer>().materials = emissionOn;
+        }
+
         GetComponentInParent<LightManager>().CountUp();
         FeedbackLightOn();
         SpriteOn();
@@ -97,6 +112,15 @@ public class LightControl : MonoBehaviour
             {
                 assignedSymbols[i].GetComponent<SpriteRenderer>().enabled = false;
             }
+        }
+
+        if(gameObject.tag == "Beacon")
+        {
+            glowstick.GetComponent<MeshRenderer>().materials = beaconEmissionOff;
+        }
+        else
+        {
+            GetComponentInChildren<MeshRenderer>().materials = emissionOff;
         }
 
         GetComponentInParent<LightManager>().CountDown();
