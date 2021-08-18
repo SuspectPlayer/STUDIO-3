@@ -64,6 +64,11 @@ public class HandScannerTouchPad : MonoBehaviour
         {
             progressEventStarted = true;
             OnTouchProgressive.Invoke();
+            if (gameObject.name == "HandScanner 1")
+            {
+                Skitter_Disappearing skitter = FindObjectOfType<Skitter_Disappearing>();
+                skitter.SkitterDisappear();
+            }
         }
     }
 

@@ -17,7 +17,7 @@ public class SkitterEventP3 : MonoBehaviour
     public Animator intelPuzzleAnims;
 
     [SerializeField]
-    GameObject dashboard, mesh;
+    GameObject dashboard, mesh, stop;
 
     bool canMove = false;
     //[HideInInspector]
@@ -91,6 +91,7 @@ public class SkitterEventP3 : MonoBehaviour
         eventHappening = true;
         if(FindObjectOfType<GameSetup>().isVRPlayer)
         {
+            stop.SetActive(true);
             mesh.GetComponent<SkinnedMeshRenderer>().enabled = true;
             canMove = true;
             GetComponent<Animator>().SetBool("canMove", true);
@@ -113,6 +114,13 @@ public class SkitterEventP3 : MonoBehaviour
     [PunRPC]
     void RPC_WaitForDoor()
     {
+        SceneLoading sceneLoading = FindObjectOfType<SceneLoading>();
+        if (PhotonNetwork.IsMasterClient)
+        {
+            sceneLoading.LoadScene();
+        }
+
+        skitterMusic.Stop();
         StopAllCoroutines();
         canMove = false;
         wait = true;

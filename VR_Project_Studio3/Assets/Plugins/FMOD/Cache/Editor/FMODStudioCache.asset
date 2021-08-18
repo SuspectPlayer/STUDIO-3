@@ -15,11 +15,11 @@ MonoBehaviour:
   Path: Assets/Audio/F-mod testing/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637643025511377221
+  lastModified: 637647473049559725
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 2990
+    Value: 3044
   Exists: 1
 --- !u!114 &-8904351311515036356
 MonoBehaviour:
@@ -877,13 +877,37 @@ MonoBehaviour:
   - {fileID: -502680822961998388}
   - {fileID: -7324009541721897147}
   - {fileID: -8016724314719798025}
+  - {fileID: 49924542614159217}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3180157659838378319}
   StringsBanks:
   - {fileID: -8915405571162439283}
-  stringsBankWriteTime: 637643025511377221
+  stringsBankWriteTime: 637647473049559725
   cacheVersion: 6
+--- !u!114 &49924542614159217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/3D World Items/Submarine/Sub Ambience
+  m_EditorClassIdentifier: 
+  Path: event:/3D World Items/Submarine/Sub Ambience
+  guid: 438ddf7292a4534a8c2f914449e8bb15
+  Banks:
+  - {fileID: 3180157659838378319}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 62171
 --- !u!114 &624870027013586835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1145,7 +1169,7 @@ MonoBehaviour:
   Path: Assets/Audio/F-mod testing/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637643025511337328
+  lastModified: 637647473049524678
   LoadResult: 0
   FileSizes: []
   Exists: 1

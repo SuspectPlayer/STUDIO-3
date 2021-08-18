@@ -2423,7 +2423,7 @@ GameObject:
   - component: {fileID: 7449520133157173334}
   m_Layer: 0
   m_Name: RightHand Controller
-  m_TagString: GameController
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3107,7 +3107,7 @@ GameObject:
   - component: {fileID: 7449520133260986528}
   m_Layer: 0
   m_Name: LeftHand Controller
-  m_TagString: GameController
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4119,7 +4119,7 @@ GameObject:
   - component: {fileID: 7449520134667973215}
   m_Layer: 0
   m_Name: LeftHandDirect Controller
-  m_TagString: GameController
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4350,7 +4350,7 @@ GameObject:
   - component: {fileID: 7449520134668181079}
   m_Layer: 0
   m_Name: RightHandDirect Controller
-  m_TagString: GameController
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5130,12 +5130,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'mixamorig:RightArm'\n\tTransform 'mixamorig:Head'\n\tTransform
-    'mixamorig:LeftArm'\n\tTransform 'mixamorig:RightHand'\n\tTransform 'mixamorig:LeftForeArm'\n\tTransform
-    'mixamorig:RightForeArm'\n\tTransform 'mixamorig:Neck'\n\tTransform 'mixamorig:LeftHand'\n\tTransform
-    'mixamorig:RightArm'\n\tTransform 'mixamorig:Head'\n\tand more ..."
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0

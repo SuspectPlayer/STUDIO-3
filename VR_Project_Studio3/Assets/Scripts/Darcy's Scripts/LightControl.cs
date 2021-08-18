@@ -13,6 +13,9 @@ public class LightControl : MonoBehaviour
     [SerializeField]
     Material lightOnMat, defaultMat;
 
+    [SerializeField]
+    Material[] emissionOn, emissionOff, beaconEmissionOn, beaconEmissionOff;
+
     public Sprite lightOn;
 
     [SerializeField]
@@ -21,6 +24,9 @@ public class LightControl : MonoBehaviour
     [SerializeField]
     GameObject[] assignedSymbols;
 
+    [SerializeField]
+    GameObject glowstick;
+
     PhotonView photonView;
 
     public int lightUsed = 0;
@@ -28,6 +34,7 @@ public class LightControl : MonoBehaviour
     void Awake()
     {
         photonView = GetComponent<PhotonView>();
+        StartCoroutine(CheckForLightOn());
     }
 
     public void LightParameterCheck() //checks all the parameters to decide which method to use
@@ -74,6 +81,15 @@ public class LightControl : MonoBehaviour
             }
         }
 
+        if (gameObject.tag == "Beacon")
+        {
+            glowstick.GetComponent<MeshRenderer>().materials = beaconEmissionOn;
+        }
+        else
+        {
+            GetComponentInChildren<MeshRenderer>().materials = emissionOn;
+        }
+
         GetComponentInParent<LightManager>().CountUp();
         FeedbackLightOn();
         SpriteOn();
@@ -97,6 +113,15 @@ public class LightControl : MonoBehaviour
             {
                 assignedSymbols[i].GetComponent<SpriteRenderer>().enabled = false;
             }
+        }
+
+        if(gameObject.tag == "Beacon")
+        {
+            glowstick.GetComponent<MeshRenderer>().materials = beaconEmissionOff;
+        }
+        else
+        {
+            GetComponentInChildren<MeshRenderer>().materials = emissionOff;
         }
 
         GetComponentInParent<LightManager>().CountDown();
@@ -142,5 +167,15 @@ public class LightControl : MonoBehaviour
     {
         assignedButton.image.sprite = lightOff;
         assignedButton.image.material = defaultMat;
+    }
+
+    IEnumerator CheckForLightOn()
+    {
+        if(GetComponentInChildren<Light>().enabled)
+        {
+            assignedButton.image.sprite = lightOn;
+        }
+
+        yield return null;
     }
 }

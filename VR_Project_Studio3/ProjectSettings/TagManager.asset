@@ -12,6 +12,7 @@ TagManager:
   - Top
   - Bottom
   - BeaconSammich
+  - Beacon
   layers:
   - Default
   - TransparentFX

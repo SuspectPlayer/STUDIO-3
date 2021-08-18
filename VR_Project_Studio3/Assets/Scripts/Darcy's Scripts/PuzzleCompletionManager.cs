@@ -50,12 +50,16 @@ public class PuzzleCompletionManager : MonoBehaviour
 
     public bool CorrectSymbolCheck(Sprite clickedSymbol)
     {
+        Debug.Log("Starting the check script");
+
         SkitterEventP3 skitterEvent = FindObjectOfType<SkitterEventP3>();
 
         bool condition;
 
         if (puzzleManager.whichPuzzle != 2 || skitterEvent.eventHappening) 
         {
+            Debug.Log("Checking symbols");
+
             isVRPlayer = GameObject.Find("GameSetup").GetComponent<GameSetup>().isVRPlayer;
 
             if (photonView == null)
@@ -118,6 +122,7 @@ public class PuzzleCompletionManager : MonoBehaviour
                     Debug.Log(incorrectSymbolCount.ToString());
                     if (incorrectSymbolCount >= 4)
                     {
+                        Debug.Log("Incorrect count when calling attempt : " + incorrectSymbolCount);
                         PuzzleAttempt();
                     }
                 }

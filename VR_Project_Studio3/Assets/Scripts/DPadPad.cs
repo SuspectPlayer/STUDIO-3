@@ -37,7 +37,12 @@ public class DPadPad : MonoBehaviour
     {
         setup = FindObjectOfType<GameSetup>();
         assignAttempt = false;
-        
+
+        if (emoteSender == null)
+        {
+            GameObject.Find("EmoteManager").GetComponent<EmoteSending>();
+
+        }
     }
 
     // Start is called before the first frame update
@@ -67,7 +72,20 @@ public class DPadPad : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (emoteSender == null)
+        {
+            GameObject.Find("EmoteManager").GetComponent<EmoteSending>();
+
+            if (emoteSender != null)
+            {
+                emoteSender.dPad = this;
+
+                for (int i = 0; i < 4; i++)
+                {
+                    emoteButtonSprites[i].sprite = emoteSender.emoteSprites[i];
+                }
+            }
+        }
     }
 
     public void DPadSend(int emote)

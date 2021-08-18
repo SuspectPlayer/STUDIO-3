@@ -10,8 +10,6 @@ using FMODUnity;
 public class DoorControl : MonoBehaviour
 {
     public GameObject door;
-    public StudioEventEmitter ambienceMusic02;
-    public StudioEventEmitter[] doorOpenSounds; //When right answer
 
     public bool doorTwoLocked = false; //this bool is for puzzle 3, to deactivate the skitter if the door is locked
 
@@ -65,7 +63,6 @@ public class DoorControl : MonoBehaviour
                 {
                     GetComponent<PuzzleManager>().whichPuzzle = 2;
                     GetComponent<PuzzleManager>().ActivatePuzzle();
-                    ambienceMusic02.Stop();
                     doorTwoLocked = false;
                     break;
                 }

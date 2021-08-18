@@ -90,6 +90,9 @@ MonoBehaviour:
   - RPC_ToggleChatOff
   - RPC_ToggleChatOn
   - RPC_TurnOnLoadingChanges
+  - RPC_CreatePlayer2
+  - RPC_LoadedGameScene2
+  - RPC_LoadGameOthers2
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
