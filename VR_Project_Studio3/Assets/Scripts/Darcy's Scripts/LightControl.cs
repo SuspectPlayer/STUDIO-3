@@ -34,6 +34,7 @@ public class LightControl : MonoBehaviour
     void Awake()
     {
         photonView = GetComponent<PhotonView>();
+        StartCoroutine(CheckForLightOn());
     }
 
     public void LightParameterCheck() //checks all the parameters to decide which method to use
@@ -166,5 +167,15 @@ public class LightControl : MonoBehaviour
     {
         assignedButton.image.sprite = lightOff;
         assignedButton.image.material = defaultMat;
+    }
+
+    IEnumerator CheckForLightOn()
+    {
+        if(GetComponentInChildren<Light>().enabled)
+        {
+            assignedButton.image.sprite = lightOn;
+        }
+
+        yield return null;
     }
 }

@@ -120,6 +120,7 @@ public class SkitterEventP3 : MonoBehaviour
             sceneLoading.LoadScene();
         }
 
+        skitterMusic.Stop();
         StopAllCoroutines();
         canMove = false;
         wait = true;
@@ -128,7 +129,6 @@ public class SkitterEventP3 : MonoBehaviour
     [PunRPC]
     void RPC_PlayersWin()
     {
-        skitterMusic.Stop();
         eventHappening = false;
         intelPuzzleAnims.SetBool("puz3comp", true);
         mesh.GetComponent<SkinnedMeshRenderer>().enabled = false; //if the door is locked, the players are safe
