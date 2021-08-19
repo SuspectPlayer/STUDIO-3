@@ -1,21 +1,19 @@
-﻿//Written by Jack and Jasper
-using System.Collections.Generic;
+﻿//Written by Jack
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using TMPro;
 
 public class Settings : MonoBehaviour
 {
 
-    public Dropdown fullScreenDropdown;
-    public Dropdown resolutionDropdown;
+    public TMP_Dropdown fullScreenDropdown;
+    public TMP_Dropdown resolutionDropdown;
 
 
     public void Start()
     {
 
         //Sets the saved player settings
-        if(fullScreenDropdown = null)
+        if(fullScreenDropdown == null)
         {
             if (PlayerPrefs.GetInt("Window", 0) == 0)
             {
@@ -36,7 +34,7 @@ public class Settings : MonoBehaviour
             fullScreenDropdown.value = PlayerPrefs.GetInt("Window", 0);
         }
 
-        if(resolutionDropdown = null)
+        if(resolutionDropdown == null)
         {
             if (PlayerPrefs.GetInt("Resolution", 0) == 0 && (PlayerPrefs.GetInt("Window", 0) == 1 || PlayerPrefs.GetInt("Window", 0) == 0))
             {
