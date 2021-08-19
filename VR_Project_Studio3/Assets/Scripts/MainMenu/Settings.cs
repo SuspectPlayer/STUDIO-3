@@ -116,5 +116,10 @@ public class Settings : MonoBehaviour
         PlayerPrefs.SetInt("Resolution", resolutionDropdown.value);
     }
 
+    //When quitting the application
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
   
 }

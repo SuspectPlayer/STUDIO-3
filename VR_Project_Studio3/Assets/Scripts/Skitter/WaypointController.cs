@@ -1,3 +1,4 @@
+//Written by Jack
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,7 +35,7 @@ public class WaypointController : MonoBehaviour
         agent.speed = moveSpeed;
     }
 
-    // Update is called once per frame
+    //follows its set path until it finds the player
     void Update()
     {
         if (!playerFound)
@@ -49,6 +50,7 @@ public class WaypointController : MonoBehaviour
         
     }
 
+    //Will change to the next node after it is within a certain distance of the node
     void CheckDistanceToWaypoint(float currentDistance)
     {
         if(currentDistance <= minDistance)
@@ -58,6 +60,7 @@ public class WaypointController : MonoBehaviour
         }
     }
 
+    //sets the next target node
     void UpdateTargetWaypoint()
     {
         if(targetWaypointIndex > lastWaypointIndex)
@@ -68,6 +71,8 @@ public class WaypointController : MonoBehaviour
         agent.SetDestination(targetWaypoint.position);
     }
 
+    //what happens when the skitter finds the player
+    //begins to start chasing the player and checking to see if they lose the player
     void OnTriggerStay(Collider other)
     {
         if (other.gameObject == player)
@@ -106,7 +111,7 @@ public class WaypointController : MonoBehaviour
         StartCoroutine("LosePlayer");
         
     }
-
+    //what happens when the skitter loses the player
     IEnumerator LosePlayer()
     {
         losingPlayer = true;

@@ -115,4 +115,10 @@ public class LobbySetup : MonoBehaviourPunCallbacks
             photonView.RPC("RPC_SetPlatform", RpcTarget.Others, 0);
         }
     }
+
+    //For leaving a room and going back to the main menu
+    public void CloseRoom()
+    {
+        PhotonNetwork.LeaveRoom();
+    }
 }

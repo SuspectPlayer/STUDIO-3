@@ -6,6 +6,7 @@ public class LoginManager : MonoBehaviourPunCallbacks
 {
     public GameObject[] disableOnConnect;
     public GameObject[] enableOnConnect;
+    bool OpenOnce;
 
     #region UI Callback Methods
 
@@ -36,10 +37,17 @@ public class LoginManager : MonoBehaviourPunCallbacks
         {
             g.SetActive(false);
         }
-        foreach (GameObject g in enableOnConnect)
+        //so it doesnt happen everytime the player reconnects to the master
+        if (OpenOnce == false)
         {
-            g.SetActive(true);
+            foreach (GameObject g in enableOnConnect)
+            {
+
+                g.SetActive(true);
+            }
+            OpenOnce = true;
         }
+        
     }
 
     public override void OnJoinedLobby()
