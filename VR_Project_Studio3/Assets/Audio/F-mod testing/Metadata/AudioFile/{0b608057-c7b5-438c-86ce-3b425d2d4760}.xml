@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{0b608057-c7b5-438c-86ce-3b425d2d4760}">
+		<property name="assetPath">
+			<value>zapsplat_horror_hit_stab_big_dark_dramatic_metallic_scrape_whine_001_46633.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>11.808</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{008270d6-d1a0-4dab-bd8f-c1b9e74ab876}</destination>
+		</relationship>
+	</object>
+</objects>

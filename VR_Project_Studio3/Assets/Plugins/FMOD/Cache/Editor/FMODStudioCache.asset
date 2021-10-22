@@ -15,11 +15,11 @@ MonoBehaviour:
   Path: Assets/Audio/F-mod testing/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637647473049559725
+  lastModified: 637704995288745317
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 3044
+    Value: 3238
   Exists: 1
 --- !u!114 &-8904351311515036356
 MonoBehaviour:
@@ -66,6 +66,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 76944
+--- !u!114 &-8310941815879033838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Adaptive_music/Drone
+  m_EditorClassIdentifier: 
+  Path: event:/Adaptive_music/Drone
+  guid: 8bbe15e138dfd74d8aeff89e31ab7af1
+  Banks:
+  - {fileID: 3180157659838378319}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 64056
 --- !u!114 &-8251638889610036858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,6 +316,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 309
+--- !u!114 &-6060631101258208180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Adaptive_music/Suspense
+  m_EditorClassIdentifier: 
+  Path: event:/Adaptive_music/Suspense
+  guid: 7aad9cb2a55b7f4284f239758a99545a
+  Banks:
+  - {fileID: 3180157659838378319}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 60024
 --- !u!114 &-6040332381662694591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -878,12 +924,16 @@ MonoBehaviour:
   - {fileID: -7324009541721897147}
   - {fileID: -8016724314719798025}
   - {fileID: 49924542614159217}
+  - {fileID: -6060631101258208180}
+  - {fileID: -8310941815879033838}
+  - {fileID: 8886964664134585328}
+  - {fileID: 352396846286246827}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3180157659838378319}
   StringsBanks:
   - {fileID: -8915405571162439283}
-  stringsBankWriteTime: 637647473049559725
+  stringsBankWriteTime: 637704995288745317
   cacheVersion: 6
 --- !u!114 &49924542614159217
 MonoBehaviour:
@@ -908,6 +958,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 62171
+--- !u!114 &352396846286246827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Adaptive_music/Chase
+  m_EditorClassIdentifier: 
+  Path: event:/Adaptive_music/Chase
+  guid: d8588f777ce780428cb71783e4487dc4
+  Banks:
+  - {fileID: 3180157659838378319}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 60203
 --- !u!114 &624870027013586835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1169,7 +1242,7 @@ MonoBehaviour:
   Path: Assets/Audio/F-mod testing/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637647473049524678
+  lastModified: 637704995288705425
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -1739,3 +1812,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 156336
+--- !u!114 &8886964664134585328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Adaptive_music/Suspense_Hit
+  m_EditorClassIdentifier: 
+  Path: event:/Adaptive_music/Suspense_Hit
+  guid: 94ccfc9514f5ae47942cc5a6da11a8b0
+  Banks:
+  - {fileID: 3180157659838378319}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 16032
